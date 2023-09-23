@@ -70,6 +70,7 @@ struct Tiles: View {
                 }
             }
         }
+//        .allowsHitTesting(false)
     }
 }
 
@@ -152,19 +153,21 @@ struct CrossMark: View {
         var ratio: Double { animatableData }
 
         func path(in rect: CGRect) -> Path {
-            let center = CGPoint(x: rect.midX, y: rect.midY)
-            let radius = ratio * 0.8 * min(rect.width/2, rect.height/2)
-            let pp = [
-                center + CGPoint(radius: radius, theta: 1/4 * .pi),
-                center + CGPoint(radius: radius, theta: 3/4 * .pi),
-                center + CGPoint(radius: radius, theta: 5/4 * .pi),
-                center + CGPoint(radius: radius, theta: 7/4 * .pi)
-            ]
+            let r0 = 0.8 * min(rect.width/2, rect.height/2)
+            let r1 = 4 * r0 * min(ratio, 0.5)
+            let r2 = 4 * r0 * max(ratio - 0.5, 0.0)
+
+            let p0 = CGPoint(x: rect.midX, y: rect.midY)
+            let p1 = p0 + CGPoint(radius: r0, theta: 7/4 * .pi)
+            let p2 = p1 + CGPoint(radius: r1, theta: 7/4 * .pi - .pi)
+            let p3 = p0 + CGPoint(radius: r0, theta: 5/4 * .pi)
+            let p4 = p3 + CGPoint(radius: r2, theta: 5/4 * .pi - .pi)
+
             var path = Path()
-            path.move(to: center); path.addLine(to: pp[0])
-            path.move(to: center); path.addLine(to: pp[1])
-            path.move(to: center); path.addLine(to: pp[2])
-            path.move(to: center); path.addLine(to: pp[3])
+            path.move(to: p1)
+            path.addLine(to: p2)
+            path.move(to: p3)
+            path.addLine(to: p4)
             return path
         }
     }
@@ -236,7 +239,7 @@ struct Background: ViewModifier {
 
 extension Animation {
     static func custom() -> Animation {
-        .spring(duration: 0.5)
+        .spring(duration: 0.7)
     }
 }
 
