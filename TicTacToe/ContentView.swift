@@ -51,44 +51,55 @@ struct Center<V: View>: View {
     }
 }
 
-/// タイル
+/// タイル領域
 struct Tiles: View {
     var spacing: Double = 6
+    @State var checks: [[Check?]] = [
+        [.check1, .check2, .check1],
+        [.check2, .check1, .check2],
+        [.check1, .check2, .check1],
+    ]
 
     var body: some View {
         Grid(horizontalSpacing: spacing, verticalSpacing: spacing) {
-            GridRow {
-                Color.clear.overlay {
-                    CrossMark()
-                }
-                Color.clear.overlay {
-                    RingMark()
-                }
-                Color.clear.overlay {
-                    RingMark()
+            ForEach(0..<3) { i in
+                GridRow {
+                    ForEach(0..<3) { j in
+                        TileItem(check: $checks[i][j])
+                    }
                 }
             }
-            GridRow {
-                Color.clear.overlay {
-                    RingMark()
-                }
-                Color.clear.overlay {
-                    RingMark()
-                }
-                Color.clear.overlay {
-                    RingMark()
+        }
+    }
+}
+
+enum Check: Hashable {
+    case check1
+    case check2
+}
+
+struct TileItem: View {
+    @Binding var check: Check?
+    @State var ratio: Double = 0
+
+    var body: some View {
+        ZStack {
+            Color.white.opacity(1/256)
+            Group {
+                switch check {
+                case .check1:
+                    RingMark(ratio: ratio)
+                case .check2:
+                    CrossMark(ratio: ratio)
+                case .none:
+                    Color.clear
                 }
             }
-            GridRow {
-                Color.clear.overlay {
-                    RingMark()
-                }
-                Color.clear.overlay {
-                    RingMark()
-                }
-                Color.clear.overlay {
-                    RingMark()
-                }
+        }
+        .onTapGesture {
+            ratio = 0
+            withAnimation(.custom()) {
+                ratio = 1
             }
         }
     }
@@ -96,7 +107,7 @@ struct Tiles: View {
 
 /// 丸マーク
 struct RingMark: View {
-    @State var ratio: Double = 0
+    var ratio: Double = 0
     var lineWidth: Double = 6.0
     var color: Color = .white
 
@@ -104,11 +115,6 @@ struct RingMark: View {
         RingShape(animatableData: ratio)
             .stroke(lineWidth: lineWidth)
             .foregroundStyle(color)
-            .onAppear {
-                withAnimation(.custom()) {
-                    ratio = 1
-                }
-            }
     }
 
     private struct RingShape: Shape, Animatable {
@@ -131,7 +137,7 @@ struct RingMark: View {
 
 /// バツマーク
 struct CrossMark: View {
-    @State var ratio: Double = 0
+    var ratio: Double = 0
     var lineWidth: Double = 6.0
     var color: Color = .white
 
@@ -139,11 +145,6 @@ struct CrossMark: View {
         CrossShape(animatableData: ratio)
             .stroke(lineWidth: lineWidth)
             .foregroundStyle(color)
-            .onAppear {
-                withAnimation(.custom()) {
-                    ratio = 1
-                }
-            }
     }
 
     private struct CrossShape: Shape, Animatable {
