@@ -6,10 +6,8 @@ struct ContentView: View {
 
     var body: some View {
         ZStack {
-            Center { _ in
+            Center {
                 Lattice(lineWidth: spacing, color: .blue, ratio: ratio)
-            }
-            Center { _ in
                 Tiles(spacing: spacing)
             }
         }
@@ -24,29 +22,20 @@ struct ContentView: View {
 }
 
 struct Center<V: View>: View {
-    var content: (CGFloat) -> V
+    var content: () -> V
 
-    init(@ViewBuilder content: @escaping (_ size: CGFloat) -> V) {
+    init(@ViewBuilder content: @escaping () -> V) {
         self.content = content
     }
 
     var body: some View {
         GeometryReader { geometry in
             let size = min(geometry.size.width, geometry.size.height)
-            VStack(spacing: 0) {
-                Spacer()
-                    .frame(minHeight: 0)
-                HStack {
-                    Spacer()
-                        .frame(minWidth: 0)
-                    content(size)
-                        .frame(width: size, height: size)
-                    Spacer()
-                        .frame(minWidth: 0)
-                }
-                Spacer()
-                    .frame(minHeight: 0)
+            ZStack(alignment: .center) {
+                content()
+                    .frame(width: size, height: size)
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
     }
 }
