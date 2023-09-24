@@ -30,7 +30,7 @@ struct ContentView: View {
 
     func reset() {
         ratio = 0
-        withAnimation(.custom()) {
+        withAnimation(.custom(duration: 1)) {
             ratio = 1
         }
     }
@@ -65,7 +65,7 @@ struct TileItem: View {
 
     var body: some View {
         ZStack {
-            Color.white.opacity(1/256)
+            Color.white.opacity(1/0xFFFF)
             Group {
                 switch check {
                 case .check1:
@@ -83,12 +83,6 @@ struct TileItem: View {
                 ratio = 1
             }
         }
-    }
-}
-
-extension Animation {
-    static func custom() -> Animation {
-        .spring(duration: 0.7)
     }
 }
 

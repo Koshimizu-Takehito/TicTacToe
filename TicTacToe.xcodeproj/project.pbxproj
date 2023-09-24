@@ -15,6 +15,7 @@
 		FB1952B22ABFE1570025BAFB /* CrossMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1952B12ABFE1570025BAFB /* CrossMark.swift */; };
 		FB1952B52ABFE2A00025BAFB /* Check.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1952B42ABFE2A00025BAFB /* Check.swift */; };
 		FB1952B92ABFE2E80025BAFB /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1952B82ABFE2E80025BAFB /* Background.swift */; };
+		FB1952BC2ABFE4C80025BAFB /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1952BB2ABFE4C80025BAFB /* Animation.swift */; };
 		FB9B4E742ABE91F300132FBA /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9B4E732ABE91F300132FBA /* App.swift */; };
 		FB9B4E762ABE91F300132FBA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9B4E752ABE91F300132FBA /* ContentView.swift */; };
 		FB9B4E782ABE91F500132FBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB9B4E772ABE91F500132FBA /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		FB1952B12ABFE1570025BAFB /* CrossMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossMark.swift; sourceTree = "<group>"; };
 		FB1952B42ABFE2A00025BAFB /* Check.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Check.swift; sourceTree = "<group>"; };
 		FB1952B82ABFE2E80025BAFB /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
+		FB1952BB2ABFE4C80025BAFB /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		FB9B4E702ABE91F300132FBA /* TicTacToe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacToe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB9B4E732ABE91F300132FBA /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		FB9B4E752ABE91F300132FBA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 		FB1952B62ABFE2BE0025BAFB /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				FB1952BB2ABFE4C80025BAFB /* Animation.swift */,
 				FB1952A42ABFD6990025BAFB /* CGPoint.swift */,
 			);
 			path = Extensions;
@@ -339,6 +342,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB1952BC2ABFE4C80025BAFB /* Animation.swift in Sources */,
 				FB1952A82ABFD6C90025BAFB /* TitleButtonStyle.swift in Sources */,
 				FB1952B02ABFE0B10025BAFB /* AnimationHelper.swift in Sources */,
 				FB1952B52ABFE2A00025BAFB /* Check.swift in Sources */,
