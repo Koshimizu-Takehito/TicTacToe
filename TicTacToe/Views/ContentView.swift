@@ -34,6 +34,7 @@ struct ContentView: View {
 
     func reset() {
         ratio = 0
+        player = .player1
         withAnimation(.custom(duration: 1)) {
             ratio = 1
             checks = .default
