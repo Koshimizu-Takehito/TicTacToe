@@ -1,10 +1,3 @@
-//
-//  CrossMark.swift
-//  TicTacToe
-//
-//  Created by Takehito Koshimizu on 2023/09/24.
-//
-
 import SwiftUI
 
 /// バツマーク
@@ -46,6 +39,6 @@ struct CrossMark: View {
 
 #Preview {
     AnimationHelper(.spring(duration: 1), start: 0, end: 1) { parameter in
-        CrossMark(ratio: parameter, color: .black)
+        CrossMark(ratio: parameter)
     }
 }
