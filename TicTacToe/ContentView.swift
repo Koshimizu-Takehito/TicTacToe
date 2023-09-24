@@ -6,36 +6,32 @@ struct ContentView: View {
 
     var body: some View {
         ZStack {
-            Center {
-                Lattice(lineWidth: spacing, color: .blue, ratio: ratio)
-                Tiles(spacing: spacing)
+            VStack {
+                GeometryReader { geometry in
+                    let size = min(geometry.size.width, geometry.size.height)
+                    ZStack(alignment: .center) {
+                        Group {
+                            Lattice(lineWidth: spacing, color: .blue, ratio: ratio)
+                            Tiles(spacing: spacing)
+                        }
+                        .frame(width: size, height: size)
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                }
+
+                Button("リセット", action: reset)
+                    .buttonStyle(TitleButtonStyle())
             }
         }
         .padding()
         .modifier(Background(color: .orange))
-        .onAppear {
-            withAnimation(.custom()) {
-                ratio = 1
-            }
-        }
-    }
-}
-
-struct Center<V: View>: View {
-    var content: () -> V
-
-    init(@ViewBuilder content: @escaping () -> V) {
-        self.content = content
+        .onAppear(perform: reset)
     }
 
-    var body: some View {
-        GeometryReader { geometry in
-            let size = min(geometry.size.width, geometry.size.height)
-            ZStack(alignment: .center) {
-                content()
-                    .frame(width: size, height: size)
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+    func reset() {
+        ratio = 0
+        withAnimation(.custom()) {
+            ratio = 1
         }
     }
 }
@@ -223,6 +219,19 @@ struct Background: ViewModifier {
             .background(in: Rectangle())
             .backgroundStyle(color)
             .ignoresSafeArea()
+    }
+}
+
+struct TitleButtonStyle: ButtonStyle {
+    var color: Color = .blue
+
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .font(.title.bold())
+            .foregroundStyle(color)
+            .frame(minHeight: 44)
+            .padding(.horizontal)
+            .opacity(configuration.isPressed ? 0.2 : 1)
     }
 }
 
