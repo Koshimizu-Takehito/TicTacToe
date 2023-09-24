@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct TitleButtonStyle: ButtonStyle {
-    var color: Color = .blue
+    var color: Color = .white
 
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .font(.title.bold())
+            .font(.largeTitle.bold())
             .foregroundStyle(color)
-            .frame(minHeight: 44)
             .padding(.horizontal)
             .opacity(configuration.isPressed ? 0.2 : 1)
+            .padding()
     }
 }

@@ -11,7 +11,7 @@ import SwiftUI
 struct RingMark: View {
     var ratio: Double = 0
     var lineWidth: Double = 6.0
-    var color: Color = .white
+    var color: Color = .check1
 
     var body: some View {
         RingShape(animatableData: ratio)

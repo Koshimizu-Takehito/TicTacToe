@@ -13,7 +13,7 @@ struct ContentView: View {
                     let spacing = size/40
                     ZStack(alignment: .center) {
                         Group {
-                            Lattice(lineWidth: spacing, color: .blue, ratio: ratio)
+                            Lattice(lineWidth: spacing, color: .foreground, ratio: ratio)
                             Tiles(checks: $checks, spacing: spacing, onTap: onTap)
                         }
                         .frame(width: size, height: size)
@@ -24,11 +24,11 @@ struct ContentView: View {
                 Button(action: reset, label: {
                     Image(systemName: "arrow.triangle.2.circlepath")
                 })
-                .buttonStyle(TitleButtonStyle())
+                .buttonStyle(TitleButtonStyle(color: .foreground))
             }
         }
         .padding()
-        .modifier(Background(color: .orange))
+        .modifier(Background(color: .background))
         .onAppear(perform: reset)
     }
 
@@ -67,7 +67,13 @@ struct Tiles: View {
             ForEach(0..<3) { i in
                 GridRow {
                     ForEach(0..<3) { j in
-                        TileItemView(row: i, column: j, check: $checks[i][j], onTap: onTap)
+                        TileItemView(
+                            lineWidth: spacing,
+                            row: i,
+                            column: j,
+                            check: $checks[i][j],
+                            onTap: onTap
+                        )
                     }
                 }
             }
@@ -76,6 +82,7 @@ struct Tiles: View {
 }
 
 struct TileItemView: View {
+    let lineWidth: Double
     let row: Int
     let column: Int
     @Binding var check: Check?
@@ -89,9 +96,9 @@ struct TileItemView: View {
             Group {
                 switch check {
                 case .check1:
-                    RingMark(ratio: ratio)
+                    RingMark(ratio: ratio, lineWidth: lineWidth)
                 case .check2:
-                    CrossMark(ratio: ratio)
+                    CrossMark(ratio: ratio, lineWidth: lineWidth)
                 case .none:
                     Color.clear
                 }
