@@ -14,13 +14,13 @@ struct ContentView: View {
                     ZStack(alignment: .center) {
                         Group {
                             Lattice(lineWidth: spacing, color: .foreground, ratio: ratio)
-                            Tiles(checks: $checks, spacing: spacing, onTap: onTap)
+                            Tiles(checks: $checks, spacing: spacing, onTap: update)
+                                .allowsHitTesting(player == .player1)
                         }
                         .frame(width: size, height: size)
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
-
                 Button(action: reset, label: {
                     Image(systemName: "arrow.triangle.2.circlepath")
                 })
@@ -30,6 +30,7 @@ struct ContentView: View {
         .padding()
         .modifier(Background(color: .background))
         .onAppear(perform: reset)
+        .onChange(of: player, changePlayer)
     }
 
     func reset() {
@@ -41,10 +42,33 @@ struct ContentView: View {
         }
     }
 
-    func onTap(row: Int, column: Int) -> Void {
+    func update(row: Int, column: Int) -> Void {
         guard checks[row][column] == .none else { return }
         checks[row][column] = player.check
         player.toggle()
+    }
+
+    func changePlayer(old: Player, new: Player) {
+        switch new {
+        case .player1:
+            break
+        case .player2:
+            let canPlay = checks.lazy.flatMap { $0 }.contains { $0 == nil }
+            guard canPlay else { return }
+            while true {
+                let row = (0...2).randomElement()!
+                let column = (0...2).randomElement()!
+                if checks[row][column] == nil {
+                    Task { @MainActor in
+                        try await Task.sleep(nanoseconds: 450_000_000)
+                        update(row: row, column: column)
+                    }
+                    break
+                } else {
+                    continue
+                }
+            }
+        }
     }
 }
 
