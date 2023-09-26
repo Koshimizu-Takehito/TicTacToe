@@ -3,7 +3,7 @@ import SwiftUI
 struct ContentView: View {
     @State var ratio: Double = 0
     @State var player: Player = .player1
-    @State var checks: [IndexPath: Check] = [:]
+    @State var marks: [IndexPath: MarkType] = [:]
 
     var body: some View {
         ZStack {
@@ -14,7 +14,7 @@ struct ContentView: View {
                     ZStack(alignment: .center) {
                         Group {
                             Lattice(lineWidth: spacing, color: .foreground, ratio: ratio)
-                            Tiles(checks: $checks, spacing: spacing, onTap: update)
+                            Tiles(marks: $marks, spacing: spacing, onTap: update)
                                 .allowsHitTesting(player == .player1)
                         }
                         .frame(width: size, height: size)
@@ -38,13 +38,13 @@ struct ContentView: View {
         player = .player1
         withAnimation(.custom(duration: 1)) {
             ratio = 1
-            checks = [:]
+            marks = [:]
         }
     }
 
     func update(at index: IndexPath) -> Void {
-        guard checks[index] == .none else { return }
-        checks[index] = player.check
+        guard marks[index] == .none else { return }
+        marks[index] = player.check
         player.toggle()
     }
 
@@ -59,13 +59,13 @@ struct ContentView: View {
 
     /// ランダムな位置に配置する
     func placeAtRandom() async throws {
-        guard checks.count < 9 else { return }
+        guard marks.count < 9 else { return }
 
         while true {
             func random() -> Int { (0...2).randomElement()! }
             let random: IndexPath = [random(), random()]
-            if checks[random] == nil {
-                try await Task.sleep(nanoseconds: 450_000_000)
+            if marks[random] == nil {
+                try await Task.sleep(nanoseconds: 550_000_000)
                 update(at: random)
                 return
             }
@@ -75,7 +75,7 @@ struct ContentView: View {
 
 /// タイル領域
 struct Tiles: View {
-    @Binding var checks: [IndexPath: Check]
+    @Binding var marks: [IndexPath: MarkType]
     var spacing: Double = 6
     let onTap: (IndexPath) -> Void
 
@@ -88,7 +88,7 @@ struct Tiles: View {
                             lineWidth: spacing,
                             row: i,
                             column: j,
-                            check: $checks[[i, j]],
+                            mark: $marks[[i, j]],
                             onTap: onTap
                         )
                     }
@@ -102,7 +102,7 @@ struct TileItemView: View {
     let lineWidth: Double
     let row: Int
     let column: Int
-    @Binding var check: Check?
+    @Binding var mark: MarkType?
     @State var ratio: Double = 0
     let onTap: (IndexPath) -> Void
 
@@ -111,10 +111,10 @@ struct TileItemView: View {
             Color.white
                 .opacity(1/0xFFFF)
             Group {
-                switch check {
-                case .check1:
+                switch mark {
+                case .circle:
                     RingMark(ratio: ratio, lineWidth: lineWidth)
-                case .check2:
+                case .cross:
                     CrossMark(ratio: ratio, lineWidth: lineWidth)
                 case .none:
                     Color.clear
@@ -124,7 +124,7 @@ struct TileItemView: View {
         .onTapGesture {
             onTap([row, column])
         }
-        .onChange(of: check) { oldValue, newValue in
+        .onChange(of: mark) { oldValue, newValue in
             ratio = 0
             withAnimation(.custom()) {
                 ratio = 1

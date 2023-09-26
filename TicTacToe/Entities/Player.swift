@@ -9,12 +9,12 @@ enum Player: Hashable {
     case player1
     case player2
 
-    var check: Check {
+    var check: MarkType {
         switch self {
         case .player1:
-            return .check1
+            return .circle
         case .player2:
-            return .check2
+            return .cross
         }
     }
 

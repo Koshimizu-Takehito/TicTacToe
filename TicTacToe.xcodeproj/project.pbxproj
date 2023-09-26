@@ -13,7 +13,7 @@
 		FB1952AE2ABFD76D0025BAFB /* RingMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1952AD2ABFD76D0025BAFB /* RingMark.swift */; };
 		FB1952B02ABFE0B10025BAFB /* AnimationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1952AF2ABFE0B10025BAFB /* AnimationHelper.swift */; };
 		FB1952B22ABFE1570025BAFB /* CrossMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1952B12ABFE1570025BAFB /* CrossMark.swift */; };
-		FB1952B52ABFE2A00025BAFB /* Check.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1952B42ABFE2A00025BAFB /* Check.swift */; };
+		FB1952B52ABFE2A00025BAFB /* MarkType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1952B42ABFE2A00025BAFB /* MarkType.swift */; };
 		FB1952B92ABFE2E80025BAFB /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1952B82ABFE2E80025BAFB /* Background.swift */; };
 		FB1952BC2ABFE4C80025BAFB /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1952BB2ABFE4C80025BAFB /* Animation.swift */; };
 		FB1952BE2ABFF1660025BAFB /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1952BD2ABFF1660025BAFB /* Player.swift */; };
@@ -51,7 +51,7 @@
 		FB1952AD2ABFD76D0025BAFB /* RingMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingMark.swift; sourceTree = "<group>"; };
 		FB1952AF2ABFE0B10025BAFB /* AnimationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationHelper.swift; sourceTree = "<group>"; };
 		FB1952B12ABFE1570025BAFB /* CrossMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossMark.swift; sourceTree = "<group>"; };
-		FB1952B42ABFE2A00025BAFB /* Check.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Check.swift; sourceTree = "<group>"; };
+		FB1952B42ABFE2A00025BAFB /* MarkType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkType.swift; sourceTree = "<group>"; };
 		FB1952B82ABFE2E80025BAFB /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		FB1952BB2ABFE4C80025BAFB /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		FB1952BD2ABFF1660025BAFB /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
@@ -135,7 +135,7 @@
 		FB1952B32ABFE2900025BAFB /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				FB1952B42ABFE2A00025BAFB /* Check.swift */,
+				FB1952B42ABFE2A00025BAFB /* MarkType.swift */,
 				FB1952BD2ABFF1660025BAFB /* Player.swift */,
 			);
 			path = Entities;
@@ -351,7 +351,7 @@
 				FB1952BC2ABFE4C80025BAFB /* Animation.swift in Sources */,
 				FB1952A82ABFD6C90025BAFB /* TitleButtonStyle.swift in Sources */,
 				FB1952B02ABFE0B10025BAFB /* AnimationHelper.swift in Sources */,
-				FB1952B52ABFE2A00025BAFB /* Check.swift in Sources */,
+				FB1952B52ABFE2A00025BAFB /* MarkType.swift in Sources */,
 				FB1952C12ABFF40F0025BAFB /* Color.swift in Sources */,
 				FB1952BE2ABFF1660025BAFB /* Player.swift in Sources */,
 				FB9B4E762ABE91F300132FBA /* ContentView.swift in Sources */,
