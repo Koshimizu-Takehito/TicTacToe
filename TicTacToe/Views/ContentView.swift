@@ -3,7 +3,7 @@ import SwiftUI
 struct ContentView: View {
     @State var ratio: Double = 0
     @State var player: Player = .player1
-    @State var checks: [[Check?]] = .default
+    @State var checks: [IndexPath: Check] = [:]
 
     var body: some View {
         ZStack {
@@ -38,13 +38,13 @@ struct ContentView: View {
         player = .player1
         withAnimation(.custom(duration: 1)) {
             ratio = 1
-            checks = .default
+            checks = [:]
         }
     }
 
-    func update(row: Int, column: Int) -> Void {
-        guard checks[row][column] == .none else { return }
-        checks[row][column] = player.check
+    func update(at index: IndexPath) -> Void {
+        guard checks[index] == .none else { return }
+        checks[index] = player.check
         player.toggle()
     }
 
@@ -53,39 +53,33 @@ struct ContentView: View {
         case .player1:
             break
         case .player2:
-            let canPlay = checks.lazy.flatMap { $0 }.contains { $0 == nil }
-            guard canPlay else { return }
-            while true {
-                let row = (0...2).randomElement()!
-                let column = (0...2).randomElement()!
-                if checks[row][column] == nil {
-                    Task { @MainActor in
-                        try await Task.sleep(nanoseconds: 450_000_000)
-                        update(row: row, column: column)
-                    }
-                    break
-                } else {
-                    continue
+            Task { try await placeAtRandom() }
+        }
+    }
+
+    /// ランダムな位置に配置する
+    func placeAtRandom() async throws {
+        guard checks.count < 10 else { return }
+
+        while true {
+            func random() -> Int { (0...2).randomElement()! }
+            let random: IndexPath = [random(), random()]
+            if checks[random] == nil {
+                try await Task.sleep(nanoseconds: 450_000_000)
+                Task { @MainActor in
+                    update(at: random)
                 }
+                return
             }
         }
     }
 }
 
-extension [[Check?]] {
-    static var `default`: Self {
-        .init(
-            repeating: .init(repeating: .none, count: 3),
-            count: 3
-        )
-    }
-}
-
 /// タイル領域
 struct Tiles: View {
-    @Binding var checks: [[Check?]]
+    @Binding var checks: [IndexPath: Check]
     var spacing: Double = 6
-    let onTap: ((row: Int, column: Int)) -> Void
+    let onTap: (IndexPath) -> Void
 
     var body: some View {
         Grid(horizontalSpacing: spacing, verticalSpacing: spacing) {
@@ -96,7 +90,7 @@ struct Tiles: View {
                             lineWidth: spacing,
                             row: i,
                             column: j,
-                            check: $checks[i][j],
+                            check: $checks[[i, j]],
                             onTap: onTap
                         )
                     }
@@ -112,7 +106,7 @@ struct TileItemView: View {
     let column: Int
     @Binding var check: Check?
     @State var ratio: Double = 0
-    let onTap: ((row: Int, column: Int)) -> Void
+    let onTap: (IndexPath) -> Void
 
     var body: some View {
         ZStack {
@@ -130,7 +124,7 @@ struct TileItemView: View {
             }
         }
         .onTapGesture {
-            onTap((row: row, column: column))
+            onTap([row, column])
         }
         .onChange(of: check) { oldValue, newValue in
             ratio = 0
