@@ -59,16 +59,14 @@ struct ContentView: View {
 
     /// ランダムな位置に配置する
     func placeAtRandom() async throws {
-        guard checks.count < 10 else { return }
+        guard checks.count < 9 else { return }
 
         while true {
             func random() -> Int { (0...2).randomElement()! }
             let random: IndexPath = [random(), random()]
             if checks[random] == nil {
                 try await Task.sleep(nanoseconds: 450_000_000)
-                Task { @MainActor in
-                    update(at: random)
-                }
+                update(at: random)
                 return
             }
         }
