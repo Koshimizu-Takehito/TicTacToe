@@ -84,13 +84,12 @@ struct Tiles: View {
             ForEach(0..<3) { i in
                 GridRow {
                     ForEach(0..<3) { j in
-                        TileItemView(
+                        let indexPath: IndexPath = [i, j]
+                        MarkView(
                             lineWidth: spacing,
-                            row: i,
-                            column: j,
-                            mark: $marks[[i, j]],
-                            onTap: onTap
+                            mark: $marks[indexPath]
                         )
+                        .onTapGesture { onTap(indexPath) }
                     }
                 }
             }
@@ -98,13 +97,10 @@ struct Tiles: View {
     }
 }
 
-struct TileItemView: View {
+struct MarkView: View {
     let lineWidth: Double
-    let row: Int
-    let column: Int
     @Binding var mark: MarkType?
     @State var ratio: Double = 0
-    let onTap: (IndexPath) -> Void
 
     var body: some View {
         ZStack {
@@ -120,9 +116,6 @@ struct TileItemView: View {
                     Color.clear
                 }
             }
-        }
-        .onTapGesture {
-            onTap([row, column])
         }
         .onChange(of: mark) { oldValue, newValue in
             ratio = 0

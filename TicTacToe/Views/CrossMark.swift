@@ -2,9 +2,14 @@ import SwiftUI
 
 /// バツマーク
 struct CrossMark: View {
-    var ratio: Double = 0
-    var lineWidth: Double = 6.0
-    var color: Color = .check2
+    private var ratio: Double = 0
+    private var lineWidth: Double = 6.0
+    private var color: Color = .check2
+
+    init(ratio: Double = 0, lineWidth: Double = 6.0) {
+        self.ratio = ratio
+        self.lineWidth = lineWidth
+    }
 
     var body: some View {
         CrossShape(animatableData: ratio)
