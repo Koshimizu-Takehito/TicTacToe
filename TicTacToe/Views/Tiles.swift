@@ -29,22 +29,20 @@ struct Tiles: View {
 }
 
 struct MarkView: View {
-    @Binding var mark: MarkType?
     @State var ratio: Double = 0
+    @Binding var mark: MarkType?
 
     var body: some View {
         ZStack {
             Color.white
                 .opacity(1/0xFFFF)
-            Group {
-                switch mark {
-                case .circle:
-                    RingMark(ratio: ratio)
-                case .cross:
-                    CrossMark(ratio: ratio)
-                case .none:
-                    Color.clear
-                }
+            switch mark {
+            case .circle:
+                RingMark(ratio: ratio)
+            case .cross:
+                CrossMark(ratio: ratio)
+            case .none:
+                Color.clear
             }
         }
         .onChange(of: mark) { oldValue, newValue in
@@ -54,12 +52,4 @@ struct MarkView: View {
             }
         }
     }
-}
-
-#Preview {
-    Tiles(marks: .constant([
-        [0, 0]: .circle, [0, 1]: .circle, [0, 2]: .circle,
-        [1, 0]: .circle, [1, 1]: .circle, [1, 2]: .circle,
-        [2, 0]: .circle, [2, 1]: .circle, [2, 2]: .circle,
-    ]))
 }
