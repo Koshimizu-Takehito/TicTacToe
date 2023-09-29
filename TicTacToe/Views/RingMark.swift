@@ -3,8 +3,8 @@ import SwiftUI
 /// 丸マーク
 struct RingMark: View {
     var ratio: Double = 0
-    var lineWidth: Double = 6.0
-    var color: Color = .check1
+    @Environment(\.markColor1) private var color
+    @Environment(\.markLineWidth) private var lineWidth
 
     var body: some View {
         RingShape(animatableData: ratio)
@@ -32,6 +32,6 @@ struct RingMark: View {
 
 #Preview {
     AnimationHelper(start: 0, end: 1) { parameter in
-        RingMark(ratio: parameter, color: .black)
+        RingMark(ratio: parameter)
     }
 }

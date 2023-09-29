@@ -9,14 +9,13 @@ import SwiftUI
 
 /// 格子
 struct Lattice: View, Animatable {
+    @Environment(\.foreground) private var color
+    @Environment(\.latticeSpacing) private var lineWidth
+    var ratio: Double
     var animatableData: Double {
         get { ratio }
         set { ratio = newValue }
     }
-
-    var lineWidth: Double
-    var color: Color
-    var ratio: Double
 
     var body: some View {
         Canvas { context, size in
@@ -60,6 +59,6 @@ struct Lattice: View, Animatable {
 
 #Preview {
     AnimationHelper(start: 0, end: 1) { parameter in
-        Lattice(lineWidth: 6, color: .blue, ratio: parameter)
+        Lattice(ratio: parameter)
     }
 }

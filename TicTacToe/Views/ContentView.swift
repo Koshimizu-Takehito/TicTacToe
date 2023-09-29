@@ -10,16 +10,17 @@ struct ContentView: View {
             VStack {
                 GeometryReader { geometry in
                     let size = min(geometry.size.width, geometry.size.height)
-                    let spacing = size/40
                     ZStack(alignment: .center) {
                         Group {
-                            Lattice(lineWidth: spacing, color: .foreground, ratio: ratio)
-                            Tiles(marks: $marks, spacing: spacing, onTap: update)
+                            Lattice(ratio: ratio)
+                            Tiles(marks: $marks, onTap: update)
                                 .allowsHitTesting(player == .player1)
                         }
                         .frame(width: size, height: size)
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .environment(\.latticeSpacing, size/40)
+                    .environment(\.markLineWidth, size/40)
                 }
                 Button(action: reset, label: {
                     Image(systemName: "arrow.triangle.2.circlepath")
@@ -28,7 +29,7 @@ struct ContentView: View {
             }
         }
         .padding()
-        .modifier(Background(color: .background))
+        .modifier(Background())
         .onAppear(perform: reset)
         .onChange(of: player, changePlayer)
     }
@@ -68,59 +69,6 @@ struct ContentView: View {
                 try await Task.sleep(nanoseconds: 550_000_000)
                 update(at: random)
                 return
-            }
-        }
-    }
-}
-
-/// タイル領域
-struct Tiles: View {
-    @Binding var marks: [IndexPath: MarkType]
-    var spacing: Double = 6
-    let onTap: (IndexPath) -> Void
-
-    var body: some View {
-        Grid(horizontalSpacing: spacing, verticalSpacing: spacing) {
-            ForEach(0..<3) { i in
-                GridRow {
-                    ForEach(0..<3) { j in
-                        let indexPath: IndexPath = [i, j]
-                        MarkView(
-                            lineWidth: spacing,
-                            mark: $marks[indexPath]
-                        )
-                        .onTapGesture { onTap(indexPath) }
-                    }
-                }
-            }
-        }
-    }
-}
-
-struct MarkView: View {
-    let lineWidth: Double
-    @Binding var mark: MarkType?
-    @State var ratio: Double = 0
-
-    var body: some View {
-        ZStack {
-            Color.white
-                .opacity(1/0xFFFF)
-            Group {
-                switch mark {
-                case .circle:
-                    RingMark(ratio: ratio, lineWidth: lineWidth)
-                case .cross:
-                    CrossMark(ratio: ratio, lineWidth: lineWidth)
-                case .none:
-                    Color.clear
-                }
-            }
-        }
-        .onChange(of: mark) { oldValue, newValue in
-            ratio = 0
-            withAnimation(.custom()) {
-                ratio = 1
             }
         }
     }

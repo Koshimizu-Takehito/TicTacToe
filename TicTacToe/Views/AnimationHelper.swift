@@ -49,6 +49,6 @@ struct AnimationHelper<Value: VectorArithmetic, V: View>: View {
 
 #Preview {
     AnimationHelper(start: 0, end: 1) { parameter in
-        RingMark(ratio: parameter, color: .black)
+        RingMark(ratio: parameter)
     }
 }

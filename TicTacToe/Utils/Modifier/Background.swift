@@ -9,7 +9,7 @@ import SwiftUI
 
 /// 背景
 struct Background: ViewModifier {
-    let color: Color
+    @Environment(\.background) var color: Color
 
     func body(content: Content) -> some View {
         content

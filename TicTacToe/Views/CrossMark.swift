@@ -3,12 +3,11 @@ import SwiftUI
 /// バツマーク
 struct CrossMark: View {
     private var ratio: Double = 0
-    private var lineWidth: Double = 6.0
-    private var color: Color = .check2
+    @Environment(\.markColor2) private var color
+    @Environment(\.markLineWidth) private var lineWidth
 
-    init(ratio: Double = 0, lineWidth: Double = 6.0) {
+    init(ratio: Double = 0) {
         self.ratio = ratio
-        self.lineWidth = lineWidth
     }
 
     var body: some View {

@@ -18,6 +18,8 @@
 		FB1952BC2ABFE4C80025BAFB /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1952BB2ABFE4C80025BAFB /* Animation.swift */; };
 		FB1952BE2ABFF1660025BAFB /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1952BD2ABFF1660025BAFB /* Player.swift */; };
 		FB1952C12ABFF40F0025BAFB /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1952C02ABFF40F0025BAFB /* Color.swift */; };
+		FB8AA2202AC775E4000C0314 /* EnvironmentValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8AA21F2AC775E4000C0314 /* EnvironmentValues.swift */; };
+		FB8AA2222AC77FA6000C0314 /* Tiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8AA2212AC77FA6000C0314 /* Tiles.swift */; };
 		FB9B4E742ABE91F300132FBA /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9B4E732ABE91F300132FBA /* App.swift */; };
 		FB9B4E762ABE91F300132FBA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9B4E752ABE91F300132FBA /* ContentView.swift */; };
 		FB9B4E782ABE91F500132FBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB9B4E772ABE91F500132FBA /* Assets.xcassets */; };
@@ -56,6 +58,8 @@
 		FB1952BB2ABFE4C80025BAFB /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		FB1952BD2ABFF1660025BAFB /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		FB1952C02ABFF40F0025BAFB /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		FB8AA21F2AC775E4000C0314 /* EnvironmentValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentValues.swift; sourceTree = "<group>"; };
+		FB8AA2212AC77FA6000C0314 /* Tiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tiles.swift; sourceTree = "<group>"; };
 		FB9B4E702ABE91F300132FBA /* TicTacToe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacToe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB9B4E732ABE91F300132FBA /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		FB9B4E752ABE91F300132FBA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -117,6 +121,7 @@
 			children = (
 				FB1952AF2ABFE0B10025BAFB /* AnimationHelper.swift */,
 				FB9B4E752ABE91F300132FBA /* ContentView.swift */,
+				FB8AA2212AC77FA6000C0314 /* Tiles.swift */,
 				FB1952B12ABFE1570025BAFB /* CrossMark.swift */,
 				FB1952AA2ABFD6F60025BAFB /* Lattice.swift */,
 				FB1952AD2ABFD76D0025BAFB /* RingMark.swift */,
@@ -147,6 +152,7 @@
 				FB1952BB2ABFE4C80025BAFB /* Animation.swift */,
 				FB1952A42ABFD6990025BAFB /* CGPoint.swift */,
 				FB1952C02ABFF40F0025BAFB /* Color.swift */,
+				FB8AA21F2AC775E4000C0314 /* EnvironmentValues.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -355,9 +361,11 @@
 				FB1952C12ABFF40F0025BAFB /* Color.swift in Sources */,
 				FB1952BE2ABFF1660025BAFB /* Player.swift in Sources */,
 				FB9B4E762ABE91F300132FBA /* ContentView.swift in Sources */,
+				FB8AA2202AC775E4000C0314 /* EnvironmentValues.swift in Sources */,
 				FB1952A52ABFD6990025BAFB /* CGPoint.swift in Sources */,
 				FB9B4E742ABE91F300132FBA /* App.swift in Sources */,
 				FB1952AE2ABFD76D0025BAFB /* RingMark.swift in Sources */,
+				FB8AA2222AC77FA6000C0314 /* Tiles.swift in Sources */,
 				FB1952AB2ABFD6F60025BAFB /* Lattice.swift in Sources */,
 				FB1952B22ABFE1570025BAFB /* CrossMark.swift in Sources */,
 				FB1952B92ABFE2E80025BAFB /* Background.swift in Sources */,
