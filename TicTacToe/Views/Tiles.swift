@@ -1,10 +1,3 @@
-//
-//  Tiles.swift
-//  TicTacToe
-//
-//  Created by Takehito Koshimizu on 2023/09/30.
-//
-
 import SwiftUI
 
 /// タイル領域
@@ -49,6 +42,37 @@ struct MarkView: View {
             ratio = 0
             withAnimation(.custom()) {
                 ratio = 1
+            }
+        }
+    }
+}
+
+struct MarkView_Previews: PreviewProvider {
+    static var previews: some View {
+        Preview()
+    }
+
+    private struct Preview: View {
+        @State var marks: [IndexPath: MarkType] = [:]
+
+        var body: some View {
+            Tiles(marks: $marks)
+                .onAppear(perform: update)
+        }
+
+        func update() {
+            Task {
+                while true {
+                    let mark: (MarkType, MarkType) = (marks[[0, 0]] == .circle)
+                        ? (.cross, .circle)
+                        : (.circle, .cross)
+                    for i in 0...2 {
+                        for j in 0...2 {
+                            marks[[i, j]] = (i + j) % 2 == 0 ? mark.0 : mark.1
+                            try await Task.sleep(nanoseconds: 500_000_000)
+                        }
+                    }
+                }
             }
         }
     }

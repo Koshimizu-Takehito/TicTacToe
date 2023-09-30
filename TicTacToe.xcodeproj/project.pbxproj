@@ -121,10 +121,10 @@
 			children = (
 				FB1952AF2ABFE0B10025BAFB /* AnimationHelper.swift */,
 				FB9B4E752ABE91F300132FBA /* ContentView.swift */,
-				FB8AA2212AC77FA6000C0314 /* Tiles.swift */,
 				FB1952B12ABFE1570025BAFB /* CrossMark.swift */,
 				FB1952AA2ABFD6F60025BAFB /* Lattice.swift */,
 				FB1952AD2ABFD76D0025BAFB /* RingMark.swift */,
+				FB8AA2212AC77FA6000C0314 /* Tiles.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
