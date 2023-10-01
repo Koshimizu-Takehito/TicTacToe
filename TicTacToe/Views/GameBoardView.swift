@@ -103,6 +103,7 @@ struct GameBoard {
     /// ランダムな位置に配置する
     func placeAtRandom() async throws {
         guard gameBoard.marks.count < 9 else { return }
+        let startTime = Date.now
         var bestScore = Int.min
         var bestPlace = IndexPath?.none
         for i in 0...2 {
@@ -119,7 +120,8 @@ struct GameBoard {
             }
         }
         if let bestPlace {
-            try await Task.sleep(nanoseconds: 550_000_000)
+            let elapsedTime = Int64(-startTime.timeIntervalSinceNow * 1_000_000_000)
+            try await Task.sleep(nanoseconds: UInt64(max(550_000_000 - elapsedTime, 0)))
             place(at: bestPlace)
         }
     }
