@@ -30,9 +30,7 @@ import SwiftUI
 
     /// ランダムな位置に配置する
     func placeAtRandom() async throws {
-        guard marks.count < 9 else { return }
-
-        while true {
+        while marks.count < 9 {
             func random() -> Int { (0...2).randomElement()! }
             let random: IndexPath = [random(), random()]
             if marks[random] == nil {
