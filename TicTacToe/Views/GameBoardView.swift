@@ -7,6 +7,7 @@ struct GameBoardView: View {
     var body: some View {
         ZStack {
             VStack {
+                PlayerMenu(role1: $gameBoard.role1, role2: $gameBoard.role2)
                 GeometryReader(content: board(geometry:))
                 ResetButton(action: reset)
             }
@@ -23,7 +24,7 @@ struct GameBoardView: View {
             LatticeView()
                 .id(drawId)
             Tiles(marks: $gameBoard.marks, onTap: gameBoard.place(at:))
-                .allowsHitTesting(gameBoard.player == .player1)
+                .allowsHitTesting(gameBoard.playerRole == .player)
         }
         .frame(width: size, height: size)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -40,6 +41,49 @@ struct GameBoardView: View {
     }
 }
 
+private struct PlayerMenu: View {
+    @Binding var role1: PlayerMode
+    @Binding var role2: PlayerMode
+
+    var body: some View {
+        HStack {
+            ForEach(Player.allCases, id: \.self) { player in
+                Menu {
+                    ForEach(PlayerMode.allCases, id: \.self) { role in
+                        Button(
+                            action: { select(player: player, role: role) },
+                            label: { role.label }
+                        )
+                    }
+                } label: {
+                    Color.clear
+                        .frame(height: 0)
+                        .padding()
+                        .overlay { title(player: player) }
+                }
+            }
+        }
+        .buttonStyle(ActionButtonStyle())
+    }
+
+    @ViewBuilder
+    func title(player: Player) -> some View {
+        let role = player == .player1 ? role1 : role2
+        let number = player == .player1 ? "1" : "2"
+        Label("\(role.title)\(number)", systemImage: role.systemImage)
+            .fixedSize()
+    }
+
+    func select(player: Player, role: PlayerMode) {
+        switch player {
+        case .player1:
+            role1 = role
+        case .player2:
+            role2 = role
+        }
+    }
+}
+
 private struct ResetButton: View {
     let action: () -> Void
 
@@ -47,7 +91,7 @@ private struct ResetButton: View {
         Button(action: action) {
             Image(systemName: "arrow.triangle.2.circlepath")
         }
-        .buttonStyle(TitleButtonStyle(color: .foreground))
+        .buttonStyle(TitleButtonStyle())
     }
 }
 

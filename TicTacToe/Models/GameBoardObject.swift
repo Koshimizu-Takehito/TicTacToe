@@ -5,13 +5,28 @@ import SwiftUI
 final class GameBoardObject {
     private var gameBoard = GameBoard()
 
+    var role1: PlayerMode = .player
+    var role2: PlayerMode = .computer
+
+    var playerRole: PlayerMode {
+        switch player {
+        case .player1:
+            role1
+        case .player2:
+            role2
+        }
+    }
+
     var player: Player = .player1 {
         didSet {
-            switch player {
-            case .player1:
-                break
-            case .player2:
-                Task.detached { [self] in
+            let role = playerRole
+            Task.detached { [self] in
+                switch role {
+                case .player:
+                    break
+                case .random:
+                    try await placeAtRandom()
+                case .computer:
                     try await placeByAI()
                 }
             }

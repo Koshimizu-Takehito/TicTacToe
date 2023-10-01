@@ -1,4 +1,4 @@
-enum Player: Hashable {
+enum Player: Hashable, CaseIterable {
     case player1
     case player2
 
