@@ -1,10 +1,3 @@
-//
-//  Player.swift
-//  TicTacToe
-//
-//  Created by Takehito Koshimizu on 2023/09/24.
-//
-
 enum Player: Hashable {
     case player1
     case player2
