@@ -8,8 +8,40 @@
 import SwiftUI
 
 @Observable final class GameBoardObject {
-    var player: Player = .player1
     var marks: [IndexPath: MarkType] = [:]
+    var player: Player = .player1 {
+        didSet {
+            switch player {
+            case .player1:
+                break
+            case .player2:
+                Task.detached { [self] in
+                    try await placeAtRandom()
+                }
+            }
+        }
+    }
+
+    func place(at index: IndexPath) -> Void {
+        guard marks[index] == .none else { return }
+        marks[index] = player.check
+        player.toggle()
+    }
+
+    /// ランダムな位置に配置する
+    func placeAtRandom() async throws {
+        guard marks.count < 9 else { return }
+
+        while true {
+            func random() -> Int { (0...2).randomElement()! }
+            let random: IndexPath = [random(), random()]
+            if marks[random] == nil {
+                try await Task.sleep(nanoseconds: 550_000_000)
+                place(at: random)
+                return
+            }
+        }
+    }
 }
 
 struct GameBoardView: View {
@@ -24,7 +56,7 @@ struct GameBoardView: View {
                     ZStack(alignment: .center) {
                         Group {
                             Lattice(ratio: ratio)
-                            Tiles(marks: $gameBoard.marks, onTap: update)
+                            Tiles(marks: $gameBoard.marks, onTap: gameBoard.place)
                                 .allowsHitTesting(gameBoard.player == .player1)
                         }
                         .frame(width: size, height: size)
@@ -42,7 +74,6 @@ struct GameBoardView: View {
         .padding()
         .modifier(Background())
         .onAppear(perform: reset)
-        .onChange(of: gameBoard.player, changePlayer)
     }
 
     func reset() {
@@ -53,38 +84,7 @@ struct GameBoardView: View {
             gameBoard.marks = [:]
         }
     }
-
-    func update(at index: IndexPath) -> Void {
-        guard gameBoard.marks[index] == .none else { return }
-        gameBoard.marks[index] = gameBoard.player.check
-        gameBoard.player.toggle()
-    }
-
-    func changePlayer(old: Player, new: Player) {
-        switch new {
-        case .player1:
-            break
-        case .player2:
-            Task { try await placeAtRandom() }
-        }
-    }
-
-    /// ランダムな位置に配置する
-    func placeAtRandom() async throws {
-        guard gameBoard.marks.count < 9 else { return }
-
-        while true {
-            func random() -> Int { (0...2).randomElement()! }
-            let random: IndexPath = [random(), random()]
-            if gameBoard.marks[random] == nil {
-                try await Task.sleep(nanoseconds: 550_000_000)
-                update(at: random)
-                return
-            }
-        }
-    }
 }
-
 
 #Preview {
     GameBoardView()
