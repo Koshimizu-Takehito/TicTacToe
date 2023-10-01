@@ -33,6 +33,10 @@ final class GameBoardObject {
         didSet { place() }
     }
 
+    func canPlay() -> Bool {
+        playerRole == .player && gameBoard.checkWinner() == .ongoing
+    }
+
     func reset() {
         gameBoard.marks = [:]
         player = .player1
@@ -66,7 +70,7 @@ private extension GameBoardObject {
 
     /// ランダムな位置に配置する
     func placeAtRandom() async throws {
-        while gameBoard.marks.count < 9 {
+        while gameBoard.checkWinner() == .ongoing {
             func random() -> Int { (0...2).randomElement()! }
             let random: IndexPath = [random(), random()]
             if gameBoard.marks[random] == nil {
@@ -79,7 +83,7 @@ private extension GameBoardObject {
 
     /// アルゴリズムによって配置する
     func placeByAI() async throws {
-        guard gameBoard.marks.count < 9 else { return }
+        guard gameBoard.checkWinner() == .ongoing else { return }
         let startTime = Date.now
         var bestScore = Int.min
         var bestPlace = IndexPath?.none

@@ -24,7 +24,7 @@ struct GameBoardView: View {
             LatticeView()
                 .id(drawId)
             Tiles(marks: $gameBoard.marks, onTap: gameBoard.place(at:))
-                .allowsHitTesting(gameBoard.playerRole == .player)
+                .allowsHitTesting(gameBoard.canPlay())
         }
         .frame(width: size, height: size)
         .frame(maxWidth: .infinity, maxHeight: .infinity)

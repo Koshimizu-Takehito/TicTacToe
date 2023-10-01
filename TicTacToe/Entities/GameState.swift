@@ -1,4 +1,4 @@
-enum GameState {
+enum GameState: Hashable {
     case ongoing
     case draw
     case win(Player)
