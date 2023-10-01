@@ -1,8 +1,9 @@
 import SwiftUI
 
 @Observable
+@dynamicMemberLookup
 final class GameBoardObject {
-    var gameBoard = GameBoard()
+    private var gameBoard = GameBoard()
 
     var player: Player = .player1 {
         didSet {
@@ -21,6 +22,11 @@ final class GameBoardObject {
         guard gameBoard.marks[index] == .none else { return }
         gameBoard.marks[index] = player.check
         player.toggle()
+    }
+
+    subscript<V>(dynamicMember keyPath: WritableKeyPath<GameBoard, V>) -> V {
+        get { gameBoard[keyPath: keyPath] }
+        set { gameBoard[keyPath: keyPath] = newValue }
     }
 }
 

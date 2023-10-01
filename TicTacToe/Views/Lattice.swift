@@ -1,21 +1,24 @@
-//
-//  Lattice.swift
-//  TicTacToe
-//
-//  Created by Takehito Koshimizu on 2023/09/24.
-//
-
 import SwiftUI
 
+struct LatticeView: View {
+    @State private var ratio: Double = 0
+
+    var body: some View {
+        Lattice(animatableData: ratio)
+            .onAppear {
+                withAnimation(.custom(duration: 1)) {
+                    ratio = 1
+                }
+            }
+    }
+}
+
 /// 格子
-struct Lattice: View, Animatable {
+private struct Lattice: View, Animatable {
     @Environment(\.foreground) private var color
     @Environment(\.latticeSpacing) private var lineWidth
-    var ratio: Double
-    var animatableData: Double {
-        get { ratio }
-        set { ratio = newValue }
-    }
+    var animatableData: Double
+    var ratio: Double { animatableData }
 
     var body: some View {
         Canvas { context, size in
@@ -59,6 +62,6 @@ struct Lattice: View, Animatable {
 
 #Preview {
     AnimationHelper(start: 0, end: 1) { parameter in
-        Lattice(ratio: parameter)
+        Lattice(animatableData: parameter)
     }
 }
