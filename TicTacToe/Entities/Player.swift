@@ -18,12 +18,16 @@ enum Player: Hashable {
         }
     }
 
-    mutating func toggle() {
+    var opposite: Player {
         switch self {
         case .player1:
-            self = .player2
+            return .player2
         case .player2:
-            self = .player1
+            return .player1
         }
+    }
+
+    mutating func toggle() {
+        self = opposite
     }
 }
