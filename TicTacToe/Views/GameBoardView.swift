@@ -34,9 +34,8 @@ struct GameBoardView: View {
 
     func reset() {
         drawId = UUID()
-        gameBoard.player = .player1
         withAnimation(.custom(duration: 1)) {
-            gameBoard.marks = [:]
+            gameBoard.reset()
         }
     }
 }

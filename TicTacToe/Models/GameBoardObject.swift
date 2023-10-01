@@ -5,8 +5,20 @@ import SwiftUI
 final class GameBoardObject {
     private var gameBoard = GameBoard()
 
-    var role1: PlayerMode = .player
-    var role2: PlayerMode = .computer
+    var role1: PlayerMode = .player {
+        didSet {
+            if player == .player1 {
+                place()
+            }
+        }
+    }
+    var role2: PlayerMode = .computer {
+        didSet {
+            if player == .player2 {
+                place()
+            }
+        }
+    }
 
     var playerRole: PlayerMode {
         switch player {
@@ -18,19 +30,12 @@ final class GameBoardObject {
     }
 
     var player: Player = .player1 {
-        didSet {
-            let role = playerRole
-            Task.detached { [self] in
-                switch role {
-                case .player:
-                    break
-                case .random:
-                    try await placeAtRandom()
-                case .computer:
-                    try await placeByAI()
-                }
-            }
-        }
+        didSet { place() }
+    }
+
+    func reset() {
+        gameBoard.marks = [:]
+        player = .player1
     }
 
     func place(at index: IndexPath) -> Void {
@@ -45,7 +50,20 @@ final class GameBoardObject {
     }
 }
 
-extension GameBoardObject {
+private extension GameBoardObject {
+    func place() {
+        Task.detached { [self] in
+            switch playerRole {
+            case .player:
+                break
+            case .random:
+                try await placeAtRandom()
+            case .computer:
+                try await placeByAI()
+            }
+        }
+    }
+
     /// ランダムな位置に配置する
     func placeAtRandom() async throws {
         while gameBoard.marks.count < 9 {
@@ -58,9 +76,7 @@ extension GameBoardObject {
             }
         }
     }
-}
 
-extension GameBoardObject {
     /// アルゴリズムによって配置する
     func placeByAI() async throws {
         guard gameBoard.marks.count < 9 else { return }
