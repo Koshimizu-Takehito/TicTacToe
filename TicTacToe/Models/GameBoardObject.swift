@@ -1,4 +1,5 @@
 import SwiftUI
+import Observation
 
 @Observable
 @dynamicMemberLookup
@@ -7,21 +8,21 @@ final class GameBoardObject {
 
     var role1: PlayerMode = .player {
         didSet {
-            if player == .player1 {
+            if currentPlayer == .player1 {
                 place()
             }
         }
     }
     var role2: PlayerMode = .computer {
         didSet {
-            if player == .player2 {
+            if currentPlayer == .player2 {
                 place()
             }
         }
     }
 
-    var playerRole: PlayerMode {
-        switch player {
+    private var playerRole: PlayerMode {
+        switch currentPlayer {
         case .player1:
             role1
         case .player2:
@@ -29,7 +30,7 @@ final class GameBoardObject {
         }
     }
 
-    var player: Player = .player1 {
+    private var currentPlayer: Player = .player1 {
         didSet { place() }
     }
 
@@ -39,13 +40,13 @@ final class GameBoardObject {
 
     func reset() {
         gameBoard.marks = [:]
-        player = .player1
+        currentPlayer = .player1
     }
 
     func place(at index: IndexPath) -> Void {
         guard gameBoard.marks[index] == .none else { return }
-        gameBoard.marks[index] = player.check
-        player.toggle()
+        gameBoard.marks[index] = currentPlayer.check
+        currentPlayer.toggle()
     }
 
     subscript<V>(dynamicMember keyPath: WritableKeyPath<GameBoard, V>) -> V {
@@ -83,17 +84,31 @@ private extension GameBoardObject {
 
     /// アルゴリズムによって配置する
     func placeByAI() async throws {
-        guard gameBoard.checkWinner() == .ongoing else { return }
+        // 初期配置はどこでも良いのでランダムに配置する
+        if gameBoard.marks.isEmpty {
+            try await Task.sleep(nanoseconds: 550_000_000)
+            place(at: [(0..<3).randomElement()!, (0..<3).randomElement()!])
+            return
+        }
+
+        // Min-Max
+        guard gameBoard.checkWinner() == .ongoing else {
+            return
+        }
         let startTime = Date.now
-        var bestScore = Int.min
+        let players = (
+            me: currentPlayer,
+            opponent: currentPlayer == .player1 ? Player.player2 : .player1
+        )
         var bestPlace = IndexPath?.none
-        for i in 0...2 {
-            for j in 0...2 {
+        var bestScore = Int.min
+        for i in (0..<3).shuffled() {
+            for j in (0..<3).shuffled() {
                 let indexPath: IndexPath = [i, j]
                 guard gameBoard.marks[indexPath] == nil else { continue }
                 var copy = gameBoard
-                copy.place(at: indexPath, player: .player2)
-                let score = copy.minimax(player: .player1)
+                copy.place(at: indexPath, player: players.me)
+                let score = copy.minMax(current: players.opponent, players: players)
                 if score > bestScore {
                     bestScore = score
                     bestPlace = indexPath

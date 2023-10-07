@@ -39,26 +39,25 @@ struct GameBoard {
         return marks.count < 9 ? .ongoing : .draw
     }
 
-    func minimax(player: Player) -> Int {
+    func minMax(current: Player, players: (me: Player, opponent: Player)) -> Int {
         switch checkWinner() {
-        case .win(.player2):
+        case .win(players.me):
             return 1
-        case .win(.player1):
+        case .win(players.opponent):
             return -1
         case .draw:
             return 0
         default:
             break
         }
-
-        var bestScore: Int = (player == .player1) ? .max : .min
-        for x in 0..<3 {
-            for y in 0..<3 {
+        var bestScore: Int = (current == players.opponent) ? .max : .min
+        for x in (0..<3).shuffled() {
+            for y in (0..<3).shuffled() {
                 if marks[[x, y]] == nil {
                     var copy = self
-                    copy.place(at: [x, y], player: player)
-                    let score = copy.minimax(player: player.opposite)
-                    bestScore = player == .player2 ? max(score, bestScore) : min(score, bestScore)
+                    copy.place(at: [x, y], player: current)
+                    let score = copy.minMax(current: current.opposite, players: players)
+                    bestScore = (current == players.me) ? max(score, bestScore) : min(score, bestScore)
                 }
             }
         }
