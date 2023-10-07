@@ -1,5 +1,19 @@
 import Foundation
 
+private let checkPositions: [[IndexPath]] = [
+    // タテ
+    [[0, 0], [1, 0], [2, 0]],
+    [[0, 1], [1, 1], [2, 1]],
+    [[0, 2], [1, 2], [2, 2]],
+    // ヨコ
+    [[0, 0], [0, 1], [0, 2]],
+    [[1, 0], [1, 1], [1, 2]],
+    [[2, 0], [2, 1], [2, 2]],
+    // ナナメ
+    [[0, 0], [1, 1], [2, 2]],
+    [[0, 2], [1, 1], [2, 0]]
+]
+
 struct GameBoard {
     var marks: [IndexPath: MarkType] = [:]
 
@@ -7,43 +21,11 @@ struct GameBoard {
         marks[index] = player == .player1 ? .circle : .cross
     }
 
-    func checkWinner() -> GameState {
-        func winner(_ m0: MarkType?, _ m1: MarkType?, _ m2: MarkType?) -> Player? {
-            if m0 == m1, m1 == m2 {
-                switch m0 {
-                case .circle:
-                    return .player1
-                case .cross:
-                    return .player2
-                case .none:
-                    return nil
-                }
-            }
-            return nil
-        }
-
-        for i in 0...2 {
-            if let winner = winner(marks[[0, i]], marks[[1, i]], marks[[2, i]]) {
-                return .win(winner)
-            }
-            if let winner = winner(marks[[i, 0]], marks[[i, 1]], marks[[i, 2]]) {
-                return .win(winner)
-            }
-        }
-        if let winner = winner(marks[[0, 0]], marks[[1, 1]], marks[[2, 2]]) {
-            return .win(winner)
-        }
-        if let winner = winner(marks[[0, 2]], marks[[1, 1]], marks[[2, 0]]) {
-            return .win(winner)
-        }
-        return marks.count < 9 ? .ongoing : .draw
-    }
-
     func minMax(current: Player, players: (me: Player, opponent: Player)) -> Int {
-        switch checkWinner() {
-        case .win(players.me):
+        switch checkGameState() {
+        case .win(players.me, _):
             return 1
-        case .win(players.opponent):
+        case .win(players.opponent, _):
             return -1
         case .draw:
             return 0
@@ -62,5 +44,28 @@ struct GameBoard {
             }
         }
         return bestScore
+    }
+
+    func checkGameState() -> GameState {
+        for positions in checkPositions {
+            if let (winner, positions) = checkWinnerAndPositions(positions) {
+                return .win(winner, positions: positions)
+            }
+        }
+        return marks.count < 9 ? .ongoing : .draw
+    }
+
+    private func checkWinnerAndPositions(_ mm: [IndexPath]) -> (winner: Player, positions: [IndexPath])? {
+        if marks[mm[0]] == marks[mm[1]], marks[mm[1]] == marks[mm[2]] {
+            switch marks[mm[0]] {
+            case .circle:
+                return (.player1, mm)
+            case .cross:
+                return (.player2, mm)
+            case .none:
+                return nil
+            }
+        }
+        return nil
     }
 }

@@ -21,6 +21,8 @@ final class GameBoardObject {
         }
     }
 
+    private(set) var gameState: GameState = .ongoing
+
     private var playerRole: PlayerMode {
         switch currentPlayer {
         case .player1:
@@ -35,7 +37,7 @@ final class GameBoardObject {
     }
 
     func canPlay() -> Bool {
-        playerRole == .player && gameBoard.checkWinner() == .ongoing
+        playerRole == .player && gameBoard.checkGameState() == .ongoing
     }
 
     func reset() {
@@ -45,8 +47,19 @@ final class GameBoardObject {
 
     func place(at index: IndexPath) -> Void {
         guard gameBoard.marks[index] == .none else { return }
+        // 配置
         gameBoard.marks[index] = currentPlayer.check
-        currentPlayer.toggle()
+
+        Task.detached { [gameBoard] in
+            let gameState = gameBoard.checkGameState()
+            Task { @MainActor [self] in
+                // 状態の更新
+                self.gameState = gameState
+                if gameState == .ongoing {
+                    self.currentPlayer.toggle()
+                }
+            }
+        }
     }
 
     subscript<V>(dynamicMember keyPath: WritableKeyPath<GameBoard, V>) -> V {
@@ -71,7 +84,7 @@ private extension GameBoardObject {
 
     /// ランダムな位置に配置する
     func placeAtRandom() async throws {
-        while gameBoard.checkWinner() == .ongoing {
+        while gameBoard.checkGameState() == .ongoing {
             func random() -> Int { (0...2).randomElement()! }
             let random: IndexPath = [random(), random()]
             if gameBoard.marks[random] == nil {
@@ -92,7 +105,7 @@ private extension GameBoardObject {
         }
 
         // Min-Max
-        guard gameBoard.checkWinner() == .ongoing else {
+        guard gameBoard.checkGameState() == .ongoing else {
             return
         }
         let startTime = Date.now
