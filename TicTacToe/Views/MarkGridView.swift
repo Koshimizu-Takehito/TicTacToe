@@ -1,7 +1,7 @@
 import SwiftUI
 
 /// タイル領域
-struct Tiles: View {
+struct MarkGridView: View {
     @Binding var marks: [IndexPath: MarkType]
     @Environment(\.latticeSpacing) var spacing
     var onTap: (IndexPath) -> Void = { _ in }
@@ -56,7 +56,7 @@ struct MarkView_Previews: PreviewProvider {
         @State var marks: [IndexPath: MarkType] = [:]
 
         var body: some View {
-            Tiles(marks: $marks)
+            MarkGridView(marks: $marks)
                 .onAppear(perform: update)
         }
 
