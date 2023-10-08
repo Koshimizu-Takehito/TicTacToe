@@ -78,10 +78,19 @@ struct MarkGridView: View {
                 Color.clear
                     .matchedGeometryEffect(id: "A", in: namespace, isSource: true)
             }
-            if case .expanding(_, let positions) = animationState {
-                ForEach(positions, id: \.self) { indexPath in
-                    Color.clear
-                        .matchedGeometryEffect(id: indexPath, in: namespace, isSource: true)
+            if case .expanding(let winner, let positions) = animationState {
+                VStack {
+                    ZStack {
+                        ForEach(positions, id: \.self) { indexPath in
+                            Color.clear
+                                .matchedGeometryEffect(id: indexPath, in: namespace, isSource: true)
+                        }
+                    }
+                    Text("WINNER!")
+                        .font(.largeTitle)
+                        .fontWeight(.black)
+                        .foregroundStyle(slashColor(player: winner))
+                        .scaleEffect(CGSizeMake(1.8, 1.8))
                 }
             }
             Group {
@@ -146,6 +155,7 @@ struct MarkGridView: View {
                                     .onTapGesture { onTap(indexPath) }
                                     .matchedGeometryEffect(id: animationState.isCentering ? indexPath : [], in: namespace, isSource: false)
                                     .matchedGeometryEffect(id: animationState.isExpanding ? indexPath : [], in: namespace, isSource: false)
+                                    .opacity(!animationState.isExpanding ? 1 : animationState.win.1.first == indexPath ? 1 : 0 )
                             }
                         }
                     }
