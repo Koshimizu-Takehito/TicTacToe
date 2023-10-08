@@ -23,7 +23,6 @@ struct GameBoardView: View {
         ZStack(alignment: .center) {
             LatticeView()
                 .id(drawId)
-            // TODO: 勝敗のアニメーションを表示する
             MarkGridView(state: gameBoard.gameState, marks: $gameBoard.marks, onTap: gameBoard.place(at:))
                 .allowsHitTesting(gameBoard.canPlay())
         }

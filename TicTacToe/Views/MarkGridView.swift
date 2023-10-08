@@ -11,21 +11,57 @@ struct MarkGridView: View {
     @Namespace private var namespace
 
     var body: some View {
-        Grid(horizontalSpacing: spacing, verticalSpacing: spacing) {
-            ForEach(0..<3) { i in
-                GridRow {
-                    ForEach(0..<3) { j in
-                        let indexPath: IndexPath = [i, j]
-                        ZStack {
-                            if case .win(_, let positions) = state, indexPath == [1, 1] {
-                                ForEach(positions, id: \.self) { indexPath in
-                                    Color.white.opacity(1/0xFFFFFF)
-                                        .matchedGeometryEffect(id: indexPath, in: namespace, isSource: true)
+        ZStack {
+            Group {
+                Group {
+                    Slash(ratio: 1, angle: .pi/4)
+                        .stroke(lineWidth: spacing)
+                        .foregroundStyle(.orange.opacity(0.2))
+                    Slash(ratio: 1, angle: -.pi/4)
+                        .stroke(lineWidth: spacing)
+                        .foregroundStyle(.cyan.opacity(0.2))
+                }
+                VStack(spacing: spacing) {
+                    Slash(ratio: 1, angle: 0)
+                        .stroke(lineWidth: spacing)
+                        .foregroundStyle(.blue.opacity(0.2))
+                    Slash(ratio: 1, angle: 0)
+                        .stroke(lineWidth: spacing)
+                        .foregroundStyle(.blue.opacity(0.2))
+                    Slash(ratio: 1, angle: 0)
+                        .stroke(lineWidth: spacing)
+                        .foregroundStyle(.blue.opacity(0.2))
+                }
+                HStack(spacing: spacing) {
+                    Slash(ratio: 1, angle: .pi/2)
+                        .stroke(lineWidth: spacing)
+                        .foregroundStyle(.red.opacity(0.2))
+                    Slash(ratio: 1, angle: .pi/2)
+                        .stroke(lineWidth: spacing)
+                        .foregroundStyle(.red.opacity(0.2))
+                    Slash(ratio: 1, angle: .pi/2)
+                        .stroke(lineWidth: spacing)
+                        .foregroundStyle(.red.opacity(0.2))
+                }
+            }
+            .padding(8)
+            // まるばつの表示
+            Grid(horizontalSpacing: spacing, verticalSpacing: spacing) {
+                ForEach(0..<3) { i in
+                    GridRow {
+                        ForEach(0..<3) { j in
+                            let indexPath: IndexPath = [i, j]
+                            ZStack {
+                                if case .win(_, let positions) = state, indexPath == [1, 1] {
+                                    ForEach(positions, id: \.self) { indexPath in
+                                        Color.clear
+                                            .matchedGeometryEffect(id: indexPath, in: namespace, isSource: true)
+                                    }
                                 }
+                                MarkView(mark: $marks[indexPath])
+                                    .onTapGesture { onTap(indexPath) }
+                                    .matchedGeometryEffect(id: isFinish ? indexPath : [], in: namespace, isSource: false)
                             }
-                            MarkView(mark: $marks[indexPath])
-                                .onTapGesture { onTap(indexPath) }
-                                .matchedGeometryEffect(id: isFinish ? indexPath : [], in: namespace, isSource: false)
                         }
                     }
                 }
@@ -41,6 +77,32 @@ struct MarkGridView: View {
                 }
             }
         }
+    }
+}
+
+private struct Slash: Shape, Animatable {
+    var ratio: Double, position: Double, angle: Double
+    var animatableData: AnimatablePair<AnimatablePair<Double, Double>, Double> {
+        get { .init(.init(ratio, position), angle) }
+        set { (ratio, position, angle) = (newValue.first.first, newValue.first.second, newValue.second) }
+    }
+
+    init(ratio: Double = 1, position: Double = 0.5, angle: Double) {
+        self.ratio = ratio
+        self.position = position
+        self.angle = angle
+    }
+
+    func path(in rect: CGRect) -> Path {
+        let radius = sqrt(pow(rect.size.width/2, 2) + pow(rect.size.height/2, 2))
+        let center = CGPoint(x: rect.midX, y: rect.midY)
+        let p1 = center + radius * CGPoint(x: cos(angle), y: sin(angle))
+        let p2 = center + radius * CGPoint(x: cos(angle + .pi), y: sin(angle + .pi))
+        let p3 = position * p1 + (1 - position) * p2
+        var path = Path()
+        path.move(to: ratio * p1 + (1 - ratio) * p3)
+        path.addLine(to: ratio * p2 + (1 - ratio) * p3)
+        return path
     }
 }
 
@@ -82,6 +144,7 @@ struct MarkView_Previews: PreviewProvider {
         var body: some View {
             MarkGridView(state: state, marks: $marks)
                 .onAppear(perform: update)
+                .backgroundStyle(Color.gray)
         }
 
         func update() {
@@ -95,6 +158,7 @@ struct MarkView_Previews: PreviewProvider {
                         try await Task.sleep(nanoseconds: 500_000_000)
                     }
                 }
+                state = .win(.player1, positions: [[0,0], [1,1], [2,2]])
             }
         }
     }
