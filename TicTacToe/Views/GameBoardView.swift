@@ -23,7 +23,7 @@ struct GameBoardView: View {
         ZStack(alignment: .center) {
             LatticeView()
                 .id(drawId)
-            MarkGridView(state: gameBoard.gameState, marks: $gameBoard.marks, onTap: gameBoard.place(at:))
+            MarkGridView(gameState: gameBoard.gameState, marks: $gameBoard.marks, onTap: gameBoard.place(at:))
                 .allowsHitTesting(gameBoard.canPlay())
         }
         .frame(width: size, height: size)

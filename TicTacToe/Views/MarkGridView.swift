@@ -2,7 +2,7 @@ import SwiftUI
 
 /// タイル領域
 struct MarkGridView: View {
-    let state: GameState
+    let gameState: GameState
     @Binding var marks: [IndexPath: MarkType]
     @Environment(\.latticeSpacing) var spacing
     var onTap: (IndexPath) -> Void = { _ in }
@@ -52,7 +52,7 @@ struct MarkGridView: View {
                         ForEach(0..<3) { j in
                             let indexPath: IndexPath = [i, j]
                             ZStack {
-                                if case .win(_, let positions) = state, indexPath == [1, 1] {
+                                if case .win(_, let positions) = gameState, indexPath == [1, 1] {
                                     ForEach(positions, id: \.self) { indexPath in
                                         Color.clear
                                             .matchedGeometryEffect(id: indexPath, in: namespace, isSource: true)
@@ -67,7 +67,7 @@ struct MarkGridView: View {
                 }
             }
         }
-        .onChange(of: state, initial: true) { old, new in
+        .onChange(of: gameState, initial: true) { old, new in
             switch new {
             case .ongoing:
                 isFinish = false
@@ -142,7 +142,7 @@ struct MarkView_Previews: PreviewProvider {
         @State var state: GameState = .ongoing
 
         var body: some View {
-            MarkGridView(state: state, marks: $marks)
+            MarkGridView(gameState: state, marks: $marks)
                 .onAppear(perform: update)
                 .backgroundStyle(Color.gray)
         }
