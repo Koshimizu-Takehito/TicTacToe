@@ -84,54 +84,67 @@ private extension GameBoardObject {
 
     /// ランダムな位置に配置する
     func placeAtRandom() async throws {
-        while gameBoard.checkGameState() == .ongoing {
-            func random() -> Int { (0...2).randomElement()! }
-            let random: IndexPath = [random(), random()]
-            if gameBoard.marks[random] == nil {
-                try await Task.sleep(nanoseconds: 550_000_000)
-                place(at: random)
-                return
+        try await waitUntilCalculation { [self] () -> IndexPath? in
+            while gameBoard.checkGameState() == .ongoing {
+                let randomPath = IndexPath.randomElement()
+                if gameBoard.marks[randomPath] == nil {
+                    return randomPath
+                }
             }
+            return nil
         }
     }
 
     /// アルゴリズムによって配置する
     func placeByAI() async throws {
-        // 初期配置はどこでも良いのでランダムに配置する
-        if gameBoard.marks.isEmpty {
-            try await Task.sleep(nanoseconds: 550_000_000)
-            place(at: [(0..<3).randomElement()!, (0..<3).randomElement()!])
-            return
+        try await waitUntilCalculation { [self] () -> IndexPath? in
+            guard gameBoard.checkGameState() == .ongoing else {
+                return nil
+            }
+            // 初期配置はどこでも良いのでランダムに配置する
+            guard !gameBoard.marks.isEmpty else {
+                return .randomElement()
+            }
+            // Min-Max
+            let players = (me: currentPlayer, opponent: currentPlayer.opposite)
+            var bestPlace = IndexPath?.none
+            var bestScore = Int.min
+            for i in (0..<3).shuffled() {
+                for j in (0..<3).shuffled() {
+                    let indexPath: IndexPath = [i, j]
+                    guard gameBoard.marks[indexPath] == nil else { continue }
+                    var copy = gameBoard
+                    copy.place(at: indexPath, player: players.me)
+                    let score = copy.minMax(current: players.opponent, players: players)
+                    if score > bestScore {
+                        bestScore = score
+                        bestPlace = indexPath
+                    }
+                }
+            }
+            return bestPlace
         }
+    }
 
-        // Min-Max
-        guard gameBoard.checkGameState() == .ongoing else {
-            return
-        }
+    func waitUntilCalculation(minWaitingTime: Int64 = 660_000_000, calculation: @escaping () -> IndexPath?) async throws {
+        let beforeStates = gameBoard.marks
         let startTime = Date.now
-        let players = (
-            me: currentPlayer,
-            opponent: currentPlayer == .player1 ? Player.player2 : .player1
-        )
-        var bestPlace = IndexPath?.none
-        var bestScore = Int.min
-        for i in (0..<3).shuffled() {
-            for j in (0..<3).shuffled() {
-                let indexPath: IndexPath = [i, j]
-                guard gameBoard.marks[indexPath] == nil else { continue }
-                var copy = gameBoard
-                copy.place(at: indexPath, player: players.me)
-                let score = copy.minMax(current: players.opponent, players: players)
-                if score > bestScore {
-                    bestScore = score
-                    bestPlace = indexPath
+        Task.detached {
+            if let location = calculation() {
+                let elapsedTime = Int64(-startTime.timeIntervalSinceNow * 1_000_000_000)
+                try await Task.sleep(nanoseconds: UInt64(max(minWaitingTime - elapsedTime, 0)))
+                Task { @MainActor [self] in
+                    let gameBoard = self.gameBoard
+                    guard gameBoard.marks == beforeStates else { return }
+                    self.place(at: location)
                 }
             }
         }
-        if let bestPlace {
-            let elapsedTime = Int64(-startTime.timeIntervalSinceNow * 1_000_000_000)
-            try await Task.sleep(nanoseconds: UInt64(max(550_000_000 - elapsedTime, 0)))
-            place(at: bestPlace)
-        }
+    }
+}
+
+private extension IndexPath {
+    static func randomElement(row: Range<Int> = 0..<3, column: Range<Int> = 0..<3) -> IndexPath {
+        [row.randomElement() ?? 0, column.randomElement() ?? 0]
     }
 }
