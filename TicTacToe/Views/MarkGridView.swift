@@ -5,9 +5,19 @@ private extension MarkGridView {
         case prepare
         case slash(player: Player, positions: [IndexPath])
         case centering(player: Player, positions: [IndexPath])
+        case expanding(player: Player, positions: [IndexPath])
 
         var isPrepare: Bool {
             self == .prepare
+        }
+
+        var isExpanding: Bool {
+            switch self {
+            case .expanding:
+                true
+            default:
+                false
+            }
         }
 
         var isSlash: Bool {
@@ -30,9 +40,7 @@ private extension MarkGridView {
 
         var win: (Player?, [IndexPath]) {
             switch self {
-            case .slash(let player, let positions):
-                (player, positions)
-            case .centering(let player, let positions):
+            case .slash(let player, let positions), .centering(let player, let positions), .expanding(let player, let positions):
                 (player, positions)
             default:
                 (nil, [])
@@ -58,7 +66,7 @@ struct MarkGridView: View {
         case .player1:
             color1
         case .player2:
-            color1
+            color2
         case .none:
             .clear
         }
@@ -66,6 +74,16 @@ struct MarkGridView: View {
 
     var body: some View {
         ZStack {
+            if case .win = gameState {
+                Color.clear
+                    .matchedGeometryEffect(id: "A", in: namespace, isSource: true)
+            }
+            if case .expanding(_, let positions) = animationState {
+                ForEach(positions, id: \.self) { indexPath in
+                    Color.clear
+                        .matchedGeometryEffect(id: indexPath, in: namespace, isSource: true)
+                }
+            }
             Group {
                 let ratio: Double = animationState.isSlash ? 1 : 0
                 let position: Double = animationState.isSlash ? 0 : 0.5
@@ -75,31 +93,39 @@ struct MarkGridView: View {
                     Slash(ratio: ratio, position: position, angle: .pi/4)
                         .stroke(lineWidth: spacing)
                         .foregroundStyle(positions == [[0,0], [1,1], [2,2]] ? color : .clear)
+                        .matchedGeometryEffect(id: animationState.isCentering ? "A" : "", in: namespace, isSource: false)
                     Slash(ratio: ratio, position: position, angle: 3 * .pi/4)
                         .stroke(lineWidth: spacing)
                         .foregroundStyle(positions == [[0,2], [1,1], [2,0]] ? color : .clear)
+                        .matchedGeometryEffect(id: animationState.isCentering ? "A" : "", in: namespace, isSource: false)
                 }
                 VStack(spacing: spacing) {
                     Slash(ratio: ratio, position: position, angle: 0)
                         .stroke(lineWidth: spacing)
                         .foregroundStyle(positions == [[0,0], [0,1], [0,2]] ? color : .clear)
+                        .matchedGeometryEffect(id: animationState.isCentering ? "A" : "", in: namespace, isSource: false)
                     Slash(ratio: ratio, position: position, angle: 0)
                         .stroke(lineWidth: spacing)
                         .foregroundStyle(positions == [[1,0], [1,1], [1,2]] ? color : .clear)
+                        .matchedGeometryEffect(id: animationState.isCentering ? "A" : "", in: namespace, isSource: false)
                     Slash(ratio: ratio, position: position, angle: 0)
                         .stroke(lineWidth: spacing)
                         .foregroundStyle(positions == [[2,0], [2,1], [2,2]] ? color : .clear)
+                        .matchedGeometryEffect(id: animationState.isCentering ? "A" : "", in: namespace, isSource: false)
                 }
                 HStack(spacing: spacing) {
                     Slash(ratio: ratio, position: position, angle: .pi/2)
                         .stroke(lineWidth: spacing)
                         .foregroundStyle(positions == [[0,0], [1,0], [2,0]] ? color : .clear)
+                        .matchedGeometryEffect(id: animationState.isCentering ? "A" : "", in: namespace, isSource: false)
                     Slash(ratio: ratio, position: position, angle: .pi/2)
                         .stroke(lineWidth: spacing)
                         .foregroundStyle(positions == [[0,1], [1,1], [2,1]] ? color : .clear)
+                        .matchedGeometryEffect(id: animationState.isCentering ? "A" : "", in: namespace, isSource: false)
                     Slash(ratio: ratio, position: position, angle: .pi/2)
                         .stroke(lineWidth: spacing)
                         .foregroundStyle(positions == [[0,2], [1,2], [2,2]] ? color : .clear)
+                        .matchedGeometryEffect(id: animationState.isCentering ? "A" : "", in: namespace, isSource: false)
                 }
             }
 
@@ -110,7 +136,7 @@ struct MarkGridView: View {
                         ForEach(0..<3) { j in
                             let indexPath: IndexPath = [i, j]
                             ZStack {
-                                if case .win(_, let positions) = gameState, indexPath == [1, 1] {
+                                if case .centering(_, let positions) = animationState, indexPath == [1, 1] {
                                     ForEach(positions, id: \.self) { indexPath in
                                         Color.clear
                                             .matchedGeometryEffect(id: indexPath, in: namespace, isSource: true)
@@ -119,6 +145,7 @@ struct MarkGridView: View {
                                 MarkView(mark: $marks[indexPath])
                                     .onTapGesture { onTap(indexPath) }
                                     .matchedGeometryEffect(id: animationState.isCentering ? indexPath : [], in: namespace, isSource: false)
+                                    .matchedGeometryEffect(id: animationState.isExpanding ? indexPath : [], in: namespace, isSource: false)
                             }
                         }
                     }
@@ -147,9 +174,15 @@ struct MarkGridView: View {
         .onChange(of: animationState) { old, new in
             switch new {
             case .slash(let player, let positions):
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.66) {
-                    withAnimation(.custom(duration: 1)) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    withAnimation(.custom(duration: 0.5)) {
                         animationState = .centering(player: player, positions: positions)
+                    }
+                }
+            case .centering(let player, let positions):
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    withAnimation(.custom(duration: 0.5)) {
+                        animationState = .expanding(player: player, positions: positions)
                     }
                 }
             default:
