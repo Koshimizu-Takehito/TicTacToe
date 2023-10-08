@@ -2,9 +2,13 @@ import SwiftUI
 
 /// タイル領域
 struct MarkGridView: View {
+    let state: GameState
     @Binding var marks: [IndexPath: MarkType]
     @Environment(\.latticeSpacing) var spacing
     var onTap: (IndexPath) -> Void = { _ in }
+
+    @State private var isFinish: Bool = false
+    @Namespace private var namespace
 
     var body: some View {
         Grid(horizontalSpacing: spacing, verticalSpacing: spacing) {
@@ -12,9 +16,28 @@ struct MarkGridView: View {
                 GridRow {
                     ForEach(0..<3) { j in
                         let indexPath: IndexPath = [i, j]
-                        MarkView(mark: $marks[indexPath])
-                            .onTapGesture { onTap(indexPath) }
+                        ZStack {
+                            if case .win(_, let positions) = state, indexPath == [1, 1] {
+                                ForEach(positions, id: \.self) { indexPath in
+                                    Color.white.opacity(1/0xFFFFFF)
+                                        .matchedGeometryEffect(id: indexPath, in: namespace, isSource: true)
+                                }
+                            }
+                            MarkView(mark: $marks[indexPath])
+                                .onTapGesture { onTap(indexPath) }
+                                .matchedGeometryEffect(id: isFinish ? indexPath : [], in: namespace, isSource: false)
+                        }
                     }
+                }
+            }
+        }
+        .onChange(of: state, initial: true) { old, new in
+            switch new {
+            case .ongoing:
+                isFinish = false
+            case .draw, .win:
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    withAnimation { isFinish = true }
                 }
             }
         }
@@ -27,8 +50,7 @@ struct MarkView: View {
 
     var body: some View {
         ZStack {
-            Color.white
-                .opacity(1/0xFFFF)
+            Color.white.opacity(1/0xFFFF)
             switch mark {
             case .circle:
                 RingMark(ratio: ratio)
@@ -50,27 +72,27 @@ struct MarkView: View {
 struct MarkView_Previews: PreviewProvider {
     static var previews: some View {
         Preview()
+            .frame(width: 330, height: 330)
     }
 
     private struct Preview: View {
         @State var marks: [IndexPath: MarkType] = [:]
+        @State var state: GameState = .ongoing
 
         var body: some View {
-            MarkGridView(marks: $marks)
+            MarkGridView(state: state, marks: $marks)
                 .onAppear(perform: update)
         }
 
         func update() {
             Task {
-                while true {
-                    let mark: (MarkType, MarkType) = (marks[[0, 0]] == .circle)
-                        ? (.cross, .circle)
-                        : (.circle, .cross)
-                    for i in 0...2 {
-                        for j in 0...2 {
-                            marks[[i, j]] = (i + j) % 2 == 0 ? mark.0 : mark.1
-                            try await Task.sleep(nanoseconds: 500_000_000)
-                        }
+                let mark: (MarkType, MarkType) = (marks[[0, 0]] == .circle)
+                    ? (.cross, .circle)
+                    : (.circle, .cross)
+                for i in 0...2 {
+                    for j in 0...2 {
+                        marks[[i, j]] = (i + j) % 2 == 0 ? mark.0 : mark.1
+                        try await Task.sleep(nanoseconds: 500_000_000)
                     }
                 }
             }

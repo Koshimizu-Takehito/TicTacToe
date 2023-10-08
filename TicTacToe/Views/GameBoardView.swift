@@ -24,7 +24,7 @@ struct GameBoardView: View {
             LatticeView()
                 .id(drawId)
             // TODO: 勝敗のアニメーションを表示する
-            MarkGridView(marks: $gameBoard.marks, onTap: gameBoard.place(at:))
+            MarkGridView(state: gameBoard.gameState, marks: $gameBoard.marks, onTap: gameBoard.place(at:))
                 .allowsHitTesting(gameBoard.canPlay())
         }
         .frame(width: size, height: size)
@@ -47,23 +47,22 @@ private struct PlayerMenu: View {
 
     var body: some View {
         HStack {
-            ForEach(Player.allCases, id: \.self) { player in
-                Menu {
-                    ForEach(PlayerMode.allCases, id: \.self) { role in
-                        Button(
-                            action: { select(player: player, role: role) },
-                            label: { role.label }
-                        )
-                    }
-                } label: {
-                    Color.clear
-                        .frame(height: 0)
-                        .padding()
-                        .overlay { title(player: player) }
-                }
-            }
+            ForEach(Player.allCases, id: \.self, content: menu(player:))
         }
         .buttonStyle(ActionButtonStyle())
+    }
+
+    func menu(player: Player) -> some View {
+        Menu {
+            ForEach(PlayerMode.allCases, id: \.self) { role in
+                Button(action: select(player: player, role: role), label: role.label)
+            }
+        } label: {
+            Color.clear
+                .frame(height: 0)
+                .padding()
+                .overlay { title(player: player) }
+        }
     }
 
     @ViewBuilder
@@ -74,12 +73,14 @@ private struct PlayerMenu: View {
             .fixedSize()
     }
 
-    func select(player: Player, role: PlayerMode) {
-        switch player {
-        case .player1:
-            role1 = role
-        case .player2:
-            role2 = role
+    func select(player: Player, role: PlayerMode) -> () -> Void {
+        {
+            switch player {
+            case .player1:
+                role1 = role
+            case .player2:
+                role2 = role
+            }
         }
     }
 }

@@ -5,7 +5,7 @@ enum PlayerMode: Hashable, CaseIterable {
     case random
     case computer
 
-    var label: some View {
+    func label() -> some View {
         Label(title, systemImage: systemImage)
     }
 
