@@ -1,50 +1,100 @@
 import SwiftUI
 
+private extension MarkGridView {
+    private enum AnimationState: Hashable {
+        case prepare
+        case slash(player: Player, positions: [IndexPath])
+        case centering
+
+        var isPrepare: Bool {
+            self == .prepare
+        }
+
+        var isSlash: Bool {
+            switch self {
+            case .slash:
+                true
+            default:
+                false
+            }
+        }
+
+        var isCentering: Bool {
+            self == .centering
+        }
+
+        var win: (Player?, [IndexPath]) {
+            switch self {
+            case .slash(let player, let positions):
+                (player, positions)
+            default:
+                (nil, [])
+            }
+        }
+    }
+}
+
 /// タイル領域
 struct MarkGridView: View {
     let gameState: GameState
     @Binding var marks: [IndexPath: MarkType]
     @Environment(\.latticeSpacing) var spacing
+    @Environment(\.markColor1) private var color1
+    @Environment(\.markColor2) private var color2
     var onTap: (IndexPath) -> Void = { _ in }
 
-    @State private var isFinish: Bool = false
+    @State private var animationState: AnimationState = .prepare
     @Namespace private var namespace
+
+    func slashColor(player: Player?) -> Color {
+        switch player {
+        case .player1:
+            color1
+        case .player2:
+            color1
+        case .none:
+            .clear
+        }
+    }
 
     var body: some View {
         ZStack {
             Group {
+                let ratio: Double = animationState.isSlash ? 1 : 0
+                let (winner, positions) = animationState.win
+                let color = slashColor(player: winner)
                 Group {
-                    Slash(ratio: 1, angle: .pi/4)
+                    Slash(ratio: ratio, position: 0, angle: .pi/4)
                         .stroke(lineWidth: spacing)
-                        .foregroundStyle(.orange.opacity(0.2))
-                    Slash(ratio: 1, angle: -.pi/4)
+                        .foregroundStyle(positions == [[0,0], [1,1], [2,2]] ? color : .clear)
+                    Slash(ratio: ratio, position: 1, angle: -.pi/4)
                         .stroke(lineWidth: spacing)
-                        .foregroundStyle(.cyan.opacity(0.2))
+                        .foregroundStyle(positions == [[0,2], [1,1], [2,0]] ? color : .clear)
                 }
                 VStack(spacing: spacing) {
-                    Slash(ratio: 1, angle: 0)
+                    Slash(ratio: ratio, position: 0, angle: 0)
                         .stroke(lineWidth: spacing)
-                        .foregroundStyle(.blue.opacity(0.2))
-                    Slash(ratio: 1, angle: 0)
+                        .foregroundStyle(positions == [[0,0], [0,1], [0,2]] ? color : .clear)
+                    Slash(ratio: ratio, position: 0, angle: 0)
                         .stroke(lineWidth: spacing)
-                        .foregroundStyle(.blue.opacity(0.2))
-                    Slash(ratio: 1, angle: 0)
+                        .foregroundStyle(positions == [[1,0], [1,1], [1,2]] ? color : .clear)
+                    Slash(ratio: ratio, position: 0, angle: 0)
                         .stroke(lineWidth: spacing)
-                        .foregroundStyle(.blue.opacity(0.2))
+                        .foregroundStyle(positions == [[2,0], [2,1], [2,2]] ? color : .clear)
                 }
                 HStack(spacing: spacing) {
-                    Slash(ratio: 1, angle: .pi/2)
+                    Slash(ratio: ratio, position: 0, angle: .pi/2)
                         .stroke(lineWidth: spacing)
-                        .foregroundStyle(.red.opacity(0.2))
-                    Slash(ratio: 1, angle: .pi/2)
+                        .foregroundStyle(positions == [[0,0], [1,0], [2,0]] ? color : .clear)
+                    Slash(ratio: ratio, position: 0, angle: .pi/2)
                         .stroke(lineWidth: spacing)
-                        .foregroundStyle(.red.opacity(0.2))
-                    Slash(ratio: 1, angle: .pi/2)
+                        .foregroundStyle(positions == [[0,1], [1,1], [2,1]] ? color : .clear)
+                    Slash(ratio: ratio, position: 0, angle: .pi/2)
                         .stroke(lineWidth: spacing)
-                        .foregroundStyle(.red.opacity(0.2))
+                        .foregroundStyle(positions == [[0,2], [1,2], [2,2]] ? color : .clear)
                 }
             }
-            .padding(8)
+
             // まるばつの表示
             Grid(horizontalSpacing: spacing, verticalSpacing: spacing) {
                 ForEach(0..<3) { i in
@@ -60,7 +110,7 @@ struct MarkGridView: View {
                                 }
                                 MarkView(mark: $marks[indexPath])
                                     .onTapGesture { onTap(indexPath) }
-                                    .matchedGeometryEffect(id: isFinish ? indexPath : [], in: namespace, isSource: false)
+                                    .matchedGeometryEffect(id: animationState.isCentering ? indexPath : [], in: namespace, isSource: false)
                             }
                         }
                     }
@@ -68,13 +118,23 @@ struct MarkGridView: View {
             }
         }
         .onChange(of: gameState, initial: true) { old, new in
+            print(old, new)
             switch new {
             case .ongoing:
-                isFinish = false
-            case .draw, .win:
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    withAnimation { isFinish = true }
+                animationState = .prepare
+            case .draw:
+                break
+            case .win(let player, let positions):
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.66) {
+                    withAnimation(.custom()) {
+                        animationState = .slash(player: player, positions: positions)
+                    }
                 }
+            }
+        }
+        .onChange(of: marks) { old, new in
+            if new == [:] {
+                animationState = .prepare
             }
         }
     }
@@ -87,7 +147,7 @@ private struct Slash: Shape, Animatable {
         set { (ratio, position, angle) = (newValue.first.first, newValue.first.second, newValue.second) }
     }
 
-    init(ratio: Double = 1, position: Double = 0.5, angle: Double) {
+    init(ratio: Double, position: Double, angle: Double) {
         self.ratio = ratio
         self.position = position
         self.angle = angle
