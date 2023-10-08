@@ -4,7 +4,7 @@ private extension MarkGridView {
     private enum AnimationState: Hashable {
         case prepare
         case slash(player: Player, positions: [IndexPath])
-        case centering
+        case centering(player: Player, positions: [IndexPath])
 
         var isPrepare: Bool {
             self == .prepare
@@ -20,12 +20,19 @@ private extension MarkGridView {
         }
 
         var isCentering: Bool {
-            self == .centering
+            switch self {
+            case .centering:
+                true
+            default:
+                false
+            }
         }
 
         var win: (Player?, [IndexPath]) {
             switch self {
             case .slash(let player, let positions):
+                (player, positions)
+            case .centering(let player, let positions):
                 (player, positions)
             default:
                 (nil, [])
@@ -61,35 +68,36 @@ struct MarkGridView: View {
         ZStack {
             Group {
                 let ratio: Double = animationState.isSlash ? 1 : 0
+                let position: Double = animationState.isSlash ? 0 : 0.5
                 let (winner, positions) = animationState.win
                 let color = slashColor(player: winner)
                 Group {
-                    Slash(ratio: ratio, position: 0, angle: .pi/4)
+                    Slash(ratio: ratio, position: position, angle: .pi/4)
                         .stroke(lineWidth: spacing)
                         .foregroundStyle(positions == [[0,0], [1,1], [2,2]] ? color : .clear)
-                    Slash(ratio: ratio, position: 1, angle: -.pi/4)
+                    Slash(ratio: ratio, position: position, angle: 3 * .pi/4)
                         .stroke(lineWidth: spacing)
                         .foregroundStyle(positions == [[0,2], [1,1], [2,0]] ? color : .clear)
                 }
                 VStack(spacing: spacing) {
-                    Slash(ratio: ratio, position: 0, angle: 0)
+                    Slash(ratio: ratio, position: position, angle: 0)
                         .stroke(lineWidth: spacing)
                         .foregroundStyle(positions == [[0,0], [0,1], [0,2]] ? color : .clear)
-                    Slash(ratio: ratio, position: 0, angle: 0)
+                    Slash(ratio: ratio, position: position, angle: 0)
                         .stroke(lineWidth: spacing)
                         .foregroundStyle(positions == [[1,0], [1,1], [1,2]] ? color : .clear)
-                    Slash(ratio: ratio, position: 0, angle: 0)
+                    Slash(ratio: ratio, position: position, angle: 0)
                         .stroke(lineWidth: spacing)
                         .foregroundStyle(positions == [[2,0], [2,1], [2,2]] ? color : .clear)
                 }
                 HStack(spacing: spacing) {
-                    Slash(ratio: ratio, position: 0, angle: .pi/2)
+                    Slash(ratio: ratio, position: position, angle: .pi/2)
                         .stroke(lineWidth: spacing)
                         .foregroundStyle(positions == [[0,0], [1,0], [2,0]] ? color : .clear)
-                    Slash(ratio: ratio, position: 0, angle: .pi/2)
+                    Slash(ratio: ratio, position: position, angle: .pi/2)
                         .stroke(lineWidth: spacing)
                         .foregroundStyle(positions == [[0,1], [1,1], [2,1]] ? color : .clear)
-                    Slash(ratio: ratio, position: 0, angle: .pi/2)
+                    Slash(ratio: ratio, position: position, angle: .pi/2)
                         .stroke(lineWidth: spacing)
                         .foregroundStyle(positions == [[0,2], [1,2], [2,2]] ? color : .clear)
                 }
@@ -118,7 +126,6 @@ struct MarkGridView: View {
             }
         }
         .onChange(of: gameState, initial: true) { old, new in
-            print(old, new)
             switch new {
             case .ongoing:
                 animationState = .prepare
@@ -137,14 +144,26 @@ struct MarkGridView: View {
                 animationState = .prepare
             }
         }
+        .onChange(of: animationState) { old, new in
+            switch new {
+            case .slash(let player, let positions):
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.66) {
+                    withAnimation(.custom(duration: 1)) {
+                        animationState = .centering(player: player, positions: positions)
+                    }
+                }
+            default:
+                break
+            }
+        }
     }
 }
 
 private struct Slash: Shape, Animatable {
     var ratio: Double, position: Double, angle: Double
-    var animatableData: AnimatablePair<AnimatablePair<Double, Double>, Double> {
-        get { .init(.init(ratio, position), angle) }
-        set { (ratio, position, angle) = (newValue.first.first, newValue.first.second, newValue.second) }
+    var animatableData: Double {
+        get { ratio }
+        set { ratio = newValue }
     }
 
     init(ratio: Double, position: Double, angle: Double) {
@@ -154,7 +173,7 @@ private struct Slash: Shape, Animatable {
     }
 
     func path(in rect: CGRect) -> Path {
-        let radius = sqrt(pow(rect.size.width/2, 2) + pow(rect.size.height/2, 2))
+        let radius = cos(angle) == 0 ? rect.size.height/2 : abs(cos(angle)) >= 1/sqrt(2) ? (rect.size.width/2)/cos(angle) : (rect.size.height/2)/sin(angle)
         let center = CGPoint(x: rect.midX, y: rect.midY)
         let p1 = center + radius * CGPoint(x: cos(angle), y: sin(angle))
         let p2 = center + radius * CGPoint(x: cos(angle + .pi), y: sin(angle + .pi))
