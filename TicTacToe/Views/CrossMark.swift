@@ -4,7 +4,7 @@ import SwiftUI
 struct CrossMark: View {
     private var ratio: Double = 0
     @Environment(\.markColor2) private var color
-    @Environment(\.markLineWidth) private var lineWidth
+    @Environment(\.symbolLineWidth) private var lineWidth
 
     init(ratio: Double = 0) {
         self.ratio = ratio

@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// タイル領域
+/// まるばつのシンボルを配置する領域
 struct SymbolGridView: View {
     let gameState: GameState
     @Binding var symbols: [IndexPath: SymbolType]
@@ -27,19 +27,10 @@ struct SymbolGridView: View {
                 transaction.animation = nil
             }
         }
-        .environment(\.markLineWidth, symbolLineWidth)
+        .environment(\.symbolLineWidth, symbolLineWidth)
         .onChange(of: symbols, redraw)
         .onChange(of: gameState, initial: true, redraw)
         .onChange(of: animationState, redraw)
-    }
-
-    var symbolLineWidth: Double {
-        switch animationState {
-        case .expanding:
-            return spacing * 3.6
-        default:
-            return spacing
-        }
     }
 }
 
@@ -186,6 +177,15 @@ private extension SymbolGridView {
             }
         default:
             break
+        }
+    }
+
+    var symbolLineWidth: Double {
+        switch animationState {
+        case .expanding:
+            return spacing * 3.6
+        default:
+            return spacing
         }
     }
 }

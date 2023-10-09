@@ -29,7 +29,7 @@ struct GameBoardView: View {
         .frame(width: size, height: size)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .environment(\.latticeSpacing, size/40)
-        .environment(\.markLineWidth, size/40)
+        .environment(\.symbolLineWidth, size/40)
     }
 
     func reset() {

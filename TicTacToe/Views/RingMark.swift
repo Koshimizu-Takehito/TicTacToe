@@ -4,7 +4,7 @@ import SwiftUI
 struct RingMark: View {
     var ratio: Double = 0
     @Environment(\.markColor1) private var color
-    @Environment(\.markLineWidth) private var lineWidth
+    @Environment(\.symbolLineWidth) private var lineWidth
 
     var body: some View {
         RingShape(animatableData: ratio)

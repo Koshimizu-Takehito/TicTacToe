@@ -5,7 +5,7 @@ extension EnvironmentValues {
         static let defaultValue: Double = 6.0
     }
 
-    var markLineWidth: Double {
+    var symbolLineWidth: Double {
         get { self[MarkLineWidthKey.self] }
         set { self[MarkLineWidthKey.self] = newValue }
     }
