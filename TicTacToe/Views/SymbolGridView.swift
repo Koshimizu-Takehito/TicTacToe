@@ -173,13 +173,13 @@ private extension SymbolGridView {
     func redraw(old: AnimationState, new: AnimationState) {
         switch new {
         case .slash(let player, let positions):
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 withAnimation(.custom(duration: 0.5)) {
                     animationState = .centering(player: player, positions: positions)
                 }
             }
         case .centering(let player, let positions):
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 withAnimation(.custom(duration: 0.5)) {
                     animationState = .expanding(player: player, positions: positions)
                 }
