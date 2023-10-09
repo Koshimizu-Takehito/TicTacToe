@@ -216,11 +216,16 @@ private struct Slash: Shape, Animatable {
     }
 
     func path(in rect: CGRect) -> Path {
-        let radius = cos(angle) == 0 ? rect.size.height/2 : abs(cos(angle)) >= 1/sqrt(2) ? (rect.size.width/2)/cos(angle) : (rect.size.height/2)/sin(angle)
-        let center = CGPoint(x: rect.midX, y: rect.midY)
-        let p1 = center + radius * CGPoint(x: cos(angle), y: sin(angle))
-        let p2 = center + radius * CGPoint(x: cos(angle + .pi), y: sin(angle + .pi))
-        let p3 = position * p1 + (1 - position) * p2
+        let x: Double = rect.size.width / 2.0
+        let y: Double = rect.size.height / 2.0
+        let c: Double = abs(cos(angle))
+        let s: Double = abs(sin(angle))
+        let boundary: Double = abs(cos(.pi / 4.0))
+        let radius: Double = (c >= boundary) ? x/c : y/s
+        let center: CGPoint = CGPoint(x: rect.midX, y: rect.midY)
+        let p1: CGPoint = center + radius * CGPoint(x: cos(angle), y: sin(angle))
+        let p2: CGPoint = center + radius * CGPoint(x: cos(angle + .pi), y: sin(angle + .pi))
+        let p3: CGPoint = position * p1 + (1 - position) * p2
         var path = Path()
         path.move(to: ratio * p1 + (1 - ratio) * p3)
         path.addLine(to: ratio * p2 + (1 - ratio) * p3)
