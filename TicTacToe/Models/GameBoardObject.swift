@@ -42,6 +42,7 @@ final class GameBoardObject {
 
     func reset() {
         gameBoard.symbols = [:]
+        gameState = .ongoing
         currentPlayer = .player1
     }
 

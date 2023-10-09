@@ -21,6 +21,12 @@ struct SymbolGridView: View {
             // まるばつのシンボル
             Grid(horizontalSpacing: spacing, verticalSpacing: spacing, content: symbolRows)
         }
+        .transaction { transaction in
+            // 盤面のリセット時のアニメーションを消す
+            if symbols == [:] {
+                transaction.animation = nil
+            }
+        }
         .environment(\.markLineWidth, symbolLineWidth)
         .onChange(of: symbols, redraw)
         .onChange(of: gameState, initial: true, redraw)
