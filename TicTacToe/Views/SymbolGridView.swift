@@ -21,9 +21,19 @@ struct SymbolGridView: View {
             // まるばつのシンボル
             Grid(horizontalSpacing: spacing, verticalSpacing: spacing, content: symbolRows)
         }
+        .environment(\.markLineWidth, symbolLineWidth)
         .onChange(of: symbols, redraw)
         .onChange(of: gameState, initial: true, redraw)
         .onChange(of: animationState, redraw)
+    }
+
+    var symbolLineWidth: Double {
+        switch animationState {
+        case .expanding:
+            return spacing * 3.6
+        default:
+            return spacing
+        }
     }
 }
 
@@ -103,6 +113,16 @@ private extension SymbolGridView {
             GridRow {
                 ForEach(0..<3) { j in
                     let indexPath: IndexPath = [i, j]
+                    var opacity: Double {
+                        switch animationState {
+                        case .prepare, .slash:
+                            return 1
+                        case .centering(_, let positions):
+                            return positions.contains(indexPath) ? 1 : 0
+                        case .expanding(_, let positions):
+                            return positions.first == indexPath ? 1 : 0
+                        }
+                    }
                     ZStack {
                         if case .centering(_, let positions) = animationState, indexPath == [1, 1] {
                             ForEach(positions, id: \.self) { indexPath in
@@ -113,7 +133,7 @@ private extension SymbolGridView {
                         SymbolView(symbol: $symbols[indexPath])
                             .onTapGesture { onTap(indexPath) }
                             .matchedGeometryEffect(id: animationState.isCentering || animationState.isExpanding ? indexPath : [], in: namespace, isSource: false)
-                            .opacity(!animationState.isExpanding ? 1 : animationState.win.1.first == indexPath ? 1 : 0 )
+                            .opacity(opacity)
                     }
                 }
             }
@@ -226,7 +246,7 @@ private enum AnimationState: Hashable {
         }
     }
 
-    var win: (Player?, [IndexPath]) {
+    var win: (winner: Player?, positions: [IndexPath]) {
         switch self {
         case .slash(let player, let positions),
             .centering(let player, let positions),
