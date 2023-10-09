@@ -1,54 +1,5 @@
 import SwiftUI
 
-private extension MarkGridView {
-    private enum AnimationState: Hashable {
-        case prepare
-        case slash(player: Player, positions: [IndexPath])
-        case centering(player: Player, positions: [IndexPath])
-        case expanding(player: Player, positions: [IndexPath])
-
-        var isPrepare: Bool {
-            self == .prepare
-        }
-
-        var isExpanding: Bool {
-            switch self {
-            case .expanding:
-                true
-            default:
-                false
-            }
-        }
-
-        var isSlash: Bool {
-            switch self {
-            case .slash:
-                true
-            default:
-                false
-            }
-        }
-
-        var isCentering: Bool {
-            switch self {
-            case .centering:
-                true
-            default:
-                false
-            }
-        }
-
-        var win: (Player?, [IndexPath]) {
-            switch self {
-            case .slash(let player, let positions), .centering(let player, let positions), .expanding(let player, let positions):
-                (player, positions)
-            default:
-                (nil, [])
-            }
-        }
-    }
-}
-
 /// タイル領域
 struct MarkGridView: View {
     let gameState: GameState
@@ -63,64 +14,25 @@ struct MarkGridView: View {
 
     var body: some View {
         ZStack {
+            // 勝敗の結果
             Group(content: gameResult)
+            // 勝利時のスラッシュ
             Group(content: slash)
+            // まるばつのシンボル
             Grid(horizontalSpacing: spacing, verticalSpacing: spacing, content: symbols)
         }
-        .onChange(of: gameState, initial: true) { old, new in
-            switch new {
-            case .ongoing:
-                animationState = .prepare
-            case .draw:
-                break
-            case .win(let player, let positions):
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.66) {
-                    withAnimation(.custom()) {
-                        animationState = .slash(player: player, positions: positions)
-                    }
-                }
-            }
-        }
-        .onChange(of: marks) { old, new in
-            if new == [:] {
-                animationState = .prepare
-            }
-        }
-        .onChange(of: animationState) { old, new in
-            switch new {
-            case .slash(let player, let positions):
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    withAnimation(.custom(duration: 0.5)) {
-                        animationState = .centering(player: player, positions: positions)
-                    }
-                }
-            case .centering(let player, let positions):
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    withAnimation(.custom(duration: 0.5)) {
-                        animationState = .expanding(player: player, positions: positions)
-                    }
-                }
-            default:
-                break
-            }
-        }
+        .onChange(of: marks, redraw)
+        .onChange(of: gameState, initial: true, redraw)
+        .onChange(of: animationState, redraw)
     }
+}
 
-    func foregroundColor(player: Player?) -> Color {
-        switch player {
-        case .player1:
-            color1
-        case .player2:
-            color2
-        case .none:
-            .clear
-        }
-    }
-
+private extension MarkGridView {
     /// ゲームの勝敗結果
     @ViewBuilder
     func gameResult() -> some View {
         if case .win = gameState {
+            // matchedGeometryEffect のためのダミーのビュー
             Color.clear
                 .matchedGeometryEffect(id: "center", in: namespace, isSource: true)
         }
@@ -148,7 +60,8 @@ struct MarkGridView: View {
         let position: Double = animationState.isSlash ? 0 : 0.5
         let (winner, positions) = animationState.win
         let color = foregroundColor(player: winner)
-        Group {
+        // ナナメのスラッシュ
+        ZStack {
             Slash(ratio: ratio, position: position, angle: .pi/4)
                 .stroke(lineWidth: spacing)
                 .foregroundStyle(positions == [[0,0], [1,1], [2,2]] ? color : .clear)
@@ -158,6 +71,7 @@ struct MarkGridView: View {
                 .foregroundStyle(positions == [[0,2], [1,1], [2,0]] ? color : .clear)
                 .matchedGeometryEffect(id: animationState.isCentering ? "center" : "", in: namespace, isSource: false)
         }
+        // ヨコのスラッシュ
         VStack(spacing: spacing) {
             let targets: [[IndexPath]] = [
                 [[0,0], [0,1], [0,2]],
@@ -171,6 +85,7 @@ struct MarkGridView: View {
                     .matchedGeometryEffect(id: animationState.isCentering ? "center" : "", in: namespace, isSource: false)
             }
         }
+        // タテのスラッシュ
         HStack(spacing: spacing) {
             let targets: [[IndexPath]] = [
                 [[0,0], [1,0], [2,0]],
@@ -207,6 +122,109 @@ struct MarkGridView: View {
                     }
                 }
             }
+        }
+    }
+
+    /// シンボルの配置の状態変更を契機として再描画する
+    func redraw(old: [IndexPath : MarkType], new: [IndexPath : MarkType]) {
+        if new == [:] {
+            animationState = .prepare
+        }
+    }
+
+    /// ゲームの状態変更を契機として再描画する
+    func redraw(old: GameState, new: GameState) {
+        switch new {
+        case .ongoing:
+            animationState = .prepare
+        case .draw:
+            break
+        case .win(let player, let positions):
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.66) {
+                withAnimation(.custom()) {
+                    animationState = .slash(player: player, positions: positions)
+                }
+            }
+        }
+    }
+
+    /// アニメーションの状態変更を契機として再描画する
+    func redraw(old: AnimationState, new: AnimationState) {
+        switch new {
+        case .slash(let player, let positions):
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                withAnimation(.custom(duration: 0.5)) {
+                    animationState = .centering(player: player, positions: positions)
+                }
+            }
+        case .centering(let player, let positions):
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                withAnimation(.custom(duration: 0.5)) {
+                    animationState = .expanding(player: player, positions: positions)
+                }
+            }
+        default:
+            break
+        }
+    }
+
+    func foregroundColor(player: Player?) -> Color {
+        switch player {
+        case .player1:
+            color1
+        case .player2:
+            color2
+        case .none:
+            .clear
+        }
+    }
+}
+
+private enum AnimationState: Hashable {
+    case prepare
+    case slash(player: Player, positions: [IndexPath])
+    case centering(player: Player, positions: [IndexPath])
+    case expanding(player: Player, positions: [IndexPath])
+
+    var isPrepare: Bool {
+        self == .prepare
+    }
+
+    var isExpanding: Bool {
+        switch self {
+        case .expanding:
+            true
+        default:
+            false
+        }
+    }
+
+    var isSlash: Bool {
+        switch self {
+        case .slash:
+            true
+        default:
+            false
+        }
+    }
+
+    var isCentering: Bool {
+        switch self {
+        case .centering:
+            true
+        default:
+            false
+        }
+    }
+
+    var win: (Player?, [IndexPath]) {
+        switch self {
+        case .slash(let player, let positions),
+            .centering(let player, let positions),
+            .expanding(let player, let positions):
+            (player, positions)
+        default:
+            (nil, [])
         }
     }
 }
