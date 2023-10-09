@@ -62,14 +62,16 @@ private extension SymbolGridView {
         ForEach(Player.allCases, id: \.self) { player in
             // ナナメのスラッシュ
             ZStack {
-                Slash(ratio: positions == [[0,0], [1,1], [2,2]] && winner == player ? ratio : 0, position: position, angle: .pi/4)
-                    .stroke(lineWidth: spacing)
-                    .foregroundStyle(foregroundColor(player: player))
-                    .matchedGeometryEffect(id: animationState.isCentering ? "center" : "", in: namespace, isSource: false)
-                Slash(ratio: positions == [[0,2], [1,1], [2,0]] && winner == player ? ratio : 0, position: position, angle: 3 * .pi/4)
-                    .stroke(lineWidth: spacing)
-                    .foregroundStyle(foregroundColor(player: player))
-                    .matchedGeometryEffect(id: animationState.isCentering ? "center" : "", in: namespace, isSource: false)
+                let targets: [[IndexPath]] = [
+                    [[0,0], [1,1], [2,2]],
+                    [[0,2], [1,1], [2,0]]
+                ]
+                ForEach(targets, id: \.self) { target in
+                    Slash(ratio: positions == target && winner == player ? ratio : 0, position: position, angle: angle(target))
+                        .stroke(lineWidth: spacing)
+                        .foregroundStyle(foregroundColor(player: player))
+                        .matchedGeometryEffect(id: animationState.isCentering ? "center" : "", in: namespace, isSource: false)
+                }
             }
             // ヨコのスラッシュ
             VStack(spacing: spacing) {
@@ -79,7 +81,7 @@ private extension SymbolGridView {
                     [[2,0], [2,1], [2,2]]
                 ]
                 ForEach(targets, id: \.self) { target in
-                    Slash(ratio: positions == target && winner == player ? ratio : 0, position: position, angle: 0)
+                    Slash(ratio: positions == target && winner == player ? ratio : 0, position: position, angle: angle(target))
                         .stroke(lineWidth: spacing)
                         .foregroundStyle(foregroundColor(player: player))
                         .matchedGeometryEffect(id: animationState.isCentering ? "center" : "", in: namespace, isSource: false)
@@ -93,7 +95,7 @@ private extension SymbolGridView {
                     [[0,2], [1,2], [2,2]]
                 ]
                 ForEach(targets, id: \.self) { target in
-                    Slash(ratio: positions == target && winner == player ? ratio : 0, position: position, angle: .pi/2)
+                    Slash(ratio: positions == target && winner == player ? ratio : 0, position: position, angle: angle(target))
                         .stroke(lineWidth: spacing)
                         .foregroundStyle(foregroundColor(player: player))
                         .matchedGeometryEffect(id: animationState.isCentering ? "center" : "", in: namespace, isSource: false)
@@ -168,13 +170,29 @@ private extension SymbolGridView {
             break
         }
     }
+}
 
+private extension SymbolGridView {
     func foregroundColor(player: Player) -> Color {
         switch player {
         case .player1:
             color1
         case .player2:
             color2
+        }
+    }
+
+    /// ２点間距離から角度を算出する
+    func angle(_ positions: [IndexPath]) -> Double {
+        switch (positions.first, positions.last) {
+        case (let first?, let last?) where positions.count > 1:
+            let p1: CGPoint = CGPoint(x: last[1], y: last[0])
+            let p2: CGPoint = CGPoint(x: first[1], y: first[0])
+            let x: Double = p1.x - p2.x
+            let y: Double = p1.y - p2.y
+            return atan2(y, x)
+        case _:
+            return 0
         }
     }
 }
