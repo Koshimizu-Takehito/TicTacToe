@@ -3,7 +3,7 @@ import SwiftUI
 /// バツマーク
 struct CrossMark: View {
     private var ratio: Double = 0
-    @Environment(\.markColor2) private var color
+    @Environment(\.symbolColor2) private var color
     @Environment(\.symbolLineWidth) private var lineWidth
 
     init(ratio: Double = 0) {

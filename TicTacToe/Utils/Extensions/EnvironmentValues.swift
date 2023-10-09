@@ -43,7 +43,7 @@ extension EnvironmentValues {
         static let defaultValue: Color = .check1
     }
 
-    var markColor1: Color {
+    var symbolColor1: Color {
         get { self[MarkColor1Key.self] }
         set { self[MarkColor1Key.self] = newValue }
     }
@@ -52,7 +52,7 @@ extension EnvironmentValues {
         static let defaultValue: Color = .check2
     }
 
-    var markColor2: Color {
+    var symbolColor2: Color {
         get { self[MarkColor2Key.self] }
         set { self[MarkColor2Key.self] = newValue }
     }

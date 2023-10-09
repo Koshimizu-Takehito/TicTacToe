@@ -5,8 +5,8 @@ struct SymbolGridView: View {
     let gameState: GameState
     @Binding var symbols: [IndexPath: SymbolType]
     @Environment(\.latticeSpacing) private var spacing
-    @Environment(\.markColor1) private var color1
-    @Environment(\.markColor2) private var color2
+    @Environment(\.symbolColor1) private var color1
+    @Environment(\.symbolColor2) private var color2
     var onTap: (IndexPath) -> Void = { _ in }
 
     @Namespace private var namespace
@@ -14,7 +14,7 @@ struct SymbolGridView: View {
 
     var body: some View {
         ZStack {
-            // 勝敗の結果
+            // 勝利の結果
             Group(content: gameResult)
             // 勝利時のスラッシュ
             Group(content: slash)
