@@ -15,10 +15,10 @@ private let checkPositions: [[IndexPath]] = [
 ]
 
 struct GameBoard {
-    var marks: [IndexPath: MarkType] = [:]
+    var symbols: [IndexPath: SymbolType] = [:]
 
     mutating func place(at index: IndexPath, player: Player) {
-        marks[index] = player == .player1 ? .circle : .cross
+        symbols[index] = player == .player1 ? .circle : .cross
     }
 
     func minMax(current: Player, players: (me: Player, opponent: Player)) -> Int {
@@ -35,7 +35,7 @@ struct GameBoard {
         var bestScore: Int = (current == players.opponent) ? .max : .min
         for x in (0..<3).shuffled() {
             for y in (0..<3).shuffled() {
-                if marks[[x, y]] == nil {
+                if symbols[[x, y]] == nil {
                     var copy = self
                     copy.place(at: [x, y], player: current)
                     let score = copy.minMax(current: current.opposite, players: players)
@@ -52,12 +52,12 @@ struct GameBoard {
                 return .win(winner, positions: positions)
             }
         }
-        return marks.count < 9 ? .ongoing : .draw
+        return symbols.count < 9 ? .ongoing : .draw
     }
 
     private func checkWinnerAndPositions(_ mm: [IndexPath]) -> (winner: Player, positions: [IndexPath])? {
-        if marks[mm[0]] == marks[mm[1]], marks[mm[1]] == marks[mm[2]] {
-            switch marks[mm[0]] {
+        if symbols[mm[0]] == symbols[mm[1]], symbols[mm[1]] == symbols[mm[2]] {
+            switch symbols[mm[0]] {
             case .circle:
                 return (.player1, mm)
             case .cross:

@@ -2,7 +2,7 @@ enum Player: Hashable, CaseIterable {
     case player1
     case player2
 
-    var check: MarkType {
+    var symbol: SymbolType {
         switch self {
         case .player1:
             return .circle

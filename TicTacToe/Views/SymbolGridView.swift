@@ -1,16 +1,16 @@
 import SwiftUI
 
 /// タイル領域
-struct MarkGridView: View {
+struct SymbolGridView: View {
     let gameState: GameState
-    @Binding var marks: [IndexPath: MarkType]
-    @Environment(\.latticeSpacing) var spacing
+    @Binding var symbols: [IndexPath: SymbolType]
+    @Environment(\.latticeSpacing) private var spacing
     @Environment(\.markColor1) private var color1
     @Environment(\.markColor2) private var color2
     var onTap: (IndexPath) -> Void = { _ in }
 
-    @State private var animationState: AnimationState = .prepare
     @Namespace private var namespace
+    @State private var animationState: AnimationState = .prepare
 
     var body: some View {
         ZStack {
@@ -19,15 +19,15 @@ struct MarkGridView: View {
             // 勝利時のスラッシュ
             Group(content: slash)
             // まるばつのシンボル
-            Grid(horizontalSpacing: spacing, verticalSpacing: spacing, content: symbols)
+            Grid(horizontalSpacing: spacing, verticalSpacing: spacing, content: symbolRows)
         }
-        .onChange(of: marks, redraw)
+        .onChange(of: symbols, redraw)
         .onChange(of: gameState, initial: true, redraw)
         .onChange(of: animationState, redraw)
     }
 }
 
-private extension MarkGridView {
+private extension SymbolGridView {
     /// ゲームの勝敗結果
     @ViewBuilder
     func gameResult() -> some View {
@@ -103,7 +103,7 @@ private extension MarkGridView {
 
     /// まるばつの表示
     @ViewBuilder
-    func symbols() -> some View {
+    func symbolRows() -> some View {
         ForEach(0..<3) { i in
             GridRow {
                 ForEach(0..<3) { j in
@@ -115,7 +115,7 @@ private extension MarkGridView {
                                     .matchedGeometryEffect(id: indexPath, in: namespace, isSource: true)
                             }
                         }
-                        MarkView(mark: $marks[indexPath])
+                        SymbolView(symbol: $symbols[indexPath])
                             .onTapGesture { onTap(indexPath) }
                             .matchedGeometryEffect(id: animationState.isCentering || animationState.isExpanding ? indexPath : [], in: namespace, isSource: false)
                             .opacity(!animationState.isExpanding ? 1 : animationState.win.1.first == indexPath ? 1 : 0 )
@@ -126,7 +126,7 @@ private extension MarkGridView {
     }
 
     /// シンボルの配置の状態変更を契機として再描画する
-    func redraw(old: [IndexPath : MarkType], new: [IndexPath : MarkType]) {
+    func redraw(old: [IndexPath : SymbolType], new: [IndexPath : SymbolType]) {
         if new == [:] {
             animationState = .prepare
         }
@@ -260,14 +260,14 @@ private struct Slash: Shape, Animatable {
     }
 }
 
-struct MarkView: View {
+private struct SymbolView: View {
     @State var ratio: Double = 0
-    @Binding var mark: MarkType?
+    @Binding var symbol: SymbolType?
 
     var body: some View {
         ZStack {
             Color.white.opacity(1/0xFFFF)
-            switch mark {
+            switch symbol {
             case .circle:
                 RingMark(ratio: ratio)
             case .cross:
@@ -276,7 +276,7 @@ struct MarkView: View {
                 Color.clear
             }
         }
-        .onChange(of: mark) { oldValue, newValue in
+        .onChange(of: symbol) { oldValue, newValue in
             ratio = 0
             withAnimation(.custom()) {
                 ratio = 1
@@ -285,25 +285,25 @@ struct MarkView: View {
     }
 }
 
-struct MarkView_Previews: PreviewProvider {
+struct SymbolGridView_Previews: PreviewProvider {
     static var previews: some View {
         Preview()
             .frame(width: 330, height: 330)
     }
 
     private struct Preview: View {
-        @State var marks: [IndexPath: MarkType] = [:]
+        @State var marks: [IndexPath: SymbolType] = [:]
         @State var state: GameState = .ongoing
 
         var body: some View {
-            MarkGridView(gameState: state, marks: $marks)
+            SymbolGridView(gameState: state, symbols: $marks)
                 .onAppear(perform: update)
                 .backgroundStyle(Color.gray)
         }
 
         func update() {
             Task {
-                let mark: (MarkType, MarkType) = (marks[[0, 0]] == .circle)
+                let mark: (SymbolType, SymbolType) = (marks[[0, 0]] == .circle)
                     ? (.cross, .circle)
                     : (.circle, .cross)
                 for i in 0...2 {

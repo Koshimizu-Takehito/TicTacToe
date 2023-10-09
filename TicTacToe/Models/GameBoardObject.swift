@@ -41,14 +41,14 @@ final class GameBoardObject {
     }
 
     func reset() {
-        gameBoard.marks = [:]
+        gameBoard.symbols = [:]
         currentPlayer = .player1
     }
 
     func place(at index: IndexPath) -> Void {
-        guard gameBoard.marks[index] == .none else { return }
+        guard gameBoard.symbols[index] == .none else { return }
         // 配置
-        gameBoard.marks[index] = currentPlayer.check
+        gameBoard.symbols[index] = currentPlayer.symbol
 
         Task.detached { [gameBoard] in
             let gameState = gameBoard.checkGameState()
@@ -87,7 +87,7 @@ private extension GameBoardObject {
         try await waitUntilCalculation { [self] () -> IndexPath? in
             while gameBoard.checkGameState() == .ongoing {
                 let randomPath = IndexPath.randomElement()
-                if gameBoard.marks[randomPath] == nil {
+                if gameBoard.symbols[randomPath] == nil {
                     return randomPath
                 }
             }
@@ -102,7 +102,7 @@ private extension GameBoardObject {
                 return nil
             }
             // 初期配置はどこでも良いのでランダムに配置する
-            guard !gameBoard.marks.isEmpty else {
+            guard !gameBoard.symbols.isEmpty else {
                 return .randomElement()
             }
             // Min-Max
@@ -112,7 +112,7 @@ private extension GameBoardObject {
             for i in (0..<3).shuffled() {
                 for j in (0..<3).shuffled() {
                     let indexPath: IndexPath = [i, j]
-                    guard gameBoard.marks[indexPath] == nil else { continue }
+                    guard gameBoard.symbols[indexPath] == nil else { continue }
                     var copy = gameBoard
                     copy.place(at: indexPath, player: players.me)
                     let score = copy.minMax(current: players.opponent, players: players)
@@ -127,7 +127,7 @@ private extension GameBoardObject {
     }
 
     func waitUntilCalculation(minWaitingTime: Int64 = 660_000_000, calculation: @escaping () -> IndexPath?) async throws {
-        let beforeStates = gameBoard.marks
+        let beforeStates = gameBoard.symbols
         let startTime = Date.now
         Task.detached {
             if let location = calculation() {
@@ -135,7 +135,7 @@ private extension GameBoardObject {
                 try await Task.sleep(nanoseconds: UInt64(max(minWaitingTime - elapsedTime, 0)))
                 Task { @MainActor [self] in
                     let gameBoard = self.gameBoard
-                    guard gameBoard.marks == beforeStates else { return }
+                    guard gameBoard.symbols == beforeStates else { return }
                     self.place(at: location)
                 }
             }

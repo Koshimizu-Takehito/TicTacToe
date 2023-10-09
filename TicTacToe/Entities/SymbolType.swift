@@ -1,4 +1,4 @@
-enum MarkType: Hashable {
+enum SymbolType: Hashable {
     case circle
     case cross
 }
