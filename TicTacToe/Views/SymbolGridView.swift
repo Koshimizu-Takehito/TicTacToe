@@ -56,51 +56,43 @@ private extension SymbolGridView {
     /// 勝敗確定時のスラッシュ
     @ViewBuilder
     func slash() -> some View {
-        let ratio: Double = animationState.isSlash ? 1 : 0
-        let position: Double = animationState.isSlash ? 0 : 0.5
-        let (winner, positions) = animationState.win
         ForEach(Player.allCases, id: \.self) { player in
             // ナナメのスラッシュ
             ZStack {
-                let targets: [[IndexPath]] = [
-                    [[0,0], [1,1], [2,2]],
-                    [[0,2], [1,1], [2,0]]
-                ]
-                ForEach(targets, id: \.self) { target in
-                    Slash(ratio: positions == target && winner == player ? ratio : 0, position: position, angle: angle(target))
-                        .stroke(lineWidth: spacing)
-                        .foregroundStyle(foregroundColor(player: player))
-                        .matchedGeometryEffect(id: animationState.isCentering ? "center" : "", in: namespace, isSource: false)
-                }
+                slash(player: player,
+                       [[0,0], [1,1], [2,2]],
+                       [[0,2], [1,1], [2,0]]
+                )
             }
             // ヨコのスラッシュ
             VStack(spacing: spacing) {
-                let targets: [[IndexPath]] = [
-                    [[0,0], [0,1], [0,2]],
-                    [[1,0], [1,1], [1,2]],
-                    [[2,0], [2,1], [2,2]]
-                ]
-                ForEach(targets, id: \.self) { target in
-                    Slash(ratio: positions == target && winner == player ? ratio : 0, position: position, angle: angle(target))
-                        .stroke(lineWidth: spacing)
-                        .foregroundStyle(foregroundColor(player: player))
-                        .matchedGeometryEffect(id: animationState.isCentering ? "center" : "", in: namespace, isSource: false)
-                }
+                slash(player: player,
+                       [[0,0], [0,1], [0,2]],
+                       [[1,0], [1,1], [1,2]],
+                       [[2,0], [2,1], [2,2]]
+                )
             }
             // タテのスラッシュ
             HStack(spacing: spacing) {
-                let targets: [[IndexPath]] = [
-                    [[0,0], [1,0], [2,0]],
-                    [[0,1], [1,1], [2,1]],
-                    [[0,2], [1,2], [2,2]]
-                ]
-                ForEach(targets, id: \.self) { target in
-                    Slash(ratio: positions == target && winner == player ? ratio : 0, position: position, angle: angle(target))
-                        .stroke(lineWidth: spacing)
-                        .foregroundStyle(foregroundColor(player: player))
-                        .matchedGeometryEffect(id: animationState.isCentering ? "center" : "", in: namespace, isSource: false)
-                }
+                slash(player: player,
+                       [[0,0], [1,0], [2,0]],
+                       [[0,1], [1,1], [2,1]],
+                       [[0,2], [1,2], [2,2]]
+                )
             }
+        }
+    }
+
+    @ViewBuilder
+    func slash(player: Player, _ targets: [IndexPath]...) -> some View {
+        let ratio: Double = animationState.isSlash ? 1 : 0
+        let position: Double = animationState.isSlash ? 0 : 0.5
+        let (winner, positions) = animationState.win
+        ForEach(targets, id: \.self) { target in
+            Slash(ratio: positions == target && winner == player ? ratio : 0, position: position, angle: angle(target))
+                .stroke(lineWidth: spacing)
+                .foregroundStyle(foregroundColor(player: player))
+                .matchedGeometryEffect(id: animationState.isCentering ? "center" : "", in: namespace, isSource: false)
         }
     }
 
