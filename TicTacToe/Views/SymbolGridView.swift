@@ -14,15 +14,15 @@ struct SymbolGridView: View {
 
     var body: some View {
         ZStack {
-            // 勝利の結果
-            Group(content: gameResult)
-            // 勝利時のスラッシュ
-            Group(content: slash)
             // まるばつのシンボル
             Grid(horizontalSpacing: spacing, verticalSpacing: spacing, content: symbolRows)
+            // 勝利時のスラッシュ
+            Group(content: slash)
+            // 勝利の結果
+            Group(content: gameResult)
         }
         .transaction { transaction in
-            // 盤面のリセット時のアニメーションを消す
+            // 盤面リセット時のアニメーションを消す
             if symbols == [:] {
                 transaction.animation = nil
             }
