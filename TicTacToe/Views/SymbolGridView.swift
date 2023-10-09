@@ -240,11 +240,17 @@ private enum AnimationState: Hashable {
 
 private struct Slash: Shape, Animatable {
     var ratio: Double, position: Double, angle: Double
+    /// 表示割合のみアニメーション可能
     var animatableData: Double {
         get { ratio }
         set { ratio = newValue }
     }
-
+    
+    /// 初期化子
+    /// - Parameters:
+    ///   - ratio: 表示割合 0...1
+    ///   - position: 表示の起点
+    ///   - angle: 角度
     init(ratio: Double, position: Double, angle: Double) {
         self.ratio = ratio
         self.position = position
