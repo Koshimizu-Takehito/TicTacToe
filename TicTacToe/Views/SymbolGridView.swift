@@ -179,7 +179,7 @@ private extension SymbolGridView {
                 }
             }
         case .centering(let player, let positions):
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
                 withAnimation(.custom(duration: 0.5)) {
                     animationState = .expanding(player: player, positions: positions)
                 }

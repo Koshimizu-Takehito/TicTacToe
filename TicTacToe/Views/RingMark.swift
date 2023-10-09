@@ -8,7 +8,7 @@ struct RingMark: View {
 
     var body: some View {
         RingShape(animatableData: ratio)
-            .stroke(lineWidth: lineWidth)
+            .stroke(style: .init(lineWidth: lineWidth, lineCap: .round))
             .foregroundStyle(color)
     }
 
