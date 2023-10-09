@@ -59,44 +59,45 @@ private extension SymbolGridView {
         let ratio: Double = animationState.isSlash ? 1 : 0
         let position: Double = animationState.isSlash ? 0 : 0.5
         let (winner, positions) = animationState.win
-        let color = foregroundColor(player: winner)
-        // ナナメのスラッシュ
-        ZStack {
-            Slash(ratio: ratio, position: position, angle: .pi/4)
-                .stroke(lineWidth: spacing)
-                .foregroundStyle(positions == [[0,0], [1,1], [2,2]] ? color : .clear)
-                .matchedGeometryEffect(id: animationState.isCentering ? "center" : "", in: namespace, isSource: false)
-            Slash(ratio: ratio, position: position, angle: 3 * .pi/4)
-                .stroke(lineWidth: spacing)
-                .foregroundStyle(positions == [[0,2], [1,1], [2,0]] ? color : .clear)
-                .matchedGeometryEffect(id: animationState.isCentering ? "center" : "", in: namespace, isSource: false)
-        }
-        // ヨコのスラッシュ
-        VStack(spacing: spacing) {
-            let targets: [[IndexPath]] = [
-                [[0,0], [0,1], [0,2]],
-                [[1,0], [1,1], [1,2]],
-                [[2,0], [2,1], [2,2]]
-            ]
-            ForEach(targets, id: \.self) { target in
-                Slash(ratio: ratio, position: position, angle: 0)
+        ForEach(Player.allCases, id: \.self) { player in
+            // ナナメのスラッシュ
+            ZStack {
+                Slash(ratio: positions == [[0,0], [1,1], [2,2]] && winner == player ? ratio : 0, position: position, angle: .pi/4)
                     .stroke(lineWidth: spacing)
-                    .foregroundStyle(positions == target ? color : .clear)
+                    .foregroundStyle(foregroundColor(player: player))
+                    .matchedGeometryEffect(id: animationState.isCentering ? "center" : "", in: namespace, isSource: false)
+                Slash(ratio: positions == [[0,2], [1,1], [2,0]] && winner == player ? ratio : 0, position: position, angle: 3 * .pi/4)
+                    .stroke(lineWidth: spacing)
+                    .foregroundStyle(foregroundColor(player: player))
                     .matchedGeometryEffect(id: animationState.isCentering ? "center" : "", in: namespace, isSource: false)
             }
-        }
-        // タテのスラッシュ
-        HStack(spacing: spacing) {
-            let targets: [[IndexPath]] = [
-                [[0,0], [1,0], [2,0]],
-                [[0,1], [1,1], [2,1]],
-                [[0,2], [1,2], [2,2]]
-            ]
-            ForEach(targets, id: \.self) { target in
-                Slash(ratio: ratio, position: position, angle: .pi/2)
-                    .stroke(lineWidth: spacing)
-                    .foregroundStyle(positions == target ? color : .clear)
-                    .matchedGeometryEffect(id: animationState.isCentering ? "center" : "", in: namespace, isSource: false)
+            // ヨコのスラッシュ
+            VStack(spacing: spacing) {
+                let targets: [[IndexPath]] = [
+                    [[0,0], [0,1], [0,2]],
+                    [[1,0], [1,1], [1,2]],
+                    [[2,0], [2,1], [2,2]]
+                ]
+                ForEach(targets, id: \.self) { target in
+                    Slash(ratio: positions == target && winner == player ? ratio : 0, position: position, angle: 0)
+                        .stroke(lineWidth: spacing)
+                        .foregroundStyle(foregroundColor(player: player))
+                        .matchedGeometryEffect(id: animationState.isCentering ? "center" : "", in: namespace, isSource: false)
+                }
+            }
+            // タテのスラッシュ
+            HStack(spacing: spacing) {
+                let targets: [[IndexPath]] = [
+                    [[0,0], [1,0], [2,0]],
+                    [[0,1], [1,1], [2,1]],
+                    [[0,2], [1,2], [2,2]]
+                ]
+                ForEach(targets, id: \.self) { target in
+                    Slash(ratio: positions == target && winner == player ? ratio : 0, position: position, angle: .pi/2)
+                        .stroke(lineWidth: spacing)
+                        .foregroundStyle(foregroundColor(player: player))
+                        .matchedGeometryEffect(id: animationState.isCentering ? "center" : "", in: namespace, isSource: false)
+                }
             }
         }
     }
@@ -168,14 +169,12 @@ private extension SymbolGridView {
         }
     }
 
-    func foregroundColor(player: Player?) -> Color {
+    func foregroundColor(player: Player) -> Color {
         switch player {
         case .player1:
             color1
         case .player2:
             color2
-        case .none:
-            .clear
         }
     }
 }
