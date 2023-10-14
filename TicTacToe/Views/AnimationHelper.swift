@@ -1,10 +1,3 @@
-//
-//  AnimationHelper.swift
-//  TicTacToe
-//
-//  Created by Takehito Koshimizu on 2023/09/24.
-//
-
 import SwiftUI
 
 struct AnimationHelper<Value: VectorArithmetic, V: View>: View {

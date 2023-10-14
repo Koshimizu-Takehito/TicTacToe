@@ -1,10 +1,3 @@
-//
-//  TitleButtonStyle.swift
-//  TicTacToe
-//
-//  Created by Takehito Koshimizu on 2023/09/24.
-//
-
 import SwiftUI
 
 struct TitleButtonStyle: ButtonStyle {

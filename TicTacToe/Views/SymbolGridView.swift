@@ -4,6 +4,7 @@ import SwiftUI
 struct SymbolGridView: View {
     let gameState: GameState
     @Binding var symbols: [IndexPath: SymbolType]
+    @Environment(\.self) var environment
     @Environment(\.latticeSpacing) private var spacing
     @Environment(\.symbolColor1) private var color1
     @Environment(\.symbolColor2) private var color2
@@ -67,7 +68,7 @@ private extension SymbolGridView {
                     Text("DRAW")
                         .font(.largeTitle)
                         .fontWeight(.black)
-                        .foregroundStyle(color1)
+                        .foregroundStyle(Color.screen(environment: environment, color1, color2))
                         .scaleEffect(CGSizeMake(1.8, 1.8))
                 }
                 .padding(.vertical, 2 * offset)
