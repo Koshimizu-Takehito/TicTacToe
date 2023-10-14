@@ -18,7 +18,7 @@ struct SymbolGridView: View {
             Grid(horizontalSpacing: spacing, verticalSpacing: spacing, content: symbolRows)
             // 勝利時のスラッシュ
             Group(content: slash)
-            // 勝利の結果
+            // 勝敗の結果
             Group(content: gameResult)
         }
         .transaction { transaction in
@@ -56,6 +56,21 @@ private extension SymbolGridView {
                     .fontWeight(.black)
                     .foregroundStyle(foregroundColor(player: winner))
                     .scaleEffect(CGSizeMake(1.8, 1.8))
+            }
+        }
+        if case .draw = animationState {
+            GeometryReader { geometry in
+                let offset = max(geometry.size.width, geometry.size.height) / 10
+                VStack {
+                    DrawSymbolView(offset: offset)
+
+                    Text("DRAW")
+                        .font(.largeTitle)
+                        .fontWeight(.black)
+                        .foregroundStyle(color1)
+                        .scaleEffect(CGSizeMake(1.8, 1.8))
+                }
+                .padding(.vertical, 2 * offset)
             }
         }
     }
@@ -118,6 +133,8 @@ private extension SymbolGridView {
                             return positions.contains(indexPath) ? 1 : 0
                         case .expanding(_, let positions):
                             return positions.first == indexPath ? 1 : 0
+                        case .draw:
+                            return 0
                         }
                     }
                     ZStack {
@@ -150,7 +167,11 @@ private extension SymbolGridView {
         case .ongoing:
             animationState = .prepare
         case .draw:
-            break
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.66) {
+                withAnimation(.custom()) {
+                    animationState = .draw
+                }
+            }
         case .win(let player, let positions):
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.66) {
                 withAnimation(.custom()) {
@@ -184,6 +205,8 @@ private extension SymbolGridView {
         switch animationState {
         case .expanding:
             return spacing * 3.6
+        case .draw:
+            return spacing * 2.4
         default:
             return spacing
         }
@@ -215,11 +238,32 @@ private extension SymbolGridView {
     }
 }
 
+private struct DrawSymbolView: View {
+    let offset: Double
+    @State private var ratio: Double = 1
+
+    var body: some View {
+        HStack(spacing: -offset / 2) {
+            SymbolView(ratio: 1, symbol: .constant(.circle))
+                .offset(x: -1 * ratio * offset)
+            SymbolView(ratio: 1, symbol: .constant(.cross))
+                .offset(x: ratio * offset)
+        }
+        .padding(.horizontal, offset)
+        .onAppear {
+            withAnimation(Animation.spring(response: 0.4, dampingFraction: 0.3)) {
+                ratio = 0
+            }
+        }
+    }
+}
+
 private enum AnimationState: Hashable {
     case prepare
     case slash(player: Player, positions: [IndexPath])
     case centering(player: Player, positions: [IndexPath])
     case expanding(player: Player, positions: [IndexPath])
+    case draw
 
     var isPrepare: Bool {
         self == .prepare
