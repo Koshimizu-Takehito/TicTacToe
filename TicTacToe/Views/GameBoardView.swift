@@ -24,13 +24,13 @@ struct GameBoardView: View {
             LatticeView()
                 .id(drawId)
             SymbolGridView(
-                drawId: drawId, 
                 gameState: gameBoard.gameState,
                 symbols: $gameBoard.symbols,
                 onTap: gameBoard.place(at:),
                 onTapGameResult: reset
             )
             .allowsHitTesting(gameBoard.allowsHitTesting())
+            .id(drawId)
         }
         .frame(width: size, height: size)
         .frame(maxWidth: .infinity, maxHeight: .infinity)

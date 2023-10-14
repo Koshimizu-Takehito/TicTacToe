@@ -2,7 +2,6 @@ import SwiftUI
 
 /// まるばつのシンボルを配置する領域
 struct SymbolGridView: View {
-    let drawId: UUID
     let gameState: GameState
     @Binding var symbols: [IndexPath: SymbolType]
     @Environment(\.self) var environment
@@ -34,7 +33,6 @@ struct SymbolGridView: View {
             }
         }
         .environment(\.symbolLineWidth, symbolLineWidth)
-        .onChange(of: drawId, redraw)
         .onChange(of: symbols, redraw)
         .onChange(of: gameState, redraw)
         .onChange(of: animationState, redraw)
@@ -166,11 +164,6 @@ private extension SymbolGridView {
 
 // MARK: - Redraw
 private extension SymbolGridView {
-    // 上位のビューの再描画時
-    func redraw(old: UUID, new: UUID) {
-        animationState = .prepare
-    }
-
     /// シンボルの配置の状態変更を契機として再描画する
     func redraw(old: [IndexPath: SymbolType], new: [IndexPath: SymbolType]) {
         if new == [:] {
@@ -421,9 +414,7 @@ private struct GameResultTapModifier: ViewModifier {
             }
             .onChange(of: state, initial: true) { old, new in
                 guard !old.isFinish && new.isFinish else { return }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
-                    canTap = true
-                }
+                canTap = true
             }
     }
 }
@@ -440,7 +431,7 @@ struct SymbolGridView_Previews: PreviewProvider {
         @State var state: GameState = .ongoing
 
         var body: some View {
-            SymbolGridView(drawId: drawId, gameState: state, symbols: $marks)
+            SymbolGridView(gameState: state, symbols: $marks)
                 .onAppear(perform: update)
                 .backgroundStyle(Color.gray)
         }
