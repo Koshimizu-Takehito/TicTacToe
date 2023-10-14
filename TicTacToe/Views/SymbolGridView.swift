@@ -2,13 +2,17 @@ import SwiftUI
 
 /// まるばつのシンボルを配置する領域
 struct SymbolGridView: View {
+    let drawId: UUID
     let gameState: GameState
     @Binding var symbols: [IndexPath: SymbolType]
     @Environment(\.self) var environment
     @Environment(\.latticeSpacing) private var spacing
     @Environment(\.symbolColor1) private var color1
     @Environment(\.symbolColor2) private var color2
+    /// 配置領域のタップ
     var onTap: (IndexPath) -> Void = { _ in }
+    /// ゲーム勝敗結果時のタップ
+    var onTapGameResult: () -> Void = {}
 
     @Namespace private var namespace
     @State private var animationState: AnimationState = .prepare
@@ -21,6 +25,7 @@ struct SymbolGridView: View {
             Group(content: slash)
             // 勝敗の結果
             Group(content: gameResult)
+                .modifier(GameResultTapModifier(state: animationState, onTap: onTapGameResult))
         }
         .transaction { transaction in
             // 盤面リセット時のアニメーションを消す
@@ -29,8 +34,9 @@ struct SymbolGridView: View {
             }
         }
         .environment(\.symbolLineWidth, symbolLineWidth)
+        .onChange(of: drawId, redraw)
         .onChange(of: symbols, redraw)
-        .onChange(of: gameState, initial: true, redraw)
+        .onChange(of: gameState, redraw)
         .onChange(of: animationState, redraw)
     }
 }
@@ -44,7 +50,9 @@ private extension SymbolGridView {
             Color.clear
                 .matchedGeometryEffect(id: "center", in: namespace, isSource: true)
         }
-        if case .expanding(let winner, let positions) = animationState {
+
+        switch (gameState, animationState) {
+        case (.win, .expanding(let winner, let positions)):
             VStack {
                 ZStack {
                     ForEach(positions, id: \.self) { indexPath in
@@ -58,8 +66,7 @@ private extension SymbolGridView {
                     .foregroundStyle(foregroundColor(player: winner))
                     .scaleEffect(CGSizeMake(1.8, 1.8))
             }
-        }
-        if case .draw = animationState {
+        case (.draw, .draw):
             GeometryReader { geometry in
                 let offset = max(geometry.size.width, geometry.size.height) / 10
                 VStack {
@@ -73,6 +80,8 @@ private extension SymbolGridView {
                 }
                 .padding(.vertical, 2 * offset)
             }
+        default:
+            EmptyView()
         }
     }
 
@@ -126,18 +135,6 @@ private extension SymbolGridView {
             GridRow {
                 ForEach(0..<3) { j in
                     let indexPath: IndexPath = [i, j]
-                    var opacity: Double {
-                        switch animationState {
-                        case .prepare, .slash:
-                            return 1
-                        case .centering(_, let positions):
-                            return positions.contains(indexPath) ? 1 : 0
-                        case .expanding(_, let positions):
-                            return positions.first == indexPath ? 1 : 0
-                        case .draw:
-                            return 0
-                        }
-                    }
                     ZStack {
                         if case .centering(_, let positions) = animationState, indexPath == [1, 1] {
                             ForEach(positions, id: \.self) { indexPath in
@@ -148,15 +145,34 @@ private extension SymbolGridView {
                         SymbolView(symbol: $symbols[indexPath])
                             .onTapGesture { onTap(indexPath) }
                             .matchedGeometryEffect(id: animationState.isCentering || animationState.isExpanding ? indexPath : [], in: namespace, isSource: false)
-                            .opacity(opacity)
+                            .opacity(animationState.symbolOpacity(at: indexPath))
                     }
                 }
             }
         }
     }
 
+    var symbolLineWidth: Double {
+        switch animationState {
+        case .expanding:
+            return spacing * 3.6
+        case .draw:
+            return spacing * 2.4
+        default:
+            return spacing
+        }
+    }
+}
+
+// MARK: - Redraw
+private extension SymbolGridView {
+    // 上位のビューの再描画時
+    func redraw(old: UUID, new: UUID) {
+        animationState = .prepare
+    }
+
     /// シンボルの配置の状態変更を契機として再描画する
-    func redraw(old: [IndexPath : SymbolType], new: [IndexPath : SymbolType]) {
+    func redraw(old: [IndexPath: SymbolType], new: [IndexPath: SymbolType]) {
         if new == [:] {
             animationState = .prepare
         }
@@ -184,14 +200,14 @@ private extension SymbolGridView {
 
     /// アニメーションの状態変更を契機として再描画する
     func redraw(old: AnimationState, new: AnimationState) {
-        switch new {
-        case .slash(let player, let positions):
+        switch (old, new) {
+        case (.prepare, .slash(let player, let positions)):
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 withAnimation(.custom(duration: 0.5)) {
                     animationState = .centering(player: player, positions: positions)
                 }
             }
-        case .centering(let player, let positions):
+        case (.slash, .centering(let player, let positions)):
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
                 withAnimation(.custom(duration: 0.5)) {
                     animationState = .expanding(player: player, positions: positions)
@@ -201,19 +217,9 @@ private extension SymbolGridView {
             break
         }
     }
-
-    var symbolLineWidth: Double {
-        switch animationState {
-        case .expanding:
-            return spacing * 3.6
-        case .draw:
-            return spacing * 2.4
-        default:
-            return spacing
-        }
-    }
 }
 
+// MARK: -
 private extension SymbolGridView {
     func foregroundColor(player: Player) -> Color {
         switch player {
@@ -239,6 +245,7 @@ private extension SymbolGridView {
     }
 }
 
+// MARK: -
 private struct DrawSymbolView: View {
     let offset: Double
     @State private var ratio: Double = 1
@@ -259,6 +266,7 @@ private struct DrawSymbolView: View {
     }
 }
 
+// MARK: -
 private enum AnimationState: Hashable {
     case prepare
     case slash(player: Player, positions: [IndexPath])
@@ -307,8 +315,31 @@ private enum AnimationState: Hashable {
             (nil, [])
         }
     }
+
+    var isFinish: Bool {
+        switch self {
+        case .expanding, .draw:
+            return true
+        case _:
+            return false
+        }
+    }
+
+    func symbolOpacity(at indexPath: IndexPath) -> Double {
+        switch self {
+        case .prepare, .slash:
+            return 1
+        case .centering(_, let positions):
+            return positions.contains(indexPath) ? 1 : 0
+        case .expanding(_, let positions):
+            return positions.first == indexPath ? 1 : 0
+        case .draw:
+            return 0
+        }
+    }
 }
 
+// MARK: -
 private struct Slash: Shape, Animatable {
     var ratio: Double, position: Double, angle: Double
     /// 表示割合のみアニメーション可能
@@ -371,6 +402,32 @@ private struct SymbolView: View {
     }
 }
 
+/// 勝敗の結果のタップ
+private struct GameResultTapModifier: ViewModifier {
+    let state: AnimationState
+    let onTap: () -> Void
+    @State private var canTap: Bool = false
+
+    func body(content: Content) -> some View {
+        content
+            .overlay {
+                Color.white.opacity(1/0xFFFF)
+            }
+            .onTapGesture {
+                if canTap {
+                    canTap = false
+                    onTap()
+                }
+            }
+            .onChange(of: state, initial: true) { old, new in
+                guard !old.isFinish && new.isFinish else { return }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                    canTap = true
+                }
+            }
+    }
+}
+
 struct SymbolGridView_Previews: PreviewProvider {
     static var previews: some View {
         Preview()
@@ -378,11 +435,12 @@ struct SymbolGridView_Previews: PreviewProvider {
     }
 
     private struct Preview: View {
+        let drawId = UUID()
         @State var marks: [IndexPath: SymbolType] = [:]
         @State var state: GameState = .ongoing
 
         var body: some View {
-            SymbolGridView(gameState: state, symbols: $marks)
+            SymbolGridView(drawId: drawId, gameState: state, symbols: $marks)
                 .onAppear(perform: update)
                 .backgroundStyle(Color.gray)
         }

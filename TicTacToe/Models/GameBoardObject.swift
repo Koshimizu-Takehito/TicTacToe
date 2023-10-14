@@ -36,8 +36,13 @@ final class GameBoardObject {
         didSet { place() }
     }
 
-    func canPlay() -> Bool {
-        playerRole == .player && gameBoard.checkGameState() == .ongoing
+    func allowsHitTesting() -> Bool {
+        switch gameBoard.checkGameState() {
+        case .win, .draw:
+            return true
+        case .ongoing:
+            return playerRole == .player
+        }
     }
 
     func reset() {
@@ -47,7 +52,7 @@ final class GameBoardObject {
     }
 
     func place(at index: IndexPath) -> Void {
-        guard gameBoard.symbols[index] == .none else { return }
+        guard gameBoard.checkGameState() == .ongoing && gameBoard.symbols[index] == .none else { return }
         // 配置
         gameBoard.symbols[index] = currentPlayer.symbol
 

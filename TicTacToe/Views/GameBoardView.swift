@@ -23,8 +23,14 @@ struct GameBoardView: View {
         ZStack(alignment: .center) {
             LatticeView()
                 .id(drawId)
-            SymbolGridView(gameState: gameBoard.gameState, symbols: $gameBoard.symbols, onTap: gameBoard.place(at:))
-                .allowsHitTesting(gameBoard.canPlay())
+            SymbolGridView(
+                drawId: drawId, 
+                gameState: gameBoard.gameState,
+                symbols: $gameBoard.symbols,
+                onTap: gameBoard.place(at:),
+                onTapGameResult: reset
+            )
+            .allowsHitTesting(gameBoard.allowsHitTesting())
         }
         .frame(width: size, height: size)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
