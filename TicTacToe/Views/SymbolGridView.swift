@@ -12,6 +12,8 @@ struct SymbolGridView: View {
     var onTap: (IndexPath) -> Void = { _ in }
     /// ゲーム勝敗結果時のタップ
     var onTapGameResult: () -> Void = {}
+    /// ゲーム勝敗結果の表示アニメーションの完了
+    var onGameResultAnimationDidFinish: () -> Void = {}
 
     @Namespace private var namespace
     @State private var animationState: AnimationState = .prepare
@@ -176,16 +178,19 @@ private extension SymbolGridView {
         switch new {
         case .ongoing:
             animationState = .prepare
-        case .draw:
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.66) {
-                withAnimation(.custom()) {
-                    animationState = .draw
-                }
-            }
         case .win(let player, let positions):
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.66) {
                 withAnimation(.custom()) {
                     animationState = .slash(player: player, positions: positions)
+                }
+            }
+        case .draw:
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.66) {
+                withAnimation(.custom(duration: 0.5)) {
+                    animationState = .draw
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.4) {
+                    onGameResultAnimationDidFinish()
                 }
             }
         }
@@ -204,6 +209,9 @@ private extension SymbolGridView {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
                 withAnimation(.custom(duration: 0.5)) {
                     animationState = .expanding(player: player, positions: positions)
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                    onGameResultAnimationDidFinish()
                 }
             }
         default:
@@ -234,27 +242,6 @@ private extension SymbolGridView {
             return atan2(y, x)
         case _:
             return 0
-        }
-    }
-}
-
-// MARK: -
-private struct DrawSymbolView: View {
-    let offset: Double
-    @State private var ratio: Double = 1
-
-    var body: some View {
-        HStack(spacing: -offset / 2) {
-            SymbolView(ratio: 1, symbol: .constant(.circle))
-                .offset(x: -1 * ratio * offset)
-            SymbolView(ratio: 1, symbol: .constant(.cross))
-                .offset(x: ratio * offset)
-        }
-        .padding(.horizontal, offset)
-        .onAppear {
-            withAnimation(Animation.spring(response: 0.4, dampingFraction: 0.3)) {
-                ratio = 0
-            }
         }
     }
 }
@@ -367,6 +354,27 @@ private struct Slash: Shape, Animatable {
         path.move(to: ratio * p1 + (1 - ratio) * p3)
         path.addLine(to: ratio * p2 + (1 - ratio) * p3)
         return path
+    }
+}
+
+// MARK: - 引き分けのシンボル
+private struct DrawSymbolView: View {
+    let offset: Double
+    @State private var ratio: Double = 1
+
+    var body: some View {
+        HStack(spacing: -offset / 2) {
+            SymbolView(ratio: 1, symbol: .constant(.circle))
+                .offset(x: -1 * ratio * offset)
+            SymbolView(ratio: 1, symbol: .constant(.cross))
+                .offset(x: ratio * offset)
+        }
+        .padding(.horizontal, offset)
+        .onAppear {
+            withAnimation(Animation.spring(response: 0.4, dampingFraction: 0.3)) {
+                ratio = 0
+            }
+        }
     }
 }
 

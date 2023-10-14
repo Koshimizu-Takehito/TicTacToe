@@ -27,7 +27,8 @@ struct GameBoardView: View {
                 gameState: gameBoard.gameState,
                 symbols: $gameBoard.symbols,
                 onTap: gameBoard.place(at:),
-                onTapGameResult: reset
+                onTapGameResult: restartPlayerGame,
+                onGameResultAnimationDidFinish: restartComputerGame
             )
             .allowsHitTesting(gameBoard.allowsHitTesting())
             .id(drawId)
@@ -43,6 +44,16 @@ struct GameBoardView: View {
         withAnimation(.custom(duration: 1)) {
             gameBoard.reset()
         }
+    }
+
+    func restartPlayerGame() {
+        guard gameBoard.role1 == .player || gameBoard.role2 == .player else { return }
+        reset()
+    }
+
+    func restartComputerGame() {
+        guard gameBoard.role1 != .player && gameBoard.role2 != .player else { return }
+        reset()
     }
 }
 
