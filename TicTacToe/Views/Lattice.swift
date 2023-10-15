@@ -15,7 +15,7 @@ struct LatticeView: View {
 
 /// 格子
 private struct Lattice: View, Animatable {
-    @Environment(\.foreground) private var color
+    @Environment(\.colorPalette.foreground) private var color
     @Environment(\.latticeSpacing) private var lineWidth
     var animatableData: Double
     var ratio: Double { animatableData }
@@ -55,7 +55,7 @@ private struct Lattice: View, Animatable {
                 )
             ]
                 .map { Path(roundedRect: $0, cornerSize: .zero) }
-                .forEach { context.fill($0, with: .color(color)) }
+                .forEach { context.fill($0, with: .color(Color(color))) }
         }
     }
 }

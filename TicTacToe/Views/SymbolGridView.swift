@@ -6,8 +6,8 @@ struct SymbolGridView: View {
     @Binding var symbols: [IndexPath: SymbolType]
     @Environment(\.self) var environment
     @Environment(\.latticeSpacing) private var spacing
-    @Environment(\.symbolColor1) private var color1
-    @Environment(\.symbolColor2) private var color2
+    @Environment(\.colorPalette.check1) private var color1
+    @Environment(\.colorPalette.check2) private var color2
     /// 配置領域のタップ
     var onTap: (IndexPath) -> Void = { _ in }
     /// ゲーム勝敗結果時のタップ
@@ -75,7 +75,7 @@ private extension SymbolGridView {
                     Text("DRAW")
                         .font(.largeTitle)
                         .fontWeight(.black)
-                        .foregroundStyle(Color.screen(environment: environment, color1, color2))
+                        .foregroundStyle(ScreenStyle(color1, color2))
                         .scaleEffect(CGSizeMake(1.8, 1.8))
                 }
                 .padding(.vertical, 2 * offset)
@@ -189,7 +189,7 @@ private extension SymbolGridView {
                 withAnimation(.custom(duration: 0.5)) {
                     animationState = .draw
                 }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.4) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
                     onGameResultAnimationDidFinish()
                 }
             }
@@ -222,7 +222,7 @@ private extension SymbolGridView {
 
 // MARK: -
 private extension SymbolGridView {
-    func foregroundColor(player: Player) -> Color {
+    func foregroundColor(player: Player) -> some ShapeStyle {
         switch player {
         case .player1:
             color1

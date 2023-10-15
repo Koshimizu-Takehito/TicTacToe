@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct TitleButtonStyle: ButtonStyle {
-    var color: Color = .foreground
+    @Environment(\.colorPalette.foreground) private var color
 
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
@@ -14,7 +14,7 @@ struct TitleButtonStyle: ButtonStyle {
 }
 
 struct ActionButtonStyle: ButtonStyle {
-    var color: Color = .foreground
+    @Environment(\.colorPalette.foreground) private var color
 
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
