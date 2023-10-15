@@ -204,4 +204,53 @@ extension ColorPalette {
         check1: 0xF4EBD3,
         check2: 0x004891
     )
+
+    static let royalPurple = ColorPalette(
+        background: 0x9F69D4,
+        foreground: 0x521F83,
+        check1: 0xF4EBD3,
+        check2: 0x34BFBA
+    )
+
+    static let persianGreen = ColorPalette(
+        background: 0x34BFBA,
+        foreground: 0x01706B,
+        check1: 0xF4EBD3,
+        check2: 0x9F69D4
+    )
+
+    static let roman = ColorPalette(
+        background: 0xFA8276,
+        foreground: 0xAF322A,
+        check1: 0xF4EBD3,
+        check2: 0xDCB229
+    )
+
+    static let lima = ColorPalette(
+        background: 0x5FBB2A,
+        foreground: 0x2F8307,
+        check1: 0xF4EBD3,
+        check2: 0x203B34
+    )
+
+    static let gableGreen = ColorPalette(
+        background: 0x40615B,
+        foreground: 0x173029,
+        check1: 0xF4EBD3,
+        check2: 0x86DE4D
+    )
+
+    static let hitPink = ColorPalette(
+        background: 0xF7B086,
+        foreground: 0xC26A40,
+        check1: 0xF4EBD3,
+        check2: 0xDD4859
+    )
+
+    static let froly = ColorPalette(
+        background: 0xFE92A0,
+        foreground: 0xDD4859,
+        check1: 0xF4EBD3,
+        check2: 0xC26A40
+    )
 }
