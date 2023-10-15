@@ -2,6 +2,7 @@ import SwiftUI
 
 struct GameBoardView: View {
     @State private var drawId = UUID()
+    @State private var colorPalette: ColorPalette?
     @State private var gameBoard = GameBoardObject()
 
     var body: some View {
@@ -15,6 +16,7 @@ struct GameBoardView: View {
         .padding()
         .modifier(Background())
         .onAppear(perform: reset)
+        .environment(\.colorPalette, colorPalette ?? .default)
     }
 
     @ViewBuilder
@@ -43,6 +45,15 @@ struct GameBoardView: View {
         drawId = UUID()
         withAnimation(.custom(duration: 1)) {
             gameBoard.reset()
+        }
+
+        switch colorPalette {
+        case .none:
+            colorPalette = .default
+        case .some:
+            withAnimation(.custom(duration: 0.5)) {
+                colorPalette = ColorPalette.allCases.randomElement()!
+            }
         }
     }
 

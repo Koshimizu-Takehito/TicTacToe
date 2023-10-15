@@ -9,6 +9,46 @@ struct ColorPalette: Hashable {
 }
 
 extension ColorPalette {
+    static let allCases: [Self] = [
+        `default`,
+        java,
+        lochmara,
+        fuzzyWuzzyBrown,
+        apricot,
+        brandyPunch,
+        schoolBusYellow,
+        wattle,
+        bunkerLightShade,
+        trueV,
+        romanCoffee,
+        whiskey,
+        ochre,
+        carouselPink,
+        ceriseRed,
+        emerald,
+        revolver,
+        contessa,
+        rodeoDust,
+        redDamask,
+        mauve,
+        astra,
+        shipGrayLightShade,
+        bonJour,
+        haitiLightShade,
+        mulberry,
+        funBlue,
+        carnation,
+        royalPurple,
+        persianGreen,
+        roman,
+        lima,
+        gableGreen,
+        hitPink,
+        froly,
+    ]
+}
+
+extension ColorPalette {
     static let `default` = ColorPalette(
         background: 0x12BDAC,
         foreground: 0x12A192,
