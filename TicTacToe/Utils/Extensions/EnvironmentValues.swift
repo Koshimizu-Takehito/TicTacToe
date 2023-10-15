@@ -22,7 +22,7 @@ extension EnvironmentValues {
 
 extension EnvironmentValues {
     private struct ColorPaletteKey: EnvironmentKey {
-        static let defaultValue: ColorPalette = .default
+        static let defaultValue: ColorPalette = .carouselPink
     }
 
     var colorPalette: ColorPalette {
@@ -30,41 +30,3 @@ extension EnvironmentValues {
         set { self[ColorPaletteKey.self] = newValue }
     }
 }
-//
-//extension EnvironmentValues {
-//    private struct ForegroundKey: EnvironmentKey {
-//        static let defaultValue: Color = .foreground
-//    }
-//
-//    var foreground: Color {
-//        get { self[ForegroundKey.self] }
-//        set { self[ForegroundKey.self] = newValue }
-//    }
-//
-//    private struct BackgroundKey: EnvironmentKey {
-//        static let defaultValue: Color = .background
-//    }
-//
-//    var background: Color {
-//        get { self[BackgroundKey.self] }
-//        set { self[BackgroundKey.self] = newValue }
-//    }
-//
-//    private struct MarkColor1Key: EnvironmentKey {
-//        static let defaultValue: Color = .check1
-//    }
-//
-//    var symbolColor1: Color {
-//        get { self[MarkColor1Key.self] }
-//        set { self[MarkColor1Key.self] = newValue }
-//    }
-//
-//    private struct MarkColor2Key: EnvironmentKey {
-//        static let defaultValue: Color = .check2
-//    }
-//
-//    var symbolColor2: Color {
-//        get { self[MarkColor2Key.self] }
-//        set { self[MarkColor2Key.self] = newValue }
-//    }
-//}
