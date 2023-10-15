@@ -22,7 +22,7 @@ extension EnvironmentValues {
 
 extension EnvironmentValues {
     private struct ColorPaletteKey: EnvironmentKey {
-        static let defaultValue: ColorPalette = .carouselPink
+        static let defaultValue: ColorPalette = .carnation
     }
 
     var colorPalette: ColorPalette {
