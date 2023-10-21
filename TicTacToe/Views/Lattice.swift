@@ -61,7 +61,5 @@ private struct Lattice: View, Animatable {
 }
 
 #Preview {
-    AnimationHelper(start: 0, end: 1) { parameter in
-        Lattice(animatableData: parameter)
-    }
+    Lattice(animatableData: 1)
 }

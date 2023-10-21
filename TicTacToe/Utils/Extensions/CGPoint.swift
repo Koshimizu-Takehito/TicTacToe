@@ -2,8 +2,8 @@ import Foundation
 import CoreGraphics
 
 extension CGPoint {
-    init(radius: Double, theta: Double) {
-        self.init(x: radius * cos(theta), y: radius * sin(theta))
+    init(radius: Double, radian: Double) {
+        self.init(x: radius * cos(radian), y: radius * sin(radian))
     }
 
     static func +(_ lhs: Self, _ rhs: Self) -> Self {

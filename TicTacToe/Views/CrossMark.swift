@@ -26,10 +26,10 @@ struct CrossMark: View {
             let r2 = 4 * r0 * max(ratio - 0.5, 0.0)
 
             let p0 = CGPoint(x: rect.midX, y: rect.midY)
-            let p1 = p0 + CGPoint(radius: r0, theta: 7/4 * .pi)
-            let p2 = p1 + CGPoint(radius: r1, theta: 7/4 * .pi - .pi)
-            let p3 = p0 + CGPoint(radius: r0, theta: 5/4 * .pi)
-            let p4 = p3 + CGPoint(radius: r2, theta: 5/4 * .pi - .pi)
+            let p1 = p0 + CGPoint(radius: r0, radian: 7/4 * .pi)
+            let p2 = p1 + CGPoint(radius: r1, radian: 7/4 * .pi - .pi)
+            let p3 = p0 + CGPoint(radius: r0, radian: 5/4 * .pi)
+            let p4 = p3 + CGPoint(radius: r2, radian: 5/4 * .pi - .pi)
 
             var path = Path()
             path.move(to: p1)
@@ -42,7 +42,5 @@ struct CrossMark: View {
 }
 
 #Preview {
-    AnimationHelper(.spring(duration: 1), start: 0, end: 1) { parameter in
-        CrossMark(ratio: parameter)
-    }
+    CrossMark(ratio: 1)
 }

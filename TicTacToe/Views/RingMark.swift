@@ -31,7 +31,5 @@ struct RingMark: View {
 }
 
 #Preview {
-    AnimationHelper(start: 0, end: 1) { parameter in
-        RingMark(ratio: parameter)
-    }
+    RingMark(ratio: 1)
 }
