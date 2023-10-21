@@ -36,7 +36,7 @@ final class GameBoardObject {
         didSet { place() }
     }
 
-    func isPlayerTurn() -> Bool {
+    func allowsHitTesting() -> Bool {
         switch gameBoard.checkGameState() {
         case .win, .draw:
             return true

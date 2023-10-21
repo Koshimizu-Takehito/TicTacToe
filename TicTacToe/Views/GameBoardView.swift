@@ -32,7 +32,7 @@ struct GameBoardView: View {
                 onTapGameResult: restartPlayerGame,
                 onGameResultAnimationDidFinish: restartComputerGame
             )
-            .allowsHitTesting(gameBoard.isPlayerTurn())
+            .allowsHitTesting(gameBoard.allowsHitTesting())
             .id(drawId)
         }
         .frame(width: size, height: size)
