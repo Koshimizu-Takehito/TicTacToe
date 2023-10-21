@@ -45,15 +45,15 @@ struct ScreenStyle<C1: ShapeStyle, C2: ShapeStyle>: ShapeStyle where C1.Resolved
     }
 
     func resolve(in environment: EnvironmentValues) -> Color.Resolved {
-        func value(_ c1: Float, _ c2: Float) -> Float {
+        func screen(_ c1: Float, _ c2: Float) -> Float {
             1 - ((1 - c1) * (1 - c2))
         }
         let r1 = color1.resolve(in: environment)
         let r2 = color2.resolve(in: environment)
         return .init(
-            red: value(r1.red, r2.red),
-            green: value(r1.green, r2.green),
-            blue: value(r1.blue, r2.blue)
+            red: screen(r1.red, r2.red),
+            green: screen(r1.green, r2.green),
+            blue: screen(r1.blue, r2.blue)
         )
     }
 }
