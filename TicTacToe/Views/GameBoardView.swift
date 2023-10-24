@@ -27,7 +27,7 @@ struct GameBoardView: View {
                 .id(drawId)
             SymbolGridView(
                 gameState: gameBoard.gameState,
-                symbols: $gameBoard.symbols,
+                occupied: $gameBoard.occupied,
                 onTap: gameBoard.place(at:),
                 onTapGameResult: restartPlayerGame,
                 onGameResultAnimationDidFinish: restartComputerGame
@@ -94,8 +94,8 @@ private struct PlayerMenu: View {
 
     @ViewBuilder
     func title(player: Player) -> some View {
-        let role = player == .player1 ? role1 : role2
-        let number = player == .player1 ? "1" : "2"
+        let role = player == .first ? role1 : role2
+        let number = player == .first ? "1" : "2"
         Label("\(role.title)\(number)", systemImage: role.systemImage)
             .fixedSize()
     }
@@ -103,9 +103,9 @@ private struct PlayerMenu: View {
     func select(player: Player, role: PlayerMode) -> () -> Void {
         {
             switch player {
-            case .player1:
+            case .first:
                 role1 = role
-            case .player2:
+            case .second:
                 role2 = role
             }
         }

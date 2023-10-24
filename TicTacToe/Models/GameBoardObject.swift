@@ -8,14 +8,14 @@ final class GameBoardObject {
 
     var role1: PlayerMode = .player {
         didSet {
-            if currentPlayer == .player1 {
+            if currentPlayer == .first {
                 place()
             }
         }
     }
     var role2: PlayerMode = .computer {
         didSet {
-            if currentPlayer == .player2 {
+            if currentPlayer == .second {
                 place()
             }
         }
@@ -25,14 +25,14 @@ final class GameBoardObject {
 
     private var playerRole: PlayerMode {
         switch currentPlayer {
-        case .player1:
+        case .first:
             role1
-        case .player2:
+        case .second:
             role2
         }
     }
 
-    private var currentPlayer: Player = .player1 {
+    private var currentPlayer: Player = .first {
         didSet { place() }
     }
 
@@ -46,15 +46,15 @@ final class GameBoardObject {
     }
 
     func reset() {
-        gameBoard.symbols = [:]
+        gameBoard.occupied = [:]
         gameState = .ongoing
-        currentPlayer = .player1
+        currentPlayer = .first
     }
 
     func place(at index: IndexPath) -> Void {
-        guard gameBoard.checkGameState() == .ongoing && gameBoard.symbols[index] == .none else { return }
+        guard gameBoard.checkGameState() == .ongoing && gameBoard.occupied[index] == .none else { return }
         // 配置
-        gameBoard.symbols[index] = currentPlayer.symbol
+        gameBoard.occupied[index] = currentPlayer
 
         Task.detached { [gameBoard] in
             let gameState = gameBoard.checkGameState()
@@ -93,7 +93,7 @@ private extension GameBoardObject {
         try await waitUntilCalculation { [self] () -> IndexPath? in
             while gameBoard.checkGameState() == .ongoing {
                 let randomPath = IndexPath.randomElement()
-                if gameBoard.symbols[randomPath] == nil {
+                if gameBoard.occupied[randomPath] == nil {
                     return randomPath
                 }
             }
@@ -108,7 +108,7 @@ private extension GameBoardObject {
                 return nil
             }
             // 初期配置はどこでも良いのでランダムに配置する
-            guard !gameBoard.symbols.isEmpty else {
+            guard !gameBoard.occupied.isEmpty else {
                 return .randomElement()
             }
             // Min-Max
@@ -118,7 +118,7 @@ private extension GameBoardObject {
             for i in (0..<3).shuffled() {
                 for j in (0..<3).shuffled() {
                     let indexPath: IndexPath = [i, j]
-                    guard gameBoard.symbols[indexPath] == nil else { continue }
+                    guard gameBoard.occupied[indexPath] == nil else { continue }
                     var copy = gameBoard
                     copy.place(at: indexPath, player: players.me)
                     let score = copy.minMax(current: players.opponent, players: players)
@@ -133,7 +133,7 @@ private extension GameBoardObject {
     }
 
     func waitUntilCalculation(minWaitingTime: Int64 = 660_000_000, calculation: @escaping () -> IndexPath?) async throws {
-        let beforeStates = gameBoard.symbols
+        let beforeStates = gameBoard.occupied
         let startTime = Date.now
         Task.detached {
             if let location = calculation() {
@@ -141,7 +141,7 @@ private extension GameBoardObject {
                 try await Task.sleep(nanoseconds: UInt64(max(minWaitingTime - elapsedTime, 0)))
                 Task { @MainActor [self] in
                     let gameBoard = self.gameBoard
-                    guard gameBoard.symbols == beforeStates else { return }
+                    guard gameBoard.occupied == beforeStates else { return }
                     self.place(at: location)
                 }
             }

@@ -1,22 +1,24 @@
 enum Player: Hashable, CaseIterable {
-    case player1
-    case player2
+    /// 先手
+    case first
+    /// 後手
+    case second
 
-    var symbol: SymbolType {
+    var symbol: Symbol {
         switch self {
-        case .player1:
+        case .first:
             return .circle
-        case .player2:
+        case .second:
             return .cross
         }
     }
 
     var opposite: Player {
         switch self {
-        case .player1:
-            return .player2
-        case .player2:
-            return .player1
+        case .first:
+            return .second
+        case .second:
+            return .first
         }
     }
 

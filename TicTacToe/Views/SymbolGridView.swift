@@ -3,7 +3,8 @@ import SwiftUI
 /// まるばつのシンボルを配置する領域
 struct SymbolGridView: View {
     let gameState: GameState
-    @Binding var symbols: [IndexPath: SymbolType]
+    /// 取得した陣地
+    @Binding var occupied: [IndexPath: Player]
     @Environment(\.self) var environment
     @Environment(\.latticeSpacing) private var spacing
     @Environment(\.colorPalette.check1) private var color1
@@ -30,12 +31,12 @@ struct SymbolGridView: View {
         }
         .transaction { transaction in
             // 盤面リセット時のアニメーションを消す
-            if symbols == [:] {
+            if occupied == [:] {
                 transaction.animation = nil
             }
         }
         .environment(\.symbolLineWidth, symbolLineWidth)
-        .onChange(of: symbols, redraw)
+        .onChange(of: occupied, redraw)
         .onChange(of: gameState, redraw)
         .onChange(of: animationState, redraw)
     }
@@ -142,7 +143,7 @@ private extension SymbolGridView {
                                     .matchedGeometryEffect(id: indexPath, in: namespace, isSource: true)
                             }
                         }
-                        SymbolView(symbol: $symbols[indexPath])
+                        SymbolView(symbol: occupied[indexPath]?.symbol)
                             .onTapGesture { onTap(indexPath) }
                             .matchedGeometryEffect(id: animationState.isCentering || animationState.isExpanding ? indexPath : [], in: namespace, isSource: false)
                             .opacity(animationState.symbolOpacity(at: indexPath))
@@ -167,7 +168,7 @@ private extension SymbolGridView {
 // MARK: - Redraw
 private extension SymbolGridView {
     /// シンボルの配置の状態変更を契機として再描画する
-    func redraw(old: [IndexPath: SymbolType], new: [IndexPath: SymbolType]) {
+    func redraw(old: [IndexPath: Player], new: [IndexPath: Player]) {
         if new == [:] {
             animationState = .prepare
         }
@@ -224,9 +225,9 @@ private extension SymbolGridView {
 private extension SymbolGridView {
     func foregroundColor(player: Player) -> some ShapeStyle {
         switch player {
-        case .player1:
+        case .first:
             color1
-        case .player2:
+        case .second:
             color2
         }
     }
@@ -364,9 +365,9 @@ private struct DrawSymbolView: View {
 
     var body: some View {
         HStack(spacing: -offset / 2) {
-            SymbolView(ratio: 1, symbol: .constant(.circle))
+            SymbolView(ratio: 1, symbol: .circle)
                 .offset(x: -1 * ratio * offset)
-            SymbolView(ratio: 1, symbol: .constant(.cross))
+            SymbolView(ratio: 1, symbol: .cross)
                 .offset(x: ratio * offset)
         }
         .padding(.horizontal, offset)
@@ -380,7 +381,7 @@ private struct DrawSymbolView: View {
 
 private struct SymbolView: View {
     @State var ratio: Double = 0
-    @Binding var symbol: SymbolType?
+    var symbol: Symbol?
 
     var body: some View {
         ZStack {
@@ -435,27 +436,27 @@ struct SymbolGridView_Previews: PreviewProvider {
 
     private struct Preview: View {
         let drawId = UUID()
-        @State var marks: [IndexPath: SymbolType] = [:]
+        @State var marks: [IndexPath: Player] = [:]
         @State var state: GameState = .ongoing
 
         var body: some View {
-            SymbolGridView(gameState: state, symbols: $marks)
+            SymbolGridView(gameState: state, occupied: $marks)
                 .onAppear(perform: update)
                 .backgroundStyle(Color.gray)
         }
 
         func update() {
             Task {
-                let mark: (SymbolType, SymbolType) = (marks[[0, 0]] == .circle)
-                    ? (.cross, .circle)
-                    : (.circle, .cross)
+                let mark: (Player, Player) = (marks[[0, 0]] == .first)
+                    ? (.second, .first)
+                    : (.first, .second)
                 for i in 0...2 {
                     for j in 0...2 {
                         marks[[i, j]] = (i + j) % 2 == 0 ? mark.0 : mark.1
                         try await Task.sleep(nanoseconds: 500_000_000)
                     }
                 }
-                state = .win(.player1, positions: [[0,0], [1,1], [2,2]])
+                state = .win(.first, positions: [[0,0], [1,1], [2,2]])
             }
         }
     }
