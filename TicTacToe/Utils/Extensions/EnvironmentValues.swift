@@ -39,7 +39,6 @@ extension EnvironmentValues {
     }
 }
 
-
 struct PlayerSymbolSetting {
     var symbols: [Player: Symbol] = [
         .first: .circle,
