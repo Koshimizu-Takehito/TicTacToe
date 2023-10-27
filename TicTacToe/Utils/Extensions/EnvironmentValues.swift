@@ -38,3 +38,20 @@ extension EnvironmentValues {
         set { self[ColorPaletteKey.self] = newValue }
     }
 }
+
+
+struct PlayerSymbolSetting {
+    var symbols: [Player: Symbol] = [
+        .first: .circle,
+        .second: .cross,
+    ]
+
+    func symbol(for player: Player) -> Symbol {
+        self[player]
+    }
+
+    subscript(_ player: Player) -> Symbol {
+        get { symbols[player]! }
+        set { symbols[player] = newValue }
+    }
+}

@@ -8,7 +8,7 @@ struct GameBoardView: View {
     var body: some View {
         ZStack {
             VStack {
-                PlayerMenu(role1: $gameBoard.role1, role2: $gameBoard.role2)
+                PlayerMenu(role1: $gameBoard.role1, role2: $gameBoard.role2, symbols: $gameBoard.symbols)
                 GeometryReader(content: board(geometry:))
                 ResetButton(action: reset)
             }
@@ -27,6 +27,7 @@ struct GameBoardView: View {
                 .id(drawId)
             SymbolGridView(
                 gameState: gameBoard.gameState,
+                symbols: gameBoard.symbols,
                 occupied: $gameBoard.occupied,
                 onTap: gameBoard.place(at:),
                 onTapGameResult: restartPlayerGame,

@@ -3,6 +3,7 @@ import SwiftUI
 /// まるばつのシンボルを配置する領域
 struct SymbolGridView: View {
     let gameState: GameState
+    let symbols: PlayerSymbolSetting
     /// 取得した陣地
     @Binding var occupied: [IndexPath: Player]
     @Environment(\.self) var environment
@@ -143,7 +144,7 @@ private extension SymbolGridView {
                                     .matchedGeometryEffect(id: indexPath, in: namespace, isSource: true)
                             }
                         }
-                        SymbolView(symbol: occupied[indexPath]?.symbol)
+                        SymbolView(symbol: occupied[indexPath].map(symbols.symbol(for:)))
                             .onTapGesture { onTap(indexPath) }
                             .matchedGeometryEffect(id: animationState.isCentering || animationState.isExpanding ? indexPath : [], in: namespace, isSource: false)
                             .opacity(animationState.symbolOpacity(at: indexPath))
@@ -440,7 +441,7 @@ struct SymbolGridView_Previews: PreviewProvider {
         @State var state: GameState = .ongoing
 
         var body: some View {
-            SymbolGridView(gameState: state, occupied: $marks)
+            SymbolGridView(gameState: state, symbols: PlayerSymbolSetting(), occupied: $marks)
                 .onAppear(perform: update)
                 .backgroundStyle(Color.gray)
         }

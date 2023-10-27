@@ -3,9 +3,7 @@ import SwiftUI
 struct PlayerMenu: View {
     @Binding var role1: PlayerMode
     @Binding var role2: PlayerMode
-
-    @State var symbol1: Symbol = .circle
-    @State var symbol2: Symbol = .cross
+    @Binding var symbols: PlayerSymbolSetting
 
     var body: some View {
         HStack(spacing: 0) {
@@ -30,11 +28,11 @@ struct PlayerMenu: View {
                         }
                     }
                 } label: {
-                    let (role, symbol) = (player == .first) ? (role1, symbol1) : (role2, symbol2)
+                    let role = player == .first ? role1 : role2
                     Color.clear
                         .frame(height: 0)
                         .overlay {
-                            PlayerMenuLabel(role: role, symbol: symbol)
+                            PlayerMenuLabel(role: role, symbol: symbols[player])
                         }
                         .frame(maxWidth: .infinity)
                 }
@@ -55,14 +53,8 @@ private extension PlayerMenu {
     }
 
     func toggle(symbol: Symbol, player: Player) {
-        switch player {
-        case .first:
-            symbol1 = symbol
-            symbol2 = symbol.opposite
-        case .second:
-            symbol2 = symbol
-            symbol1 = symbol.opposite
-        }
+        symbols[player] = symbol
+        symbols[player.opposite] = symbol.opposite
     }
 }
 
@@ -70,8 +62,9 @@ private extension PlayerMenu {
     struct _View: View {
         @State var role1: PlayerMode = .player
         @State var role2: PlayerMode = .computer
+        @State var symbols = PlayerSymbolSetting()
         var body: some View {
-            PlayerMenu(role1: $role1, role2: $role2)
+            PlayerMenu(role1: $role1, role2: $role2, symbols: $symbols)
         }
     }
     return _View()

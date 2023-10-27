@@ -5,6 +5,7 @@ import Observation
 @dynamicMemberLookup
 final class GameBoardObject {
     private var gameBoard = GameBoard()
+    var symbols = PlayerSymbolSetting()
 
     var role1: PlayerMode = .player {
         didSet {
