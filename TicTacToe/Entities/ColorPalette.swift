@@ -2,10 +2,10 @@ import SwiftUI
 
 // MARK: - ColorPalette
 struct ColorPalette: Hashable {
-    let background: ColorCode
-    let foreground: ColorCode
-    let check1: ColorCode
-    let check2: ColorCode
+    var background: ColorCode
+    var foreground: ColorCode
+    var check1: ColorCode
+    var check2: ColorCode
 }
 
 extension ColorPalette {

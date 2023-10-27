@@ -18,6 +18,9 @@
 		FB1952BE2ABFF1660025BAFB /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1952BD2ABFF1660025BAFB /* Player.swift */; };
 		FB26990C2ADB54DE00712236 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB26990B2ADB54DE00712236 /* ColorPalette.swift */; };
 		FB26990E2ADB555200712236 /* ColorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB26990D2ADB555200712236 /* ColorCode.swift */; };
+		FB8934132AEB9BB300DBAECE /* PlayerMenuIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8934122AEB9BB300DBAECE /* PlayerMenuIcon.swift */; };
+		FB8934152AEB9EBF00DBAECE /* PlayerMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8934142AEB9EBF00DBAECE /* PlayerMenu.swift */; };
+		FB8934182AEBA11B00DBAECE /* PlayerMenuLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8934172AEBA11B00DBAECE /* PlayerMenuLabel.swift */; };
 		FB8AA2202AC775E4000C0314 /* EnvironmentValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8AA21F2AC775E4000C0314 /* EnvironmentValues.swift */; };
 		FB8AA2222AC77FA6000C0314 /* SymbolGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8AA2212AC77FA6000C0314 /* SymbolGridView.swift */; };
 		FB8AA2242AC91849000C0314 /* GameBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8AA2232AC91849000C0314 /* GameBoardView.swift */; };
@@ -63,6 +66,9 @@
 		FB1952BD2ABFF1660025BAFB /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		FB26990B2ADB54DE00712236 /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		FB26990D2ADB555200712236 /* ColorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCode.swift; sourceTree = "<group>"; };
+		FB8934122AEB9BB300DBAECE /* PlayerMenuIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMenuIcon.swift; sourceTree = "<group>"; };
+		FB8934142AEB9EBF00DBAECE /* PlayerMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMenu.swift; sourceTree = "<group>"; };
+		FB8934172AEBA11B00DBAECE /* PlayerMenuLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMenuLabel.swift; sourceTree = "<group>"; };
 		FB8AA21F2AC775E4000C0314 /* EnvironmentValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentValues.swift; sourceTree = "<group>"; };
 		FB8AA2212AC77FA6000C0314 /* SymbolGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolGridView.swift; sourceTree = "<group>"; };
 		FB8AA2232AC91849000C0314 /* GameBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardView.swift; sourceTree = "<group>"; };
@@ -129,6 +135,7 @@
 		FB1952A92ABFD6E00025BAFB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FB8934162AEB9F6700DBAECE /* Menu */,
 				FB9B4E752ABE91F300132FBA /* ContentView.swift */,
 				FB1952B12ABFE1570025BAFB /* CrossMark.swift */,
 				FB8AA2232AC91849000C0314 /* GameBoardView.swift */,
@@ -177,6 +184,16 @@
 				FB1952B82ABFE2E80025BAFB /* Background.swift */,
 			);
 			path = Modifier;
+			sourceTree = "<group>";
+		};
+		FB8934162AEB9F6700DBAECE /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				FB8934142AEB9EBF00DBAECE /* PlayerMenu.swift */,
+				FB8934122AEB9BB300DBAECE /* PlayerMenuIcon.swift */,
+				FB8934172AEBA11B00DBAECE /* PlayerMenuLabel.swift */,
+			);
+			path = Menu;
 			sourceTree = "<group>";
 		};
 		FB8AA2292AC954D2000C0314 /* Models */ = {
@@ -380,6 +397,7 @@
 				FB1952BC2ABFE4C80025BAFB /* Animation.swift in Sources */,
 				FB26990E2ADB555200712236 /* ColorCode.swift in Sources */,
 				FB1952A82ABFD6C90025BAFB /* TitleButtonStyle.swift in Sources */,
+				FB8934182AEBA11B00DBAECE /* PlayerMenuLabel.swift in Sources */,
 				FB1952B52ABFE2A00025BAFB /* SymbolType.swift in Sources */,
 				FBE625972AC97EAE00C945F7 /* PlayerMode.swift in Sources */,
 				FB1952BE2ABFF1660025BAFB /* Player.swift in Sources */,
@@ -388,11 +406,13 @@
 				FB8AA2202AC775E4000C0314 /* EnvironmentValues.swift in Sources */,
 				FB8AA2262AC95432000C0314 /* GameState.swift in Sources */,
 				FB1952A52ABFD6990025BAFB /* CGPoint.swift in Sources */,
+				FB8934132AEB9BB300DBAECE /* PlayerMenuIcon.swift in Sources */,
 				FB8AA2282AC9545B000C0314 /* GameBoard.swift in Sources */,
 				FB9B4E742ABE91F300132FBA /* App.swift in Sources */,
 				FB26990C2ADB54DE00712236 /* ColorPalette.swift in Sources */,
 				FB1952AE2ABFD76D0025BAFB /* RingMark.swift in Sources */,
 				FB8AA2242AC91849000C0314 /* GameBoardView.swift in Sources */,
+				FB8934152AEB9EBF00DBAECE /* PlayerMenu.swift in Sources */,
 				FB8AA2222AC77FA6000C0314 /* SymbolGridView.swift in Sources */,
 				FB1952AB2ABFD6F60025BAFB /* Lattice.swift in Sources */,
 				FB1952B22ABFE1570025BAFB /* CrossMark.swift in Sources */,

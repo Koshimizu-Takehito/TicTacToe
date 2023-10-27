@@ -40,7 +40,9 @@ struct GameBoardView: View {
         .environment(\.latticeSpacing, size/40)
         .environment(\.symbolLineWidth, size/40)
     }
+}
 
+private extension GameBoardView {
     func reset() {
         drawId = UUID()
         withAnimation(.custom(duration: 1)) {
@@ -65,50 +67,6 @@ struct GameBoardView: View {
     func restartComputerGame() {
         guard gameBoard.role1 != .player && gameBoard.role2 != .player else { return }
         reset()
-    }
-}
-
-private struct PlayerMenu: View {
-    @Binding var role1: PlayerMode
-    @Binding var role2: PlayerMode
-
-    var body: some View {
-        HStack {
-            ForEach(Player.allCases, id: \.self, content: menu(player:))
-        }
-        .buttonStyle(ActionButtonStyle())
-    }
-
-    func menu(player: Player) -> some View {
-        Menu {
-            ForEach(PlayerMode.allCases, id: \.self) { role in
-                Button(action: select(player: player, role: role), label: role.label)
-            }
-        } label: {
-            Color.clear
-                .frame(height: 0)
-                .padding()
-                .overlay { title(player: player) }
-        }
-    }
-
-    @ViewBuilder
-    func title(player: Player) -> some View {
-        let role = player == .first ? role1 : role2
-        let number = player == .first ? "1" : "2"
-        Label("\(role.title)\(number)", systemImage: role.systemImage)
-            .fixedSize()
-    }
-
-    func select(player: Player, role: PlayerMode) -> () -> Void {
-        {
-            switch player {
-            case .first:
-                role1 = role
-            case .second:
-                role2 = role
-            }
-        }
     }
 }
 
