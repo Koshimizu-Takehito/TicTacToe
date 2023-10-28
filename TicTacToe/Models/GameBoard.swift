@@ -108,11 +108,11 @@ private extension GameBoard {
             case .random:
                 try await placeAtRandom()
             case .computer(.easy):
-                try await placeByAI()
+                try await placeByEasyAI()
             case .computer(.medium):
-                try await placeByAI()
+                try await placeByHardAI()
             case .computer(.hard):
-                try await placeByAI()
+                try await placeByHardAI()
             }
         }
     }
@@ -131,7 +131,38 @@ private extension GameBoard {
     }
 
     /// アルゴリズムによって配置する
-    func placeByAI() async throws {
+    func placeByEasyAI() async throws {
+        try await waitUntilCalculation { [self] () -> IndexPath? in
+            guard gameBoard.checkGameState() == .ongoing else {
+                return nil
+            }
+            // 初期配置はどこでも良いのでランダムに配置する
+            guard !gameBoard.occupied.isEmpty else {
+                return .randomElement()
+            }
+            // Min-Max
+            let players = (me: currentPlayer, opponent: currentPlayer.opposite)
+            var worstPlace = IndexPath?.none
+            var worstScore = Int.max
+            for i in (0..<3).shuffled() {
+                for j in (0..<3).shuffled() {
+                    let indexPath: IndexPath = [i, j]
+                    guard gameBoard.occupied[indexPath] == nil else { continue }
+                    var copy = gameBoard
+                    copy.place(at: indexPath, player: players.me)
+                    let score = copy.minMax(current: players.opponent, players: players)
+                    if score < worstScore {
+                        worstScore = score
+                        worstPlace = indexPath
+                    }
+                }
+            }
+            return worstPlace
+        }
+    }
+
+    /// アルゴリズムによって配置する
+    func placeByHardAI() async throws {
         try await waitUntilCalculation { [self] () -> IndexPath? in
             guard gameBoard.checkGameState() == .ongoing else {
                 return nil
