@@ -14,5 +14,5 @@ struct PlayerMenuTitle: View {
 }
 
 #Preview {
-    PlayerMenuTitle(mode: .player)
+    PlayerMenuTitle(mode: .computer(.hard))
 }

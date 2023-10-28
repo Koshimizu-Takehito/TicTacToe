@@ -24,7 +24,7 @@ private extension PlayerMenuLabel {
     }
 }
 
-private struct PlayerMenuLabelStyle: LabelStyle {
+struct PlayerMenuLabelStyle: LabelStyle {
     @Environment(\.colorPalette.foreground) private var color
 
     func makeBody(configuration: Configuration) -> some View {
