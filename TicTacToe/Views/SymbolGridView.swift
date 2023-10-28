@@ -2,11 +2,11 @@ import SwiftUI
 
 /// まるばつのシンボルを配置する領域
 struct SymbolGridView: View {
-    @Environment(GameBoard.self) private var gameBoard
     @Environment(\.self) var environment
     @Environment(\.latticeSpacing) private var spacing
     @Environment(\.colorPalette.check1) private var color1
     @Environment(\.colorPalette.check2) private var color2
+    @Environment(GameBoard.self) private var gameBoard
 
     /// ゲーム勝敗結果時のタップ
     var onTapGameResult: () -> Void = {}
@@ -452,7 +452,7 @@ struct SymbolGridView_Previews: PreviewProvider {
             SymbolGridView()
                 .onAppear(perform: update)
                 .background()
-                .backgroundStyle(Color.gray)
+                .backgroundStyle(Color.orange)
                 .environment(gameBoard)
         }
 
