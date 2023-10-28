@@ -110,7 +110,7 @@ private extension GameBoard {
             case .computer(.easy):
                 try await placeByEasyAI()
             case .computer(.medium):
-                try await placeByHardAI()
+                try await placeByMediumAI()
             case .computer(.hard):
                 try await placeByHardAI()
             }
@@ -158,6 +158,17 @@ private extension GameBoard {
                 }
             }
             return worstPlace
+        }
+    }
+
+    func placeByMediumAI() async throws {
+        let p = 10 * max(10 - gameBoard.occupied.count, 0)
+        if Int.random(in: 0..<100) < p {
+            try await placeByHardAI()
+        } else if Bool.random() {
+            try await placeAtRandom()
+        } else {
+            try await placeByEasyAI()
         }
     }
 
