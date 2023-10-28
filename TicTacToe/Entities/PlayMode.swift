@@ -9,11 +9,11 @@ enum Difficulty: Hashable, CaseIterable {
     var title: String {
         switch self {
         case .easy:
-            "Easy"
+            String(localized: "Easy")
         case .medium:
-            "Medium"
+            String(localized: "Medium")
         case .hard:
-            "Hard"
+            String(localized: "Hard")
         }
     }
 
@@ -61,11 +61,11 @@ extension PlayMode {
     var title: String {
         switch self {
         case .player:
-            "Player"
+            String(localized: "Player")
         case .random:
-            "Random"
+            String(localized: "Random")
         case .computer:
-            "Computer"
+            String(localized: "Computer")
         }
     }
 
