@@ -7,7 +7,7 @@ struct PlayerMenuLabel: View {
     var body: some View {
         Label(
             title: { Text("\(role.title)") },
-            icon: { PlayerMenuIcon(symbol: symbol) }
+            icon: { PlayerMenuIcon(symbol: gameBoard.symbols[player]) }
         )
         .fixedSize()
         .labelStyle(PlayerMenuLabelStyle())
@@ -17,10 +17,6 @@ struct PlayerMenuLabel: View {
 private extension PlayerMenuLabel {
     var role: PlayerMode {
         player == .first ? gameBoard.role1 : gameBoard.role2
-    }
-
-    var symbol: Symbol {
-        gameBoard.symbols[player]
     }
 }
 

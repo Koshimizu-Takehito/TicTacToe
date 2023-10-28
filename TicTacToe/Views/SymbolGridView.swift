@@ -140,7 +140,7 @@ private extension SymbolGridView {
                                     .matchedGeometryEffect(id: indexPath, in: namespace, isSource: true)
                             }
                         }
-                        SymbolView(symbol: gameBoard.occupied[indexPath].map(gameBoard.symbols.symbol(for:)))
+                        SymbolView(symbol: gameBoard.symbol(at: indexPath))
                             .onTapGesture { gameBoard.place(at: indexPath) }
                             .matchedGeometryEffect(id: animationState.isCentering || animationState.isExpanding ? indexPath : [], in: namespace, isSource: false)
                             .opacity(animationState.symbolOpacity(at: indexPath))
@@ -429,32 +429,25 @@ struct SymbolGridView_Previews: PreviewProvider {
     static var previews: some View {
         Preview()
             .frame(width: 330, height: 330)
-            .environment(GameBoard())
+
     }
 
     private struct Preview: View {
         let drawId = UUID()
-        @State var marks: [IndexPath: Player] = [:]
-        @State var state: GameState = .ongoing
+        @State var gameBoard = GameBoard()
 
         var body: some View {
             SymbolGridView()
                 .onAppear(perform: update)
+                .background()
                 .backgroundStyle(Color.gray)
+                .environment(gameBoard)
         }
 
         func update() {
             Task {
-                let mark: (Player, Player) = (marks[[0, 0]] == .first)
-                    ? (.second, .first)
-                    : (.first, .second)
-                for i in 0...2 {
-                    for j in 0...2 {
-                        marks[[i, j]] = (i + j) % 2 == 0 ? mark.0 : mark.1
-                        try await Task.sleep(nanoseconds: 500_000_000)
-                    }
-                }
-                state = .win(.first, positions: [[0,0], [1,1], [2,2]])
+                gameBoard.role1 = .computer
+                gameBoard.role2 = .computer
             }
         }
     }
