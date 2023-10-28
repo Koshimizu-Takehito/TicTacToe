@@ -150,15 +150,12 @@ private extension SymbolGridView {
                             )
                             .opacity(animationState.symbolOpacity(at: indexPath))
                             .sensoryFeedback(.success, trigger: gameBoard.occupied[indexPath]) { old, new in
-                                guard old == nil else {
-                                    return false
-                                }
-                                switch new {
-                                case .first:
+                                switch (old, new) {
+                                case (.none, .first):
                                     return gameBoard.role1 == .player
-                                case .second:
+                                case (.none, .second):
                                     return gameBoard.role2 == .player
-                                case .none:
+                                case _:
                                     return false
                                 }
                             }
