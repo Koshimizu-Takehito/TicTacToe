@@ -45,7 +45,7 @@ extension EnvironmentValues {
     private struct PlayerSettingKey: EnvironmentKey {
         static let defaultValue: [Player: PlayerSetting] = [
             .first:  PlayerSetting(mode: .player, symbol: .circle),
-            .second: PlayerSetting(mode: .computer, symbol: .cross),
+            .second: PlayerSetting(mode: .computer(.medium), symbol: .cross),
         ]
     }
 
@@ -57,7 +57,7 @@ extension EnvironmentValues {
 }
 
 struct PlayerSetting {
-    var mode: PlayerMode
+    var mode: PlayMode
     var symbol: Symbol
 }
 

@@ -15,7 +15,7 @@ struct PlayerMenuLabel: View {
 }
 
 private extension PlayerMenuLabel {
-    var role: PlayerMode {
+    var role: PlayMode {
         player == .first ? gameBoard.role1 : gameBoard.role2
     }
 }

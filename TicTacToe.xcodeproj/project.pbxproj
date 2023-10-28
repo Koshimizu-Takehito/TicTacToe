@@ -34,7 +34,7 @@
 		FB9B4E862ABE91F500132FBA /* TicTacToeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9B4E852ABE91F500132FBA /* TicTacToeTests.swift */; };
 		FB9B4E902ABE91F500132FBA /* TicTacToeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9B4E8F2ABE91F500132FBA /* TicTacToeUITests.swift */; };
 		FB9B4E922ABE91F500132FBA /* TicTacToeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9B4E912ABE91F500132FBA /* TicTacToeUITestsLaunchTests.swift */; };
-		FBE625972AC97EAE00C945F7 /* PlayerMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE625962AC97EAE00C945F7 /* PlayerMode.swift */; };
+		FBE625972AC97EAE00C945F7 /* PlayMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE625962AC97EAE00C945F7 /* PlayMode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,7 +86,7 @@
 		FB9B4E8B2ABE91F500132FBA /* TicTacToeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TicTacToeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB9B4E8F2ABE91F500132FBA /* TicTacToeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeUITests.swift; sourceTree = "<group>"; };
 		FB9B4E912ABE91F500132FBA /* TicTacToeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		FBE625962AC97EAE00C945F7 /* PlayerMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMode.swift; sourceTree = "<group>"; };
+		FBE625962AC97EAE00C945F7 /* PlayMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayMode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,7 +162,7 @@
 				FB8AA2272AC9545B000C0314 /* GameBoardLogic.swift */,
 				FB8AA2252AC95432000C0314 /* GameState.swift */,
 				FB1952BD2ABFF1660025BAFB /* Player.swift */,
-				FBE625962AC97EAE00C945F7 /* PlayerMode.swift */,
+				FBE625962AC97EAE00C945F7 /* PlayMode.swift */,
 				FB1952B42ABFE2A00025BAFB /* SymbolType.swift */,
 			);
 			path = Entities;
@@ -399,7 +399,7 @@
 				FB1952A82ABFD6C90025BAFB /* TitleButtonStyle.swift in Sources */,
 				FB8934182AEBA11B00DBAECE /* PlayerMenuLabel.swift in Sources */,
 				FB1952B52ABFE2A00025BAFB /* SymbolType.swift in Sources */,
-				FBE625972AC97EAE00C945F7 /* PlayerMode.swift in Sources */,
+				FBE625972AC97EAE00C945F7 /* PlayMode.swift in Sources */,
 				FB1952BE2ABFF1660025BAFB /* Player.swift in Sources */,
 				FB8AA22B2AC954DB000C0314 /* GameBoard.swift in Sources */,
 				FB9B4E762ABE91F300132FBA /* ContentView.swift in Sources */,

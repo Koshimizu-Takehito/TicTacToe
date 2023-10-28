@@ -458,8 +458,8 @@ struct SymbolGridView_Previews: PreviewProvider {
 
         func update() {
             Task {
-                gameBoard.role1 = .computer
-                gameBoard.role2 = .computer
+                gameBoard.role1 = .computer(.medium)
+                gameBoard.role2 = .computer(.medium)
             }
         }
     }

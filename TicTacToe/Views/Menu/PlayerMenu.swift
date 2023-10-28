@@ -7,14 +7,30 @@ struct PlayerMenu: View {
         HStack(spacing: 0) {
             ForEach(Player.allCases, id: \.self) { player in
                 Menu {
-                    // 難易度選択
-                    ForEach(PlayerMode.allCases, id: \.self) { role in
-                        Button {
-                            select(player: player, role: role)
-                        } label: {
-                            Label(role.title, systemImage: role.systemImage)
+                    // モード選択
+                    Group {
+                        ForEach([PlayMode.player, PlayMode.random], id: \.self) { mode in
+                            Button {
+                                select(player: player, role: mode)
+                            } label: {
+                                Label(mode.title, systemImage: mode.systemImage)
+                            }
                         }
                     }
+                    // Computer 難易度選択
+                    Menu {
+                        ForEach(Difficulty.allCases, id: \.self) { difficulty in
+                            let mode = PlayMode.computer(difficulty)
+                            Button {
+                                select(player: player, role: mode)
+                            } label: {
+                                Label(difficulty.title, systemImage: difficulty.systemImage)
+                            }
+                        }
+                    } label: {
+                        Label("Computer", systemImage: "x.squareroot")
+                    }
+
                     // シンボル選択
                     ControlGroup {
                         ForEach(Symbol.allCases, id: \.self) { symbol in
@@ -38,7 +54,7 @@ struct PlayerMenu: View {
 }
 
 private extension PlayerMenu {
-    func select(player: Player, role: PlayerMode) {
+    func select(player: Player, role: PlayMode) {
         switch player {
         case .first:
             gameBoard.role1 = role
@@ -55,8 +71,8 @@ private extension PlayerMenu {
 
 #Preview {
     struct _View: View {
-        @State var role1: PlayerMode = .player
-        @State var role2: PlayerMode = .computer
+        @State var role1: PlayMode = .player
+        @State var role2: PlayMode = .computer(.medium)
         @State var symbols = PlayerSymbolSetting()
         var body: some View {
             PlayerMenu()

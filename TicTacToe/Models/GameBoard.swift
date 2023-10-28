@@ -7,14 +7,14 @@ final class GameBoard {
     private var gameBoard = GameBoardLogic()
     var symbols = PlayerSymbolSetting()
 
-    var role1: PlayerMode = .player {
+    var role1: PlayMode = .player {
         didSet {
             if currentPlayer == .first {
                 place()
             }
         }
     }
-    var role2: PlayerMode = .computer {
+    var role2: PlayMode = .computer(.medium) {
         didSet {
             if currentPlayer == .second {
                 place()
@@ -24,7 +24,7 @@ final class GameBoard {
 
     private(set) var gameState: GameState = .ongoing
 
-    private var playerRole: PlayerMode {
+    private var playerRole: PlayMode {
         switch currentPlayer {
         case .first:
             role1
