@@ -6,11 +6,21 @@ struct PlayerMenuLabel: View {
 
     var body: some View {
         Label(
-            title: { Text("\(role.title)") },
+            title: { title },
             icon: { PlayerMenuIcon(symbol: gameBoard.symbols[player]) }
         )
         .fixedSize()
         .labelStyle(PlayerMenuLabelStyle())
+    }
+
+    @ViewBuilder
+    var title: some View {
+        switch role {
+        case .computer(let difficulty):
+            Text("\(role.title) \(difficulty.level)")
+        default:
+            Text("\(role.title)")
+        }
     }
 }
 
@@ -34,6 +44,9 @@ private struct PlayerMenuLabelStyle: LabelStyle {
 }
 
 #Preview {
-    PlayerMenuLabel(player: .first)
-        .environment(GameBoard())
+    var gameBoard = GameBoard()
+    gameBoard.symbols[.first] = .cross
+    gameBoard.role1 = .computer(.easy)
+    return PlayerMenuLabel(player: .first)
+        .environment(gameBoard)
 }

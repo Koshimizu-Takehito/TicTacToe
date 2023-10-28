@@ -1,6 +1,22 @@
 import SwiftUI
 import Observation
 
+struct PlayerSymbolSetting {
+    var symbols: [Player: Symbol] = [
+        .first: .circle,
+        .second: .cross,
+    ]
+
+    func symbol(for player: Player) -> Symbol {
+        self[player]
+    }
+
+    subscript(_ player: Player) -> Symbol {
+        get { symbols[player]! }
+        set { symbols[player] = newValue }
+    }
+}
+
 @Observable
 @dynamicMemberLookup
 final class GameBoard {
@@ -91,7 +107,11 @@ private extension GameBoard {
                 break
             case .random:
                 try await placeAtRandom()
-            case .computer:
+            case .computer(.easy):
+                try await placeByAI()
+            case .computer(.medium):
+                try await placeByAI()
+            case .computer(.hard):
                 try await placeByAI()
             }
         }

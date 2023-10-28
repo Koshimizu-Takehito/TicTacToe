@@ -27,6 +27,17 @@ enum Difficulty: Hashable, CaseIterable {
             "3.square.fill"
         }
     }
+
+    var level: Int {
+        switch self {
+        case .easy:
+            1
+        case .medium:
+            2
+        case .hard:
+            3
+        }
+    }
 }
 
 // MARK: - PlayMode
