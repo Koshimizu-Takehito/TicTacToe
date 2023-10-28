@@ -3,8 +3,8 @@ import Observation
 
 @Observable
 @dynamicMemberLookup
-final class GameBoardObject {
-    private var gameBoard = GameBoard()
+final class GameBoard {
+    private var gameBoard = GameBoardLogic()
     var symbols = PlayerSymbolSetting()
 
     var role1: PlayerMode = .player {
@@ -69,13 +69,13 @@ final class GameBoardObject {
         }
     }
 
-    subscript<V>(dynamicMember keyPath: WritableKeyPath<GameBoard, V>) -> V {
+    subscript<V>(dynamicMember keyPath: WritableKeyPath<GameBoardLogic, V>) -> V {
         get { gameBoard[keyPath: keyPath] }
         set { gameBoard[keyPath: keyPath] = newValue }
     }
 }
 
-private extension GameBoardObject {
+private extension GameBoard {
     func place() {
         Task.detached { [self] in
             switch playerRole {

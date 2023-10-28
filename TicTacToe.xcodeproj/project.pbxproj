@@ -25,8 +25,8 @@
 		FB8AA2222AC77FA6000C0314 /* SymbolGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8AA2212AC77FA6000C0314 /* SymbolGridView.swift */; };
 		FB8AA2242AC91849000C0314 /* GameBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8AA2232AC91849000C0314 /* GameBoardView.swift */; };
 		FB8AA2262AC95432000C0314 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8AA2252AC95432000C0314 /* GameState.swift */; };
-		FB8AA2282AC9545B000C0314 /* GameBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8AA2272AC9545B000C0314 /* GameBoard.swift */; };
-		FB8AA22B2AC954DB000C0314 /* GameBoardObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8AA22A2AC954DB000C0314 /* GameBoardObject.swift */; };
+		FB8AA2282AC9545B000C0314 /* GameBoardLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8AA2272AC9545B000C0314 /* GameBoardLogic.swift */; };
+		FB8AA22B2AC954DB000C0314 /* GameBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8AA22A2AC954DB000C0314 /* GameBoard.swift */; };
 		FB9B4E742ABE91F300132FBA /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9B4E732ABE91F300132FBA /* App.swift */; };
 		FB9B4E762ABE91F300132FBA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9B4E752ABE91F300132FBA /* ContentView.swift */; };
 		FB9B4E782ABE91F500132FBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB9B4E772ABE91F500132FBA /* Assets.xcassets */; };
@@ -73,8 +73,8 @@
 		FB8AA2212AC77FA6000C0314 /* SymbolGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolGridView.swift; sourceTree = "<group>"; };
 		FB8AA2232AC91849000C0314 /* GameBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardView.swift; sourceTree = "<group>"; };
 		FB8AA2252AC95432000C0314 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
-		FB8AA2272AC9545B000C0314 /* GameBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoard.swift; sourceTree = "<group>"; };
-		FB8AA22A2AC954DB000C0314 /* GameBoardObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardObject.swift; sourceTree = "<group>"; };
+		FB8AA2272AC9545B000C0314 /* GameBoardLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardLogic.swift; sourceTree = "<group>"; };
+		FB8AA22A2AC954DB000C0314 /* GameBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoard.swift; sourceTree = "<group>"; };
 		FB9B4E702ABE91F300132FBA /* TicTacToe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacToe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB9B4E732ABE91F300132FBA /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		FB9B4E752ABE91F300132FBA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -159,7 +159,7 @@
 			children = (
 				FB26990D2ADB555200712236 /* ColorCode.swift */,
 				FB26990B2ADB54DE00712236 /* ColorPalette.swift */,
-				FB8AA2272AC9545B000C0314 /* GameBoard.swift */,
+				FB8AA2272AC9545B000C0314 /* GameBoardLogic.swift */,
 				FB8AA2252AC95432000C0314 /* GameState.swift */,
 				FB1952BD2ABFF1660025BAFB /* Player.swift */,
 				FBE625962AC97EAE00C945F7 /* PlayerMode.swift */,
@@ -199,7 +199,7 @@
 		FB8AA2292AC954D2000C0314 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FB8AA22A2AC954DB000C0314 /* GameBoardObject.swift */,
+				FB8AA22A2AC954DB000C0314 /* GameBoard.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -401,13 +401,13 @@
 				FB1952B52ABFE2A00025BAFB /* SymbolType.swift in Sources */,
 				FBE625972AC97EAE00C945F7 /* PlayerMode.swift in Sources */,
 				FB1952BE2ABFF1660025BAFB /* Player.swift in Sources */,
-				FB8AA22B2AC954DB000C0314 /* GameBoardObject.swift in Sources */,
+				FB8AA22B2AC954DB000C0314 /* GameBoard.swift in Sources */,
 				FB9B4E762ABE91F300132FBA /* ContentView.swift in Sources */,
 				FB8AA2202AC775E4000C0314 /* EnvironmentValues.swift in Sources */,
 				FB8AA2262AC95432000C0314 /* GameState.swift in Sources */,
 				FB1952A52ABFD6990025BAFB /* CGPoint.swift in Sources */,
 				FB8934132AEB9BB300DBAECE /* PlayerMenuIcon.swift in Sources */,
-				FB8AA2282AC9545B000C0314 /* GameBoard.swift in Sources */,
+				FB8AA2282AC9545B000C0314 /* GameBoardLogic.swift in Sources */,
 				FB9B4E742ABE91F300132FBA /* App.swift in Sources */,
 				FB26990C2ADB54DE00712236 /* ColorPalette.swift in Sources */,
 				FB1952AE2ABFD76D0025BAFB /* RingMark.swift in Sources */,

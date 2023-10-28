@@ -2,7 +2,7 @@ import SwiftUI
 
 struct PlayerMenuLabel: View {
     let player: Player
-    @Environment(GameBoardObject.self) private var gameBoard
+    @Environment(GameBoard.self) private var gameBoard
 
     var body: some View {
         Label(
@@ -39,5 +39,5 @@ private struct PlayerMenuLabelStyle: LabelStyle {
 
 #Preview {
     PlayerMenuLabel(player: .first)
-        .environment(GameBoardObject())
+        .environment(GameBoard())
 }

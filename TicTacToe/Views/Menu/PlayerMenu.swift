@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct PlayerMenu: View {
-    @Environment(GameBoardObject.self) private var gameBoard
+    @Environment(GameBoard.self) private var gameBoard
 
     var body: some View {
         HStack(spacing: 0) {
@@ -63,5 +63,5 @@ private extension PlayerMenu {
         }
     }
     return _View()
-        .environment(GameBoardObject())
+        .environment(GameBoard())
 }

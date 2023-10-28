@@ -3,7 +3,7 @@ import SwiftUI
 struct GameBoardView: View {
     @State private var drawId = UUID()
     @State private var colorPalette: ColorPalette?
-    @Environment(GameBoardObject.self) private var gameBoard
+    @Environment(GameBoard.self) private var gameBoard
 
     var body: some View {
         ZStack {
@@ -88,5 +88,5 @@ private extension Optional<ColorPalette> {
 
 #Preview {
     GameBoardView()
-        .environment(GameBoardObject())
+        .environment(GameBoard())
 }

@@ -14,7 +14,7 @@ private let checkPositions: [[IndexPath]] = [
     [[0, 2], [1, 1], [2, 0]]
 ]
 
-struct GameBoard {
+struct GameBoardLogic {
     /// 取った陣地
     var occupied: [IndexPath: Player] = [:]
 

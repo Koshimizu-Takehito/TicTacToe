@@ -2,7 +2,7 @@ import SwiftUI
 
 /// まるばつのシンボルを配置する領域
 struct SymbolGridView: View {
-    @Environment(GameBoardObject.self) private var gameBoard
+    @Environment(GameBoard.self) private var gameBoard
     @Environment(\.self) var environment
     @Environment(\.latticeSpacing) private var spacing
     @Environment(\.colorPalette.check1) private var color1
@@ -429,7 +429,7 @@ struct SymbolGridView_Previews: PreviewProvider {
     static var previews: some View {
         Preview()
             .frame(width: 330, height: 330)
-            .environment(GameBoardObject())
+            .environment(GameBoard())
     }
 
     private struct Preview: View {
