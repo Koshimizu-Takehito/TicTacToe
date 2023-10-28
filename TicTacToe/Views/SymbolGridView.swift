@@ -144,8 +144,24 @@ private extension SymbolGridView {
                         }
                         SymbolView(symbol: gameBoard.symbol(at: indexPath))
                             .onTapGesture { gameBoard.place(at: indexPath) }
-                            .matchedGeometryEffect(id: animationState.isCentering || animationState.isExpanding ? indexPath : [], in: namespace, isSource: false)
+                            .matchedGeometryEffect(
+                                id: animationState.isCentering || animationState.isExpanding ? indexPath : [],
+                                in: namespace, isSource: false
+                            )
                             .opacity(animationState.symbolOpacity(at: indexPath))
+                            .sensoryFeedback(.success, trigger: gameBoard.occupied[indexPath]) { old, new in
+                                guard old == nil else {
+                                    return false
+                                }
+                                switch new {
+                                case .first:
+                                    return gameBoard.role1 == .player
+                                case .second:
+                                    return gameBoard.role2 == .player
+                                case .none:
+                                    return false
+                                }
+                            }
                     }
                 }
             }
