@@ -20,6 +20,8 @@ struct SymbolGridView: View {
         ZStack {
             // まるばつのシンボル
             Grid(horizontalSpacing: spacing, verticalSpacing: spacing, content: symbolRows)
+                .environment(\.colorPalette.check1, symbolColor(for: .first))
+                .environment(\.colorPalette.check2, symbolColor(for: .second))
             // 勝利時のスラッシュ
             Group(content: slash)
             // 勝敗の結果
@@ -226,6 +228,16 @@ private extension SymbolGridView {
             color1
         case .second:
             color2
+        }
+    }
+
+    func symbolColor(for player: Player) -> ColorCode {
+        let symbol = gameBoard.symbol(for: player)
+        switch symbol {
+        case .circle:
+            return color1
+        default:
+            return color2
         }
     }
 

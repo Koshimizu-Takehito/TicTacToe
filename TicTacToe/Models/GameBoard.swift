@@ -41,6 +41,10 @@ final class GameBoard {
         gameBoard.occupied[indexPath].map(symbols.symbol(for:))
     }
 
+    func symbol(for player: Player) -> Symbol? {
+        symbols.symbol(for: player)
+    }
+
     func allowsHitTesting() -> Bool {
         switch gameBoard.checkGameState() {
         case .win, .draw:
