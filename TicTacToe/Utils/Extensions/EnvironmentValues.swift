@@ -39,6 +39,28 @@ extension EnvironmentValues {
     }
 }
 
+// MARK: - 設定
+extension EnvironmentValues {
+    /// 設定
+    private struct PlayerSettingKey: EnvironmentKey {
+        static let defaultValue: [Player: PlayerSetting] = [
+            .first:  PlayerSetting(mode: .player, symbol: .circle),
+            .second: PlayerSetting(mode: .computer, symbol: .cross),
+        ]
+    }
+
+    /// 設定
+    var playerSettings: [Player: PlayerSetting] {
+        get { self[PlayerSettingKey.self] }
+        set { self[PlayerSettingKey.self] = newValue }
+    }
+}
+
+struct PlayerSetting {
+    var mode: PlayerMode
+    var symbol: Symbol
+}
+
 struct PlayerSymbolSetting {
     var symbols: [Player: Symbol] = [
         .first: .circle,

@@ -2,16 +2,12 @@ import SwiftUI
 
 /// まるばつのシンボルを配置する領域
 struct SymbolGridView: View {
-    let gameState: GameState
-    let symbols: PlayerSymbolSetting
-    /// 取得した陣地
-    @Binding var occupied: [IndexPath: Player]
+    @Environment(GameBoardObject.self) private var gameBoard
     @Environment(\.self) var environment
     @Environment(\.latticeSpacing) private var spacing
     @Environment(\.colorPalette.check1) private var color1
     @Environment(\.colorPalette.check2) private var color2
-    /// 配置領域のタップ
-    var onTap: (IndexPath) -> Void = { _ in }
+
     /// ゲーム勝敗結果時のタップ
     var onTapGameResult: () -> Void = {}
     /// ゲーム勝敗結果の表示アニメーションの完了
@@ -32,13 +28,13 @@ struct SymbolGridView: View {
         }
         .transaction { transaction in
             // 盤面リセット時のアニメーションを消す
-            if occupied == [:] {
+            if gameBoard.occupied == [:] {
                 transaction.animation = nil
             }
         }
         .environment(\.symbolLineWidth, symbolLineWidth)
-        .onChange(of: occupied, redraw)
-        .onChange(of: gameState, redraw)
+        .onChange(of: gameBoard.occupied, redraw)
+        .onChange(of: gameBoard.gameState, redraw)
         .onChange(of: animationState, redraw)
     }
 }
@@ -47,13 +43,13 @@ private extension SymbolGridView {
     /// ゲームの勝敗結果
     @ViewBuilder
     func gameResult() -> some View {
-        if case .win = gameState {
+        if case .win = gameBoard.gameState {
             // matchedGeometryEffect のためのダミーのビュー
             Color.clear
                 .matchedGeometryEffect(id: "center", in: namespace, isSource: true)
         }
 
-        switch (gameState, animationState) {
+        switch (gameBoard.gameState, animationState) {
         case (.win, .expanding(let winner, let positions)):
             VStack {
                 ZStack {
@@ -144,8 +140,8 @@ private extension SymbolGridView {
                                     .matchedGeometryEffect(id: indexPath, in: namespace, isSource: true)
                             }
                         }
-                        SymbolView(symbol: occupied[indexPath].map(symbols.symbol(for:)))
-                            .onTapGesture { onTap(indexPath) }
+                        SymbolView(symbol: gameBoard.occupied[indexPath].map(gameBoard.symbols.symbol(for:)))
+                            .onTapGesture { gameBoard.place(at: indexPath) }
                             .matchedGeometryEffect(id: animationState.isCentering || animationState.isExpanding ? indexPath : [], in: namespace, isSource: false)
                             .opacity(animationState.symbolOpacity(at: indexPath))
                     }
@@ -433,6 +429,7 @@ struct SymbolGridView_Previews: PreviewProvider {
     static var previews: some View {
         Preview()
             .frame(width: 330, height: 330)
+            .environment(GameBoardObject())
     }
 
     private struct Preview: View {
@@ -441,7 +438,7 @@ struct SymbolGridView_Previews: PreviewProvider {
         @State var state: GameState = .ongoing
 
         var body: some View {
-            SymbolGridView(gameState: state, symbols: PlayerSymbolSetting(), occupied: $marks)
+            SymbolGridView()
                 .onAppear(perform: update)
                 .backgroundStyle(Color.gray)
         }

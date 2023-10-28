@@ -1,9 +1,7 @@
 import SwiftUI
 
 struct PlayerMenu: View {
-    @Binding var role1: PlayerMode
-    @Binding var role2: PlayerMode
-    @Binding var symbols: PlayerSymbolSetting
+    @Environment(GameBoardObject.self) private var gameBoard
 
     var body: some View {
         HStack(spacing: 0) {
@@ -28,12 +26,9 @@ struct PlayerMenu: View {
                         }
                     }
                 } label: {
-                    let role = player == .first ? role1 : role2
                     Color.clear
                         .frame(height: 0)
-                        .overlay {
-                            PlayerMenuLabel(role: role, symbol: symbols[player])
-                        }
+                        .overlay { PlayerMenuLabel(player: player) }
                         .frame(maxWidth: .infinity)
                 }
             }
@@ -46,15 +41,15 @@ private extension PlayerMenu {
     func select(player: Player, role: PlayerMode) {
         switch player {
         case .first:
-            role1 = role
+            gameBoard.role1 = role
         case .second:
-            role2 = role
+            gameBoard.role2 = role
         }
     }
 
     func toggle(symbol: Symbol, player: Player) {
-        symbols[player] = symbol
-        symbols[player.opposite] = symbol.opposite
+        gameBoard.symbols[player] = symbol
+        gameBoard.symbols[player.opposite] = symbol.opposite
     }
 }
 
@@ -64,8 +59,9 @@ private extension PlayerMenu {
         @State var role2: PlayerMode = .computer
         @State var symbols = PlayerSymbolSetting()
         var body: some View {
-            PlayerMenu(role1: $role1, role2: $role2, symbols: $symbols)
+            PlayerMenu()
         }
     }
     return _View()
+        .environment(GameBoardObject())
 }

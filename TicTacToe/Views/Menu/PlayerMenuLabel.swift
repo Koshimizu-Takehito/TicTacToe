@@ -1,8 +1,8 @@
 import SwiftUI
 
 struct PlayerMenuLabel: View {
-    let role: PlayerMode
-    let symbol: Symbol
+    let player: Player
+    @Environment(GameBoardObject.self) private var gameBoard
 
     var body: some View {
         Label(
@@ -11,6 +11,16 @@ struct PlayerMenuLabel: View {
         )
         .fixedSize()
         .labelStyle(PlayerMenuLabelStyle())
+    }
+}
+
+private extension PlayerMenuLabel {
+    var role: PlayerMode {
+        player == .first ? gameBoard.role1 : gameBoard.role2
+    }
+
+    var symbol: Symbol {
+        gameBoard.symbols[player]
     }
 }
 
@@ -28,5 +38,6 @@ private struct PlayerMenuLabelStyle: LabelStyle {
 }
 
 #Preview {
-    PlayerMenuLabel(role: .player, symbol: .circle)
+    PlayerMenuLabel(player: .first)
+        .environment(GameBoardObject())
 }
