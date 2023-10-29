@@ -394,6 +394,11 @@
 				he,
 				hi,
 				nb,
+				ain,
+				ang,
+				fro,
+				goh,
+				eo,
 			);
 			mainGroup = FB9B4E672ABE91F300132FBA;
 			productRefGroup = FB9B4E712ABE91F300132FBA /* Products */;

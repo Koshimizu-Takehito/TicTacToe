@@ -3,6 +3,18 @@
   "strings" : {
     "%@" : {
       "localizations" : {
+        "ain" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        },
+        "ang" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        },
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
@@ -39,6 +51,12 @@
             "value" : "%@"
           }
         },
+        "eo" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -52,6 +70,18 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        },
+        "fro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        },
+        "goh" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@"
@@ -211,6 +241,18 @@
     },
     "%@ %lld" : {
       "localizations" : {
+        "ain" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ %2$lld"
+          }
+        },
+        "ang" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ %2$lld"
+          }
+        },
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
@@ -253,6 +295,12 @@
             "value" : "%1$@ %2$lld"
           }
         },
+        "eo" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ %2$lld"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -266,6 +314,18 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ %2$lld"
+          }
+        },
+        "fro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ %2$lld"
+          }
+        },
+        "goh" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%1$@ %2$lld"
@@ -425,6 +485,18 @@
     },
     "Computer" : {
       "localizations" : {
+        "ain" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "コンピュータ"
+          }
+        },
+        "ang" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "cræftsefa"
+          }
+        },
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
@@ -461,6 +533,12 @@
             "value" : "Υπολογιστής"
           }
         },
+        "eo" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Komputilo"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -477,6 +555,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ordinateur"
+          }
+        },
+        "fro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "eschineur"
+          }
+        },
+        "goh" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "rēhhanōn"
           }
         },
         "he" : {
@@ -633,6 +723,18 @@
     },
     "DRAW" : {
       "localizations" : {
+        "ain" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ひきわけ"
+          }
+        },
+        "ang" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "efengelic"
+          }
+        },
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
@@ -669,6 +771,12 @@
             "value" : "Ισοπαλία"
           }
         },
+        "eo" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Egalvenko"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -685,6 +793,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Match Nul"
+          }
+        },
+        "fro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "egale"
+          }
+        },
+        "goh" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "gilīh"
           }
         },
         "he" : {
@@ -841,6 +961,18 @@
     },
     "Easy" : {
       "localizations" : {
+        "ain" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "やしん"
+          }
+        },
+        "ang" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ēaþe"
+          }
+        },
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
@@ -877,6 +1009,12 @@
             "value" : "Εύκολο"
           }
         },
+        "eo" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Facila"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -893,6 +1031,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Facile"
+          }
+        },
+        "fro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "aisié"
+          }
+        },
+        "goh" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "līhti"
           }
         },
         "he" : {
@@ -1049,6 +1199,18 @@
     },
     "Hard" : {
       "localizations" : {
+        "ain" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "しんの"
+          }
+        },
+        "ang" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "heard"
+          }
+        },
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1085,6 +1247,12 @@
             "value" : "Δύσκολο"
           }
         },
+        "eo" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malfacila"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1101,6 +1269,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Difficile"
+          }
+        },
+        "fro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "fort"
+          }
+        },
+        "goh" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "hart"
           }
         },
         "he" : {
@@ -1257,6 +1437,18 @@
     },
     "Medium" : {
       "localizations" : {
+        "ain" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ふつう"
+          }
+        },
+        "ang" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "middel"
+          }
+        },
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1293,6 +1485,12 @@
             "value" : "Μεσαίο"
           }
         },
+        "eo" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meznivela"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1309,6 +1507,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Moyen"
+          }
+        },
+        "fro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "meien"
+          }
+        },
+        "goh" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mittil"
           }
         },
         "he" : {
@@ -1465,6 +1675,18 @@
     },
     "Player" : {
       "localizations" : {
+        "ain" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "プレイヤー"
+          }
+        },
+        "ang" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "spelend"
+          }
+        },
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1501,6 +1723,12 @@
             "value" : "Παίκτης"
           }
         },
+        "eo" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ludanto"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1517,6 +1745,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Joueur"
+          }
+        },
+        "fro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "jor"
+          }
+        },
+        "goh" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "spilāri"
           }
         },
         "he" : {
@@ -1673,6 +1913,18 @@
     },
     "Random" : {
       "localizations" : {
+        "ain" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ランダム"
+          }
+        },
+        "ang" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "haphazard"
+          }
+        },
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1709,6 +1961,12 @@
             "value" : "Τυχαίο"
           }
         },
+        "eo" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hazarda"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1725,6 +1983,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aléatoire"
+          }
+        },
+        "fro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "aventure"
+          }
+        },
+        "goh" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "zufellig"
           }
         },
         "he" : {
@@ -1881,6 +2151,18 @@
     },
     "WINNER!" : {
       "localizations" : {
+        "ain" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "かち!"
+          }
+        },
+        "ang" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "sige"
+          }
+        },
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1917,6 +2199,12 @@
             "value" : "Νικητής!"
           }
         },
+        "eo" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Venkinto!"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1933,6 +2221,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gagnant !"
+          }
+        },
+        "fro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "venqueor"
+          }
+        },
+        "goh" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "sigāri"
           }
         },
         "he" : {
