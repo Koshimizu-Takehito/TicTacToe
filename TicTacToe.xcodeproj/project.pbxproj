@@ -384,6 +384,16 @@
 				tr,
 				uk,
 				vi,
+				ar,
+				ca,
+				hr,
+				cs,
+				da,
+				nl,
+				fi,
+				he,
+				hi,
+				nb,
 			);
 			mainGroup = FB9B4E672ABE91F300132FBA;
 			productRefGroup = FB9B4E712ABE91F300132FBA /* Products */;
