@@ -3,8 +3,8 @@ import Observation
 
 struct PlayerSymbolSetting {
     var symbols: [Player: Symbol] = [
-        .first: .circle,
-        .second: .cross,
+        .first: .default,
+        .second: .default.opposite,
     ]
 
     func symbol(for player: Player) -> Symbol {
