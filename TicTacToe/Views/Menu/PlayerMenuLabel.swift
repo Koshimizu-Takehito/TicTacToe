@@ -28,7 +28,7 @@ struct PlayerMenuLabelStyle: LabelStyle {
     @Environment(\.colorPalette.foreground) private var color
 
     func makeBody(configuration: Configuration) -> some View {
-        HStack {
+        HStack(spacing: 4) {
             configuration.icon
             configuration.title
         }

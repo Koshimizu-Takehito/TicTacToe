@@ -256,7 +256,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%1$@ %2$lld"
+            "value" : "%2$lld %1$@"
           }
         },
         "ca" : {
@@ -334,7 +334,7 @@
         "he" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%1$@ %2$lld"
+            "value" : "%2$lld %1$@"
           }
         },
         "hi" : {
@@ -370,7 +370,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%1$@ %2$lld"
+            "value" : "%1$@%2$lld"
           }
         },
         "ko" : {
