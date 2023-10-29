@@ -53,18 +53,20 @@ private extension SymbolGridView {
 
         switch (gameBoard.gameState, animationState) {
         case (.win, .expanding(let winner, let positions)):
-            VStack {
-                ZStack {
-                    ForEach(positions, id: \.self) { indexPath in
-                        Color.clear
-                            .matchedGeometryEffect(id: indexPath, in: namespace, isSource: true)
+            GeometryReader { geometry in
+                VStack {
+                    ZStack {
+                        ForEach(positions, id: \.self) { indexPath in
+                            Color.clear
+                                .matchedGeometryEffect(id: indexPath, in: namespace, isSource: true)
+                        }
                     }
+                    Text("WINNER!")
+                        .font(.largeTitle)
+                        .fontWeight(.black)
+                        .foregroundStyle(foregroundColor(player: winner))
+                        .modifier(AdjustScaleModifier(containerSize: geometry.size))
                 }
-                Text("WINNER!")
-                    .font(.largeTitle)
-                    .fontWeight(.black)
-                    .foregroundStyle(foregroundColor(player: winner))
-                    .scaleEffect(CGSizeMake(1.8, 1.8))
             }
         case (.draw, .draw):
             GeometryReader { geometry in
@@ -476,7 +478,7 @@ private struct AdjustScaleModifier: ViewModifier {
             SymbolGridView()
                 .environment(gameBoard)
                 .onAppear {
-                    gameBoard.role1 = .computer(.hard)
+                    gameBoard.role1 = .computer(.easy)
                     gameBoard.role2 = .computer(.hard)
                 }
         }
@@ -490,4 +492,5 @@ private struct AdjustScaleModifier: ViewModifier {
         .background()
         .backgroundStyle(.mint)
 //        .environment(\.locale, .init(identifier: "de")) // DRAW の文字が長い
+//        .environment(\.locale, .init(identifier: "vi")) // WINNER! の文字が長い
 }
