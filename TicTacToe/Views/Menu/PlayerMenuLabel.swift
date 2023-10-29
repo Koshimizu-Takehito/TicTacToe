@@ -38,7 +38,7 @@ struct PlayerMenuLabelStyle: LabelStyle {
 }
 
 #Preview {
-    var gameBoard = GameBoard()
+    let gameBoard = GameBoard()
     gameBoard.symbols[.first] = .cross
     gameBoard.role1 = .computer(.medium)
     return PlayerMenuLabel(player: .first)
