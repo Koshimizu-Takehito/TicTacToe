@@ -71,12 +71,11 @@ private extension SymbolGridView {
                 let offset = max(geometry.size.width, geometry.size.height) / 10
                 VStack {
                     DrawSymbolView(offset: offset)
-
                     Text("DRAW")
                         .font(.largeTitle)
                         .fontWeight(.black)
                         .foregroundStyle(ScreenStyle(color1, color2))
-                        .scaleEffect(CGSizeMake(1.8, 1.8))
+                        .modifier(AdjustScaleModifier(containerSize: geometry.size))
                 }
                 .padding(.vertical, 2 * offset)
             }
@@ -450,30 +449,45 @@ private struct GameResultTapModifier: ViewModifier {
     }
 }
 
-struct SymbolGridView_Previews: PreviewProvider {
-    static var previews: some View {
-        Preview()
-            .frame(width: 330, height: 330)
+/// 文字が長い場合に画面からはみ出さないようにスケールの値を調整する
+private struct AdjustScaleModifier: ViewModifier {
+    let containerSize: CGSize
+    @State var contentSize: CGSize = .zero
 
+    func body(content: Content) -> some View {
+        let scale = min(containerSize.width / contentSize.width, 1.8)
+        content
+            .background {
+                GeometryReader { geometry in
+                    Color.clear
+                        .onChange(of: geometry.size, initial: true) { old, new in
+                            contentSize = new
+                        }
+                }
+            }
+            .scaleEffect(CGSizeMake(scale, scale))
     }
+}
 
-    private struct Preview: View {
-        let drawId = UUID()
+#Preview {
+    struct Preview: View {
         @State var gameBoard = GameBoard()
-
         var body: some View {
             SymbolGridView()
-                .onAppear(perform: update)
-                .background()
-                .backgroundStyle(Color.orange)
                 .environment(gameBoard)
-        }
-
-        func update() {
-            Task {
-                gameBoard.role1 = .computer(.medium)
-                gameBoard.role2 = .computer(.medium)
-            }
+                .onAppear {
+                    gameBoard.role1 = .computer(.hard)
+                    gameBoard.role2 = .computer(.hard)
+                }
         }
     }
+
+    return Preview()
+        .frame(width: 330, height: 330)
+        .background()
+        .backgroundStyle(.pink)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background()
+        .backgroundStyle(.mint)
+//        .environment(\.locale, .init(identifier: "de")) // DRAW の文字が長い
 }

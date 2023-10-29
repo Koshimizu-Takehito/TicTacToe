@@ -89,4 +89,5 @@ private extension Optional<ColorPalette> {
 #Preview {
     GameBoardView()
         .environment(GameBoard())
+        .environment(\.locale, .init(identifier: "en_US"))
 }
