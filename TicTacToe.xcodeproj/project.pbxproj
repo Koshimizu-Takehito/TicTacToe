@@ -111,6 +111,7 @@
 		FB1CE1A82AEE21DB008E9C64 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FB26990B2ADB54DE00712236 /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		FB26990D2ADB555200712236 /* ColorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCode.swift; sourceTree = "<group>"; };
+		FB687B892AEF08310039E005 /* zh-Hant-TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant-TW"; path = "zh-Hant-TW.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		FB8934122AEB9BB300DBAECE /* PlayerMenuIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMenuIcon.swift; sourceTree = "<group>"; };
 		FB8934142AEB9EBF00DBAECE /* PlayerMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMenu.swift; sourceTree = "<group>"; };
 		FB8934172AEBA11B00DBAECE /* PlayerMenuLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMenuLabel.swift; sourceTree = "<group>"; };
@@ -437,6 +438,7 @@
 				fro,
 				goh,
 				eo,
+				"zh-Hant-TW",
 			);
 			mainGroup = FB9B4E672ABE91F300132FBA;
 			productRefGroup = FB9B4E712ABE91F300132FBA /* Products */;
@@ -586,6 +588,7 @@
 				FB1CE1A62AEE21DA008E9C64 /* tr */,
 				FB1CE1A72AEE21DA008E9C64 /* uk */,
 				FB1CE1A82AEE21DB008E9C64 /* vi */,
+				FB687B892AEF08310039E005 /* zh-Hant-TW */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

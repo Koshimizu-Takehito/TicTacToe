@@ -231,6 +231,12 @@
             "value" : "%@"
           }
         },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        },
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
@@ -475,6 +481,12 @@
             "value" : "%1$@ %2$lld"
           }
         },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ %2$lld"
+          }
+        },
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
@@ -708,6 +720,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "電腦"
+          }
+        },
+        "zh-Hant-TW" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "電腦"
@@ -951,6 +969,12 @@
             "value" : "和局"
           }
         },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "和局"
+          }
+        },
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1184,6 +1208,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "簡單"
+          }
+        },
+        "zh-Hant-TW" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "簡單"
@@ -1427,6 +1457,12 @@
             "value" : "困難"
           }
         },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "困難"
+          }
+        },
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1660,6 +1696,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "中等"
+          }
+        },
+        "zh-Hant-TW" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "中等"
@@ -1903,6 +1945,12 @@
             "value" : "玩家"
           }
         },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "玩家"
+          }
+        },
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2136,6 +2184,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "隨機"
+          }
+        },
+        "zh-Hant-TW" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "隨機"
@@ -2377,6 +2431,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "勝者！"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "贏家!"
           }
         },
         "zh-HK" : {
