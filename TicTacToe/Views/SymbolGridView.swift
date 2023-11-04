@@ -4,8 +4,8 @@ import SwiftUI
 struct SymbolGridView: View {
     @Environment(\.self) var environment
     @Environment(\.latticeSpacing) private var spacing
-    @Environment(\.colorPalette.check1) private var color1
-    @Environment(\.colorPalette.check2) private var color2
+    @Environment(\.colorPalette.symbol1) private var color1
+    @Environment(\.colorPalette.symbol2) private var color2
     @Environment(GameBoard.self) private var gameBoard
 
     /// ゲーム勝敗結果時のタップ
@@ -20,8 +20,8 @@ struct SymbolGridView: View {
         ZStack {
             // まるばつのシンボル
             Grid(horizontalSpacing: spacing, verticalSpacing: spacing, content: symbolRows)
-                .environment(\.colorPalette.check1, symbolColor(for: .first))
-                .environment(\.colorPalette.check2, symbolColor(for: .second))
+                .environment(\.colorPalette.symbol1, symbolColor(for: .first))
+                .environment(\.colorPalette.symbol2, symbolColor(for: .second))
             // 勝利時のスラッシュ
             Group(content: slash)
             // 勝敗の結果
@@ -76,7 +76,7 @@ private extension SymbolGridView {
                     Text("DRAW")
                         .font(.largeTitle)
                         .fontWeight(.black)
-                        .foregroundStyle(ScreenStyle(color1, color2))
+                        .foregroundStyle(color1.screen(color2))
                         .modifier(AdjustScaleModifier(containerSize: geometry.size))
                 }
                 .padding(.vertical, 2 * offset)
@@ -245,7 +245,7 @@ private extension SymbolGridView {
         }
     }
 
-    func symbolColor(for player: Player) -> ColorCode {
+    func symbolColor(for player: Player) -> Color {
         let symbol = gameBoard.symbol(for: player)
         switch symbol {
         case .circle:

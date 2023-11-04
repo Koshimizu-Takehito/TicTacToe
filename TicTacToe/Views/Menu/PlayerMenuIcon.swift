@@ -18,8 +18,8 @@ struct PlayerMenuIcon: View {
         .background(content: sizeReader)
         .frame(width: size.width, height: size.height)
         .environment(\.symbolLineWidth, size.height/10)
-        .environment(\.colorPalette.check1, color)
-        .environment(\.colorPalette.check2, color)
+        .environment(\.colorPalette.symbol1, color)
+        .environment(\.colorPalette.symbol2, color)
     }
 
     private func sizeReader() -> some View {
