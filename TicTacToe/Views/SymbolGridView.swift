@@ -472,24 +472,25 @@ private struct AdjustScaleModifier: ViewModifier {
 
 #Preview {
     struct Preview: View {
-        @State var gameBoard = GameBoard()
+        @State var gameBoard: GameBoard = {
+            let gameBoard = GameBoard()
+            gameBoard.role1 = .computer(.easy)
+            gameBoard.role2 = .computer(.hard)
+            return gameBoard
+        }()
         var body: some View {
             SymbolGridView()
+                .frame(width: 330, height: 330)
+                .background()
+                .backgroundStyle(.mint.opacity(0.3))
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background()
+                .backgroundStyle(.mint.opacity(0.3))
                 .environment(gameBoard)
-                .onAppear {
-                    gameBoard.role1 = .computer(.easy)
-                    gameBoard.role2 = .computer(.hard)
-                }
         }
     }
-
     return Preview()
-        .frame(width: 330, height: 330)
-        .background()
-        .backgroundStyle(.pink)
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background()
-        .backgroundStyle(.mint)
+        .environment(\.locale, .init(identifier: "en"))
 //        .environment(\.locale, .init(identifier: "de")) // DRAW の文字が長い
 //        .environment(\.locale, .init(identifier: "vi")) // WINNER! の文字が長い
 }

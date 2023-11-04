@@ -1,3 +1,4 @@
+/// 言語コード
 enum LanguageCode: String, Hashable, CaseIterable {
     case ain
     case ang
