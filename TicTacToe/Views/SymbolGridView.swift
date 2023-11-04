@@ -2,7 +2,6 @@ import SwiftUI
 
 /// まるばつのシンボルを配置する領域
 struct SymbolGridView: View {
-    @Environment(\.self) var environment
     @Environment(\.latticeSpacing) private var spacing
     @Environment(\.colorPalette.symbol1) private var color1
     @Environment(\.colorPalette.symbol2) private var color2
