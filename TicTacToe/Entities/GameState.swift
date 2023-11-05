@@ -15,4 +15,13 @@ extension GameState {
             return false
         }
     }
+
+    var winnerAndPositions: (winner: Player?, positions: [IndexPath]) {
+        switch self {
+        case .win(let winner, let positions):
+            (winner, positions)
+        case .ongoing, .draw:
+            (nil, [])
+        }
+    }
 }

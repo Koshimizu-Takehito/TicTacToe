@@ -13,7 +13,7 @@ struct SymbolGridView: View {
     var onGameResultAnimationDidFinish: () -> Void = {}
 
     @Namespace private var namespace
-    @State private var animationState: AnimationState = .prepare
+    @State private var state: AnimationState = .prepare
 
     var body: some View {
         ZStack {
@@ -25,7 +25,7 @@ struct SymbolGridView: View {
             Group(content: slash)
             // 勝敗の結果
             Group(content: gameResult)
-                .modifier(GameResultTapModifier(state: animationState, onTap: onTapGameResult))
+                .modifier(GameResultTapModifier(state: state, onTap: onTapGameResult))
         }
         .transaction { transaction in
             // 盤面リセット時のアニメーションを消す
@@ -36,7 +36,6 @@ struct SymbolGridView: View {
         .environment(\.symbolLineWidth, symbolLineWidth)
         .onChange(of: gameBoard.occupied, redraw)
         .onChange(of: gameBoard.gameState, redraw)
-        .onChange(of: animationState, redraw)
     }
 }
 
@@ -50,8 +49,8 @@ private extension SymbolGridView {
                 .matchedGeometryEffect(id: "center", in: namespace, isSource: true)
         }
 
-        switch (gameBoard.gameState, animationState) {
-        case (.win, .expanding(let winner, let positions)):
+        switch (gameBoard.gameState, state) {
+        case (.win(let winner, let positions), .expanding):
             GeometryReader { geometry in
                 VStack {
                     ZStack {
@@ -117,14 +116,14 @@ private extension SymbolGridView {
 
     @ViewBuilder
     func slash(player: Player, _ targets: [IndexPath]...) -> some View {
-        let ratio: Double = animationState.isSlash ? 1 : 0
-        let position: Double = animationState.isSlash ? 0 : 0.5
-        let (winner, positions) = animationState.win
+        let ratio: Double = state.isSlash ? 1 : 0
+        let position: Double = state.isSlash ? 0 : 0.5
+        let (winner, positions) = winnerAndPositions
         ForEach(targets, id: \.self) { target in
             Slash(ratio: positions == target && winner == player ? ratio : 0, position: position, angle: angle(target))
                 .stroke(lineWidth: spacing)
                 .foregroundStyle(foregroundColor(player: player))
-                .matchedGeometryEffect(id: animationState.isCentering ? "center" : "", in: namespace, isSource: false)
+                .matchedGeometryEffect(id: state.isCentering ? "center" : "", in: namespace, isSource: false)
         }
     }
 
@@ -136,7 +135,8 @@ private extension SymbolGridView {
                 ForEach(0..<3) { j in
                     let indexPath: IndexPath = [i, j]
                     ZStack {
-                        if case .centering(_, let positions) = animationState, indexPath == [1, 1] {
+                        let positions = winnerAndPositions.positions
+                        if case .centering = state, indexPath == [1, 1] {
                             ForEach(positions, id: \.self) { indexPath in
                                 Color.clear
                                     .matchedGeometryEffect(id: indexPath, in: namespace, isSource: true)
@@ -145,10 +145,10 @@ private extension SymbolGridView {
                         SymbolView(symbol: gameBoard.symbol(at: indexPath))
                             .onTapGesture { gameBoard.place(at: indexPath) }
                             .matchedGeometryEffect(
-                                id: animationState.isCentering || animationState.isExpanding ? indexPath : [],
+                                id: state.isCentering || state.isExpanding ? indexPath : [],
                                 in: namespace, isSource: false
                             )
-                            .opacity(animationState.symbolOpacity(at: indexPath))
+                            .opacity(symbolOpacity(at: indexPath))
                             .sensoryFeedback(.success, trigger: gameBoard.occupied[indexPath]) { old, new in
                                 switch (old, new) {
                                 case (.none, .first):
@@ -166,7 +166,7 @@ private extension SymbolGridView {
     }
 
     var symbolLineWidth: Double {
-        switch animationState {
+        switch state {
         case .expanding:
             return spacing * 3.6
         case .draw:
@@ -175,6 +175,23 @@ private extension SymbolGridView {
             return spacing
         }
     }
+
+    func symbolOpacity(at indexPath: IndexPath) -> Double {
+        switch state {
+        case .prepare, .slash:
+            1
+        case .centering:
+            winnerAndPositions.positions.contains(indexPath) ? 1 : 0
+        case .expanding:
+            winnerAndPositions.positions.first == indexPath ? 1 : 0
+        case .draw:
+            0
+        }
+    }
+
+    var winnerAndPositions: (winner: Player?, positions: [IndexPath]) {
+        gameBoard.gameState.winnerAndPositions
+    }
 }
 
 // MARK: - Redraw
@@ -182,53 +199,47 @@ private extension SymbolGridView {
     /// シンボルの配置の状態変更を契機として再描画する
     func redraw(old: [IndexPath: Player], new: [IndexPath: Player]) {
         if new == [:] {
-            animationState = .prepare
+            state = .prepare
         }
     }
 
     /// ゲームの状態変更を契機として再描画する
     func redraw(old: GameState, new: GameState) {
-        switch new {
-        case .ongoing:
-            animationState = .prepare
-        case .win(let player, let positions):
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.66) {
-                withAnimation(.custom()) {
-                    animationState = .slash(player: player, positions: positions)
+        Task {
+            switch new {
+            case .ongoing:
+                state = .prepare
+            case .win:
+                try await Task.sleep(nanoseconds: 0_660_000_000)
+                await withAnimation(.custom(duration: 0.6)) {
+                    state = .slash
                 }
-            }
-        case .draw:
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.66) {
-                withAnimation(.custom(duration: 0.5)) {
-                    animationState = .draw
+                await withAnimation(.custom(duration: 0.5)) {
+                    state = .centering
                 }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
-                    onGameResultAnimationDidFinish()
+                await withAnimation(.custom(duration: 0.5)) {
+                    state = .expanding
                 }
+                try await Task.sleep(nanoseconds: 0_700_000_000)
+                self.onGameResultAnimationDidFinish()
+            case .draw:
+                try await Task.sleep(nanoseconds: 0_660_000_000)
+                await withAnimation(.custom(duration: 0.5)) {
+                    state = .draw
+                }
+                try await Task.sleep(nanoseconds: 1_000_000_000)
+                self.onGameResultAnimationDidFinish()
             }
         }
     }
+}
 
-    /// アニメーションの状態変更を契機として再描画する
-    func redraw(old: AnimationState, new: AnimationState) {
-        switch (old, new) {
-        case (.prepare, .slash(let player, let positions)):
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                withAnimation(.custom(duration: 0.5)) {
-                    animationState = .centering(player: player, positions: positions)
-                }
-            }
-        case (.slash, .centering(let player, let positions)):
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
-                withAnimation(.custom(duration: 0.5)) {
-                    animationState = .expanding(player: player, positions: positions)
-                }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                    onGameResultAnimationDidFinish()
-                }
-            }
-        default:
-            break
+func withAnimation(_ animation: Animation? = .default, _ body: () -> Void) async {
+    await withCheckedContinuation { continuation in
+        withAnimation(animation) {
+            body()
+        } completion: {
+            continuation.resume(returning: ())
         }
     }
 }
@@ -272,9 +283,9 @@ private extension SymbolGridView {
 // MARK: -
 private enum AnimationState: Hashable {
     case prepare
-    case slash(player: Player, positions: [IndexPath])
-    case centering(player: Player, positions: [IndexPath])
-    case expanding(player: Player, positions: [IndexPath])
+    case slash
+    case centering
+    case expanding
     case draw
 
     var isPrepare: Bool {
@@ -282,41 +293,15 @@ private enum AnimationState: Hashable {
     }
 
     var isExpanding: Bool {
-        switch self {
-        case .expanding:
-            true
-        default:
-            false
-        }
+        self == .expanding
     }
 
     var isSlash: Bool {
-        switch self {
-        case .slash:
-            true
-        default:
-            false
-        }
+        self == .slash
     }
 
     var isCentering: Bool {
-        switch self {
-        case .centering:
-            true
-        default:
-            false
-        }
-    }
-
-    var win: (winner: Player?, positions: [IndexPath]) {
-        switch self {
-        case .slash(let player, let positions),
-            .centering(let player, let positions),
-            .expanding(let player, let positions):
-            (player, positions)
-        default:
-            (nil, [])
-        }
+        self == .centering
     }
 
     var isFinish: Bool {
@@ -325,19 +310,6 @@ private enum AnimationState: Hashable {
             return true
         case _:
             return false
-        }
-    }
-
-    func symbolOpacity(at indexPath: IndexPath) -> Double {
-        switch self {
-        case .prepare, .slash:
-            return 1
-        case .centering(_, let positions):
-            return positions.contains(indexPath) ? 1 : 0
-        case .expanding(_, let positions):
-            return positions.first == indexPath ? 1 : 0
-        case .draw:
-            return 0
         }
     }
 }
