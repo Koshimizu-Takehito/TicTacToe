@@ -234,6 +234,7 @@ private extension SymbolGridView {
     }
 }
 
+@MainActor
 func withAnimation(_ animation: Animation? = .default, _ body: () -> Void) async {
     await withCheckedContinuation { continuation in
         withAnimation(animation) {

@@ -38,9 +38,12 @@ struct PlayerMenuLabelStyle: LabelStyle {
 }
 
 #Preview {
-    let gameBoard = GameBoard()
-    gameBoard.symbols[.first] = .cross
-    gameBoard.role1 = .computer(.medium)
-    return PlayerMenuLabel(player: .first)
-        .environment(gameBoard)
+    @Previewable var board = GameBoard()
+
+    PlayerMenuLabel(player: .first)
+        .environment(board)
+        .onAppear {
+            board.symbols[.first] = .cross
+            board.role1 = .computer(.medium)
+        }
 }

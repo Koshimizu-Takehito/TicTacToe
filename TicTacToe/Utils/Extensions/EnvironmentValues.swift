@@ -1,40 +1,13 @@
 import SwiftUI
 
-// MARK: - 幅・スペース
 extension EnvironmentValues {
-    /// シンボルの幅
-    private struct SymbolLineWidthKey: EnvironmentKey {
-        static let defaultValue: Double = 6.0
-    }
-
-    /// シンボルの幅
-    var symbolLineWidth: Double {
-        get { self[SymbolLineWidthKey.self] }
-        set { self[SymbolLineWidthKey.self] = newValue }
-    }
-
+    // MARK: - 幅・スペース
     /// 格子の幅
-    private struct LatticeSpacingKey: EnvironmentKey {
-        static var defaultValue: Double = 6.0
-    }
-
+    @Entry var symbolLineWidth: Double = 6.0
     /// 格子の幅
-    var latticeSpacing: Double {
-        get { self[LatticeSpacingKey.self] }
-        set { self[LatticeSpacingKey.self] = newValue }
-    }
-}
+    @Entry var latticeSpacing: Double = 6.0
 
-// MARK: - 色
-extension EnvironmentValues {
+    // MARK: - 色
     /// カラーパレット
-    private struct ColorPaletteKey: EnvironmentKey {
-        static let defaultValue: ColorPalette = .default
-    }
-
-    /// カラーパレット
-    var colorPalette: ColorPalette {
-        get { self[ColorPaletteKey.self] }
-        set { self[ColorPaletteKey.self] = newValue }
-    }
+    @Entry var colorPalette: ColorPalette = .default
 }

@@ -1,13 +1,16 @@
 import SwiftUI
 
 // MARK: - ColorPalette
-struct ColorPalette: Hashable {
+struct ColorPalette: Hashable, Identifiable {
+    var id = UUID()
+    var name: ColorPalette.Name
     var background: Color
     var foreground: Color
     var symbol1: Color
     var symbol2: Color
 
     init(name: ColorPalette.Name) {
+        self.name = name
         background = Color("\(Self.self)/\(name.rawValue)/background")
         foreground = Color("\(Self.self)/\(name.rawValue)/foreground")
         symbol1 = Color("\(Self.self)/\(name.rawValue)/symbol1")
@@ -29,7 +32,6 @@ extension ColorPalette {
         case apricot
         case astra
         case brandyPunch
-        case bunkerLightShade
         case carnation
         case carouselPink
         case ceriseRed
@@ -39,7 +41,6 @@ extension ColorPalette {
         case funBlue
         case fuzzyWuzzyBrown
         case gableGreen
-        case haitiLightShade
         case hitPink
         case java
         case lima
@@ -61,3 +62,101 @@ extension ColorPalette {
         case whiskey
     }
 }
+
+#if DEBUG
+// MARK: - Color Palette
+#Preview {
+    @Previewable @State var ratio: Double = 0
+
+    NavigationStack {
+        ZStack {
+            List {
+                ForEach(ColorPalette.allCases) { palette in
+                    VStack(alignment: .leading, spacing: 0) {
+                        Text(String(describing: palette.name))
+                            .font(.title2)
+                            .fontWeight(.medium)
+                            .padding(.leading)
+                        HStack(spacing: 0) {
+                            palette.symbol1
+                            palette.symbol2.hueRotation(.radians(2 * .pi * ratio))
+                            palette.background.hueRotation(.radians(2 * .pi * ratio))
+                            palette.foreground.hueRotation(.radians(2 * .pi * ratio))
+                        }
+                        .frame(height: 80)
+                    }
+                    .padding(.top)
+                }
+                .listRowInsets(.init())
+
+                Rectangle()
+                    .foregroundStyle(.systemGroupedBackground)
+                    .frame(height: 160)
+                    .listRowInsets(.init())
+                    .listRowSeparator(.hidden, edges: .all)
+            }
+            .listStyle(.automatic)
+
+            VStack(alignment: .trailing, spacing: 0) {
+                Color.clear
+                RingSlider(ratio: $ratio)
+                    .frame(width: 120, height: 120)
+                    .padding()
+                    .tint(.mint.opacity(0.6))
+            }
+        }
+        .toolbar {
+            Button(String("Reset")) {
+                withAnimation { ratio = ratio > 0.5 ? 1 : 0 }
+            }
+        }
+        .navigationTitle(String("Color Palette"))
+    }
+}
+
+struct RingSlider: View, Animatable {
+    @Binding var ratio: Double
+    var animatableData: Double
+
+    init(ratio: Binding<Double>) {
+        _ratio = ratio
+        animatableData = ratio.wrappedValue
+    }
+
+    var body: some View {
+        GeometryReader { geometry in
+            let size = geometry.size
+            let ringRadius = min(size.width, size.height) / 2
+            ZStack {
+                // Ring
+                let dotSize = ringRadius / 3
+                let lineWidth = 0.5 * dotSize
+                Circle()
+                    .strokeBorder(lineWidth: lineWidth)
+                    .foregroundStyle(.tint)
+                    .frame(width: ringRadius * 2, height: ringRadius * 2)
+                // Dot
+                let r = ringRadius - lineWidth / 2
+                let t = 2 * .pi * animatableData - .pi / 2
+                Circle()
+                    .frame(width: dotSize, height: dotSize)
+                    .foregroundStyle(.white)
+                    .shadow(radius: 2)
+                    .offset(x: r * cos(t), y: r * sin(t))
+            }
+            .gesture(
+                DragGesture().onChanged { value in
+                    var location = value.location
+                    location.x -= ringRadius
+                    location.y -= ringRadius
+                    location.y *= -1
+                    var t = atan2(location.x, location.y) / (2 * .pi)
+                    t += t < 0 ? 1 : 0
+                    ratio = t
+                }
+            )
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+        }
+    }
+}
+#endif

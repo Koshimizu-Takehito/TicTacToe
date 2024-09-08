@@ -2,21 +2,21 @@ import SwiftUI
 
 struct GameBoardView: View {
     @State private var drawId = UUID()
-    @State private var colorPalette: ColorPalette?
+    @State private var colorPalette: ColorPalette = .default
     @Environment(GameBoard.self) private var gameBoard
 
     var body: some View {
-        ZStack {
-            VStack {
-                PlayerMenu()
-                GeometryReader(content: board(geometry:))
-                ResetButton(action: reset)
-            }
+        VStack {
+            PlayerMenu()
+            GeometryReader(content: board(geometry:))
+            ResetButton(action: reset)
         }
         .padding()
-        .modifier(Background())
-        .onAppear(perform: reset)
-        .environment(\.colorPalette, colorPalette ?? .default)
+        .background {
+            colorPalette.background
+                .ignoresSafeArea()
+        }
+        .environment(\.colorPalette, colorPalette)
     }
 
     @ViewBuilder
@@ -43,7 +43,7 @@ private extension GameBoardView {
         drawId = UUID()
         withAnimation(.custom(duration: 1)) {
             gameBoard.reset()
-            colorPalette.reset()
+            colorPalette = ColorPalette.allCases.randomElement()!
         }
     }
 
@@ -75,19 +75,7 @@ private struct ResetButton: View {
     }
 }
 
-private extension Optional<ColorPalette> {
-    mutating func reset() {
-        switch self {
-        case .none:
-            self = .default
-        default:
-            self = ColorPalette.allCases.randomElement()!
-        }
-    }
-}
-
 #Preview {
     GameBoardView()
         .environment(GameBoard())
-        .environment(\.locale, .init(identifier: "en_US"))
 }

@@ -28,3 +28,21 @@ private struct ScreenStyle<C1: ShapeStyle, C2: ShapeStyle>: ShapeStyle where C1.
         )
     }
 }
+
+extension ShapeStyle where Self == Color {
+    static var systemGroupedBackground: Self {
+        Self.systemGroupedBackground
+    }
+}
+
+extension Color {
+    static var systemGroupedBackground: Color {
+#if canImport(UIKit)
+        return Color(UIColor.systemGroupedBackground)
+#elseif canImport(AppKit)
+        return Color(NSColor.windowBackgroundColor)
+#else
+        return Color.clear
+#endif
+    }
+}

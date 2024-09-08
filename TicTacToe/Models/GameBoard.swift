@@ -18,6 +18,7 @@ struct PlayerSymbolSetting {
 }
 
 @Observable
+@MainActor
 @dynamicMemberLookup
 final class GameBoard {
     private var gameBoard = GameBoardLogic()
@@ -102,7 +103,7 @@ final class GameBoard {
 private extension GameBoard {
     func place() {
         Task.detached { [self] in
-            switch playerRole {
+            switch await playerRole {
             case .player:
                 break
             case .random:
@@ -119,7 +120,8 @@ private extension GameBoard {
 
     /// ランダムな位置に配置する
     func placeAtRandom() async throws {
-        try await waitUntilCalculation { [self] () -> IndexPath? in
+        let gameBoard = gameBoard
+        try await waitUntilCalculation {
             while gameBoard.checkGameState() == .ongoing {
                 let randomPath = IndexPath.randomElement()
                 if gameBoard.occupied[randomPath] == nil {
@@ -132,7 +134,9 @@ private extension GameBoard {
 
     /// アルゴリズムによって配置する
     func placeByEasyAI() async throws {
-        try await waitUntilCalculation { [self] () -> IndexPath? in
+        let gameBoard = gameBoard
+        let currentPlayer = currentPlayer
+        try await waitUntilCalculation {
             guard gameBoard.checkGameState() == .ongoing else {
                 return nil
             }
@@ -174,7 +178,9 @@ private extension GameBoard {
 
     /// アルゴリズムによって配置する
     func placeByHardAI() async throws {
-        try await waitUntilCalculation { [self] () -> IndexPath? in
+        let gameBoard = gameBoard
+        let currentPlayer = currentPlayer
+        try await waitUntilCalculation {
             guard gameBoard.checkGameState() == .ongoing else {
                 return nil
             }
@@ -203,14 +209,14 @@ private extension GameBoard {
         }
     }
 
-    func waitUntilCalculation(minWaitingTime: Int64 = 660_000_000, calculation: @escaping () -> IndexPath?) async throws {
+    func waitUntilCalculation(minWaitingTime: Int64 = 660_000_000, calculation: @Sendable @escaping () -> IndexPath?) async throws {
         let beforeStates = gameBoard.occupied
         let startTime = Date.now
         Task.detached {
             if let location = calculation() {
                 let elapsedTime = Int64(-startTime.timeIntervalSinceNow * 1_000_000_000)
                 try await Task.sleep(nanoseconds: UInt64(max(minWaitingTime - elapsedTime, 0)))
-                Task { @MainActor [self] in
+                Task { @MainActor in
                     let gameBoard = self.gameBoard
                     guard gameBoard.occupied == beforeStates else { return }
                     self.place(at: location)

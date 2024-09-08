@@ -48,7 +48,7 @@ enum PlayMode: Hashable {
 }
 
 extension PlayMode: CaseIterable {
-    static var allCases: [Self] = [
+    static let allCases: [Self] = [
         .player,
         .random,
         .computer(.easy),
