@@ -107,7 +107,7 @@ extension ColorPalette {
         }
         .toolbar {
             Button(String("Reset")) {
-                withAnimation { ratio = ratio > 0.5 ? 1 : 0 }
+                withAnimation { ratio = ratio.rounded(.toNearestOrEven) }
             }
         }
         .navigationTitle(String("Color Palette"))
@@ -150,9 +150,8 @@ struct RingSlider: View, Animatable {
                     location.x -= ringRadius
                     location.y -= ringRadius
                     location.y *= -1
-                    var t = atan2(location.x, location.y) / (2 * .pi)
-                    t += t < 0 ? 1 : 0
-                    ratio = t
+                    let t = atan2(location.x, location.y) / (2 * .pi)
+                    ratio = (t + 1).remainder(dividingBy: 1)
                 }
             )
             .frame(maxWidth: .infinity, maxHeight: .infinity)
