@@ -70,14 +70,6 @@ private extension PlayerMenu {
 }
 
 #Preview {
-    struct _View: View {
-        @State var role1: PlayMode = .player
-        @State var role2: PlayMode = .computer(.medium)
-        @State var symbols = PlayerSymbolSetting()
-        var body: some View {
-            PlayerMenu()
-        }
-    }
-    return _View()
+    PlayerMenu()
         .environment(GameBoard())
 }

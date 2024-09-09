@@ -14,9 +14,9 @@ struct RingMark: View {
 
     private struct RingShape: Shape, Animatable {
         var animatableData: Double = 0
-        var ratio: Double { animatableData }
 
         func path(in rect: CGRect) -> Path {
+            let ratio = animatableData
             var path = Path()
             path.addArc(
                 center: CGPoint(x: rect.midX, y: rect.midY),

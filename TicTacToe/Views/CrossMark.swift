@@ -18,9 +18,9 @@ struct CrossMark: View {
 
     private struct CrossShape: Shape, Animatable {
         var animatableData: Double = 0
-        var ratio: Double { animatableData }
 
         func path(in rect: CGRect) -> Path {
+            let ratio = animatableData
             let r0 = 0.8 * min(rect.width/2, rect.height/2)
             let r1 = 4 * r0 * min(ratio, 0.5)
             let r2 = 4 * r0 * max(ratio - 0.5, 0.0)
