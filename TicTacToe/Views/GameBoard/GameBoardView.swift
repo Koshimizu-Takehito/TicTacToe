@@ -6,7 +6,7 @@ struct GameBoardView: View {
 
     var body: some View {
         VStack {
-            PlayerMenu()
+            PlayerMenuView()
             GeometryReader(content: board(geometry:))
             ResetButton(action: viewModel.reset)
         }

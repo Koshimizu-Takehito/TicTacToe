@@ -9,9 +9,11 @@ struct ContentView: View {
 
 extension View {
     @ViewBuilder
-    func environment() -> some View {
+    func environment(_ configuration: (GameBoard) -> () = { _ in }) -> some View {
         let gameBoard = GameBoard.shared
+        let _ = configuration(gameBoard)
         self.environment(gameBoard)
+            .environment(PlayerMenuViewModel(gameBoard: gameBoard))
             .environment(GameBoardViewModel(gameBoard: gameBoard))
     }
 }
