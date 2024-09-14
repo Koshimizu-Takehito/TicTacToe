@@ -51,7 +51,7 @@ private struct ResetButton: View {
         Button(action: action) {
             Image(systemName: "arrow.triangle.2.circlepath")
         }
-        .buttonStyle(TitleButtonStyle())
+        .buttonStyle(.titleStyle)
     }
 }
 

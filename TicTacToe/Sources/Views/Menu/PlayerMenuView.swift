@@ -51,7 +51,7 @@ struct PlayerMenuView: View {
                 }
             }
         }
-        .buttonStyle(ActionButtonStyle())
+        .buttonStyle(.actionStyle)
     }
 }
 
