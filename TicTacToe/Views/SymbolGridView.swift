@@ -211,20 +211,20 @@ private extension SymbolGridView {
                 state = .prepare
             case .win:
                 try await Task.sleep(nanoseconds: 0_660_000_000)
-                await withAnimation(.custom(duration: 0.6)) {
+                await withAnimation(.spring(duration: 0.6)) {
                     state = .slash
                 }
-                await withAnimation(.custom(duration: 0.5)) {
+                await withAnimation(.spring(duration: 0.5)) {
                     state = .centering
                 }
-                await withAnimation(.custom(duration: 0.5)) {
+                await withAnimation(.spring(duration: 0.5)) {
                     state = .expanding
                 }
                 try await Task.sleep(nanoseconds: 0_700_000_000)
                 self.onGameResultAnimationDidFinish()
             case .draw:
                 try await Task.sleep(nanoseconds: 0_660_000_000)
-                await withAnimation(.custom(duration: 0.5)) {
+                await withAnimation(.spring(duration: 0.5)) {
                     state = .draw
                 }
                 try await Task.sleep(nanoseconds: 1_000_000_000)
@@ -392,7 +392,7 @@ private struct SymbolView: View {
         }
         .onChange(of: symbol) { oldValue, newValue in
             ratio = 0
-            withAnimation(.custom()) {
+            withAnimation(.spring(duration: 0.7)) {
                 ratio = 1
             }
         }
@@ -446,7 +446,7 @@ private struct AdjustScaleModifier: ViewModifier {
 #Preview {
     struct Preview: View {
         @State var gameBoard: GameBoard = {
-            let gameBoard = GameBoard()
+            let gameBoard = GameBoard.shared
             gameBoard.role1 = .computer(.easy)
             gameBoard.role2 = .computer(.hard)
             return gameBoard

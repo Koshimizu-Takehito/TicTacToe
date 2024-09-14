@@ -6,7 +6,7 @@ struct LatticeView: View {
     var body: some View {
         Lattice(animatableData: ratio)
             .onAppear {
-                withAnimation(.custom(duration: 1)) {
+                withAnimation(.spring(duration: 1)) {
                     ratio = 1
                 }
             }

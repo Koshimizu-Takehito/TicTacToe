@@ -17,6 +17,10 @@ struct PlayerSymbolSetting {
     }
 }
 
+extension GameBoard {
+    static let shared = GameBoard()
+}
+
 @Observable
 @MainActor
 @dynamicMemberLookup
@@ -41,7 +45,7 @@ final class GameBoard {
 
     private(set) var gameState: GameState = .ongoing
 
-    private var playerRole: PlayMode {
+    var playerRole: PlayMode {
         switch currentPlayer {
         case .first:
             role1
@@ -54,21 +58,14 @@ final class GameBoard {
         didSet { place() }
     }
 
+    private init() {}
+
     func symbol(at indexPath: IndexPath) -> Symbol? {
         gameBoard.occupied[indexPath].map(symbols.symbol(for:))
     }
 
     func symbol(for player: Player) -> Symbol? {
         symbols.symbol(for: player)
-    }
-
-    func allowsHitTesting() -> Bool {
-        switch gameBoard.checkGameState() {
-        case .win, .draw:
-            return true
-        case .ongoing:
-            return playerRole == .player
-        }
     }
 
     func reset() {

@@ -71,5 +71,5 @@ private extension PlayerMenu {
 
 #Preview {
     PlayerMenu()
-        .environment(GameBoard())
+        .environment(GameBoard.shared)
 }

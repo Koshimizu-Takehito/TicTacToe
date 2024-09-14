@@ -38,7 +38,7 @@ struct PlayerMenuLabelStyle: LabelStyle {
 }
 
 #Preview {
-    @Previewable var board = GameBoard()
+    @Previewable var board = GameBoard.shared
 
     PlayerMenuLabel(player: .first)
         .environment(board)
