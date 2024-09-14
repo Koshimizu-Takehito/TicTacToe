@@ -1,16 +1,15 @@
 import SwiftUI
 
 struct PlayerMenuLabel: View {
-    let player: Player
-    @Environment(GameBoard.self) private var gameBoard
+    var viewModel: PlayerMenuIconViewModel
 
     var body: some View {
         Label(
             title: {
-                PlayerMenuTitle(mode: mode)
+                PlayerMenuTitle(mode: viewModel.mode)
             },
             icon: {
-                PlayerMenuIcon(symbol: gameBoard.symbols[player])
+                PlayerMenuIcon(symbol: viewModel.symbol)
             }
         )
         .fixedSize()
@@ -18,13 +17,7 @@ struct PlayerMenuLabel: View {
     }
 }
 
-private extension PlayerMenuLabel {
-    var mode: PlayMode {
-        player == .first ? gameBoard.role1 : gameBoard.role2
-    }
-}
-
-struct PlayerMenuLabelStyle: LabelStyle {
+private struct PlayerMenuLabelStyle: LabelStyle {
     @Environment(\.colorPalette.foreground) private var color
 
     func makeBody(configuration: Configuration) -> some View {
@@ -35,15 +28,4 @@ struct PlayerMenuLabelStyle: LabelStyle {
         .font(.title2.bold())
         .foregroundStyle(color)
     }
-}
-
-#Preview {
-    @Previewable var board = GameBoard()
-
-    PlayerMenuLabel(player: .first)
-        .environment(board)
-        .onAppear {
-            board.symbols[.first] = .cross
-            board.role1 = .computer(.medium)
-        }
 }

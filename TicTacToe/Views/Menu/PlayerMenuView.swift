@@ -1,7 +1,8 @@
 import SwiftUI
 
-struct PlayerMenu: View {
-    @Environment(GameBoard.self) private var gameBoard
+struct PlayerMenuView: View {
+    @Environment(PlayerMenuViewModel.self)
+    private var viewModel
 
     var body: some View {
         HStack(spacing: 0) {
@@ -9,9 +10,9 @@ struct PlayerMenu: View {
                 Menu {
                     // モード選択
                     Group {
-                        ForEach([PlayMode.player, PlayMode.random], id: \.self) { mode in
+                        ForEach([PlayMode.player, .random], id: \.self) { mode in
                             Button {
-                                select(player: player, role: mode)
+                                viewModel.select(player: player, role: mode)
                             } label: {
                                 Label(mode.title, systemImage: mode.systemImage)
                             }
@@ -20,9 +21,8 @@ struct PlayerMenu: View {
                     // Computer 難易度選択
                     Menu {
                         ForEach(Difficulty.allCases, id: \.self) { difficulty in
-                            let mode = PlayMode.computer(difficulty)
                             Button {
-                                select(player: player, role: mode)
+                                viewModel.select(player: player, role: .computer(difficulty))
                             } label: {
                                 Label(difficulty.title, systemImage: difficulty.systemImage)
                             }
@@ -35,7 +35,7 @@ struct PlayerMenu: View {
                     ControlGroup {
                         ForEach(Symbol.allCases, id: \.self) { symbol in
                             Button {
-                                toggle(symbol: symbol, player: player)
+                                viewModel.toggle(symbol: symbol, player: player)
                             } label: {
                                 Text(String(describing: symbol))
                             }
@@ -44,7 +44,9 @@ struct PlayerMenu: View {
                 } label: {
                     Color.clear
                         .frame(height: 0)
-                        .overlay { PlayerMenuLabel(player: player) }
+                        .overlay { PlayerMenuLabel(
+                            viewModel: .init(viewModel: viewModel, player: player))
+                        }
                         .frame(maxWidth: .infinity)
                 }
             }
@@ -53,23 +55,7 @@ struct PlayerMenu: View {
     }
 }
 
-private extension PlayerMenu {
-    func select(player: Player, role: PlayMode) {
-        switch player {
-        case .first:
-            gameBoard.role1 = role
-        case .second:
-            gameBoard.role2 = role
-        }
-    }
-
-    func toggle(symbol: Symbol, player: Player) {
-        gameBoard.symbols[player] = symbol
-        gameBoard.symbols[player.opposite] = symbol.opposite
-    }
-}
-
 #Preview {
-    PlayerMenu()
-        .environment(GameBoard())
+    PlayerMenuView()
+        .environment()
 }

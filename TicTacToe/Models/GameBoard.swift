@@ -1,5 +1,5 @@
-import SwiftUI
 import Observation
+import SwiftUI
 
 struct PlayerSymbolSetting {
     var symbols: [Player: Symbol] = [
@@ -17,6 +17,10 @@ struct PlayerSymbolSetting {
     }
 }
 
+extension GameBoard {
+    static let shared = GameBoard()
+}
+
 @Observable
 @MainActor
 @dynamicMemberLookup
@@ -31,6 +35,7 @@ final class GameBoard {
             }
         }
     }
+
     var role2: PlayMode = .computer(.medium) {
         didSet {
             if currentPlayer == .second {
@@ -41,7 +46,7 @@ final class GameBoard {
 
     private(set) var gameState: GameState = .ongoing
 
-    private var playerRole: PlayMode {
+    var playerRole: PlayMode {
         switch currentPlayer {
         case .first:
             role1
@@ -54,6 +59,8 @@ final class GameBoard {
         didSet { place() }
     }
 
+    private init() {}
+
     func symbol(at indexPath: IndexPath) -> Symbol? {
         gameBoard.occupied[indexPath].map(symbols.symbol(for:))
     }
@@ -62,23 +69,14 @@ final class GameBoard {
         symbols.symbol(for: player)
     }
 
-    func allowsHitTesting() -> Bool {
-        switch gameBoard.checkGameState() {
-        case .win, .draw:
-            return true
-        case .ongoing:
-            return playerRole == .player
-        }
-    }
-
     func reset() {
         gameBoard.occupied = [:]
         gameState = .ongoing
         currentPlayer = .first
     }
 
-    func place(at index: IndexPath) -> Void {
-        guard gameBoard.checkGameState() == .ongoing && gameBoard.occupied[index] == .none else { return }
+    func place(at index: IndexPath) {
+        guard gameBoard.checkGameState() == .ongoing, gameBoard.occupied[index] == .none else { return }
         // 配置
         gameBoard.occupied[index] = currentPlayer
 
@@ -148,8 +146,8 @@ private extension GameBoard {
             let players = (me: currentPlayer, opponent: currentPlayer.opposite)
             var worstPlace = IndexPath?.none
             var worstScore = Int.max
-            for i in (0..<3).shuffled() {
-                for j in (0..<3).shuffled() {
+            for i in (0 ..< 3).shuffled() {
+                for j in (0 ..< 3).shuffled() {
                     let indexPath: IndexPath = [i, j]
                     guard gameBoard.occupied[indexPath] == nil else { continue }
                     var copy = gameBoard
@@ -167,7 +165,7 @@ private extension GameBoard {
 
     func placeByMediumAI() async throws {
         let p = 10 * max(10 - gameBoard.occupied.count, 0)
-        if Int.random(in: 0..<100) < p {
+        if Int.random(in: 0 ..< 100) < p {
             try await placeByHardAI()
         } else if Bool.random() {
             try await placeAtRandom()
@@ -192,8 +190,8 @@ private extension GameBoard {
             let players = (me: currentPlayer, opponent: currentPlayer.opposite)
             var bestPlace = IndexPath?.none
             var bestScore = Int.min
-            for i in (0..<3).shuffled() {
-                for j in (0..<3).shuffled() {
+            for i in (0 ..< 3).shuffled() {
+                for j in (0 ..< 3).shuffled() {
                     let indexPath: IndexPath = [i, j]
                     guard gameBoard.occupied[indexPath] == nil else { continue }
                     var copy = gameBoard
@@ -227,7 +225,7 @@ private extension GameBoard {
 }
 
 private extension IndexPath {
-    static func randomElement(row: Range<Int> = 0..<3, column: Range<Int> = 0..<3) -> IndexPath {
+    static func randomElement(row: Range<Int> = 0 ..< 3, column: Range<Int> = 0 ..< 3) -> IndexPath {
         [row.randomElement() ?? 0, column.randomElement() ?? 0]
     }
 }

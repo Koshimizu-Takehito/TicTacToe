@@ -17,7 +17,7 @@ struct PlayerMenuIcon: View {
         }
         .background(content: sizeReader)
         .frame(width: size.width, height: size.height)
-        .environment(\.symbolLineWidth, size.height/10)
+        .environment(\.symbolLineWidth, size.height / 10)
         .environment(\.colorPalette.symbol1, color)
         .environment(\.colorPalette.symbol2, color)
     }

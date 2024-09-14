@@ -1,6 +1,7 @@
 import SwiftUI
 
 // MARK: - ColorPalette
+
 struct ColorPalette: Hashable, Identifiable {
     var id = UUID()
     var name: ColorPalette.Name
@@ -19,13 +20,14 @@ struct ColorPalette: Hashable, Identifiable {
 }
 
 extension ColorPalette {
-    static let `default` = Self.init(name: ColorPalette.Name.default)
+    static let `default` = Self(name: ColorPalette.Name.default)
 
     static let allCases: [Self] = ColorPalette.Name.allCases
         .map(Self.init(name:))
 }
 
 // MARK: - ColorPalette.Name
+
 extension ColorPalette {
     enum Name: String, Hashable, CaseIterable {
         case `default`
@@ -63,8 +65,8 @@ extension ColorPalette {
     }
 }
 
-#if DEBUG
 // MARK: - Color Palette
+
 #Preview {
     @Previewable @State var ratio: Double = 0
 
@@ -114,7 +116,7 @@ extension ColorPalette {
     }
 }
 
-struct RingSlider: View, Animatable {
+private struct RingSlider: View, Animatable {
     @Binding var ratio: Double
     var animatableData: Double
 
@@ -158,4 +160,3 @@ struct RingSlider: View, Animatable {
         }
     }
 }
-#endif
