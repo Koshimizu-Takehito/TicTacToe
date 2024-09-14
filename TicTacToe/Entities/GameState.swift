@@ -18,7 +18,7 @@ extension GameState {
 
     var winnerAndPositions: (winner: Player?, positions: [IndexPath]) {
         switch self {
-        case .win(let winner, let positions):
+        case let .win(winner, positions):
             (winner, positions)
         case .ongoing, .draw:
             (nil, [])

@@ -50,7 +50,7 @@ private extension SymbolGridView {
         }
 
         switch (gameBoard.gameState, state) {
-        case (.win(let winner, let positions), .expanding):
+        case let (.win(winner, positions), .expanding):
             GeometryReader { geometry in
                 VStack {
                     ZStack {
@@ -91,25 +91,22 @@ private extension SymbolGridView {
             // ナナメのスラッシュ
             ZStack {
                 slash(player: player,
-                       [[0,0], [1,1], [2,2]],
-                       [[0,2], [1,1], [2,0]]
-                )
+                      [[0, 0], [1, 1], [2, 2]],
+                      [[0, 2], [1, 1], [2, 0]])
             }
             // ヨコのスラッシュ
             VStack(spacing: spacing) {
                 slash(player: player,
-                       [[0,0], [0,1], [0,2]],
-                       [[1,0], [1,1], [1,2]],
-                       [[2,0], [2,1], [2,2]]
-                )
+                      [[0, 0], [0, 1], [0, 2]],
+                      [[1, 0], [1, 1], [1, 2]],
+                      [[2, 0], [2, 1], [2, 2]])
             }
             // タテのスラッシュ
             HStack(spacing: spacing) {
                 slash(player: player,
-                       [[0,0], [1,0], [2,0]],
-                       [[0,1], [1,1], [2,1]],
-                       [[0,2], [1,2], [2,2]]
-                )
+                      [[0, 0], [1, 0], [2, 0]],
+                      [[0, 1], [1, 1], [2, 1]],
+                      [[0, 2], [1, 2], [2, 2]])
             }
         }
     }
@@ -130,9 +127,9 @@ private extension SymbolGridView {
     /// まるばつの表示
     @ViewBuilder
     func symbolRows() -> some View {
-        ForEach(0..<3) { i in
+        ForEach(0 ..< 3) { i in
             GridRow {
-                ForEach(0..<3) { j in
+                ForEach(0 ..< 3) { j in
                     let indexPath: IndexPath = [i, j]
                     ZStack {
                         let positions = winnerAndPositions.positions
@@ -195,16 +192,17 @@ private extension SymbolGridView {
 }
 
 // MARK: - Redraw
+
 private extension SymbolGridView {
     /// シンボルの配置の状態変更を契機として再描画する
-    func redraw(old: [IndexPath: Player], new: [IndexPath: Player]) {
+    func redraw(old _: [IndexPath: Player], new: [IndexPath: Player]) {
         if new == [:] {
             state = .prepare
         }
     }
 
     /// ゲームの状態変更を契機として再描画する
-    func redraw(old: GameState, new: GameState) {
+    func redraw(old _: GameState, new: GameState) {
         Task {
             switch new {
             case .ongoing:
@@ -246,6 +244,7 @@ func withAnimation(_ animation: Animation? = .default, _ body: () -> Void) async
 }
 
 // MARK: -
+
 private extension SymbolGridView {
     func foregroundColor(player: Player) -> some ShapeStyle {
         switch player {
@@ -269,9 +268,9 @@ private extension SymbolGridView {
     /// ２点間距離から角度を算出する
     func angle(_ positions: [IndexPath]) -> Double {
         switch (positions.first, positions.last) {
-        case (let first?, let last?) where positions.count > 1:
-            let p1: CGPoint = CGPoint(x: last[1], y: last[0])
-            let p2: CGPoint = CGPoint(x: first[1], y: first[0])
+        case let (first?, last?) where positions.count > 1:
+            let p1 = CGPoint(x: last[1], y: last[0])
+            let p2 = CGPoint(x: first[1], y: first[0])
             let x: Double = p1.x - p2.x
             let y: Double = p1.y - p2.y
             return atan2(y, x)
@@ -282,6 +281,7 @@ private extension SymbolGridView {
 }
 
 // MARK: -
+
 private enum AnimationState: Hashable {
     case prepare
     case slash
@@ -316,6 +316,7 @@ private enum AnimationState: Hashable {
 }
 
 // MARK: -
+
 private struct Slash: Shape, Animatable {
     var ratio: Double, position: Double, angle: Double
     /// 表示割合のみアニメーション可能
@@ -323,7 +324,7 @@ private struct Slash: Shape, Animatable {
         get { ratio }
         set { ratio = newValue }
     }
-    
+
     /// 初期化子
     /// - Parameters:
     ///   - ratio: 表示割合 0...1
@@ -341,8 +342,8 @@ private struct Slash: Shape, Animatable {
         let c: Double = abs(cos(angle))
         let s: Double = abs(sin(angle))
         let boundary: Double = abs(cos(.pi / 4.0))
-        let radius: Double = (c >= boundary) ? x/c : y/s
-        let center: CGPoint = CGPoint(x: rect.midX, y: rect.midY)
+        let radius: Double = (c >= boundary) ? x / c : y / s
+        let center = CGPoint(x: rect.midX, y: rect.midY)
         let p1: CGPoint = center + radius * CGPoint(x: cos(angle), y: sin(angle))
         let p2: CGPoint = center + radius * CGPoint(x: cos(angle + .pi), y: sin(angle + .pi))
         let p3: CGPoint = position * p1 + (1 - position) * p2
@@ -354,6 +355,7 @@ private struct Slash: Shape, Animatable {
 }
 
 // MARK: - 引き分けのシンボル
+
 private struct DrawSymbolView: View {
     let offset: Double
     @State private var ratio: Double = 1
@@ -380,7 +382,7 @@ private struct SymbolView: View {
 
     var body: some View {
         ZStack {
-            Color.white.opacity(1/0xFFFF)
+            Color.white.opacity(1 / 0xFFFF)
             switch symbol {
             case .circle:
                 RingMark(ratio: ratio)
@@ -390,7 +392,7 @@ private struct SymbolView: View {
                 Color.clear
             }
         }
-        .onChange(of: symbol) { oldValue, newValue in
+        .onChange(of: symbol) { _, _ in
             ratio = 0
             withAnimation(.spring(duration: 0.7)) {
                 ratio = 1
@@ -408,7 +410,7 @@ private struct GameResultTapModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .overlay {
-                Color.white.opacity(1/0xFFFF)
+                Color.white.opacity(1 / 0xFFFF)
             }
             .onTapGesture {
                 if canTap {
@@ -434,7 +436,7 @@ private struct AdjustScaleModifier: ViewModifier {
             .background {
                 GeometryReader { geometry in
                     Color.clear
-                        .onChange(of: geometry.size, initial: true) { old, new in
+                        .onChange(of: geometry.size, initial: true) { _, new in
                             contentSize = new
                         }
                 }

@@ -33,8 +33,8 @@ private extension GameBoardView {
         }
         .frame(width: size, height: size)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .environment(\.latticeSpacing, size/40)
-        .environment(\.symbolLineWidth, size/40)
+        .environment(\.latticeSpacing, size / 40)
+        .environment(\.symbolLineWidth, size / 40)
         .id(viewModel.drawId)
     }
 

@@ -1,6 +1,7 @@
 import SwiftUI
 
 // MARK: - Difficulty
+
 enum Difficulty: Hashable, CaseIterable {
     case easy
     case medium
@@ -41,6 +42,7 @@ enum Difficulty: Hashable, CaseIterable {
 }
 
 // MARK: - PlayMode
+
 enum PlayMode: Hashable {
     case player
     case random

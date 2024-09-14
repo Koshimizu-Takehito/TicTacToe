@@ -11,7 +11,7 @@ private let checkPositions: [[IndexPath]] = [
     [[2, 0], [2, 1], [2, 2]],
     // ナナメ
     [[0, 0], [1, 1], [2, 2]],
-    [[0, 2], [1, 1], [2, 0]]
+    [[0, 2], [1, 1], [2, 0]],
 ]
 
 struct GameBoardLogic {
@@ -34,8 +34,8 @@ struct GameBoardLogic {
             break
         }
         var bestScore: Int = (current == players.opponent) ? .max : .min
-        for x in (0..<3).shuffled() {
-            for y in (0..<3).shuffled() {
+        for x in (0 ..< 3).shuffled() {
+            for y in (0 ..< 3).shuffled() {
                 if occupied[[x, y]] == nil {
                     var copy = self
                     copy.place(at: [x, y], player: current)

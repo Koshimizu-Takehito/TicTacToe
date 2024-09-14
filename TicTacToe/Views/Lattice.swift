@@ -27,35 +27,35 @@ private struct Lattice: View, Animatable {
             [
                 // タテ（左）
                 CGRect(
-                    x: 1.0 * size/3.0 - lineWidth/2.0,
-                    y: (1.0 - ratio) * length/2,
+                    x: 1.0 * size / 3.0 - lineWidth / 2.0,
+                    y: (1.0 - ratio) * length / 2,
                     width: lineWidth,
                     height: length * ratio
                 ),
                 // タテ（右）
                 CGRect(
-                    x: 2.0 * size/3.0 - lineWidth/2.0,
-                    y: (1.0 - ratio) * length/2,
+                    x: 2.0 * size / 3.0 - lineWidth / 2.0,
+                    y: (1.0 - ratio) * length / 2,
                     width: lineWidth,
                     height: length * ratio
                 ),
                 // ヨコ（上）
                 CGRect(
-                    x: (1.0 - ratio) * length/2,
-                    y: 1.0 * size/3.0 - lineWidth/2.0,
+                    x: (1.0 - ratio) * length / 2,
+                    y: 1.0 * size / 3.0 - lineWidth / 2.0,
                     width: length * ratio,
                     height: lineWidth
                 ),
                 // ヨコ（下）
                 CGRect(
-                    x: (1.0 - ratio) * length/2,
-                    y: 2.0 * size/3.0 - lineWidth/2.0,
+                    x: (1.0 - ratio) * length / 2,
+                    y: 2.0 * size / 3.0 - lineWidth / 2.0,
                     width: length * ratio,
                     height: lineWidth
-                )
+                ),
             ]
-                .map { Path(roundedRect: $0, cornerSize: .zero) }
-                .forEach { context.fill($0, with: .color(Color(color))) }
+            .map { Path(roundedRect: $0, cornerSize: .zero) }
+            .forEach { context.fill($0, with: .color(Color(color))) }
         }
     }
 }
