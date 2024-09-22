@@ -1,0 +1,23 @@
+import SwiftUI
+
+struct ContentView: View {
+    var body: some View {
+        GameBoardView()
+            .environment()
+    }
+}
+
+extension View {
+    @ViewBuilder
+    func environment(_ configuration: (GameBoard) -> Void = { _ in }) -> some View {
+        let gameBoard = GameBoard.shared
+        let _ = configuration(gameBoard)
+        environment(gameBoard)
+            .environment(PlayerMenuViewModel(gameBoard: gameBoard))
+            .environment(GameBoardViewModel(gameBoard: gameBoard))
+    }
+}
+
+#Preview {
+    ContentView()
+}
