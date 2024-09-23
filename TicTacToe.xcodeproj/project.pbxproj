@@ -533,10 +533,10 @@
 				INFOPLIST_KEY_CFBundleDisplayName = TicTacToe;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.4.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.takehito.koshimizu.TicTacToe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.takehito.koshimizu.TicTacToeWatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 			};
 			name = Debug;
 		};
@@ -549,10 +549,10 @@
 				INFOPLIST_KEY_CFBundleDisplayName = TicTacToe;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.4.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.takehito.koshimizu.TicTacToe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.takehito.koshimizu.TicTacToeWatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -576,12 +576,12 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.4.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.takehito.koshimizu.TicTacToe.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.takehito.koshimizu.TicTacToeWatch.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 10.0;
 			};
@@ -606,12 +606,12 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.4.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.takehito.koshimizu.TicTacToe.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.takehito.koshimizu.TicTacToeWatch.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VALIDATE_PRODUCT = YES;
 				WATCHOS_DEPLOYMENT_TARGET = 10.0;
