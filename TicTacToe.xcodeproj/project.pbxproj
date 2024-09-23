@@ -44,7 +44,7 @@
 		FBAB8A702CA139BB003AD555 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Resources/Assets.xcassets,
+				Resources/ColorPalette.xcassets,
 				Resources/InfoPlist.xcstrings,
 				Resources/Localizable.xcstrings,
 				Sources/App/App.swift,
