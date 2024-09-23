@@ -1,9 +1,11 @@
 import SwiftUI
 
+// MARK: - iOS
+#if os(iOS) || os(macOS)
 struct PlayerMenuView: View {
     @Environment(PlayerMenuViewModel.self)
     private var viewModel
-
+    
     var body: some View {
         HStack(spacing: 0) {
             ForEach(Player.allCases, id: \.self) { player in
@@ -30,7 +32,7 @@ struct PlayerMenuView: View {
                     } label: {
                         Label("Computer", systemImage: "x.squareroot")
                     }
-
+                    
                     // シンボル選択
                     ControlGroup {
                         ForEach(Symbol.allCases, id: \.self) { symbol in
@@ -54,6 +56,23 @@ struct PlayerMenuView: View {
         .buttonStyle(.actionStyle)
     }
 }
+#endif
+
+// MARK: - watchOS
+#if os(watchOS)
+struct PlayerMenuView: View {
+    @Environment(PlayerMenuViewModel.self) private var viewModel
+
+    var body: some View {
+        @Bindable var viewModel = viewModel
+        Picker("Computer", selection: $viewModel.difficulty) {
+            ForEach.init(Difficulty.allCases, id: \.self) { item in
+                Text(item.title).tag(item)
+            }
+        }
+    }
+}
+#endif
 
 #Preview {
     PlayerMenuView()

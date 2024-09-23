@@ -59,11 +59,13 @@ private extension SymbolGridView {
                                 .matchedGeometryEffect(id: indexPath, in: namespace, isSource: true)
                         }
                     }
-                    Text("WINNER!")
-                        .font(.largeTitle)
-                        .fontWeight(.black)
-                        .foregroundStyle(foregroundColor(player: winner))
-                        .modifier(AdjustScaleModifier(containerSize: geometry.size))
+                    #if os(iOS) || os(macOS)
+                        Text("WINNER!")
+                            .font(.largeTitle)
+                            .fontWeight(.black)
+                            .foregroundStyle(foregroundColor(player: winner))
+                            .modifier(AdjustScaleModifier(containerSize: geometry.size))
+                    #endif
                 }
             }
         case (.draw, .draw):
@@ -71,11 +73,13 @@ private extension SymbolGridView {
                 let offset = max(geometry.size.width, geometry.size.height) / 10
                 VStack {
                     DrawSymbolView(offset: offset)
-                    Text("DRAW")
-                        .font(.largeTitle)
-                        .fontWeight(.black)
-                        .foregroundStyle(color1.screen(color2))
-                        .modifier(AdjustScaleModifier(containerSize: geometry.size))
+                    #if os(iOS) || os(macOS)
+                        Text("DRAW")
+                            .font(.largeTitle)
+                            .fontWeight(.black)
+                            .foregroundStyle(color1.screen(color2))
+                            .modifier(AdjustScaleModifier(containerSize: geometry.size))
+                    #endif
                 }
                 .padding(.vertical, 2 * offset)
             }
