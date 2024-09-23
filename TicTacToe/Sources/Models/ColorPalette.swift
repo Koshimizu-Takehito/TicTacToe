@@ -95,7 +95,9 @@ extension ColorPalette {
                     .foregroundStyle(.systemGroupedBackground)
                     .frame(height: 160)
                     .listRowInsets(.init())
+                #if os(iOS) || os(macOS)
                     .listRowSeparator(.hidden, edges: .all)
+                #endif
             }
             .listStyle(.automatic)
 

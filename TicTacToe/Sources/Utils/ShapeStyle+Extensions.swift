@@ -37,9 +37,9 @@ extension ShapeStyle where Self == Color {
 
 extension Color {
     static var systemGroupedBackground: Color {
-        #if canImport(UIKit)
+        #if os(iOS)
             return Color(UIColor.systemGroupedBackground)
-        #elseif canImport(AppKit)
+        #elseif os(macOS)
             return Color(NSColor.windowBackgroundColor)
         #else
             return Color.clear
