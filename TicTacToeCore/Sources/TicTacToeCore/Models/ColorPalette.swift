@@ -12,10 +12,10 @@ struct ColorPalette: Hashable, Identifiable {
 
     init(name: ColorPalette.Name) {
         self.name = name
-        background = Color("\(Self.self)/\(name.rawValue)/background")
-        foreground = Color("\(Self.self)/\(name.rawValue)/foreground")
-        symbol1 = Color("\(Self.self)/\(name.rawValue)/symbol1")
-        symbol2 = Color("\(Self.self)/\(name.rawValue)/symbol2")
+        background = Color.init("\(Self.self)/\(name.rawValue)/background", bundle: .module)
+        foreground = Color("\(Self.self)/\(name.rawValue)/foreground", bundle: .module)
+        symbol1 = Color("\(Self.self)/\(name.rawValue)/symbol1", bundle: .module)
+        symbol2 = Color("\(Self.self)/\(name.rawValue)/symbol2", bundle: .module)
     }
 }
 
@@ -110,11 +110,11 @@ extension ColorPalette {
             }
         }
         .toolbar {
-            Button(String("Reset")) {
+            Button(String(localized: "Reset", bundle: .module)) {
                 withAnimation { ratio = ratio.rounded(.toNearestOrEven) }
             }
         }
-        .navigationTitle(String("Color Palette"))
+        .navigationTitle(String(localized: "Color Palette", bundle: .module))
     }
 }
 
