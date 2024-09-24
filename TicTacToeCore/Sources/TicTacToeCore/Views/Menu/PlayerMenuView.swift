@@ -30,7 +30,7 @@ struct PlayerMenuView: View {
                             }
                         }
                     } label: {
-                        Label("Computer", systemImage: "x.squareroot")
+                        Label(String(localized: "Computer", bundle: .module), systemImage: "x.squareroot")
                     }
                     
                     // シンボル選択

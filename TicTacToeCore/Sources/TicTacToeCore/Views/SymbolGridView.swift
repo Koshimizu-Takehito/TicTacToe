@@ -60,7 +60,7 @@ private extension SymbolGridView {
                         }
                     }
                     #if os(iOS) || os(macOS)
-                        Text("WINNER!")
+                        Text("WINNER!", bundle: .module)
                             .font(.largeTitle)
                             .fontWeight(.black)
                             .foregroundStyle(foregroundColor(player: winner))
@@ -74,7 +74,7 @@ private extension SymbolGridView {
                 VStack {
                     DrawSymbolView(offset: offset)
                     #if os(iOS) || os(macOS)
-                        Text("DRAW")
+                        Text("DRAW", bundle: .module)
                             .font(.largeTitle)
                             .fontWeight(.black)
                             .foregroundStyle(color1.screen(color2))

@@ -1,14 +1,11 @@
 import SwiftUI
+import TicTacToeCore
 
 @main
-struct App: SwiftUI.App {
+struct WatchApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
     }
-}
-
-#Preview {
-    ContentView()
 }
