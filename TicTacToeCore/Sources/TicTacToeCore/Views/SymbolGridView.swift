@@ -457,10 +457,7 @@ private struct AdjustScaleModifier: ViewModifier {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background()
         .backgroundStyle(.mint.opacity(0.3))
-        .environment { board in
-            board.role1 = .computer(.easy)
-            board.role2 = .computer(.hard)
-        }
+        .environment(gameBoard: GameBoard())
 //        .environment(\.locale, .init(identifier: "de")) // DRAW の文字が長い
         .environment(\.locale, .init(identifier: "vi")) // WINNER! の文字が長い
 }

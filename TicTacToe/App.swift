@@ -5,7 +5,7 @@ import TicTacToeCore
 struct App: SwiftUI.App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TicTacToeView()
         }
     }
 }

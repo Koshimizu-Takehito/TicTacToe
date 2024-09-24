@@ -5,7 +5,7 @@ import TicTacToeCore
 struct WatchApp_iOS: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TicTacToeView()
         }
     }
 }

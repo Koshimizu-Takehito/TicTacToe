@@ -87,5 +87,5 @@ private extension GameBoardView {
 
 #Preview {
     GameBoardView()
-        .environment()
+        .environment(gameBoard: GameBoard())
 }
