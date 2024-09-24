@@ -45,6 +45,6 @@ enum LanguageCode: String, Hashable, CaseIterable {
 
 extension LanguageCode {
     static var current: Self {
-        LanguageCode(rawValue: String(localized: "LanguageCode")) ?? .en
+        LanguageCode(rawValue: String(localized: "LanguageCode", bundle: .module)) ?? .en
     }
 }
