@@ -76,5 +76,5 @@ struct PlayerMenuView: View {
 
 #Preview {
     PlayerMenuView()
-        .environment()
+        .environment(gameBoard: GameBoard())
 }

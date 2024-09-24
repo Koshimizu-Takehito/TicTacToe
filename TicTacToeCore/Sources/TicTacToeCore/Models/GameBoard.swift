@@ -17,10 +17,6 @@ struct PlayerSymbolSetting {
     }
 }
 
-extension GameBoard {
-    static let shared = GameBoard()
-}
-
 @Observable
 @MainActor
 @dynamicMemberLookup
@@ -58,8 +54,6 @@ final class GameBoard {
     private var currentPlayer: Player = .first {
         didSet { place() }
     }
-
-    private init() {}
 
     func symbol(at indexPath: IndexPath) -> Symbol? {
         gameBoard.occupied[indexPath].map(symbols.symbol(for:))
