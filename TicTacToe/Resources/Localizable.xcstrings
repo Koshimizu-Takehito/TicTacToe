@@ -1465,9 +1465,6 @@
         }
       }
     },
-    "Hello, world!" : {
-
-    },
     "LanguageCode" : {
       "localizations" : {
         "ain" : {
