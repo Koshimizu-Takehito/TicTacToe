@@ -8,7 +8,7 @@ struct GameBoardView: View {
     var body: some View {
         VStack {
             PlayerMenuView()
-            GeometryReader(content: board(geometry:))
+            GameBoardInnerView(viewModel: viewModel)
             ResetButton(action: viewModel.reset)
         }
         .padding()
@@ -41,7 +41,7 @@ struct GameBoardView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                GeometryReader(content: board(geometry:))
+                GameBoardInnerView(viewModel: viewModel)
             }
             .background {
                 viewModel.colorPalette.background
@@ -65,27 +65,7 @@ struct GameBoardView: View {
 }
 #endif
 
-private extension GameBoardView {
-    @ViewBuilder
-    func board(geometry: GeometryProxy) -> some View {
-        let size = min(geometry.size.width, geometry.size.height)
-        ZStack(alignment: .center) {
-            LatticeView()
-            SymbolGridView(
-                onTapGameResult: viewModel.restartPlayerGame,
-                onGameResultAnimationDidFinish: viewModel.restartComputerGame
-            )
-            .allowsHitTesting(viewModel.allowsHitTesting())
-        }
-        .frame(width: size, height: size)
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .environment(\.latticeSpacing, size / 40)
-        .environment(\.symbolLineWidth, size / 40)
-        .id(viewModel.drawId)
-    }
-}
-
-#Preview {
+@available(iOS 18.0, macOS 15.0, watchOS 11.0, *)
+#Preview(traits: .myEnvironment) {
     GameBoardView()
-        .environment(gameBoard: GameBoard())
 }

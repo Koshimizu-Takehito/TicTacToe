@@ -38,10 +38,14 @@ final class GameBoardViewModel {
     }
 
     func reset() {
+        reset(color: .allCases.randomElement()!)
+    }
+
+    func reset(color: ColorPalette) {
         drawId = UUID()
         withAnimation(.spring(duration: 1)) {
             gameBoard.reset()
-            colorPalette = ColorPalette.allCases.randomElement()!
+            colorPalette = color
         }
     }
 }
