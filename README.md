@@ -22,5 +22,5 @@ Enjoy the classic game of Tic-Tac-Toe in a simple and stylish way with "TicTacTo
 ```bash
 git clone git@github.com:Koshimizu-Takehito/TicTacToe.git
 cd TicTacToe
-open TicTacToe.xcodeproj
+open TicTacToe.xcworkspace
 ```
