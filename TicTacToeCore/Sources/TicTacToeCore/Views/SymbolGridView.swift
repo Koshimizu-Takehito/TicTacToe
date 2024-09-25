@@ -449,7 +449,8 @@ private struct AdjustScaleModifier: ViewModifier {
     }
 }
 
-#Preview {
+@available(iOS 18.0, macOS 15.0, watchOS 11.0, *)
+#Preview(traits: .myEnvironment) {
     SymbolGridView()
         .frame(width: 330, height: 330)
         .background()
@@ -457,7 +458,6 @@ private struct AdjustScaleModifier: ViewModifier {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background()
         .backgroundStyle(.mint.opacity(0.3))
-        .environment(gameBoard: GameBoard())
 //        .environment(\.locale, .init(identifier: "de")) // DRAW の文字が長い
         .environment(\.locale, .init(identifier: "vi")) // WINNER! の文字が長い
 }

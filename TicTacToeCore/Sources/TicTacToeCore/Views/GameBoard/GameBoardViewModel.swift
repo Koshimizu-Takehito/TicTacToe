@@ -8,6 +8,7 @@ final class GameBoardViewModel {
 
     private(set) var drawId = UUID()
     private(set) var colorPalette: ColorPalette = .default
+    var colorScheme: ColorScheme?
     private var role1: PlayMode { gameBoard.role1 }
     private var role2: PlayMode { gameBoard.role2 }
     private var isPlayerGame: Bool { role1 == .player || role2 == .player }
@@ -38,10 +39,14 @@ final class GameBoardViewModel {
     }
 
     func reset() {
+        reset(color: .allCases.randomElement()!)
+    }
+
+    func reset(color: ColorPalette) {
         drawId = UUID()
         withAnimation(.spring(duration: 1)) {
             gameBoard.reset()
-            colorPalette = ColorPalette.allCases.randomElement()!
+            colorPalette = color
         }
     }
 }

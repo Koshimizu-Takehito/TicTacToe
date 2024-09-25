@@ -5,7 +5,7 @@ public struct TicTacToeView: View {
 
     public var body: some View {
         GameBoardView()
-            .environment(gameBoard: GameBoard())
+            .myEnvironment()
     }
 }
 

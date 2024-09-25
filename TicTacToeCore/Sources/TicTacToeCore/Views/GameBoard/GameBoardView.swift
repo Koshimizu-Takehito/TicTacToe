@@ -6,10 +6,15 @@ struct GameBoardView: View {
     @Environment(GameBoardViewModel.self) private var viewModel
 
     var body: some View {
-        VStack {
+        @Bindable var viewModel = viewModel
+        VStack(alignment: .trailing) {
             PlayerMenuView()
-            GeometryReader(content: board(geometry:))
-            ResetButton(action: viewModel.reset)
+            GameBoardInnerView(viewModel: viewModel)
+            HStack(spacing: 0) {
+                ResetButton(action: viewModel.reset)
+                ColorSchemeSwitch(colorScheme: $viewModel.colorScheme)
+                    .frame(width: 40, height: 40)
+            }
         }
         .padding()
         .background {
@@ -17,6 +22,7 @@ struct GameBoardView: View {
                 .ignoresSafeArea()
         }
         .environment(\.colorPalette, viewModel.colorPalette)
+        .preferredColorScheme(viewModel.colorScheme)
     }
 }
 
@@ -26,6 +32,9 @@ private struct ResetButton: View {
     var body: some View {
         Button(action: action) {
             Image(systemName: "arrow.triangle.2.circlepath")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 40, height: 40)
         }
         .buttonStyle(.titleStyle)
     }
@@ -41,7 +50,7 @@ struct GameBoardView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                GeometryReader(content: board(geometry:))
+                GameBoardInnerView(viewModel: viewModel)
             }
             .background {
                 viewModel.colorPalette.background
@@ -65,27 +74,7 @@ struct GameBoardView: View {
 }
 #endif
 
-private extension GameBoardView {
-    @ViewBuilder
-    func board(geometry: GeometryProxy) -> some View {
-        let size = min(geometry.size.width, geometry.size.height)
-        ZStack(alignment: .center) {
-            LatticeView()
-            SymbolGridView(
-                onTapGameResult: viewModel.restartPlayerGame,
-                onGameResultAnimationDidFinish: viewModel.restartComputerGame
-            )
-            .allowsHitTesting(viewModel.allowsHitTesting())
-        }
-        .frame(width: size, height: size)
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .environment(\.latticeSpacing, size / 40)
-        .environment(\.symbolLineWidth, size / 40)
-        .id(viewModel.drawId)
-    }
-}
-
-#Preview {
+@available(iOS 18.0, macOS 15.0, watchOS 11.0, *)
+#Preview(traits: .myEnvironment) {
     GameBoardView()
-        .environment(gameBoard: GameBoard())
 }

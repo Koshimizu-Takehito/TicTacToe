@@ -4,7 +4,7 @@ import SwiftUI
 struct PlayerMenuIcon: View {
     let symbol: Symbol
     @State private var size: CGSize = .zero
-    @Environment(\.colorPalette.foreground) private var color
+    @TextColor private var color
 
     var body: some View {
         Group {
