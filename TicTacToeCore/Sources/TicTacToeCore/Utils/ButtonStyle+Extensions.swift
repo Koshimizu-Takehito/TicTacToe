@@ -19,7 +19,7 @@ extension ButtonStyle where Self == ActionButtonStyle {
 // MARK: - TitleButtonStyle
 
 struct TitleButtonStyle: ButtonStyle {
-    @Environment(\.colorPalette.foreground) private var color
+    @TextColor private var color
 
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
@@ -34,7 +34,7 @@ struct TitleButtonStyle: ButtonStyle {
 // MARK: - ActionButtonStyle
 
 struct ActionButtonStyle: ButtonStyle {
-    @Environment(\.colorPalette.foreground) private var color
+    @TextColor private var color
 
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
