@@ -8,6 +8,7 @@ final class GameBoardViewModel {
 
     private(set) var drawId = UUID()
     private(set) var colorPalette: ColorPalette = .default
+    var colorScheme: ColorScheme?
     private var role1: PlayMode { gameBoard.role1 }
     private var role2: PlayMode { gameBoard.role2 }
     private var isPlayerGame: Bool { role1 == .player || role2 == .player }

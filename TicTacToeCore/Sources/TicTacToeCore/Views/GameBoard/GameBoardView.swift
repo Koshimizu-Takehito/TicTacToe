@@ -6,10 +6,15 @@ struct GameBoardView: View {
     @Environment(GameBoardViewModel.self) private var viewModel
 
     var body: some View {
-        VStack {
+        @Bindable var viewModel = viewModel
+        VStack(alignment: .trailing) {
             PlayerMenuView()
             GameBoardInnerView(viewModel: viewModel)
-            ResetButton(action: viewModel.reset)
+            HStack(spacing: 0) {
+                ResetButton(action: viewModel.reset)
+                ColorSchemeSwitch(colorScheme: $viewModel.colorScheme)
+                    .frame(width: 40, height: 40)
+            }
         }
         .padding()
         .background {
@@ -17,6 +22,7 @@ struct GameBoardView: View {
                 .ignoresSafeArea()
         }
         .environment(\.colorPalette, viewModel.colorPalette)
+        .preferredColorScheme(viewModel.colorScheme)
     }
 }
 
@@ -26,6 +32,9 @@ private struct ResetButton: View {
     var body: some View {
         Button(action: action) {
             Image(systemName: "arrow.triangle.2.circlepath")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 40, height: 40)
         }
         .buttonStyle(.titleStyle)
     }
