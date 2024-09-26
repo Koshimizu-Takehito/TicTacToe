@@ -11,11 +11,7 @@ struct ColorSchemeSwitch: View {
 
     var body: some View {
         Button {
-            ratio = 0.0
             toggle()
-            withAnimation(.smooth(duration: 0.6)) {
-                ratio = 1.0
-            }
         } label: {
             ZStack {
                 SwitchShape(angle: .degrees(-90), ratio: isOn ? 1 : ratio, reversed: true)
@@ -39,7 +35,11 @@ struct ColorSchemeSwitch: View {
     }
 
     func toggle() {
+        ratio = 0.0
         colorScheme = isOn ? .dark : .light
+        withAnimation(.smooth(duration: 0.6)) {
+            ratio = 1.0
+        }
     }
 }
 
@@ -125,9 +125,10 @@ private extension CGRect {
 // MARK: - Preview
 
 #Preview {
-    @Previewable @State var colorScheme = ColorScheme?.some(.light)
+    @Previewable @State var colorScheme: ColorScheme?
 
     ColorSchemeSwitch(colorScheme: $colorScheme)
-        .padding()
+        .frame(width: 100, height: 100)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background { Color.blue.ignoresSafeArea() }
 }
