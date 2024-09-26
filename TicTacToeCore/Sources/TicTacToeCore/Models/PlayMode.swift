@@ -46,7 +46,7 @@ enum Difficulty: Hashable, CaseIterable {
 enum PlayMode: Hashable {
     case player
     case random
-    case computer(Difficulty)
+    case computer(Difficulty = .medium)
 }
 
 extension PlayMode: CaseIterable {
