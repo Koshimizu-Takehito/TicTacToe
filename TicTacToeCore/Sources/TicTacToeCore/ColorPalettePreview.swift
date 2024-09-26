@@ -1,3 +1,4 @@
+#if DEBUG
 import SwiftUI
 
 // MARK: - Preview
@@ -30,3 +31,4 @@ private extension GameBoardViewModel {
         }
     }
 }
+#endif
