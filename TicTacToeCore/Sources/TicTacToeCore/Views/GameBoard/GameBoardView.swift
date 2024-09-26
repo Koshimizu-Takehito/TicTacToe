@@ -12,9 +12,11 @@ struct GameBoardView: View {
             GameBoardInnerView(viewModel: viewModel)
             HStack(spacing: 0) {
                 ResetButton(action: viewModel.reset)
+                Spacer()
                 ColorSchemeSwitch(colorScheme: $viewModel.colorScheme)
                     .frame(width: 40, height: 40)
             }
+            .frame(maxWidth: .infinity)
         }
         .padding()
         .background {

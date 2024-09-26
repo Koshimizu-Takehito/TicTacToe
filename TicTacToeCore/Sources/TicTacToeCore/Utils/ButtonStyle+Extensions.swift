@@ -27,7 +27,6 @@ struct TitleButtonStyle: ButtonStyle {
             .foregroundStyle(color)
             .padding(.horizontal)
             .opacity(configuration.isPressed ? 0.2 : 1)
-            .padding()
     }
 }
 
