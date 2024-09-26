@@ -8,8 +8,11 @@ struct GameBoardView: View {
     var body: some View {
         @Bindable var viewModel = viewModel
         VStack(alignment: .trailing) {
+            // メニュー
             PlayerMenuView()
+            // 盤面
             GameBoardInnerView(viewModel: viewModel)
+            // ボトムアイテム
             HStack(spacing: 0) {
                 ResetButton(action: viewModel.reset)
                 Spacer()
