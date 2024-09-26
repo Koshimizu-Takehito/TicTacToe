@@ -6,9 +6,9 @@ struct PlayerMenuTitle: View {
     var body: some View {
         switch mode {
         case let .computer(difficulty):
-            Text("\(mode.title) \(difficulty.level)", bundle: .module)
+            Text("\(difficulty.title)")
         default:
-            Text("\(mode.title)", bundle: .module)
+            Text("\(mode.title)")
         }
     }
 }
