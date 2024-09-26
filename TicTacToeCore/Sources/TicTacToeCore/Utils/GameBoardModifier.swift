@@ -12,11 +12,3 @@ struct GameBoardModifier: ViewModifier {
             .environment(GameBoardViewModel(gameBoard: gameBoard))
     }
 }
-
-// MARK: -
-
-extension View {
-    func myEnvironment(gameBoard: GameBoard = GameBoard()) -> some View {
-        modifier(GameBoardModifier(gameBoard: gameBoard))
-    }
-}
