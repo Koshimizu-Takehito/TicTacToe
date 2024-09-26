@@ -14,5 +14,8 @@ struct PlayerMenuTitle: View {
 }
 
 #Preview {
-    PlayerMenuTitle(mode: .computer(.hard))
+    ForEach(PlayMode.allCases, id: \.self) { mode in
+        PlayerMenuTitle(mode: mode)
+    }
+    .padding()
 }

@@ -1,28 +1,42 @@
 import SwiftUI
 
+// MARK: - PlayerMenuLabel
+
 struct PlayerMenuLabel: View {
+    @TextColor private var color
     var mode: PlayMode
     var symbol: Symbol
 
     var body: some View {
-        Label(
-            title: {
-                PlayerMenuTitle(mode: mode)
-            },
-            icon: {
-                PlayerMenuIcon(symbol: symbol)
-            }
-        )
-        .fixedSize()
-        .labelStyle(PlayerMenuLabelStyle())
+        VStack(spacing: 0) {
+            Text("\(mode.title)")
+                .font(.subheadline)
+                .foregroundStyle(mode == .player ? .clear : color)
+            Label(
+                title: {
+                    PlayerMenuTitle(mode: mode)
+                },
+                icon: {
+                    PlayerMenuIcon(symbol: symbol)
+                }
+            )
+            .fixedSize()
+            .font(.title2.bold())
+            .foregroundStyle(color)
+            .labelStyle(PlayerMenuLabelStyle())
+        }
     }
 }
+
+// MARK: -
 
 extension PlayerMenuLabel {
     init(viewModel: PlayerMenuIconViewModel) {
         self.init(mode: viewModel.mode, symbol: viewModel.symbol)
     }
 }
+
+// MARK: - PlayerMenuLabelStyle
 
 private struct PlayerMenuLabelStyle: LabelStyle {
     @TextColor private var color
@@ -32,13 +46,13 @@ private struct PlayerMenuLabelStyle: LabelStyle {
             configuration.icon
             configuration.title
         }
-        .font(.title2.bold())
-        .foregroundStyle(color)
     }
 }
 
+// MARK: - Preview
+
 #Preview {
-    Grid(alignment: .leading) {
+    Grid {
         ForEach(PlayMode.allCases, id: \.self) { mode in
             GridRow {
                 ForEach(Symbol.allCases, id: \.self) { symbol in
