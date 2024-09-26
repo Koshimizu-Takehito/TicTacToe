@@ -10,24 +10,37 @@ struct ColorSchemeSwitch: View {
     @BackgroundColor private var background
 
     var body: some View {
+#if os(iOS)
         Button {
             toggle()
         } label: {
-            ZStack {
-                SwitchShape(angle: .degrees(-90), ratio: isOn ? 1 : ratio, reversed: true)
-                    .foregroundStyle(background)
-                    .background(foreground, in: Circle())
-                    .opacity(isOn ? 1 - ratio : ratio)
-                SwitchShape(angle: .degrees(90), ratio: isOn ? ratio : 1, reversed: false)
-                    .foregroundStyle(foreground)
-                    .background(background, in: Circle())
-                    .opacity(isOn ? ratio : 1 - ratio)
-            }
+            content()
         }
         .transaction { transaction in
             transaction.disablesAnimations = true
         }
         .contentShape(Circle())
+#else
+        content()
+            .contentShape(Circle())
+            .onTapGesture {
+                toggle()
+            }
+#endif
+    }
+
+    @ViewBuilder
+    func content() -> some View {
+        ZStack {
+            SwitchShape(angle: .degrees(-90), ratio: isOn ? 1 : ratio, reversed: true)
+                .foregroundStyle(background)
+                .background(foreground, in: Circle())
+                .opacity(isOn ? 1 - ratio : ratio)
+            SwitchShape(angle: .degrees(90), ratio: isOn ? ratio : 1, reversed: false)
+                .foregroundStyle(foreground)
+                .background(background, in: Circle())
+                .opacity(isOn ? ratio : 1 - ratio)
+        }
     }
 
     var isOn: Bool {
