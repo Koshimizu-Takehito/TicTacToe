@@ -3,7 +3,6 @@ import SwiftUI
 // MARK: - ColorSchemeSwitch
 
 struct ColorSchemeSwitch: View {
-    @Environment(\.colorScheme) var defaultScheme
     @Binding var colorScheme: ColorScheme?
     @State private var ratio = 1.0
     @TextColor private var foreground
@@ -31,7 +30,7 @@ struct ColorSchemeSwitch: View {
     }
 
     var isOn: Bool {
-        (colorScheme ?? defaultScheme) == .light
+        colorScheme != .dark
     }
 
     func toggle() {
