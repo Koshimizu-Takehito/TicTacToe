@@ -7,12 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB7670C92CA78E2C002BC3C0 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB7670C82CA78E2C002BC3C0 /* WidgetKit.framework */; };
+		FB7670CB2CA78E2C002BC3C0 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB7670CA2CA78E2C002BC3C0 /* SwiftUI.framework */; };
+		FB7670D72CA78E2E002BC3C0 /* TicTacToeWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = FB7670C72CA78E2C002BC3C0 /* TicTacToeWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FB97AB8E2CA24819000AD13B /* TicTacToeWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = FB97AB812CA24817000AD13B /* TicTacToeWatch.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FBB0DA4A2CA26A42003681DE /* TicTacToeCore in Frameworks */ = {isa = PBXBuildFile; productRef = FBB0DA492CA26A42003681DE /* TicTacToeCore */; };
 		FBB0DA4C2CA26A7D003681DE /* TicTacToeCore in Frameworks */ = {isa = PBXBuildFile; productRef = FBB0DA4B2CA26A7D003681DE /* TicTacToeCore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		FB7670D52CA78E2E002BC3C0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB9B4E682ABE91F300132FBA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FB7670C62CA78E2C002BC3C0;
+			remoteInfo = TicTacToeWidgetExtension;
+		};
 		FB97AB8C2CA24819000AD13B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FB9B4E682ABE91F300132FBA /* Project object */;
@@ -23,6 +33,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		FB7670D82CA78E2E002BC3C0 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FB7670D72CA78E2E002BC3C0 /* TicTacToeWidget.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FB97AB8F2CA24819000AD13B /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -37,12 +58,22 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FB7670C72CA78E2C002BC3C0 /* TicTacToeWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TicTacToeWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB7670C82CA78E2C002BC3C0 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = /System/Library/Frameworks/WidgetKit.framework; sourceTree = "<absolute>"; };
+		FB7670CA2CA78E2C002BC3C0 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = /System/Library/Frameworks/SwiftUI.framework; sourceTree = "<absolute>"; };
 		FB97AB812CA24817000AD13B /* TicTacToeWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacToeWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB9B4E702ABE91F300132FBA /* TicTacToe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacToe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBB0DA412CA25F95003681DE /* TicTacToeCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = TicTacToeCore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		FB7670DC2CA78E2E002BC3C0 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = FB7670C62CA78E2C002BC3C0 /* TicTacToeWidget */;
+		};
 		FB97AB962CA2492E000AD13B /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -60,11 +91,21 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		FB7670CC2CA78E2C002BC3C0 /* TicTacToeWidget */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (FB7670DC2CA78E2E002BC3C0 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = TicTacToeWidget; sourceTree = "<group>"; };
 		FB97AB822CA24817000AD13B /* TicTacToeWatch */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TicTacToeWatch; sourceTree = "<group>"; };
 		FBD118A52C8D87470028803F /* TicTacToe */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (FBD1E30B2C8EBD8B001F956A /* PBXFileSystemSynchronizedBuildFileExceptionSet */, FB97AB962CA2492E000AD13B /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = TicTacToe; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		FB7670C42CA78E2C002BC3C0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB7670CB2CA78E2C002BC3C0 /* SwiftUI.framework in Frameworks */,
+				FB7670C92CA78E2C002BC3C0 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FB97AB7E2CA24817000AD13B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -90,6 +131,7 @@
 				FBB0DA412CA25F95003681DE /* TicTacToeCore */,
 				FBD118A52C8D87470028803F /* TicTacToe */,
 				FB97AB822CA24817000AD13B /* TicTacToeWatch */,
+				FB7670CC2CA78E2C002BC3C0 /* TicTacToeWidget */,
 				FBB0DA422CA25FDB003681DE /* Frameworks */,
 				FB9B4E712ABE91F300132FBA /* Products */,
 			);
@@ -100,6 +142,7 @@
 			children = (
 				FB9B4E702ABE91F300132FBA /* TicTacToe.app */,
 				FB97AB812CA24817000AD13B /* TicTacToeWatch.app */,
+				FB7670C72CA78E2C002BC3C0 /* TicTacToeWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -107,6 +150,8 @@
 		FBB0DA422CA25FDB003681DE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FB7670C82CA78E2C002BC3C0 /* WidgetKit.framework */,
+				FB7670CA2CA78E2C002BC3C0 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -114,6 +159,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		FB7670C62CA78E2C002BC3C0 /* TicTacToeWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB7670DB2CA78E2E002BC3C0 /* Build configuration list for PBXNativeTarget "TicTacToeWidget" */;
+			buildPhases = (
+				FB7670C32CA78E2C002BC3C0 /* Sources */,
+				FB7670C42CA78E2C002BC3C0 /* Frameworks */,
+				FB7670C52CA78E2C002BC3C0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				FB7670CC2CA78E2C002BC3C0 /* TicTacToeWidget */,
+			);
+			name = TicTacToeWidget;
+			packageProductDependencies = (
+			);
+			productName = TicTacToeWidgetExtension;
+			productReference = FB7670C72CA78E2C002BC3C0 /* TicTacToeWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		FB97AB802CA24817000AD13B /* TicTacToeWatch */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FB97AB922CA24819000AD13B /* Build configuration list for PBXNativeTarget "TicTacToeWatch" */;
@@ -145,11 +212,13 @@
 				FB9B4E6D2ABE91F300132FBA /* Frameworks */,
 				FB9B4E6E2ABE91F300132FBA /* Resources */,
 				FB97AB8F2CA24819000AD13B /* Embed Watch Content */,
+				FB7670D82CA78E2E002BC3C0 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				FB97AB8D2CA24819000AD13B /* PBXTargetDependency */,
+				FB7670D62CA78E2E002BC3C0 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				FBD118A52C8D87470028803F /* TicTacToe */,
@@ -169,6 +238,9 @@
 				LastSwiftUpdateCheck = 1610;
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
+					FB7670C62CA78E2C002BC3C0 = {
+						CreatedOnToolsVersion = 16.1;
+					};
 					FB97AB802CA24817000AD13B = {
 						CreatedOnToolsVersion = 16.1;
 					};
@@ -232,11 +304,19 @@
 			targets = (
 				FB9B4E6F2ABE91F300132FBA /* TicTacToe */,
 				FB97AB802CA24817000AD13B /* TicTacToeWatch */,
+				FB7670C62CA78E2C002BC3C0 /* TicTacToeWidget */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		FB7670C52CA78E2C002BC3C0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FB97AB7F2CA24817000AD13B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -254,6 +334,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		FB7670C32CA78E2C002BC3C0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FB97AB7D2CA24817000AD13B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -271,6 +358,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		FB7670D62CA78E2E002BC3C0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FB7670C62CA78E2C002BC3C0 /* TicTacToeWidget */;
+			targetProxy = FB7670D52CA78E2E002BC3C0 /* PBXContainerItemProxy */;
+		};
 		FB97AB8D2CA24819000AD13B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			platformFilter = ios;
@@ -280,6 +372,84 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		FB7670D92CA78E2E002BC3C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = TicTacToeWidget/TicTacToeWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L2S68XMK99;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TicTacToeWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TicTacToeWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.takehito.koshimizu.TicTacToe.TicTacToeWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Debug;
+		};
+		FB7670DA2CA78E2E002BC3C0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = TicTacToeWidget/TicTacToeWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L2S68XMK99;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TicTacToeWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TicTacToeWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.takehito.koshimizu.TicTacToe.TicTacToeWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Release;
+		};
 		FB97AB902CA24819000AD13B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -548,6 +718,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		FB7670DB2CA78E2E002BC3C0 /* Build configuration list for PBXNativeTarget "TicTacToeWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB7670D92CA78E2E002BC3C0 /* Debug */,
+				FB7670DA2CA78E2E002BC3C0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FB97AB922CA24819000AD13B /* Build configuration list for PBXNativeTarget "TicTacToeWatch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
