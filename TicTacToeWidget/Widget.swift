@@ -11,7 +11,6 @@ struct WidgetEntryView : View {
     var body: some View {
         VStack {
             HStack {
-                Text("Time:")
                 Text(entry.date, style: .time)
             }
         }
@@ -33,7 +32,7 @@ struct Widget: SwiftUI.Widget {
             }
         }
         .configurationDisplayName("TicTacToe")
-        .description("You can quickly launch TicTacToe.")
+        .description("Let's Play TicTacToe.")
     }
 }
 
