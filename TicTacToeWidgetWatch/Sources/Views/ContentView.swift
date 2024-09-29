@@ -28,6 +28,7 @@ struct ContentView: View {
             .padding(padding)
         }
         .background(background, in: .circle)
+        .widgetAccentable()
     }
 }
 
@@ -37,7 +38,7 @@ private extension ContentView {
         case .fullColor:
             colorPalette.background
         default:
-            colorPalette.background.opacity(0.5)
+            colorPalette.background.opacity(0.3)
         }
     }
 }
