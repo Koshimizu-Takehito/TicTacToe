@@ -14,10 +14,10 @@ struct ColorPalette: Hashable, Identifiable {
 
     init(name: ColorPalette.Name) {
         self.name = name
-        background = Color("\(Self.self)/\(name.rawValue)/background")
-        foreground = Color("\(Self.self)/\(name.rawValue)/foreground")
-        symbol1 = Color("\(Self.self)/\(name.rawValue)/symbol1")
-        symbol2 = Color("\(Self.self)/\(name.rawValue)/symbol2")
+        background = Color("\(Self.self)/\(name.rawValue)/background", bundle: .module)
+        foreground = Color("\(Self.self)/\(name.rawValue)/foreground", bundle: .module)
+        symbol1 = Color("\(Self.self)/\(name.rawValue)/symbol1", bundle: .module)
+        symbol2 = Color("\(Self.self)/\(name.rawValue)/symbol2", bundle: .module)
     }
 }
 
@@ -73,5 +73,13 @@ extension ColorPalette.Name: CustomStringConvertible {
             .replacingOccurrences(of: "([A-Z])", with: " $1", options: .regularExpression)
             .capitalized
             .trimmingCharacters(in: .whitespaces)
+    }
+}
+
+extension Bundle {
+    private class Anonymous {}
+
+    static var module: Bundle {
+        Bundle(for: Anonymous.self)
     }
 }

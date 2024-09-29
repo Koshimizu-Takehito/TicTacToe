@@ -1,3 +1,4 @@
+import WidgetKit
 import SwiftUI
 
 struct RingMark: View {
@@ -25,4 +26,10 @@ private struct RingShape: Shape {
         )
         return path
     }
+}
+
+#Preview(as: .accessoryRectangular) {
+    WatchWidget()
+} timeline: {
+    TimelineEntry(date: .now)
 }
