@@ -39,12 +39,21 @@ struct WatchWidget: SwiftUI.Widget {
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: TimelineProvider()) { entry in
-            TicTacToeWidgetWatchEntryView(entry: entry)
+            GameBoardView()
                 .containerBackground(.fill.tertiary, for: .widget)
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("TicTacToe")
+        .description("Let's Play TicTacToe.")
+        .supportedFamilies(.supportedFamilies)
     }
+}
+
+private extension [WidgetFamily] {
+#if os(watchOS)
+    static let supportedFamilies: Self = [
+        .accessoryCorner, .accessoryCircular, .accessoryRectangular
+    ]
+#endif
 }
 
 #Preview(as: .accessoryRectangular) {
