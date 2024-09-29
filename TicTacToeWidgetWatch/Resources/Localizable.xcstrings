@@ -2,7 +2,6 @@
   "sourceLanguage" : "en",
   "strings" : {
     "Let's Play TicTacToe." : {
-      "extractionState" : "stale",
       "localizations" : {
         "ain" : {
           "stringUnit" : {
