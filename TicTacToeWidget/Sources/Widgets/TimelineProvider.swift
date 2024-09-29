@@ -2,6 +2,7 @@ import WidgetKit
 import SwiftUI
 
 // MARK: - TimelineEntry
+
 struct TimelineEntry: WidgetKit.TimelineEntry {
     let date: Date
 }
@@ -18,7 +19,7 @@ struct TimelineProvider: WidgetKit.TimelineProvider {
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<TimelineEntry>) -> ()) {
-        let entries: [TimelineEntry] = [TimelineEntry(date: .now)]
+        let entries = [TimelineEntry(date: .now)]
         let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
     }
