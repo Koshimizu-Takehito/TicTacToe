@@ -39,7 +39,7 @@ struct WatchWidget: SwiftUI.Widget {
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: TimelineProvider()) { entry in
-            GameBoardView()
+            ContentView()
                 .containerBackground(.fill.tertiary, for: .widget)
         }
         .configurationDisplayName("TicTacToe")
