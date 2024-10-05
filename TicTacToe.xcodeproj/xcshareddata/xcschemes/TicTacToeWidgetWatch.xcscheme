@@ -75,12 +75,21 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
+            BlueprintIdentifier = "FBB4DC042CA9093700C84F47"
+            BuildableName = "TicTacToeWidgetWatch.appex"
+            BlueprintName = "TicTacToeWidgetWatch"
+            ReferencedContainer = "container:TicTacToe.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
             BlueprintIdentifier = "FB97AB802CA24817000AD13B"
             BuildableName = "TicTacToeWatch.app"
             BlueprintName = "TicTacToeWatch"
             ReferencedContainer = "container:TicTacToe.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "_XCWidgetKind"
