@@ -2,6 +2,7 @@ import SwiftUI
 
 public struct CrossMark: View {
     @Environment(\.colorPalette.symbol2) var color
+    @Environment(\.widgetRenderingMode) var renderingMode
     let lineWidth: Double
 
     public init(lineWidth: Double) {
@@ -11,7 +12,7 @@ public struct CrossMark: View {
     public var body: some View {
         CrossShape()
             .stroke(lineWidth: lineWidth)
-            .foregroundStyle(color)
+            .foregroundStyle(renderingMode == .fullColor ? color : color.opacity(0.5))
     }
 }
 

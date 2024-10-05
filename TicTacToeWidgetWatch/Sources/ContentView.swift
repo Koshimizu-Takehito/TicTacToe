@@ -39,7 +39,7 @@ private extension ContentView {
         case .fullColor:
             colorPalette.background
         default:
-            colorPalette.background.opacity(0.3)
+            colorPalette.background.opacity(0.2)
         }
     }
 }
