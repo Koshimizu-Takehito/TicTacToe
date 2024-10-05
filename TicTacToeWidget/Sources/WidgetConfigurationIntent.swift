@@ -3,13 +3,12 @@ import TicTacToeWidgetCore
 import WidgetKit
 
 struct WidgetConfigurationIntent: AppIntents.WidgetConfigurationIntent {
-    static var title: LocalizedStringResource = "Select Color Palette"
-    static var description = IntentDescription("Selects the Color Palette.")
+    static let title: LocalizedStringResource = "Select Widget Configuration"
 
     @Parameter(title: "Color Palette")
-    var colorPalette: AppEntity?
+    var colorPalette: ColorPaletteEntity?
 
-    init(character: AppEntity) {
+    init(character: ColorPaletteEntity) {
         colorPalette = character
     }
 
@@ -18,7 +17,7 @@ struct WidgetConfigurationIntent: AppIntents.WidgetConfigurationIntent {
     }
 }
 
-struct AppEntity: AppIntents.AppEntity {
+struct ColorPaletteEntity: AppIntents.AppEntity {
     static let typeDisplayRepresentation: TypeDisplayRepresentation = "Color Palette"
     static let defaultQuery = EntityQuery()
 
@@ -28,21 +27,21 @@ struct AppEntity: AppIntents.AppEntity {
         DisplayRepresentation(title: "\(id.description)")
     }
 
-    static let allCases: [AppEntity] = ColorPalette.Name
+    static let allCases: [ColorPaletteEntity] = ColorPalette.Name
         .allCases
-        .map(AppEntity.init(id:))
+        .map(ColorPaletteEntity.init(id:))
 }
 
 struct EntityQuery: AppIntents.EntityQuery {
-    func entities(for identifiers: [AppEntity.ID]) async throws -> [AppEntity] {
-        AppEntity.allCases.filter { identifiers.contains($0.id) }
+    func entities(for identifiers: [ColorPaletteEntity.ID]) async throws -> [ColorPaletteEntity] {
+        ColorPaletteEntity.allCases.filter { identifiers.contains($0.id) }
     }
 
-    func suggestedEntities() async throws -> [AppEntity] {
-        AppEntity.allCases
+    func suggestedEntities() async throws -> [ColorPaletteEntity] {
+        ColorPaletteEntity.allCases
     }
 
-    func defaultResult() async -> AppEntity? {
-        AppEntity(id: .default)
+    func defaultResult() async -> ColorPaletteEntity? {
+        ColorPaletteEntity(id: .default)
     }
 }

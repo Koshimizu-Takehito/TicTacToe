@@ -62,7 +62,7 @@ private extension [WidgetFamily] {
 
 extension WidgetConfigurationIntent {
     static var samples: [WidgetConfigurationIntent] {
-        AppEntity.allCases.map { entity in
+        ColorPaletteEntity.allCases.map { entity in
             let intent = WidgetConfigurationIntent()
             intent.colorPalette = entity
             return intent
