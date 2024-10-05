@@ -2,17 +2,17 @@ import SwiftUI
 
 // MARK: - ColorPalette
 
-struct ColorPalette: Hashable, Identifiable {
-    var id = UUID()
-    var name: ColorPalette.Name
-    var background: Color
-    var foreground: Color
-    var symbol1: Color
-    var symbol2: Color
+public struct ColorPalette: Hashable, Identifiable, Sendable {
+    public var id = UUID()
+    public var name: ColorPalette.Name
+    public var background: Color
+    public var foreground: Color
+    public var symbol1: Color
+    public var symbol2: Color
 
-    static let `default` = Self(name: ColorPalette.Name.default)
+    public static let `default` = Self(name: ColorPalette.Name.default)
 
-    init(name: ColorPalette.Name) {
+    public init(name: ColorPalette.Name) {
         self.name = name
         background = Color("\(Self.self)/\(name.rawValue)/background", bundle: .module)
         foreground = Color("\(Self.self)/\(name.rawValue)/foreground", bundle: .module)
@@ -24,14 +24,14 @@ struct ColorPalette: Hashable, Identifiable {
 // MARK: - CaseIterable
 
 extension ColorPalette: CaseIterable {
-    static let allCases: [Self] = ColorPalette.Name.allCases
+    public static let allCases: [Self] = ColorPalette.Name.allCases
         .map(Self.init(name:))
 }
 
 // MARK: - ColorPalette.Name
 
 extension ColorPalette {
-    enum Name: String, Hashable, CaseIterable {
+    public enum Name: String, Hashable, CaseIterable, Sendable {
         case `default`
         case apricot
         case astra
@@ -68,7 +68,7 @@ extension ColorPalette {
 }
 
 extension ColorPalette.Name: CustomStringConvertible {
-    var description: String {
+    public var description: String {
         rawValue
             .replacingOccurrences(of: "([A-Z])", with: " $1", options: .regularExpression)
             .capitalized

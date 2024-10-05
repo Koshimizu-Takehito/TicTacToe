@@ -3,9 +3,12 @@ import TicTacToeWidgetCore
 import WidgetKit
 
 struct ContentView: View {
-    var entry: TimelineEntry
+    @Environment(\.colorScheme) var colorScheme
     @Environment(\.widgetFamily) var widgetFamily
     @Environment(\.widgetRenderingMode) var renderingMode
+
+    var entry: TimelineEntry
+
     var colorPalette: ColorPalette {
         entry.colorPalette ?? .default
     }
@@ -32,6 +35,7 @@ struct ContentView: View {
             .widgetAccentable()
         }
         .environment(\.colorPalette, colorPalette)
+        .widgetURL(.tictactoe.with(colorPalette).with(colorScheme))
     }
 }
 

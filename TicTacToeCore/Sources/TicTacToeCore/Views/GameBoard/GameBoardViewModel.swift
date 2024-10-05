@@ -7,14 +7,16 @@ final class GameBoardViewModel {
     private let gameBoard: GameBoard
 
     private(set) var drawId = UUID()
-    private(set) var colorPalette: ColorPalette = .default
+    private(set) var colorPalette: ColorPalette
     var colorScheme: ColorScheme?
     private var role1: PlayMode { gameBoard.role1 }
     private var role2: PlayMode { gameBoard.role2 }
     private var isPlayerGame: Bool { role1 == .player || role2 == .player }
 
-    init(gameBoard: GameBoard) {
+    init(gameBoard: GameBoard, colorPalette: ColorPalette, colorScheme: ColorScheme?) {
         self.gameBoard = gameBoard
+        self.colorPalette = colorPalette
+        self.colorScheme = colorScheme
     }
 
     func allowsHitTesting() -> Bool {
