@@ -1,11 +1,14 @@
 import SwiftUI
-import WidgetKit
 import TicTacToeWidgetCore
+import WidgetKit
 
 struct ContentView: View {
+    var entry: TimelineEntry
     @Environment(\.widgetFamily) var widgetFamily
     @Environment(\.widgetRenderingMode) var renderingMode
-    @Environment(\.colorPalette) var colorPalette
+    var colorPalette: ColorPalette {
+        entry.colorPalette ?? .default
+    }
 
     var body: some View {
         GeometryReader { geometry in
@@ -28,47 +31,49 @@ struct ContentView: View {
             .background(background, in: .rect)
             .widgetAccentable()
         }
+        .environment(\.colorPalette, colorPalette)
     }
 }
 
 private extension ContentView {
-#if os(iOS)
-    var background: Color {
-        // renderingMode
-        switch widgetFamily {
-        case .systemSmall, .systemMedium, .systemLarge, .systemExtraLarge:
-            switch renderingMode {
-            case .fullColor:
-                colorPalette.background
-            default:
-                Color.black.opacity(0.2)
+    #if os(iOS)
+        var background: Color {
+            // renderingMode
+            switch widgetFamily {
+            case .systemSmall, .systemMedium, .systemLarge, .systemExtraLarge:
+                switch renderingMode {
+                case .fullColor:
+                    colorPalette.background
+                default:
+                    Color.black.opacity(0.2)
+                }
+            case .accessoryCircular, .accessoryRectangular, .accessoryInline:
+                Color.clear
+            @unknown default:
+                Color.clear
             }
-        case .accessoryCircular, .accessoryRectangular, .accessoryInline:
-            Color.clear
-        @unknown default:
-            Color.clear
         }
-    }
-#elseif os(macOS)
-    var background: Color {
-        switch widgetFamily {
-        case .systemSmall:
-            colorPalette.background
-        case .systemMedium:
-            colorPalette.background
-        case .systemLarge:
-            colorPalette.background
-        case .systemExtraLarge:
-            colorPalette.background
-        @unknown default:
-            Color.clear
+
+    #elseif os(macOS)
+        var background: Color {
+            switch widgetFamily {
+            case .systemSmall:
+                colorPalette.background
+            case .systemMedium:
+                colorPalette.background
+            case .systemLarge:
+                colorPalette.background
+            case .systemExtraLarge:
+                colorPalette.background
+            @unknown default:
+                Color.clear
+            }
         }
-    }
-#endif
+    #endif
 }
 
 #Preview(as: .systemSmall) {
     Widget()
 } timeline: {
-    TimelineEntry(date: .now)
+    TimelineEntry(date: .now, configuration: WidgetConfigurationIntent.samples[0])
 }

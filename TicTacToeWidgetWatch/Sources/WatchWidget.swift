@@ -1,5 +1,5 @@
-import WidgetKit
 import SwiftUI
+import WidgetKit
 
 // MARK: - TimelineEntry
 
@@ -10,22 +10,22 @@ struct TimelineEntry: WidgetKit.TimelineEntry {
 // MARK: - TimelineProvider
 
 struct TimelineProvider: WidgetKit.TimelineProvider {
-    func placeholder(in context: Context) -> TimelineEntry {
+    func placeholder(in _: Context) -> TimelineEntry {
         TimelineEntry(date: .now)
     }
 
-    func getSnapshot(in context: Context, completion: @escaping (TimelineEntry) -> ()) {
+    func getSnapshot(in _: Context, completion: @escaping (TimelineEntry) -> Void) {
         completion(TimelineEntry(date: .now))
     }
 
-    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+    func getTimeline(in _: Context, completion: @escaping (Timeline<Entry>) -> Void) {
         let entries = [TimelineEntry(date: .now)]
         let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
     }
 }
 
-struct TicTacToeWidgetWatchEntryView : View {
+struct TicTacToeWidgetWatchEntryView: View {
     var entry: TimelineProvider.Entry
 
     var body: some View {
@@ -38,7 +38,7 @@ struct WatchWidget: SwiftUI.Widget {
     let kind: String = "TicTacToeWidgetWatch"
 
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: TimelineProvider()) { entry in
+        StaticConfiguration(kind: kind, provider: TimelineProvider()) { _ in
             ContentView()
                 .containerBackground(.fill.tertiary, for: .widget)
         }
@@ -49,11 +49,11 @@ struct WatchWidget: SwiftUI.Widget {
 }
 
 private extension [WidgetFamily] {
-#if os(watchOS)
-    static let supportedFamilies: Self = [
-        .accessoryCorner, .accessoryCircular, .accessoryRectangular
-    ]
-#endif
+    #if os(watchOS)
+        static let supportedFamilies: Self = [
+            .accessoryCorner, .accessoryCircular, .accessoryRectangular,
+        ]
+    #endif
 }
 
 #Preview(as: .accessoryRectangular) {

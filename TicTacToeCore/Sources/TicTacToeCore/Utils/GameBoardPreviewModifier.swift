@@ -6,7 +6,7 @@ import SwiftUI
 struct GameBoardPreviewModifier: PreviewModifier {
     let gameBoard: GameBoard
 
-    func body(content: Content, context: Void) -> some View {
+    func body(content: Content, context _: Void) -> some View {
         content.modifier(GameBoardModifier(gameBoard: gameBoard))
     }
 }

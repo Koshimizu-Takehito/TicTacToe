@@ -1,6 +1,6 @@
 import SwiftUI
-import WidgetKit
 import TicTacToeWidgetCore
+import WidgetKit
 
 struct ContentView: View {
     @Environment(\.widgetRenderingMode) var renderingMode

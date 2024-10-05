@@ -14,7 +14,7 @@ struct ColorPalette: Hashable, Identifiable {
 
     init(name: ColorPalette.Name) {
         self.name = name
-        background = Color.init("\(Self.self)/\(name.rawValue)/background", bundle: .module)
+        background = Color("\(Self.self)/\(name.rawValue)/background", bundle: .module)
         foreground = Color("\(Self.self)/\(name.rawValue)/foreground", bundle: .module)
         symbol1 = Color("\(Self.self)/\(name.rawValue)/symbol1", bundle: .module)
         symbol2 = Color("\(Self.self)/\(name.rawValue)/symbol2", bundle: .module)

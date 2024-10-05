@@ -1,6 +1,12 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "%@" : {
+
+    },
+    "Color Palette" : {
+
+    },
     "Let's Play TicTacToe." : {
       "localizations" : {
         "ain" : {
@@ -244,6 +250,12 @@
           }
         }
       }
+    },
+    "Select Color Palette" : {
+
+    },
+    "Selects the Color Palette." : {
+
     },
     "TicTacToe" : {
       "localizations" : {
