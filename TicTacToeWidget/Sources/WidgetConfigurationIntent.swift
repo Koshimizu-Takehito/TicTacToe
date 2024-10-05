@@ -11,15 +11,17 @@ struct WidgetConfigurationIntent: AppIntents.WidgetConfigurationIntent {
     init(character: ColorPaletteEntity) {
         colorPalette = character
     }
+}
 
+extension WidgetConfigurationIntent {
     init() {
-        colorPalette = .init(id: .default)
+        self.init(character: .init(id: .default))
     }
 }
 
 struct ColorPaletteEntity: AppIntents.AppEntity {
     static let typeDisplayRepresentation: TypeDisplayRepresentation = "Color Palette"
-    static let defaultQuery = EntityQuery()
+    static let defaultQuery = ColorPaletteQuery()
 
     let id: ColorPalette.Name
 
@@ -32,7 +34,7 @@ struct ColorPaletteEntity: AppIntents.AppEntity {
         .map(ColorPaletteEntity.init(id:))
 }
 
-struct EntityQuery: AppIntents.EntityQuery {
+struct ColorPaletteQuery: AppIntents.EntityQuery {
     func entities(for identifiers: [ColorPaletteEntity.ID]) async throws -> [ColorPaletteEntity] {
         ColorPaletteEntity.allCases.filter { identifiers.contains($0.id) }
     }
