@@ -30,8 +30,8 @@ extension ColorPalette: CaseIterable {
 
 // MARK: - ColorPalette.Name
 
-extension ColorPalette {
-    public enum Name: String, Hashable, CaseIterable, Sendable {
+public extension ColorPalette {
+    enum Name: String, Hashable, CaseIterable, Sendable {
         case `default`
         case apricot
         case astra

@@ -68,6 +68,12 @@ extension WidgetConfigurationIntent {
             return intent
         }
     }
+
+    static var sample: WidgetConfigurationIntent {
+        let intent = WidgetConfigurationIntent()
+        intent.colorPalette = ColorPaletteEntity(id: .default)
+        return intent
+    }
 }
 
 @main

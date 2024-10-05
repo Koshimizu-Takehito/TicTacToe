@@ -1,8 +1,8 @@
 import Foundation
 import SwiftUI
 
-extension URL {
-    public static var tictactoe: Self {
+public extension URL {
+    static var tictactoe: Self {
         var components = URLComponents()
         components.scheme = "tictactoe"
         components.host = "tictactoe.koshimizu.takehito.com"
@@ -10,19 +10,19 @@ extension URL {
         return components.url!
     }
 
-    public func with(_ colorPalette: ColorPalette) -> Self {
+    func with(_ colorPalette: ColorPalette) -> Self {
         var copy = self
         copy.colorPalette = colorPalette
         return copy
     }
 
-    public func with(_ colorScheme: ColorScheme) -> Self {
+    func with(_ colorScheme: ColorScheme) -> Self {
         var copy = self
         copy.colorScheme = colorScheme
         return copy
     }
 
-    public var colorPalette: ColorPalette? {
+    var colorPalette: ColorPalette? {
         get {
             URLComponents(url: self, resolvingAgainstBaseURL: false)?
                 .queryItems?
@@ -47,7 +47,7 @@ extension URL {
         }
     }
 
-    public var colorScheme: ColorScheme? {
+    var colorScheme: ColorScheme? {
         get {
             let value = URLComponents(url: self, resolvingAgainstBaseURL: false)?
                 .queryItems?
