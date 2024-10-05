@@ -1,26 +1,16 @@
 import SwiftUI
 
 public struct TicTacToeView: View {
-    @State private var colorPalette: ColorPalette = .default
-    @State private var colorScheme: ColorScheme?
+    @State var viewModel: GameBoardViewModel
 
-    public init() {}
+    public init() {
+        _viewModel = .init(initialValue: .init(gameBoard: .init()))
+    }
 
     public var body: some View {
         GameBoardView()
-            .modifier(GameBoardModifier(
-                gameBoard: GameBoard(),
-                colorPalette: colorPalette,
-                colorScheme: colorScheme
-            ))
-            .onOpenURL { url in
-                if let newPalette = url.colorPalette, colorPalette.name != newPalette.name {
-                    colorPalette = newPalette
-                }
-                if let newScheme = url.colorScheme, colorScheme != newScheme {
-                    colorScheme = newScheme
-                }
-            }
+            .modifier(GameBoardModifier(gameBoardViewModel: viewModel))
+            .onOpenURL(perform: viewModel.recieve(url:))
     }
 }
 

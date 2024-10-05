@@ -4,19 +4,42 @@ import SwiftUI
 
 struct GameBoardModifier: ViewModifier {
     let gameBoard: GameBoard
-    let colorPalette: ColorPalette
-    let colorScheme: ColorScheme?
-
-    init(gameBoard: GameBoard = .init(), colorPalette: ColorPalette = .default, colorScheme: ColorScheme? = nil) {
-        self.gameBoard = gameBoard
-        self.colorPalette = colorPalette
-        self.colorScheme = colorScheme
-    }
+    let playerMenuViewModel: PlayerMenuViewModel
+    let gameBoardViewModel: GameBoardViewModel
 
     func body(content: Content) -> some View {
         content
             .environment(gameBoard)
-            .environment(PlayerMenuViewModel(gameBoard: gameBoard))
-            .environment(GameBoardViewModel(gameBoard: gameBoard, colorPalette: colorPalette, colorScheme: colorScheme))
+            .environment(playerMenuViewModel)
+            .environment(gameBoardViewModel)
+    }
+}
+
+extension GameBoardModifier {
+    init(
+        gameBoard: GameBoard = .init(),
+        colorPalette: ColorPalette = .default,
+        colorScheme: ColorScheme? = nil
+    ) {
+        self.init(
+            gameBoard: gameBoard,
+            playerMenuViewModel: PlayerMenuViewModel(
+                gameBoard: gameBoard
+            ),
+            gameBoardViewModel: GameBoardViewModel(
+                gameBoard: gameBoard,
+                colorPalette: colorPalette,
+                colorScheme: colorScheme
+            )
+        )
+    }
+
+    init(gameBoardViewModel viewModel: GameBoardViewModel) {
+        let gameBoard = viewModel.gameBoard
+        self.init(
+            gameBoard: gameBoard,
+            playerMenuViewModel: .init(gameBoard: gameBoard),
+            gameBoardViewModel: viewModel
+        )
     }
 }

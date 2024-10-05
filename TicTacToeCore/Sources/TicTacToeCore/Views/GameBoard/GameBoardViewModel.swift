@@ -4,7 +4,7 @@ import SwiftUI
 @MainActor
 @Observable
 final class GameBoardViewModel {
-    private let gameBoard: GameBoard
+    let gameBoard: GameBoard
 
     private(set) var drawId = UUID()
     private(set) var colorPalette: ColorPalette
@@ -13,7 +13,7 @@ final class GameBoardViewModel {
     private var role2: PlayMode { gameBoard.role2 }
     private var isPlayerGame: Bool { role1 == .player || role2 == .player }
 
-    init(gameBoard: GameBoard, colorPalette: ColorPalette, colorScheme: ColorScheme?) {
+    init(gameBoard: GameBoard, colorPalette: ColorPalette = .default, colorScheme: ColorScheme? = nil) {
         self.gameBoard = gameBoard
         self.colorPalette = colorPalette
         self.colorScheme = colorScheme
@@ -49,6 +49,29 @@ final class GameBoardViewModel {
         withAnimation(.spring(duration: 1)) {
             gameBoard.reset()
             colorPalette = color
+        }
+    }
+}
+
+extension GameBoardViewModel {
+    func recieve(url: URL) {
+        if let newPalette = url.colorPalette {
+            update(colorPalette: newPalette)
+        }
+        if let newScheme = url.colorScheme {
+            update(colorScheme: newScheme)
+        }
+    }
+
+    private func update(colorPalette newValue: ColorPalette) {
+        if colorPalette.name != newValue.name {
+            colorPalette = newValue
+        }
+    }
+
+    private func update(colorScheme newScheme: ColorScheme?) {
+        if colorScheme != newScheme {
+            colorScheme = newScheme
         }
     }
 }
