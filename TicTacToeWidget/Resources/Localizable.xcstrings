@@ -1,10 +1,58 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "%@" : {
+    "Apricot" : {
+
+    },
+    "Astra" : {
+
+    },
+    "Brandy Punch" : {
+
+    },
+    "Carnation" : {
+
+    },
+    "Carousel Pink" : {
+
+    },
+    "Cerise Red" : {
 
     },
     "Color Palette" : {
+
+    },
+    "Color Scheme" : {
+
+    },
+    "Contessa" : {
+
+    },
+    "Dark" : {
+
+    },
+    "Default" : {
+
+    },
+    "Emerald" : {
+
+    },
+    "Froly" : {
+
+    },
+    "Fun Blue" : {
+
+    },
+    "Fuzzy Wuzzy Brown" : {
+
+    },
+    "Gable Green" : {
+
+    },
+    "Hit Pink" : {
+
+    },
+    "Java" : {
 
     },
     "Let's Play TicTacToe." : {
@@ -251,7 +299,52 @@
         }
       }
     },
+    "Light" : {
+
+    },
+    "Lima" : {
+
+    },
+    "Lochmara" : {
+
+    },
+    "Mauve" : {
+
+    },
+    "Mulberry" : {
+
+    },
+    "Ochre" : {
+
+    },
+    "Persian Green" : {
+
+    },
+    "Red Damask" : {
+
+    },
+    "Revolver" : {
+
+    },
+    "RodeoDust" : {
+
+    },
+    "Roman" : {
+
+    },
+    "Roman Coffee" : {
+
+    },
+    "Royal Purple" : {
+
+    },
+    "School Bus Yellow" : {
+
+    },
     "Select Widget Configuration" : {
+
+    },
+    "Ship Gray Light Shade" : {
 
     },
     "TicTacToe" : {
@@ -497,6 +590,15 @@
           }
         }
       }
+    },
+    "True V" : {
+
+    },
+    "Wattle" : {
+
+    },
+    "Whiskey" : {
+
     }
   },
   "version" : "1.0"

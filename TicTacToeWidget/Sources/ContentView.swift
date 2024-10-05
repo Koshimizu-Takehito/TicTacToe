@@ -35,7 +35,8 @@ struct ContentView: View {
             .widgetAccentable()
         }
         .environment(\.colorPalette, colorPalette)
-        .widgetURL(.tictactoe.with(colorPalette).with(colorScheme))
+        .environment(\.colorScheme, entry.colorScheme ?? colorScheme)
+        .widgetURL(.tictactoe.with(colorPalette).with(entry.colorScheme ?? colorScheme))
     }
 }
 
@@ -76,8 +77,31 @@ private extension ContentView {
     #endif
 }
 
+extension TimelineEntry {
+    var colorPalette: ColorPalette? {
+        (configuration.colorPalette?.id)
+            .flatMap(ColorPalette.init(name:))
+    }
+
+    var colorScheme: ColorScheme? {
+        switch configuration.colorScheme?.id {
+        case .none:
+            nil
+        case let .some(colorScheme):
+            switch colorScheme {
+            case .default:
+                nil
+            case .light:
+                .light
+            case .dark:
+                .dark
+            }
+        }
+    }
+}
+
 #Preview(as: .systemSmall) {
     Widget()
 } timeline: {
-    TimelineEntry(date: .now, configuration: WidgetConfigurationIntent.samples[0])
+    TimelineEntry(date: .now, configuration: WidgetConfigurationIntent.sample)
 }

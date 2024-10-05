@@ -1,5 +1,4 @@
 import SwiftUI
-import TicTacToeWidgetCore
 import WidgetKit
 
 // MARK: - TimelineEntry
@@ -7,11 +6,6 @@ import WidgetKit
 struct TimelineEntry: WidgetKit.TimelineEntry {
     let date: Date
     let configuration: WidgetConfigurationIntent
-
-    var colorPalette: ColorPalette? {
-        (configuration.colorPalette?.id)
-            .flatMap(ColorPalette.init(name:))
-    }
 }
 
 // MARK: - TimelineProvider
@@ -61,14 +55,6 @@ private extension [WidgetFamily] {
 }
 
 extension WidgetConfigurationIntent {
-    static var samples: [WidgetConfigurationIntent] {
-        ColorPaletteEntity.allCases.map { entity in
-            let intent = WidgetConfigurationIntent()
-            intent.colorPalette = entity
-            return intent
-        }
-    }
-
     static var sample: WidgetConfigurationIntent {
         let intent = WidgetConfigurationIntent()
         intent.colorPalette = ColorPaletteEntity(id: .default)
@@ -86,5 +72,5 @@ struct WidgetBundle: SwiftUI.WidgetBundle {
 #Preview(as: .systemSmall) {
     Widget()
 } timeline: {
-    TimelineEntry(date: .now, configuration: WidgetConfigurationIntent.samples[0])
+    TimelineEntry(date: .now, configuration: WidgetConfigurationIntent.sample)
 }
