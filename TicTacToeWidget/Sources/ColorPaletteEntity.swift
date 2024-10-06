@@ -58,7 +58,7 @@ struct ColorPaletteEntity: AppIntents.AppEntity {
         case .revolver:
             "Revolver"
         case .rodeoDust:
-            "RodeoDust"
+            "Rodeo Dust"
         case .roman:
             "Roman"
         case .romanCoffee:
