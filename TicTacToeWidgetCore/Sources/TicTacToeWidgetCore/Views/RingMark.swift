@@ -1,5 +1,5 @@
-import WidgetKit
 import SwiftUI
+import WidgetKit
 
 public struct RingMark: View {
     @Environment(\.colorPalette.symbol1) private var color

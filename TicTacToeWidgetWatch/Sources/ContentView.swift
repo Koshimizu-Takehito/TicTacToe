@@ -1,6 +1,6 @@
 import SwiftUI
-import WidgetKit
 import TicTacToeWidgetCore
+import WidgetKit
 
 struct ContentView: View {
     @Environment(\.widgetRenderingMode) var renderingMode
@@ -39,7 +39,7 @@ private extension ContentView {
         case .fullColor:
             colorPalette.background
         default:
-            colorPalette.background.opacity(0.3)
+            colorPalette.background.opacity(0.2)
         }
     }
 }
