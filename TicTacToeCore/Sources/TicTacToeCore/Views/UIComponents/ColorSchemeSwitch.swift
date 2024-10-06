@@ -10,23 +10,23 @@ struct ColorSchemeSwitch: View {
     @BackgroundColor private var background
 
     var body: some View {
-#if os(iOS)
-        Button {
-            toggle()
-        } label: {
-            content()
-        }
-        .transaction { transaction in
-            transaction.disablesAnimations = true
-        }
-        .contentShape(Circle())
-#else
-        content()
-            .contentShape(Circle())
-            .onTapGesture {
+        #if os(iOS)
+            Button {
                 toggle()
+            } label: {
+                content()
             }
-#endif
+            .transaction { transaction in
+                transaction.disablesAnimations = true
+            }
+            .contentShape(Circle())
+        #else
+            content()
+                .contentShape(Circle())
+                .onTapGesture {
+                    toggle()
+                }
+        #endif
     }
 
     @ViewBuilder

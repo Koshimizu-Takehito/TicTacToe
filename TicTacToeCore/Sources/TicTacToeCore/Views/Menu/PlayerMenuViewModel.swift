@@ -26,21 +26,21 @@ final class PlayerMenuViewModel {
 }
 
 #if os(watchOS)
-extension PlayerMenuViewModel {
-    var difficulty: Difficulty {
-        get {
-            switch gameBoard.role2 {
-            case let .computer(difficulty):
-                return difficulty
-            default:
-                return .medium
+    extension PlayerMenuViewModel {
+        var difficulty: Difficulty {
+            get {
+                switch gameBoard.role2 {
+                case let .computer(difficulty):
+                    return difficulty
+                default:
+                    return .medium
+                }
+            }
+            set {
+                gameBoard.role2 = .computer(newValue)
             }
         }
-        set {
-            gameBoard.role2 = .computer(newValue)
-        }
     }
-}
 #endif
 
 extension PlayerMenuIconViewModel {

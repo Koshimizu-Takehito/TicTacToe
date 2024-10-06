@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "TicTacToeCore",
+    name: "TicTacToeWidgetCore",
     platforms: [
         .iOS(.v17),
         .macOS(.v14),
@@ -13,15 +13,14 @@ let package = Package(
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "TicTacToeCore",
-            targets: ["TicTacToeCore"]
+            name: "TicTacToeWidgetCore",
+            targets: ["TicTacToeWidgetCore"]
         ),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "TicTacToeCore"
-        ),
+            name: "TicTacToeWidgetCore"),
     ]
 )

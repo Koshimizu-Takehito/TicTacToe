@@ -3,9 +3,9 @@ import SwiftUI
 // MARK: - EnumPicker
 
 struct EnumPicker<Enum>: View where
-Enum: CaseIterable & Hashable,
-Enum == Enum.AllCases.Element,
-Enum.AllCases: RandomAccessCollection
+    Enum: CaseIterable & Hashable,
+    Enum == Enum.AllCases.Element,
+    Enum.AllCases: RandomAccessCollection
 {
     @Binding var selection: Enum
 

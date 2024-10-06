@@ -1,3 +1,4 @@
+import AppIntents
 import SwiftUI
 
 // MARK: - ColorPalette
@@ -73,5 +74,15 @@ extension ColorPalette.Name: CustomStringConvertible {
             .replacingOccurrences(of: "([A-Z])", with: " $1", options: .regularExpression)
             .capitalized
             .trimmingCharacters(in: .whitespaces)
+    }
+}
+
+extension ColorPalette.Name: EntityIdentifierConvertible {
+    public var entityIdentifierString: String {
+        rawValue
+    }
+
+    public static func entityIdentifier(for entityIdentifierString: String) -> Self? {
+        self.init(rawValue: entityIdentifierString)
     }
 }

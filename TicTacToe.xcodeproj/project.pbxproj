@@ -16,6 +16,8 @@
 		FBB4DC062CA9093700C84F47 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB7670C82CA78E2C002BC3C0 /* WidgetKit.framework */; };
 		FBB4DC072CA9093700C84F47 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB7670CA2CA78E2C002BC3C0 /* SwiftUI.framework */; };
 		FBB4DC102CA9093800C84F47 /* TicTacToeWidgetWatch.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = FBB4DC052CA9093700C84F47 /* TicTacToeWidgetWatch.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FBCD740B2CB10B54001CB7A7 /* TicTacToeWidgetCore in Frameworks */ = {isa = PBXBuildFile; productRef = FBCD740A2CB10B54001CB7A7 /* TicTacToeWidgetCore */; };
+		FBCD740D2CB10B59001CB7A7 /* TicTacToeWidgetCore in Frameworks */ = {isa = PBXBuildFile; productRef = FBCD740C2CB10B59001CB7A7 /* TicTacToeWidgetCore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +88,7 @@
 		FB9B4E702ABE91F300132FBA /* TicTacToe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacToe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBB0DA412CA25F95003681DE /* TicTacToeCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = TicTacToeCore; sourceTree = "<group>"; };
 		FBB4DC052CA9093700C84F47 /* TicTacToeWidgetWatch.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TicTacToeWidgetWatch.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBCD74092CB108B8001CB7A7 /* TicTacToeWidgetCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = TicTacToeWidgetCore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -131,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBCD740B2CB10B54001CB7A7 /* TicTacToeWidgetCore in Frameworks */,
 				FB7670CB2CA78E2C002BC3C0 /* SwiftUI.framework in Frameworks */,
 				FB7670C92CA78E2C002BC3C0 /* WidgetKit.framework in Frameworks */,
 			);
@@ -156,6 +160,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBCD740D2CB10B59001CB7A7 /* TicTacToeWidgetCore in Frameworks */,
 				FBB4DC072CA9093700C84F47 /* SwiftUI.framework in Frameworks */,
 				FBB4DC062CA9093700C84F47 /* WidgetKit.framework in Frameworks */,
 			);
@@ -168,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				FBB0DA412CA25F95003681DE /* TicTacToeCore */,
+				FBCD74092CB108B8001CB7A7 /* TicTacToeWidgetCore */,
 				FBD118A52C8D87470028803F /* TicTacToe */,
 				FB97AB822CA24817000AD13B /* TicTacToeWatch */,
 				FB7670CC2CA78E2C002BC3C0 /* TicTacToeWidget */,
@@ -217,6 +223,7 @@
 			);
 			name = TicTacToeWidget;
 			packageProductDependencies = (
+				FBCD740A2CB10B54001CB7A7 /* TicTacToeWidgetCore */,
 			);
 			productName = TicTacToeWidgetExtension;
 			productReference = FB7670C72CA78E2C002BC3C0 /* TicTacToeWidget.appex */;
@@ -288,6 +295,7 @@
 			);
 			name = TicTacToeWidgetWatch;
 			packageProductDependencies = (
+				FBCD740C2CB10B59001CB7A7 /* TicTacToeWidgetCore */,
 			);
 			productName = TicTacToeWidgetWatchExtension;
 			productReference = FBB4DC052CA9093700C84F47 /* TicTacToeWidgetWatch.appex */;
@@ -662,7 +670,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.7.0;
+				MARKETING_VERSION = 1.8.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -722,7 +730,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.7.0;
+				MARKETING_VERSION = 1.8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -936,6 +944,14 @@
 		FBB0DA4B2CA26A7D003681DE /* TicTacToeCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = TicTacToeCore;
+		};
+		FBCD740A2CB10B54001CB7A7 /* TicTacToeWidgetCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TicTacToeWidgetCore;
+		};
+		FBCD740C2CB10B59001CB7A7 /* TicTacToeWidgetCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TicTacToeWidgetCore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
