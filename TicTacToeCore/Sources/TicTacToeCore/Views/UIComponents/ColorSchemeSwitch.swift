@@ -3,11 +3,15 @@ import SwiftUI
 // MARK: - ColorSchemeSwitch
 
 struct ColorSchemeSwitch: View {
-    @Environment(\.colorScheme) var defaultScheme
-    @Binding var colorScheme: ColorScheme?
     @State private var ratio = 1.0
+    @Binding private var isOn: Bool
+    @Environment(\.colorScheme) private var colorScheme
     @TextColor private var foreground
     @BackgroundColor private var background
+
+    init(isLightMode: Binding<Bool>) {
+        _isOn = isLightMode
+    }
 
     var body: some View {
         #if os(iOS)
@@ -43,15 +47,13 @@ struct ColorSchemeSwitch: View {
         }
     }
 
-    var isOn: Bool {
-        (colorScheme ?? defaultScheme) == .light
-    }
-
     func toggle() {
+        isOn.toggle()
         ratio = 0.0
-        colorScheme = isOn ? .dark : .light
-        withAnimation(.smooth(duration: 0.6)) {
-            ratio = 1.0
+        Task { @MainActor in
+            withAnimation(.smooth(duration: 0.66)) {
+                ratio = 1.0
+            }
         }
     }
 }
@@ -138,9 +140,14 @@ private extension CGRect {
 // MARK: - Preview
 
 #Preview {
-    @Previewable @State var colorScheme: ColorScheme?
-
-    ColorSchemeSwitch(colorScheme: $colorScheme)
+    @Previewable @State var colorScheme: ColorScheme = .light
+    let isLightMode = Binding<Bool> {
+        colorScheme == .light
+    } set: {
+        colorScheme = $0 ? .light : .dark
+    }
+    ColorSchemeSwitch(isLightMode: isLightMode)
+        .environment(\.colorScheme, colorScheme)
         .frame(width: 100, height: 100)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background { Color.blue.ignoresSafeArea() }
