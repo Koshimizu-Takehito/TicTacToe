@@ -101,5 +101,9 @@ import SwiftUI
 
 @available(iOS 18.0, macOS 15.0, watchOS 11.0, *)
 #Preview(traits: .myEnvironment) {
-    GameBoardView()
+    @Previewable @Environment(\.colorScheme) var colorScheme
+    @Previewable @Environment(GameBoardViewModel.self) var viewModel
+    viewModel.colorScheme = colorScheme
+
+    return GameBoardView()
 }
