@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct GameBoardInnerView: View {
-    var viewModel: GameBoardViewModel
+    let viewModel: GameBoardViewModel
 
     var body: some View {
         GeometryReader { geometry in

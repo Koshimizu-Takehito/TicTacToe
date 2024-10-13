@@ -8,12 +8,12 @@ final class GameBoardViewModel {
 
     private(set) var drawId = UUID()
     private(set) var colorPalette: ColorPalette
-    var colorScheme: ColorScheme?
+    var colorScheme: ColorScheme
     private var role1: PlayMode { gameBoard.role1 }
     private var role2: PlayMode { gameBoard.role2 }
     private var isPlayerGame: Bool { role1 == .player || role2 == .player }
 
-    init(gameBoard: GameBoard, colorPalette: ColorPalette = .default, colorScheme: ColorScheme? = nil) {
+    init(gameBoard: GameBoard = .init(), colorPalette: ColorPalette = .default, colorScheme: ColorScheme = .light) {
         self.gameBoard = gameBoard
         self.colorPalette = colorPalette
         self.colorScheme = colorScheme
@@ -70,7 +70,7 @@ extension GameBoardViewModel {
     }
 
     private func update(colorScheme newScheme: ColorScheme?) {
-        if colorScheme != newScheme {
+        if colorScheme != newScheme, let newScheme {
             colorScheme = newScheme
         }
     }
