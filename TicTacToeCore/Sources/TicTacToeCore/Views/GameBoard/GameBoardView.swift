@@ -31,13 +31,12 @@ import SwiftUI
         }
 
         var preferredColorScheme: ColorScheme? {
-#if os(iOS)
-            nil
-#elseif os(macOS)
-            viewModel.colorScheme
-#endif
+            #if os(iOS)
+                nil
+            #elseif os(macOS)
+                viewModel.colorScheme
+            #endif
         }
-
 
         var isLightMode: Binding<Bool> {
             let viewModel = viewModel
