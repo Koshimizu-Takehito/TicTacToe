@@ -5,6 +5,7 @@ import SwiftUI
 #if os(iOS) || os(macOS)
     struct GameBoardView: View {
         @Environment(GameBoardViewModel.self) private var viewModel
+        @Environment(\.colorScheme) private var colorScheme
 
         var body: some View {
             @Bindable var viewModel = viewModel
@@ -17,18 +18,35 @@ import SwiftUI
                 HStack(spacing: 0) {
                     ResetButton(action: viewModel.reset)
                     Spacer()
-                    ColorSchemeSwitch(colorScheme: $viewModel.colorScheme)
+                    ColorSchemeSwitch(isLightMode: isLightMode)
                         .frame(width: 40, height: 40)
                 }
                 .frame(maxWidth: .infinity)
             }
             .padding()
-            .background {
-                viewModel.colorPalette.background
-                    .ignoresSafeArea()
-            }
+            .background { viewModel.colorPalette.background.ignoresSafeArea() }
             .environment(\.colorPalette, viewModel.colorPalette)
-            .preferredColorScheme(viewModel.colorScheme)
+            .environment(\.colorScheme, viewModel.colorScheme)
+            .preferredColorScheme(preferredColorScheme)
+        }
+
+        var preferredColorScheme: ColorScheme? {
+            #if os(iOS)
+                nil
+            #elseif os(macOS)
+                viewModel.colorScheme
+            #endif
+        }
+
+        var isLightMode: Binding<Bool> {
+            let viewModel = viewModel
+            return Binding {
+                viewModel.colorScheme == .light
+            } set: { isLightMode in
+                withAnimation(.smooth(duration: 0.6)) {
+                    viewModel.colorScheme = isLightMode ? .light : .dark
+                }
+            }
         }
     }
 

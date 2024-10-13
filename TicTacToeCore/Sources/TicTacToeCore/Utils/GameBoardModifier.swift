@@ -19,7 +19,7 @@ extension GameBoardModifier {
     init(
         gameBoard: GameBoard = .init(),
         colorPalette: ColorPalette = .default,
-        colorScheme: ColorScheme? = nil
+        colorScheme: ColorScheme = .light
     ) {
         self.init(
             gameBoard: gameBoard,
@@ -34,7 +34,7 @@ extension GameBoardModifier {
         )
     }
 
-    init(gameBoardViewModel viewModel: GameBoardViewModel) {
+    init(viewModel: GameBoardViewModel) {
         let gameBoard = viewModel.gameBoard
         self.init(
             gameBoard: gameBoard,
