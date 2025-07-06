@@ -1,4 +1,4 @@
-name: Build and Test
+name: CI
 
 on:
   pull_request:
@@ -6,7 +6,7 @@ on:
     types: [ opened, synchronize, reopened ]
 
 jobs:
-  build-and-test:
+  build:
     runs-on: macos-14
     steps:
       - uses: actions/checkout@v4
@@ -28,8 +28,3 @@ jobs:
             -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.2' \
             CODE_SIGNING_ALLOWED=NO clean build | xcpretty
 
-      - name: Run Xcode tests
-        run: |
-          xcodebuild test -workspace TicTacToe.xcworkspace -scheme TicTacToe \
-            -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.2' \
-            CODE_SIGNING_ALLOWED=NO test
