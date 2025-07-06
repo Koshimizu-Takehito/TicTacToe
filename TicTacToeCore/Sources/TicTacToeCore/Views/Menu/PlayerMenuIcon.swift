@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// Menu のアイコンとして設定する◯✕のアイコン
+/// Symbol used as the menu icon for selecting player settings.
 struct PlayerMenuIcon: View {
     let symbol: Symbol
     @State private var size: CGSize = .zero

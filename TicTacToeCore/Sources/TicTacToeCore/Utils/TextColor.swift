@@ -1,18 +1,17 @@
 import SwiftUI
 
-/// テキストの色
+/// Property wrapper that provides an appropriate foreground color for text.
 @propertyWrapper
 struct TextColor: DynamicProperty {
-    /// カラースキーム
+    /// Current color scheme.
     @Environment(\.colorScheme) private var colorScheme
-    /// 線の色
+    /// Default line color.
     @Environment(\.colorPalette.foreground) private var foregroundColor
-    /// 記号『◯』の色
+    /// Color used for the circle symbol.
     @Environment(\.colorPalette.symbol1) private var symbolColor
 
     var wrappedValue: Color {
-        // ダークテーマの場合は、記号『◯』と同じ色
-        // ライトテーマの場合は、線と同じ色
+        // Use the circle symbol color in dark mode and the line color in light mode.
         switch colorScheme {
         case .dark:
             return symbolColor

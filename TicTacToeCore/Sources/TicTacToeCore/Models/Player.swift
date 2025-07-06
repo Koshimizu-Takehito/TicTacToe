@@ -1,7 +1,8 @@
+/// Represents either the first or second player.
 enum Player: Hashable, CaseIterable {
-    /// 先手
+    /// The player who moves first.
     case first
-    /// 後手
+    /// The player who moves second.
     case second
 
     var symbol: Symbol {

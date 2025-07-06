@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// バツマーク
+/// View that draws the "X" mark used on the board.
 struct CrossMark: View {
     private var ratio: Double = 0
     @Environment(\.colorPalette.symbol2) private var color

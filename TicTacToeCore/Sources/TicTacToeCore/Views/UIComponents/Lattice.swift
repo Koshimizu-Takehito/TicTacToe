@@ -1,5 +1,6 @@
 import SwiftUI
 
+/// Animated grid lines used as the Tic‑Tac‑Toe board background.
 struct LatticeView: View {
     @State private var ratio: Double = 0
 
@@ -13,7 +14,7 @@ struct LatticeView: View {
     }
 }
 
-/// 格子
+/// Grid shape that animates its drawing progress.
 private struct Lattice: View, Animatable {
     @Environment(\.colorPalette.foreground) private var color
     @Environment(\.latticeSpacing) private var lineWidth
@@ -25,28 +26,28 @@ private struct Lattice: View, Animatable {
             let size = min(size.width, size.height)
             let length: Double = size
             [
-                // タテ（左）
+                // left vertical line
                 CGRect(
                     x: 1.0 * size / 3.0 - lineWidth / 2.0,
                     y: (1.0 - ratio) * length / 2,
                     width: lineWidth,
                     height: length * ratio
                 ),
-                // タテ（右）
+                // right vertical line
                 CGRect(
                     x: 2.0 * size / 3.0 - lineWidth / 2.0,
                     y: (1.0 - ratio) * length / 2,
                     width: lineWidth,
                     height: length * ratio
                 ),
-                // ヨコ（上）
+                // top horizontal line
                 CGRect(
                     x: (1.0 - ratio) * length / 2,
                     y: 1.0 * size / 3.0 - lineWidth / 2.0,
                     width: length * ratio,
                     height: lineWidth
                 ),
-                // ヨコ（下）
+                // bottom horizontal line
                 CGRect(
                     x: (1.0 - ratio) * length / 2,
                     y: 2.0 * size / 3.0 - lineWidth / 2.0,

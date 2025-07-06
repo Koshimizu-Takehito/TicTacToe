@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// 丸マーク
+/// View that draws the "O" mark used on the board.
 struct RingMark: View {
     var ratio: Double = 0
     @Environment(\.colorPalette.symbol1) private var color

@@ -1,6 +1,6 @@
 import SwiftUI
 
-// MARK: - GameBoardModifier
+/// Injects game related model objects into the environment.
 
 struct GameBoardModifier: ViewModifier {
     let gameBoard: GameBoard

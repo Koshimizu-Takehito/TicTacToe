@@ -1,6 +1,6 @@
 import SwiftUI
 
-// MARK: - ColorSchemeSwitch
+/// Toggle used to switch between light and dark color schemes.
 
 struct ColorSchemeSwitch: View {
     @State private var ratio = 1.0

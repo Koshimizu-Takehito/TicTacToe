@@ -2,7 +2,8 @@ enum Symbol: Hashable, CaseIterable, CustomStringConvertible {
     case circle
     case cross
 
-    /// 「O」を先攻とする文化圏は日本だけ
+    /// Default symbol for the first player.
+    /// In most locales X starts first; only a few cultures such as Japan use O.
     static var `default`: Self {
         switch LanguageCode.current {
         case .ja, .ain:
