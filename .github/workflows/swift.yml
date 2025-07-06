@@ -1,0 +1,21 @@
+name: TicTacToeCore Tests
+
+on:
+  pull_request:
+    paths:
+      - 'TicTacToeCore/**'
+      - '.github/workflows/**'
+
+jobs:
+  test:
+    runs-on: macos-14 # Xcode 16.x is available on macOS 14
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Xcode 16.2
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: '16.2'
+
+      - name: Run unit tests
+        run: swift test --package-path TicTacToeCore
