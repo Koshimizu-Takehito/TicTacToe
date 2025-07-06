@@ -16,6 +16,9 @@ jobs:
         with:
           xcode-version: '16.2'
 
+      - name: Install xcpretty
+        run: gem install xcpretty
+
       - name: List available simulators
         run: xcrun simctl list devices
 
@@ -23,7 +26,7 @@ jobs:
         run: |
           xcodebuild -workspace TicTacToe.xcworkspace -scheme TicTacToe \
             -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.2' \
-            CODE_SIGNING_ALLOWED=NO clean build
+            CODE_SIGNING_ALLOWED=NO clean build | xcpretty
 
       - name: Run Xcode tests
         run: |
