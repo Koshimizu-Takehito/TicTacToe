@@ -23,5 +23,9 @@ let package = Package(
         .target(
             name: "TicTacToeCore"
         ),
+        .testTarget(
+            name: "TicTacToeCoreTests",
+            dependencies: ["TicTacToeCore"]
+        ),
     ]
 )
