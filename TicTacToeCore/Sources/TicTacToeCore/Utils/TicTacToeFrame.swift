@@ -1,14 +1,14 @@
 import SwiftUI
 
 extension View {
-    /// MacOS app 用に下限のサイズを定義を設定する
+    /// Applies a reasonable minimum frame size for the macOS app.
     public func defaultFrame() -> some View {
         modifier(TicTacToeFrame())
     }
 }
 
 #if os(macOS)
-    /// MacOS app 用に下限のサイズを定義を設定する
+    /// View modifier that sets a minimum frame size when running on macOS.
     public struct TicTacToeFrame: ViewModifier {
         public init() {}
 

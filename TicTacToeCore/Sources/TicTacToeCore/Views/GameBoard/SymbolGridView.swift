@@ -1,15 +1,15 @@
 import SwiftUI
 
-/// まるばつのシンボルを配置する領域
+/// View responsible for drawing and animating the X and O symbols.
 struct SymbolGridView: View {
     @Environment(\.latticeSpacing) private var spacing
     @Environment(\.colorPalette.symbol1) private var color1
     @Environment(\.colorPalette.symbol2) private var color2
     @Environment(GameBoard.self) private var gameBoard
 
-    /// ゲーム勝敗結果時のタップ
+    /// Called when the result view is tapped.
     var onTapGameResult: () -> Void = {}
-    /// ゲーム勝敗結果の表示アニメーションの完了
+    /// Called when the win/draw animation finishes.
     var onGameResultAnimationDidFinish: () -> Void = {}
 
     @Namespace private var namespace
@@ -17,18 +17,18 @@ struct SymbolGridView: View {
 
     var body: some View {
         ZStack {
-            // まるばつのシンボル
+            // X and O symbols
             Grid(horizontalSpacing: spacing, verticalSpacing: spacing, content: symbolRows)
                 .environment(\.colorPalette.symbol1, symbolColor(for: .first))
                 .environment(\.colorPalette.symbol2, symbolColor(for: .second))
-            // 勝利時のスラッシュ
+            // slash shown when a player wins
             Group(content: slash)
-            // 勝敗の結果
+            // win or draw label
             Group(content: gameResult)
                 .modifier(GameResultTapModifier(state: state, onTap: onTapGameResult))
         }
         .transaction { transaction in
-            // 盤面リセット時のアニメーションを消す
+            // Disable animations when the board is reset
             if gameBoard.occupied == [:] {
                 transaction.animation = nil
             }
@@ -40,11 +40,11 @@ struct SymbolGridView: View {
 }
 
 private extension SymbolGridView {
-    /// ゲームの勝敗結果
+    /// Displays the winner or draw state.
     @ViewBuilder
     func gameResult() -> some View {
         if case .win = gameBoard.gameState {
-            // matchedGeometryEffect のためのダミーのビュー
+            // placeholder view required for matchedGeometryEffect
             Color.clear
                 .matchedGeometryEffect(id: "center", in: namespace, isSource: true)
         }
@@ -88,24 +88,24 @@ private extension SymbolGridView {
         }
     }
 
-    /// 勝敗確定時のスラッシュ
+    /// Slash overlay shown when a player wins.
     @ViewBuilder
     func slash() -> some View {
         ForEach(Player.allCases, id: \.self) { player in
-            // ナナメのスラッシュ
+            // diagonal slashes
             ZStack {
                 slash(player: player,
                       [[0, 0], [1, 1], [2, 2]],
                       [[0, 2], [1, 1], [2, 0]])
             }
-            // ヨコのスラッシュ
+            // horizontal slashes
             VStack(spacing: spacing) {
                 slash(player: player,
                       [[0, 0], [0, 1], [0, 2]],
                       [[1, 0], [1, 1], [1, 2]],
                       [[2, 0], [2, 1], [2, 2]])
             }
-            // タテのスラッシュ
+            // vertical slashes
             HStack(spacing: spacing) {
                 slash(player: player,
                       [[0, 0], [1, 0], [2, 0]],
@@ -128,7 +128,7 @@ private extension SymbolGridView {
         }
     }
 
-    /// まるばつの表示
+    /// Grid of individual symbol views.
     @ViewBuilder
     func symbolRows() -> some View {
         ForEach(0 ..< 3) { i in
@@ -198,14 +198,14 @@ private extension SymbolGridView {
 // MARK: - Redraw
 
 private extension SymbolGridView {
-    /// シンボルの配置の状態変更を契機として再描画する
+    /// Redraws the board when the symbol placement changes.
     func redraw(old _: [IndexPath: Player], new: [IndexPath: Player]) {
         if new == [:] {
             state = .prepare
         }
     }
 
-    /// ゲームの状態変更を契機として再描画する
+    /// Triggers animations when the overall game state changes.
     func redraw(old _: GameState, new: GameState) {
         Task {
             switch new {
@@ -269,7 +269,7 @@ private extension SymbolGridView {
         }
     }
 
-    /// ２点間距離から角度を算出する
+    /// Calculates the angle between the first and last positions.
     func angle(_ positions: [IndexPath]) -> Double {
         switch (positions.first, positions.last) {
         case let (first?, last?) where positions.count > 1:
@@ -323,17 +323,17 @@ private enum AnimationState: Hashable {
 
 private struct Slash: Shape, Animatable {
     var ratio: Double, position: Double, angle: Double
-    /// 表示割合のみアニメーション可能
+    /// Only the ratio property is animated.
     var animatableData: Double {
         get { ratio }
         set { ratio = newValue }
     }
 
-    /// 初期化子
+    /// Creates a slash shape.
     /// - Parameters:
-    ///   - ratio: 表示割合 0...1
-    ///   - position: 表示の起点
-    ///   - angle: 角度
+    ///   - ratio: Visibility ratio from 0...1
+    ///   - position: Relative position of the center of the slash
+    ///   - angle: Angle in radians
     init(ratio: Double, position: Double, angle: Double) {
         self.ratio = ratio
         self.position = position
@@ -405,7 +405,7 @@ private struct SymbolView: View {
     }
 }
 
-/// 勝敗の結果のタップ
+/// Handles taps on the result view after the game finishes.
 private struct GameResultTapModifier: ViewModifier {
     let state: AnimationState
     let onTap: () -> Void
@@ -429,7 +429,7 @@ private struct GameResultTapModifier: ViewModifier {
     }
 }
 
-/// 文字が長い場合に画面からはみ出さないようにスケールの値を調整する
+/// Adjusts scale so long text does not overflow the screen.
 private struct AdjustScaleModifier: ViewModifier {
     let containerSize: CGSize
     @State var contentSize: CGSize = .zero

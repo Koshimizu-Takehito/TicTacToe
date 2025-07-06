@@ -1,4 +1,4 @@
-/// 言語コード
+/// ISO language codes supported by the application.
 enum LanguageCode: String, Hashable, CaseIterable {
     case ain
     case ang

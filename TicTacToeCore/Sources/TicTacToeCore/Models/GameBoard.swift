@@ -1,16 +1,23 @@
 import Observation
 import SwiftUI
 
+/// Manages a single game of Tic‑Tac‑Toe, coordinating the board logic,
+/// active players and their assigned symbols.
+
+/// Stores which symbol each player uses.
 struct PlayerSymbolSetting {
+    /// Mapping of player to their chosen symbol.
     var symbols: [Player: Symbol] = [
         .first: .default,
         .second: .default.opposite,
     ]
 
+    /// Convenience helper to access a player's symbol.
     func symbol(for player: Player) -> Symbol {
         self[player]
     }
 
+    /// Accessor for player symbols using subscript syntax.
     subscript(_ player: Player) -> Symbol {
         get { symbols[player]! }
         set { symbols[player] = newValue }
@@ -20,10 +27,14 @@ struct PlayerSymbolSetting {
 @Observable
 @MainActor
 @dynamicMemberLookup
+/// Observable model object that controls game progression and AI moves.
 final class GameBoard {
     private var gameBoard = GameBoardLogic()
+    /// Symbols assigned to each player.
     var symbols = PlayerSymbolSetting()
 
+    /// The play mode for the first player.
+    /// When changed while it is that player's turn, a move is triggered automatically.
     var role1: PlayMode = .player {
         didSet {
             if currentPlayer == .first {
@@ -32,6 +43,8 @@ final class GameBoard {
         }
     }
 
+    /// The play mode for the second player.
+    /// When changed while it is that player's turn, a move is triggered automatically.
     var role2: PlayMode = .computer(.medium) {
         didSet {
             if currentPlayer == .second {
@@ -40,8 +53,10 @@ final class GameBoard {
         }
     }
 
+    /// Current state of the game.
     private(set) var gameState: GameState = .ongoing
 
+    /// Returns the role of the player whose turn it currently is.
     var playerRole: PlayMode {
         switch currentPlayer {
         case .first:
@@ -51,33 +66,39 @@ final class GameBoard {
         }
     }
 
+    /// Tracks which player's turn it is.
     private var currentPlayer: Player = .first {
         didSet { place() }
     }
 
+    /// Returns the symbol currently placed at a given location.
     func symbol(at indexPath: IndexPath) -> Symbol? {
         gameBoard.occupied[indexPath].map(symbols.symbol(for:))
     }
 
+    /// Returns the symbol assigned to the specified player.
     func symbol(for player: Player) -> Symbol? {
         symbols.symbol(for: player)
     }
 
+    /// Clears the board and starts a new game.
     func reset() {
         gameBoard.occupied = [:]
         gameState = .ongoing
         currentPlayer = .first
     }
 
+    /// Places the current player's piece at the given location if allowed
+    /// and updates the game state asynchronously.
     func place(at index: IndexPath) {
         guard gameBoard.checkGameState() == .ongoing, gameBoard.occupied[index] == .none else { return }
-        // 配置
+        // place piece
         gameBoard.occupied[index] = currentPlayer
 
         Task.detached { [gameBoard] in
             let gameState = gameBoard.checkGameState()
             Task { @MainActor [self] in
-                // 状態の更新
+                // update game state on the main actor
                 self.gameState = gameState
                 if gameState == .ongoing {
                     self.currentPlayer.toggle()
@@ -93,6 +114,7 @@ final class GameBoard {
 }
 
 private extension GameBoard {
+    /// Executes a move for the current player based on their selected play mode.
     func place() {
         Task.detached { [self] in
             switch await playerRole {
@@ -110,7 +132,7 @@ private extension GameBoard {
         }
     }
 
-    /// ランダムな位置に配置する
+    /// Places a piece at a random open location.
     func placeAtRandom() async throws {
         let gameBoard = gameBoard
         try await waitUntilCalculation {
@@ -124,7 +146,7 @@ private extension GameBoard {
         }
     }
 
-    /// アルゴリズムによって配置する
+    /// Places a piece using a basic Min‑Max search that favors slower moves.
     func placeByEasyAI() async throws {
         let gameBoard = gameBoard
         let currentPlayer = currentPlayer
@@ -132,11 +154,11 @@ private extension GameBoard {
             guard gameBoard.checkGameState() == .ongoing else {
                 return nil
             }
-            // 初期配置はどこでも良いのでランダムに配置する
+            // For the first move just pick a random square
             guard !gameBoard.occupied.isEmpty else {
                 return .randomElement()
             }
-            // Min-Max
+            // Use the Min‑Max algorithm to find the worst position
             let players = (me: currentPlayer, opponent: currentPlayer.opposite)
             var worstPlace = IndexPath?.none
             var worstScore = Int.max
@@ -157,6 +179,7 @@ private extension GameBoard {
         }
     }
 
+    /// Medium difficulty mixes random, easy and hard strategies.
     func placeByMediumAI() async throws {
         let p = 10 * max(10 - gameBoard.occupied.count, 0)
         if Int.random(in: 0 ..< 100) < p {
@@ -168,7 +191,7 @@ private extension GameBoard {
         }
     }
 
-    /// アルゴリズムによって配置する
+    /// Places a piece using the Min‑Max algorithm.
     func placeByHardAI() async throws {
         let gameBoard = gameBoard
         let currentPlayer = currentPlayer
@@ -176,11 +199,11 @@ private extension GameBoard {
             guard gameBoard.checkGameState() == .ongoing else {
                 return nil
             }
-            // 初期配置はどこでも良いのでランダムに配置する
+            // For the first move just pick a random square
             guard !gameBoard.occupied.isEmpty else {
                 return .randomElement()
             }
-            // Min-Max
+            // Use the Min‑Max algorithm to find the best position
             let players = (me: currentPlayer, opponent: currentPlayer.opposite)
             var bestPlace = IndexPath?.none
             var bestScore = Int.min
@@ -201,6 +224,10 @@ private extension GameBoard {
         }
     }
 
+    /// Runs a calculation off the main actor and places a piece when the result is ready.
+    /// - Parameters:
+    ///   - minWaitingTime: Minimum duration (in nanoseconds) to wait before placing the piece.
+    ///   - calculation: Closure that returns the selected move.
     func waitUntilCalculation(minWaitingTime: Int64 = 660_000_000, calculation: @Sendable @escaping () -> IndexPath?) async throws {
         let beforeStates = gameBoard.occupied
         let startTime = Date.now

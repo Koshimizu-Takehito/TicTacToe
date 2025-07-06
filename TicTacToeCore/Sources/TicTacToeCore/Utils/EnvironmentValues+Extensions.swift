@@ -1,15 +1,15 @@
 import SwiftUI
 
 extension EnvironmentValues {
-    // MARK: - 幅・スペース
+    // MARK: - Layout
 
-    /// 格子の幅
+    /// Width of the symbol strokes.
     @Entry var symbolLineWidth: Double = 6.0
-    /// 格子の幅
+    /// Spacing between lattice lines.
     @Entry var latticeSpacing: Double = 6.0
 
-    // MARK: - 色
+    // MARK: - Colors
 
-    /// カラーパレット
+    /// Active color palette.
     @Entry var colorPalette: ColorPalette = .default
 }
