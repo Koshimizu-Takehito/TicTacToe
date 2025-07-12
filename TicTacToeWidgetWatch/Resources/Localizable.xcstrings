@@ -6,7 +6,7 @@
         "ain": {
           "stringUnit": {
             "state": "translated",
-            "value": "Let's Play TicTacToe."
+            "value": "すぐに三目並べで遊びましょう。"
           }
         },
         "ang": {
@@ -222,25 +222,25 @@
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "Let's Play TicTacToe."
+            "value": "让我们快速玩井字棋吧。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "Let's Play TicTacToe."
+            "value": "讓我們快速來玩井字遊戲吧。"
           }
         },
         "zh-Hant-TW": {
           "stringUnit": {
             "state": "translated",
-            "value": "Let's Play TicTacToe."
+            "value": "讓我們快速來玩井字遊戲吧。"
           }
         },
         "zh-HK": {
           "stringUnit": {
             "state": "translated",
-            "value": "Let's Play TicTacToe."
+            "value": "我哋快啲嚟玩井字過三關啦。"
           }
         },
         "arz": {
@@ -460,7 +460,7 @@
         "ain": {
           "stringUnit": {
             "state": "translated",
-            "value": "TicTacToe"
+            "value": "三目並べ"
           }
         },
         "ang": {
@@ -676,25 +676,25 @@
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "TicTacToe"
+            "value": "井字棋"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "TicTacToe"
+            "value": "井字遊戲"
           }
         },
         "zh-Hant-TW": {
           "stringUnit": {
             "state": "translated",
-            "value": "TicTacToe"
+            "value": "井字遊戲"
           }
         },
         "zh-HK": {
           "stringUnit": {
             "state": "translated",
-            "value": "TicTacToe"
+            "value": "井字過三關"
           }
         },
         "arz": {

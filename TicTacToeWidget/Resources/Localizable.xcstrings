@@ -24,7 +24,7 @@
         "ain": {
           "stringUnit": {
             "state": "translated",
-            "value": "Color Palette"
+            "value": "色のパレット"
           }
         },
         "ang": {
@@ -240,25 +240,25 @@
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "Color Palette"
+            "value": "调色板"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "Color Palette"
+            "value": "調色盤"
           }
         },
         "zh-Hant-TW": {
           "stringUnit": {
             "state": "translated",
-            "value": "Color Palette"
+            "value": "調色盤"
           }
         },
         "zh-HK": {
           "stringUnit": {
             "state": "translated",
-            "value": "Color Palette"
+            "value": "調色板"
           }
         },
         "arz": {
@@ -478,7 +478,7 @@
         "ain": {
           "stringUnit": {
             "state": "translated",
-            "value": "Color Scheme"
+            "value": "外観モード"
           }
         },
         "ang": {
@@ -694,25 +694,25 @@
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "Color Scheme"
+            "value": "配色方案"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "Color Scheme"
+            "value": "配色方案"
           }
         },
         "zh-Hant-TW": {
           "stringUnit": {
             "state": "translated",
-            "value": "Color Scheme"
+            "value": "配色方案"
           }
         },
         "zh-HK": {
           "stringUnit": {
             "state": "translated",
-            "value": "Color Scheme"
+            "value": "顏色方案"
           }
         },
         "arz": {
@@ -935,7 +935,7 @@
         "ain": {
           "stringUnit": {
             "state": "translated",
-            "value": "Dark"
+            "value": "ダーク"
           }
         },
         "ang": {
@@ -1389,7 +1389,7 @@
         "ain": {
           "stringUnit": {
             "state": "translated",
-            "value": "Default"
+            "value": "デフォルト"
           }
         },
         "ang": {
@@ -1864,7 +1864,7 @@
         "ain": {
           "stringUnit": {
             "state": "translated",
-            "value": "Let's Play TicTacToe."
+            "value": "すぐに三目並べで遊びましょう。"
           }
         },
         "ang": {
@@ -2080,25 +2080,25 @@
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "Let's Play TicTacToe."
+            "value": "让我们快速玩井字棋吧。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "Let's Play TicTacToe."
+            "value": "讓我們快速來玩井字遊戲吧。"
           }
         },
         "zh-Hant-TW": {
           "stringUnit": {
             "state": "translated",
-            "value": "Let's Play TicTacToe."
+            "value": "讓我們快速來玩井字遊戲吧。"
           }
         },
         "zh-HK": {
           "stringUnit": {
             "state": "translated",
-            "value": "Let's Play TicTacToe."
+            "value": "我哋快啲嚟玩井字過三關啦。"
           }
         },
         "arz": {
@@ -2318,7 +2318,7 @@
         "ain": {
           "stringUnit": {
             "state": "translated",
-            "value": "Light"
+            "value": "ライト"
           }
         },
         "ang": {
@@ -2811,7 +2811,7 @@
         "ain": {
           "stringUnit": {
             "state": "translated",
-            "value": "Select Widget Configuration"
+            "value": "ウィジェットの設定を選択"
           }
         },
         "ang": {
@@ -3268,7 +3268,7 @@
         "ain": {
           "stringUnit": {
             "state": "translated",
-            "value": "TicTacToe"
+            "value": "三目並べ"
           }
         },
         "ang": {
@@ -3484,25 +3484,25 @@
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "TicTacToe"
+            "value": "井字棋"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "TicTacToe"
+            "value": "井字遊戲"
           }
         },
         "zh-Hant-TW": {
           "stringUnit": {
             "state": "translated",
-            "value": "TicTacToe"
+            "value": "井字遊戲"
           }
         },
         "zh-HK": {
           "stringUnit": {
             "state": "translated",
-            "value": "TicTacToe"
+            "value": "井字過三關"
           }
         },
         "arz": {
