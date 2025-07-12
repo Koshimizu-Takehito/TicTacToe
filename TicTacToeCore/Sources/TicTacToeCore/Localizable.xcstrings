@@ -1,2696 +1,5054 @@
 {
-  "sourceLanguage" : "en",
+  "sourceLanguage" : "en", 
   "strings" : {
     "%@" : {
       "localizations" : {
         "ain" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%@"
           }
-        },
+        }, 
         "ang" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%@"
           }
-        },
+        }, 
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%@"
           }
-        },
+        }, 
+        "arz" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%@"
+          }
+        }, 
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%@"
+          }
+        }, 
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%@"
+          }
+        }, 
+        "bo" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%@"
+          }
+        }, 
         "ca" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%@"
           }
-        },
+        }, 
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%@"
           }
-        },
+        }, 
         "da" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%@"
           }
-        },
+        }, 
         "de" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%@"
           }
-        },
+        }, 
         "el" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%@"
           }
-        },
+        }, 
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%@"
+          }
+        }, 
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%@"
+          }
+        }, 
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%@"
+          }
+        }, 
         "eo" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%@"
           }
-        },
+        }, 
         "es" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%@"
           }
-        },
+        }, 
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%@"
+          }
+        }, 
+        "es-US" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%@"
+          }
+        }, 
         "fi" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%@"
           }
-        },
+        }, 
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%@"
           }
-        },
+        }, 
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%@"
+          }
+        }, 
         "fro" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%@"
           }
-        },
+        }, 
+        "gl" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%@"
+          }
+        }, 
         "goh" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%@"
           }
-        },
+        }, 
+        "gu" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%@"
+          }
+        }, 
         "he" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%@"
           }
-        },
+        }, 
         "hi" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%@"
           }
-        },
+        }, 
         "hr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%@"
           }
-        },
+        }, 
         "hu" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%@"
           }
-        },
+        }, 
         "id" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%@"
           }
-        },
+        }, 
         "it" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%@"
           }
-        },
+        }, 
+        "it-IT" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%@"
+          }
+        }, 
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%@"
           }
-        },
+        }, 
+        "jam" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%@"
+          }
+        }, 
+        "jv" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%@"
+          }
+        }, 
+        "kk" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%@"
+          }
+        }, 
+        "kn" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%@"
+          }
+        }, 
         "ko" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%@"
           }
-        },
+        }, 
+        "ko-CN" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%@"
+          }
+        }, 
+        "ko-KP" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%@"
+          }
+        }, 
+        "ko-KR" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%@"
+          }
+        }, 
+        "lt" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%@"
+          }
+        }, 
+        "ml" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%@"
+          }
+        }, 
+        "mr" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%@"
+          }
+        }, 
         "ms" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%@"
           }
-        },
+        }, 
         "nb" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%@"
           }
-        },
+        }, 
         "nl" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%@"
           }
-        },
+        }, 
+        "nqo" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%@"
+          }
+        }, 
+        "or" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%@"
+          }
+        }, 
+        "pa" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%@"
+          }
+        }, 
         "pl" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%@"
           }
-        },
+        }, 
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%@"
           }
-        },
+        }, 
         "pt-PT" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%@"
           }
-        },
+        }, 
         "ro" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%@"
           }
-        },
+        }, 
         "ru" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%@"
           }
-        },
+        }, 
+        "ru-RU" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%@"
+          }
+        }, 
         "sk" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%@"
           }
-        },
+        }, 
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%@"
+          }
+        }, 
         "sv" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%@"
           }
-        },
+        }, 
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%@"
+          }
+        }, 
+        "te" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%@"
+          }
+        }, 
         "th" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%@"
           }
-        },
+        }, 
         "tr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%@"
           }
-        },
+        }, 
+        "tr-CY" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%@"
+          }
+        }, 
+        "tr-TR" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%@"
+          }
+        }, 
         "uk" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%@"
           }
-        },
+        }, 
+        "ur" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%@"
+          }
+        }, 
         "vi" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%@"
           }
-        },
+        }, 
+        "vro" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%@"
+          }
+        }, 
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%@"
           }
-        },
+        }, 
+        "zh-Hans-JP" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%@"
+          }
+        }, 
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%@"
           }
-        },
+        }, 
         "zh-Hant-TW" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%@"
           }
-        },
+        }, 
         "zh-HK" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%@"
           }
         }
       }
-    },
+    }, 
     "%@ %lld" : {
       "localizations" : {
         "ain" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%1$@ %2$lld"
           }
-        },
+        }, 
         "ang" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%1$@ %2$lld"
           }
-        },
+        }, 
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%2$lld %1$@"
           }
-        },
+        }, 
         "ca" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%1$@ %2$lld"
           }
-        },
+        }, 
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%1$@ %2$lld"
           }
-        },
+        }, 
         "da" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%1$@ %2$lld"
           }
-        },
+        }, 
         "de" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%1$@ %2$lld"
           }
-        },
+        }, 
         "el" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%1$@ %2$lld"
           }
-        },
+        }, 
         "eo" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%1$@ %2$lld"
           }
-        },
+        }, 
         "es" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%1$@ %2$lld"
           }
-        },
+        }, 
         "fi" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%1$@ %2$lld"
           }
-        },
+        }, 
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%1$@ %2$lld"
           }
-        },
+        }, 
         "fro" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%1$@ %2$lld"
           }
-        },
+        }, 
         "goh" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%1$@ %2$lld"
           }
-        },
+        }, 
         "he" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%2$lld %1$@"
           }
-        },
+        }, 
         "hi" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%1$@ %2$lld"
           }
-        },
+        }, 
         "hr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%1$@ %2$lld"
           }
-        },
+        }, 
         "hu" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%1$@ %2$lld"
           }
-        },
+        }, 
         "id" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%1$@ %2$lld"
           }
-        },
+        }, 
         "it" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%1$@ %2$lld"
           }
-        },
+        }, 
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%1$@%2$lld"
           }
-        },
+        }, 
         "ko" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%1$@ %2$lld"
           }
-        },
+        }, 
         "ms" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%1$@ %2$lld"
           }
-        },
+        }, 
         "nb" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%1$@ %2$lld"
           }
-        },
+        }, 
         "nl" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%1$@ %2$lld"
           }
-        },
+        }, 
         "pl" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%1$@ %2$lld"
           }
-        },
+        }, 
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%1$@ %2$lld"
           }
-        },
+        }, 
         "pt-PT" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%1$@ %2$lld"
           }
-        },
+        }, 
         "ro" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%1$@ %2$lld"
           }
-        },
+        }, 
         "ru" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%1$@ %2$lld"
           }
-        },
+        }, 
         "sk" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%1$@ %2$lld"
           }
-        },
+        }, 
         "sv" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%1$@ %2$lld"
           }
-        },
+        }, 
         "th" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%1$@ %2$lld"
           }
-        },
+        }, 
         "tr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%1$@ %2$lld"
           }
-        },
+        }, 
         "uk" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%1$@ %2$lld"
           }
-        },
+        }, 
         "vi" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%1$@ %2$lld"
           }
-        },
+        }, 
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%1$@ %2$lld"
           }
-        },
+        }, 
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%1$@ %2$lld"
           }
-        },
+        }, 
         "zh-Hant-TW" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "%1$@ %2$lld"
           }
-        },
+        }, 
         "zh-HK" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
+            "value" : "%1$@ %2$lld"
+          }
+        }, 
+        "arz" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%2$lld %1$@"
+          }
+        }, 
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%1$@ %2$lld"
+          }
+        }, 
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%1$@ %2$lld"
+          }
+        }, 
+        "bo" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%1$@ %2$lld"
+          }
+        }, 
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%1$@ %2$lld"
+          }
+        }, 
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%1$@ %2$lld"
+          }
+        }, 
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%1$@ %2$lld"
+          }
+        }, 
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%1$@ %2$lld"
+          }
+        }, 
+        "es-US" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%1$@ %2$lld"
+          }
+        }, 
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%1$@ %2$lld"
+          }
+        }, 
+        "gl" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%1$@ %2$lld"
+          }
+        }, 
+        "gu" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%1$@ %2$lld"
+          }
+        }, 
+        "it-IT" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%1$@ %2$lld"
+          }
+        }, 
+        "jam" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%1$@ %2$lld"
+          }
+        }, 
+        "jv" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%1$@ %2$lld"
+          }
+        }, 
+        "kk" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%1$@ %2$lld"
+          }
+        }, 
+        "kn" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%1$@ %2$lld"
+          }
+        }, 
+        "ko-CN" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%1$@ %2$lld"
+          }
+        }, 
+        "ko-KP" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%1$@ %2$lld"
+          }
+        }, 
+        "ko-KR" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%1$@ %2$lld"
+          }
+        }, 
+        "lt" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%1$@ %2$lld"
+          }
+        }, 
+        "ml" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%1$@ %2$lld"
+          }
+        }, 
+        "mr" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%1$@ %2$lld"
+          }
+        }, 
+        "nqo" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%1$@ %2$lld"
+          }
+        }, 
+        "or" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%1$@ %2$lld"
+          }
+        }, 
+        "pa" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%1$@ %2$lld"
+          }
+        }, 
+        "ru-RU" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%1$@ %2$lld"
+          }
+        }, 
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%1$@ %2$lld"
+          }
+        }, 
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%1$@ %2$lld"
+          }
+        }, 
+        "te" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%1$@ %2$lld"
+          }
+        }, 
+        "tr-CY" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%1$@ %2$lld"
+          }
+        }, 
+        "tr-TR" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%1$@ %2$lld"
+          }
+        }, 
+        "ur" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%2$lld %1$@"
+          }
+        }, 
+        "vro" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "%1$@ %2$lld"
+          }
+        }, 
+        "zh-Hans-JP" : {
+          "stringUnit" : {
+            "state" : "translated", 
             "value" : "%1$@ %2$lld"
           }
         }
       }
-    },
+    }, 
     "Computer" : {
       "localizations" : {
         "ain" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "コンピュータ"
           }
-        },
+        }, 
         "ang" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "cræftsefa"
           }
-        },
+        }, 
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "الكمبيوتر"
           }
-        },
+        }, 
         "ca" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Ordinador"
           }
-        },
+        }, 
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Počítač"
           }
-        },
+        }, 
         "da" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Computer"
           }
-        },
+        }, 
         "de" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Computer"
           }
-        },
+        }, 
         "el" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Υπολογιστής"
           }
-        },
+        }, 
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Computer"
+          }
+        }, 
         "eo" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Komputilo"
           }
-        },
+        }, 
         "es" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Computadora"
           }
-        },
+        }, 
         "fi" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Tietokone"
           }
-        },
+        }, 
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Ordinateur"
           }
-        },
+        }, 
         "fro" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "eschineur"
           }
-        },
+        }, 
         "goh" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "rēhhanōn"
           }
-        },
+        }, 
         "he" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "מחשב"
           }
-        },
+        }, 
         "hi" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "कंप्यूटर"
           }
-        },
+        }, 
         "hr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Računalo"
           }
-        },
+        }, 
         "hu" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Számítógép"
           }
-        },
+        }, 
         "id" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Komputer"
           }
-        },
+        }, 
         "it" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Computer"
           }
-        },
+        }, 
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "コンピューター"
           }
-        },
+        }, 
         "ko" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "컴퓨터"
           }
-        },
+        }, 
         "ms" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Komputer"
           }
-        },
+        }, 
         "nb" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Datamaskin"
           }
-        },
+        }, 
         "nl" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Computer"
           }
-        },
+        }, 
         "pl" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Komputer"
           }
-        },
+        }, 
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Computador"
           }
-        },
+        }, 
         "pt-PT" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Computador"
           }
-        },
+        }, 
         "ro" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Calculator"
           }
-        },
+        }, 
         "ru" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Компьютер"
           }
-        },
+        }, 
         "sk" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Počítač"
           }
-        },
+        }, 
         "sv" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Dator"
           }
-        },
+        }, 
         "th" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "คอมพิวเตอร์"
           }
-        },
+        }, 
         "tr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Bilgisayar"
           }
-        },
+        }, 
         "uk" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Комп’ютер"
           }
-        },
+        }, 
         "vi" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Máy tính"
           }
-        },
+        }, 
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "计算机"
           }
-        },
+        }, 
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "電腦"
           }
-        },
+        }, 
         "zh-Hant-TW" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "電腦"
           }
-        },
+        }, 
         "zh-HK" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "電腦"
+          }
+        }, 
+        "arz" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "الكمبيوتر"
+          }
+        }, 
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Компютър"
+          }
+        }, 
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "কম্পিউটার"
+          }
+        }, 
+        "bo" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "གོང་རིང"
+          }
+        }, 
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Computer"
+          }
+        }, 
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Computer"
+          }
+        }, 
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Computer"
+          }
+        }, 
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Computadora"
+          }
+        }, 
+        "es-US" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Computadora"
+          }
+        }, 
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Ordinateur"
+          }
+        }, 
+        "gl" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Ordenador"
+          }
+        }, 
+        "gu" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "કંપ્યુટર"
+          }
+        }, 
+        "it-IT" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Computer"
+          }
+        }, 
+        "jam" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Computer"
+          }
+        }, 
+        "jv" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Komputer"
+          }
+        }, 
+        "kk" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Компьютер"
+          }
+        }, 
+        "kn" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "ಕಂಪ್ಯೂಟರ್"
+          }
+        }, 
+        "ko-CN" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "컴퓨터"
+          }
+        }, 
+        "ko-KP" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "컴퓨터"
+          }
+        }, 
+        "ko-KR" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "컴퓨터"
+          }
+        }, 
+        "lt" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Kompiuteris"
+          }
+        }, 
+        "ml" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "കമ്പ്യൂട്ടർ"
+          }
+        }, 
+        "mr" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "संगणक"
+          }
+        }, 
+        "nqo" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Computer"
+          }
+        }, 
+        "or" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "କମ୍ପ୍ୟୁଟର"
+          }
+        }, 
+        "pa" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "ਕੰਪਿਊਟਰ"
+          }
+        }, 
+        "ru-RU" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Компьютер"
+          }
+        }, 
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Računalnik"
+          }
+        }, 
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "கணினி"
+          }
+        }, 
+        "te" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "కంప్యూటర్"
+          }
+        }, 
+        "tr-CY" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Bilgisayar"
+          }
+        }, 
+        "tr-TR" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Bilgisayar"
+          }
+        }, 
+        "ur" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "کمپیوٹر"
+          }
+        }, 
+        "vro" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Arvuti"
+          }
+        }, 
+        "zh-Hans-JP" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "计算机"
           }
         }
       }
-    },
+    }, 
     "DRAW" : {
       "localizations" : {
         "ain" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "ひきわけ"
           }
-        },
+        }, 
         "ang" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "efengelic"
           }
-        },
+        }, 
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "تعادل"
           }
-        },
+        }, 
         "ca" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Empat"
           }
-        },
+        }, 
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Remíza"
           }
-        },
+        }, 
         "da" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Uafgjort"
           }
-        },
+        }, 
         "de" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Unentschieden"
           }
-        },
+        }, 
         "el" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Ισοπαλία"
           }
-        },
+        }, 
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "DRAW"
+          }
+        }, 
         "eo" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Egalvenko"
           }
-        },
+        }, 
         "es" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Empate"
           }
-        },
+        }, 
         "fi" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Tasapeli"
           }
-        },
+        }, 
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Match Nul"
           }
-        },
+        }, 
         "fro" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "egale"
           }
-        },
+        }, 
         "goh" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "gilīh"
           }
-        },
+        }, 
         "he" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "תיקו"
           }
-        },
+        }, 
         "hi" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "ड्रॉ"
           }
-        },
+        }, 
         "hr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Neriješeno"
           }
-        },
+        }, 
         "hu" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Döntetlen"
           }
-        },
+        }, 
         "id" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Seri"
           }
-        },
+        }, 
         "it" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Pareggio"
           }
-        },
+        }, 
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "ひきわけ"
           }
-        },
+        }, 
         "ko" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "무승부"
           }
-        },
+        }, 
         "ms" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Seri"
           }
-        },
+        }, 
         "nb" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Uavgjort"
           }
-        },
+        }, 
         "nl" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Gelijkspel"
           }
-        },
+        }, 
         "pl" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Remis"
           }
-        },
+        }, 
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Empate"
           }
-        },
+        }, 
         "pt-PT" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Empate"
           }
-        },
+        }, 
         "ro" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Egalitate"
           }
-        },
+        }, 
         "ru" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Ничья"
           }
-        },
+        }, 
         "sk" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Remíza"
           }
-        },
+        }, 
         "sv" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Oavgjort"
           }
-        },
+        }, 
         "th" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "เสมอ"
           }
-        },
+        }, 
         "tr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Beraberlik"
           }
-        },
+        }, 
         "uk" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Нічия"
           }
-        },
+        }, 
         "vi" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Hòa"
           }
-        },
+        }, 
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "平局"
           }
-        },
+        }, 
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "和局"
           }
-        },
+        }, 
         "zh-Hant-TW" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "和局"
           }
-        },
+        }, 
         "zh-HK" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "和局"
+          }
+        }, 
+        "arz" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "تعادل"
+          }
+        }, 
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Равенство"
+          }
+        }, 
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "ড্র"
+          }
+        }, 
+        "bo" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "མ་མི"
+          }
+        }, 
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "DRAW"
+          }
+        }, 
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "DRAW"
+          }
+        }, 
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "DRAW"
+          }
+        }, 
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Empate"
+          }
+        }, 
+        "es-US" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Empate"
+          }
+        }, 
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Match Nul"
+          }
+        }, 
+        "gl" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Empate"
+          }
+        }, 
+        "gu" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "ડ્ર"
+          }
+        }, 
+        "it-IT" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Pareggio"
+          }
+        }, 
+        "jam" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "DRAW"
+          }
+        }, 
+        "jv" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Seri"
+          }
+        }, 
+        "kk" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Тең ойын"
+          }
+        }, 
+        "kn" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "ಸಮ"
+          }
+        }, 
+        "ko-CN" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "무승부"
+          }
+        }, 
+        "ko-KP" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "무승부"
+          }
+        }, 
+        "ko-KR" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "무승부"
+          }
+        }, 
+        "lt" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Lygiosios"
+          }
+        }, 
+        "ml" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "സമനില"
+          }
+        }, 
+        "mr" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "बरोबरी"
+          }
+        }, 
+        "nqo" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "DRAW"
+          }
+        }, 
+        "or" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "ଡ୍ର"
+          }
+        }, 
+        "pa" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "ਡ੍ਰਾ"
+          }
+        }, 
+        "ru-RU" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Ничья"
+          }
+        }, 
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Neodločeno"
+          }
+        }, 
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "ட்ரா"
+          }
+        }, 
+        "te" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "డ్రా"
+          }
+        }, 
+        "tr-CY" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Beraberlik"
+          }
+        }, 
+        "tr-TR" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Beraberlik"
+          }
+        }, 
+        "ur" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "برابر"
+          }
+        }, 
+        "vro" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Viik"
+          }
+        }, 
+        "zh-Hans-JP" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "平局"
           }
         }
       }
-    },
+    }, 
     "Easy" : {
       "localizations" : {
         "ain" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "やしん"
           }
-        },
+        }, 
         "ang" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "ēaþe"
           }
-        },
+        }, 
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "سهل"
           }
-        },
+        }, 
         "ca" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Fàcil"
           }
-        },
+        }, 
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Lehký"
           }
-        },
+        }, 
         "da" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Let"
           }
-        },
+        }, 
         "de" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Einfach"
           }
-        },
+        }, 
         "el" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Εύκολο"
           }
-        },
+        }, 
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Easy"
+          }
+        }, 
         "eo" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Facila"
           }
-        },
+        }, 
         "es" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Fácil"
           }
-        },
+        }, 
         "fi" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Helppo"
           }
-        },
+        }, 
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Facile"
           }
-        },
+        }, 
         "fro" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "aisié"
           }
-        },
+        }, 
         "goh" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "līhti"
           }
-        },
+        }, 
         "he" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "קל"
           }
-        },
+        }, 
         "hi" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "आसान"
           }
-        },
+        }, 
         "hr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Lako"
           }
-        },
+        }, 
         "hu" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Könnyű"
           }
-        },
+        }, 
         "id" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Mudah"
           }
-        },
+        }, 
         "it" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Facile"
           }
-        },
+        }, 
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "かんたん"
           }
-        },
+        }, 
         "ko" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "쉬움"
           }
-        },
+        }, 
         "ms" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Mudah"
           }
-        },
+        }, 
         "nb" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Enkel"
           }
-        },
+        }, 
         "nl" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Makkelijk"
           }
-        },
+        }, 
         "pl" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Łatwy"
           }
-        },
+        }, 
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Fácil"
           }
-        },
+        }, 
         "pt-PT" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Fácil"
           }
-        },
+        }, 
         "ro" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Ușor"
           }
-        },
+        }, 
         "ru" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Легко"
           }
-        },
+        }, 
         "sk" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Ľahký"
           }
-        },
+        }, 
         "sv" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Lätt"
           }
-        },
+        }, 
         "th" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "ง่าย"
           }
-        },
+        }, 
         "tr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Kolay"
           }
-        },
+        }, 
         "uk" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Легко"
           }
-        },
+        }, 
         "vi" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Dễ"
           }
-        },
+        }, 
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "简单"
           }
-        },
+        }, 
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "簡單"
           }
-        },
+        }, 
         "zh-Hant-TW" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "簡單"
           }
-        },
+        }, 
         "zh-HK" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "簡單"
+          }
+        }, 
+        "arz" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "سهل"
+          }
+        }, 
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Лесно"
+          }
+        }, 
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "সহজ"
+          }
+        }, 
+        "bo" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "སང་"
+          }
+        }, 
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Easy"
+          }
+        }, 
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Easy"
+          }
+        }, 
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Easy"
+          }
+        }, 
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Fácil"
+          }
+        }, 
+        "es-US" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Fácil"
+          }
+        }, 
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Facile"
+          }
+        }, 
+        "gl" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Doado"
+          }
+        }, 
+        "gu" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "સરળ"
+          }
+        }, 
+        "it-IT" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Facile"
+          }
+        }, 
+        "jam" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Easy"
+          }
+        }, 
+        "jv" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Gampang"
+          }
+        }, 
+        "kk" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Оңай"
+          }
+        }, 
+        "kn" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "ಸುಲಭ"
+          }
+        }, 
+        "ko-CN" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "쉬움"
+          }
+        }, 
+        "ko-KP" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "쉬움"
+          }
+        }, 
+        "ko-KR" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "쉬움"
+          }
+        }, 
+        "lt" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Lengva"
+          }
+        }, 
+        "ml" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "എളുപ്പം"
+          }
+        }, 
+        "mr" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "सोपे"
+          }
+        }, 
+        "nqo" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Easy"
+          }
+        }, 
+        "or" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "ସହଜ"
+          }
+        }, 
+        "pa" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "ਆਸਾਨ"
+          }
+        }, 
+        "ru-RU" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Легко"
+          }
+        }, 
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Lahko"
+          }
+        }, 
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "எளிது"
+          }
+        }, 
+        "te" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "సులభం"
+          }
+        }, 
+        "tr-CY" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Kolay"
+          }
+        }, 
+        "tr-TR" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Kolay"
+          }
+        }, 
+        "ur" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "آسان"
+          }
+        }, 
+        "vro" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Lihtne"
+          }
+        }, 
+        "zh-Hans-JP" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "简单"
           }
         }
       }
-    },
+    }, 
     "Hard" : {
       "localizations" : {
         "ain" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "しんの"
           }
-        },
+        }, 
         "ang" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "heard"
           }
-        },
+        }, 
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "صعب"
           }
-        },
+        }, 
         "ca" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Difícil"
           }
-        },
+        }, 
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Těžký"
           }
-        },
+        }, 
         "da" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Svær"
           }
-        },
+        }, 
         "de" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Schwer"
           }
-        },
+        }, 
         "el" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Δύσκολο"
           }
-        },
+        }, 
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Hard"
+          }
+        }, 
         "eo" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Malfacila"
           }
-        },
+        }, 
         "es" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Difícil"
           }
-        },
+        }, 
         "fi" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Vaikea"
           }
-        },
+        }, 
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Difficile"
           }
-        },
+        }, 
         "fro" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "fort"
           }
-        },
+        }, 
         "goh" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "hart"
           }
-        },
+        }, 
         "he" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "קשה"
           }
-        },
+        }, 
         "hi" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "कठिन"
           }
-        },
+        }, 
         "hr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Teško"
           }
-        },
+        }, 
         "hu" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Nehéz"
           }
-        },
+        }, 
         "id" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Sulit"
           }
-        },
+        }, 
         "it" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Difficile"
           }
-        },
+        }, 
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "むずかしい"
           }
-        },
+        }, 
         "ko" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "어려움"
           }
-        },
+        }, 
         "ms" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Sukar"
           }
-        },
+        }, 
         "nb" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Vanskelig"
           }
-        },
+        }, 
         "nl" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Moeilijk"
           }
-        },
+        }, 
         "pl" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Trudny"
           }
-        },
+        }, 
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Difícil"
           }
-        },
+        }, 
         "pt-PT" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Difícil"
           }
-        },
+        }, 
         "ro" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Dificil"
           }
-        },
+        }, 
         "ru" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Трудно"
           }
-        },
+        }, 
         "sk" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Ťažký"
           }
-        },
+        }, 
         "sv" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Svår"
           }
-        },
+        }, 
         "th" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "ยาก"
           }
-        },
+        }, 
         "tr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Zor"
           }
-        },
+        }, 
         "uk" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Важко"
           }
-        },
+        }, 
         "vi" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Khó"
           }
-        },
+        }, 
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "困难"
           }
-        },
+        }, 
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "困難"
           }
-        },
+        }, 
         "zh-Hant-TW" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "困難"
           }
-        },
+        }, 
         "zh-HK" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "困難"
+          }
+        }, 
+        "arz" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "صعب"
+          }
+        }, 
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Трудно"
+          }
+        }, 
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "কঠিন"
+          }
+        }, 
+        "bo" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "ཀྱི"
+          }
+        }, 
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Hard"
+          }
+        }, 
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Hard"
+          }
+        }, 
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Hard"
+          }
+        }, 
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Difícil"
+          }
+        }, 
+        "es-US" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Difícil"
+          }
+        }, 
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Difficile"
+          }
+        }, 
+        "gl" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Difícil"
+          }
+        }, 
+        "gu" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "કઠિન"
+          }
+        }, 
+        "it-IT" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Difficile"
+          }
+        }, 
+        "jam" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Hard"
+          }
+        }, 
+        "jv" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Angel"
+          }
+        }, 
+        "kk" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Қиын"
+          }
+        }, 
+        "kn" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "ಕಷ್ಟ"
+          }
+        }, 
+        "ko-CN" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "어려움"
+          }
+        }, 
+        "ko-KP" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "어려움"
+          }
+        }, 
+        "ko-KR" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "어려움"
+          }
+        }, 
+        "lt" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Sunku"
+          }
+        }, 
+        "ml" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "കഠിനം"
+          }
+        }, 
+        "mr" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "कठीण"
+          }
+        }, 
+        "nqo" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Hard"
+          }
+        }, 
+        "or" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "କଠିନ"
+          }
+        }, 
+        "pa" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "ਉਖਾ"
+          }
+        }, 
+        "ru-RU" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Трудно"
+          }
+        }, 
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Težko"
+          }
+        }, 
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "கடினம்"
+          }
+        }, 
+        "te" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "కష్టం"
+          }
+        }, 
+        "tr-CY" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Zor"
+          }
+        }, 
+        "tr-TR" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Zor"
+          }
+        }, 
+        "ur" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "مشکل"
+          }
+        }, 
+        "vro" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Raske"
+          }
+        }, 
+        "zh-Hans-JP" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "困难"
           }
         }
       }
-    },
+    }, 
     "LanguageCode" : {
       "localizations" : {
         "ain" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "ain"
           }
-        },
+        }, 
         "ang" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "ang"
           }
-        },
+        }, 
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "ar"
           }
-        },
+        }, 
         "ca" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "ca"
           }
-        },
+        }, 
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "cs"
           }
-        },
+        }, 
         "da" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "da"
           }
-        },
+        }, 
         "de" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "de"
           }
-        },
+        }, 
         "el" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "el"
           }
-        },
+        }, 
         "en" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "en"
           }
-        },
+        }, 
         "eo" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "eo"
           }
-        },
+        }, 
         "es" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "es"
           }
-        },
+        }, 
         "fi" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "fi"
           }
-        },
+        }, 
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "fr"
           }
-        },
+        }, 
         "fro" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "fro"
           }
-        },
+        }, 
         "goh" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "goh"
           }
-        },
+        }, 
         "he" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "he"
           }
-        },
+        }, 
         "hi" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "hi"
           }
-        },
+        }, 
         "hr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "hr"
           }
-        },
+        }, 
         "hu" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "hu"
           }
-        },
+        }, 
         "id" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "id"
           }
-        },
+        }, 
         "it" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "it"
           }
-        },
+        }, 
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "ja"
           }
-        },
+        }, 
         "ko" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "ko"
           }
-        },
+        }, 
         "ms" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "ms"
           }
-        },
+        }, 
         "nb" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "nb"
           }
-        },
+        }, 
         "nl" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "nl"
           }
-        },
+        }, 
         "pl" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "pl"
           }
-        },
+        }, 
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "pt-BR"
           }
-        },
+        }, 
         "pt-PT" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "pt-PT"
           }
-        },
+        }, 
         "ro" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "ro"
           }
-        },
+        }, 
         "ru" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "ru"
           }
-        },
+        }, 
         "sk" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "sk"
           }
-        },
+        }, 
         "sv" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "sv"
           }
-        },
+        }, 
         "th" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "th"
           }
-        },
+        }, 
         "tr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "tr"
           }
-        },
+        }, 
         "uk" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "uk"
           }
-        },
+        }, 
         "vi" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "vi"
           }
-        },
+        }, 
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "zh-Hans"
           }
-        },
+        }, 
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "zh-Hant"
           }
-        },
+        }, 
         "zh-Hant-TW" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "zh-Hant-TW"
           }
-        },
+        }, 
         "zh-HK" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "zh-HK"
+          }
+        }, 
+        "arz" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "arz"
+          }
+        }, 
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "bg"
+          }
+        }, 
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "bn"
+          }
+        }, 
+        "bo" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "bo"
+          }
+        }, 
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "en-AU"
+          }
+        }, 
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "en-GB"
+          }
+        }, 
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "en-IN"
+          }
+        }, 
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "es-419"
+          }
+        }, 
+        "es-US" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "es-US"
+          }
+        }, 
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "fr-CA"
+          }
+        }, 
+        "gl" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "gl"
+          }
+        }, 
+        "gu" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "gu"
+          }
+        }, 
+        "it-IT" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "it-IT"
+          }
+        }, 
+        "jam" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "jam"
+          }
+        }, 
+        "jv" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "jv"
+          }
+        }, 
+        "kk" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "kk"
+          }
+        }, 
+        "kn" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "kn"
+          }
+        }, 
+        "ko-CN" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "ko-CN"
+          }
+        }, 
+        "ko-KP" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "ko-KP"
+          }
+        }, 
+        "ko-KR" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "ko-KR"
+          }
+        }, 
+        "lt" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "lt"
+          }
+        }, 
+        "ml" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "ml"
+          }
+        }, 
+        "mr" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "mr"
+          }
+        }, 
+        "nqo" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "nqo"
+          }
+        }, 
+        "or" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "or"
+          }
+        }, 
+        "pa" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "pa"
+          }
+        }, 
+        "ru-RU" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "ru-RU"
+          }
+        }, 
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "sl"
+          }
+        }, 
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "ta"
+          }
+        }, 
+        "te" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "te"
+          }
+        }, 
+        "tr-CY" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "tr-CY"
+          }
+        }, 
+        "tr-TR" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "tr-TR"
+          }
+        }, 
+        "ur" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "ur"
+          }
+        }, 
+        "vro" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "vro"
+          }
+        }, 
+        "zh-Hans-JP" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "zh-Hans-JP"
           }
         }
       }
-    },
+    }, 
     "Medium" : {
       "localizations" : {
         "ain" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "ふつう"
           }
-        },
+        }, 
         "ang" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "middel"
           }
-        },
+        }, 
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "متوسط"
           }
-        },
+        }, 
         "ca" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Mitjà"
           }
-        },
+        }, 
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Střední"
           }
-        },
+        }, 
         "da" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Middel"
           }
-        },
+        }, 
         "de" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Mittel"
           }
-        },
+        }, 
         "el" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Μεσαίο"
           }
-        },
+        }, 
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Medium"
+          }
+        }, 
         "eo" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Meznivela"
           }
-        },
+        }, 
         "es" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Medio"
           }
-        },
+        }, 
         "fi" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Keskivaikea"
           }
-        },
+        }, 
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Moyen"
           }
-        },
+        }, 
         "fro" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "meien"
           }
-        },
+        }, 
         "goh" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "mittil"
           }
-        },
+        }, 
         "he" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "בינוני"
           }
-        },
+        }, 
         "hi" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "मध्यम"
           }
-        },
+        }, 
         "hr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Srednje"
           }
-        },
+        }, 
         "hu" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Közepes"
           }
-        },
+        }, 
         "id" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Sedang"
           }
-        },
+        }, 
         "it" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Medio"
           }
-        },
+        }, 
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "ふつう"
           }
-        },
+        }, 
         "ko" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "보통"
           }
-        },
+        }, 
         "ms" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Sederhana"
           }
-        },
+        }, 
         "nb" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Middels"
           }
-        },
+        }, 
         "nl" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Gemiddeld"
           }
-        },
+        }, 
         "pl" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Średni"
           }
-        },
+        }, 
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Médio"
           }
-        },
+        }, 
         "pt-PT" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Médio"
           }
-        },
+        }, 
         "ro" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Mediu"
           }
-        },
+        }, 
         "ru" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Средне"
           }
-        },
+        }, 
         "sk" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Stredný"
           }
-        },
+        }, 
         "sv" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Medel"
           }
-        },
+        }, 
         "th" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "ปานกลาง"
           }
-        },
+        }, 
         "tr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Orta"
           }
-        },
+        }, 
         "uk" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Середньо"
           }
-        },
+        }, 
         "vi" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Trung bình"
           }
-        },
+        }, 
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "中等"
           }
-        },
+        }, 
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "中等"
           }
-        },
+        }, 
         "zh-Hant-TW" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "中等"
           }
-        },
+        }, 
         "zh-HK" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
+            "value" : "中等"
+          }
+        }, 
+        "arz" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "متوسط"
+          }
+        }, 
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Средно"
+          }
+        }, 
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "মাঝারি"
+          }
+        }, 
+        "bo" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "མིསྤ"
+          }
+        }, 
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Medium"
+          }
+        }, 
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Medium"
+          }
+        }, 
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Medium"
+          }
+        }, 
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Medio"
+          }
+        }, 
+        "es-US" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Medio"
+          }
+        }, 
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Moyen"
+          }
+        }, 
+        "gl" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Medio"
+          }
+        }, 
+        "gu" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "મધ્યમ"
+          }
+        }, 
+        "it-IT" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Medio"
+          }
+        }, 
+        "jam" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Medium"
+          }
+        }, 
+        "jv" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Sedang"
+          }
+        }, 
+        "kk" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Орташа"
+          }
+        }, 
+        "kn" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "ಮಧ್ಯಮ"
+          }
+        }, 
+        "ko-CN" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "보통"
+          }
+        }, 
+        "ko-KP" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "보통"
+          }
+        }, 
+        "ko-KR" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "보통"
+          }
+        }, 
+        "lt" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Vidutinis"
+          }
+        }, 
+        "ml" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "ഇടത്തരം"
+          }
+        }, 
+        "mr" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "मध्यम"
+          }
+        }, 
+        "nqo" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Medium"
+          }
+        }, 
+        "or" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "ମଧ୍ୟମ"
+          }
+        }, 
+        "pa" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "ਦਰਮਿਆਨਾ"
+          }
+        }, 
+        "ru-RU" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Средне"
+          }
+        }, 
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Srednje"
+          }
+        }, 
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "நடுத்தர"
+          }
+        }, 
+        "te" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "మధ్యం"
+          }
+        }, 
+        "tr-CY" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Orta"
+          }
+        }, 
+        "tr-TR" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Orta"
+          }
+        }, 
+        "ur" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "درمیانہ"
+          }
+        }, 
+        "vro" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Keskmine"
+          }
+        }, 
+        "zh-Hans-JP" : {
+          "stringUnit" : {
+            "state" : "translated", 
             "value" : "中等"
           }
         }
       }
-    },
+    }, 
     "Player" : {
       "localizations" : {
         "ain" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "プレイヤー"
           }
-        },
+        }, 
         "ang" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "spelend"
           }
-        },
+        }, 
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "لاعب"
           }
-        },
+        }, 
         "ca" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Jugador"
           }
-        },
+        }, 
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Hráč"
           }
-        },
+        }, 
         "da" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Spiller"
           }
-        },
+        }, 
         "de" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Spieler"
           }
-        },
+        }, 
         "el" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Παίκτης"
           }
-        },
+        }, 
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Player"
+          }
+        }, 
         "eo" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Ludanto"
           }
-        },
+        }, 
         "es" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Jugador"
           }
-        },
+        }, 
         "fi" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Pelaaja"
           }
-        },
+        }, 
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Joueur"
           }
-        },
+        }, 
         "fro" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "jor"
           }
-        },
+        }, 
         "goh" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "spilāri"
           }
-        },
+        }, 
         "he" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "שחקן"
           }
-        },
+        }, 
         "hi" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "खिलाड़ी"
           }
-        },
+        }, 
         "hr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Igrač"
           }
-        },
+        }, 
         "hu" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Játékos"
           }
-        },
+        }, 
         "id" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Pemain"
           }
-        },
+        }, 
         "it" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Giocatore"
           }
-        },
+        }, 
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "プレイヤー"
           }
-        },
+        }, 
         "ko" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "플레이어"
           }
-        },
+        }, 
         "ms" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Pemain"
           }
-        },
+        }, 
         "nb" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Spiller"
           }
-        },
+        }, 
         "nl" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Speler"
           }
-        },
+        }, 
         "pl" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Gracz"
           }
-        },
+        }, 
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Jogador"
           }
-        },
+        }, 
         "pt-PT" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Jogador"
           }
-        },
+        }, 
         "ro" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Jucător"
           }
-        },
+        }, 
         "ru" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Игрок"
           }
-        },
+        }, 
         "sk" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Hráč"
           }
-        },
+        }, 
         "sv" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Spelare"
           }
-        },
+        }, 
         "th" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "ผู้เล่น"
           }
-        },
+        }, 
         "tr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Oyuncu"
           }
-        },
+        }, 
         "uk" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Гравець"
           }
-        },
+        }, 
         "vi" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Người chơi"
           }
-        },
+        }, 
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "玩家"
           }
-        },
+        }, 
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "玩家"
           }
-        },
+        }, 
         "zh-Hant-TW" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "玩家"
           }
-        },
+        }, 
         "zh-HK" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
+            "value" : "玩家"
+          }
+        }, 
+        "arz" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "لاعب"
+          }
+        }, 
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Играч"
+          }
+        }, 
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "খেলোয়াড়"
+          }
+        }, 
+        "bo" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "སང་ལོ།"
+          }
+        }, 
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Player"
+          }
+        }, 
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Player"
+          }
+        }, 
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Player"
+          }
+        }, 
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Jugador"
+          }
+        }, 
+        "es-US" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Jugador"
+          }
+        }, 
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Joueur"
+          }
+        }, 
+        "gl" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Xogador"
+          }
+        }, 
+        "gu" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "ખેલાડી"
+          }
+        }, 
+        "it-IT" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Giocatore"
+          }
+        }, 
+        "jam" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Player"
+          }
+        }, 
+        "jv" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Pemain"
+          }
+        }, 
+        "kk" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Ойыншы"
+          }
+        }, 
+        "kn" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "ಆಟಗಾರ"
+          }
+        }, 
+        "ko-CN" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "플레이어"
+          }
+        }, 
+        "ko-KP" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "플레이어"
+          }
+        }, 
+        "ko-KR" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "플레이어"
+          }
+        }, 
+        "lt" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Žaidėjas"
+          }
+        }, 
+        "ml" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "കളിക്കാരൻ"
+          }
+        }, 
+        "mr" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "खेळाडू"
+          }
+        }, 
+        "nqo" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Player"
+          }
+        }, 
+        "or" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "ଖେଳାଳି"
+          }
+        }, 
+        "pa" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "ਖਿਡਾਰੀ"
+          }
+        }, 
+        "ru-RU" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Игрок"
+          }
+        }, 
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Igralec"
+          }
+        }, 
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "வீரர்"
+          }
+        }, 
+        "te" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "ఆటగాడు"
+          }
+        }, 
+        "tr-CY" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Oyuncu"
+          }
+        }, 
+        "tr-TR" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Oyuncu"
+          }
+        }, 
+        "ur" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "کھلاڑی"
+          }
+        }, 
+        "vro" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Mängija"
+          }
+        }, 
+        "zh-Hans-JP" : {
+          "stringUnit" : {
+            "state" : "translated", 
             "value" : "玩家"
           }
         }
       }
-    },
+    }, 
     "Random" : {
       "localizations" : {
         "ain" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "ランダム"
           }
-        },
+        }, 
         "ang" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "haphazard"
           }
-        },
+        }, 
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "عشوائي"
           }
-        },
+        }, 
         "ca" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Aleatori"
           }
-        },
+        }, 
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Náhodný"
           }
-        },
+        }, 
         "da" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Tilfældig"
           }
-        },
+        }, 
         "de" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Zufällig"
           }
-        },
+        }, 
         "el" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Τυχαίο"
           }
-        },
+        }, 
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Random"
+          }
+        }, 
         "eo" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Hazarda"
           }
-        },
+        }, 
         "es" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Aleatorio"
           }
-        },
+        }, 
         "fi" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Satunnainen"
           }
-        },
+        }, 
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Aléatoire"
           }
-        },
+        }, 
         "fro" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "aventure"
           }
-        },
+        }, 
         "goh" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "zufellig"
           }
-        },
+        }, 
         "he" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "אקראי"
           }
-        },
+        }, 
         "hi" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "यादृच्छिक"
           }
-        },
+        }, 
         "hr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Nasumično"
           }
-        },
+        }, 
         "hu" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Véletlenszerű"
           }
-        },
+        }, 
         "id" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Acak"
           }
-        },
+        }, 
         "it" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Casuale"
           }
-        },
+        }, 
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "ランダム"
           }
-        },
+        }, 
         "ko" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "무작위"
           }
-        },
+        }, 
         "ms" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Rawak"
           }
-        },
+        }, 
         "nb" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Tilfeldig"
           }
-        },
+        }, 
         "nl" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Willekeurig"
           }
-        },
+        }, 
         "pl" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Losowy"
           }
-        },
+        }, 
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Aleatório"
           }
-        },
+        }, 
         "pt-PT" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Aleatório"
           }
-        },
+        }, 
         "ro" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Aleator"
           }
-        },
+        }, 
         "ru" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Случайно"
           }
-        },
+        }, 
         "sk" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Náhodný"
           }
-        },
+        }, 
         "sv" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Slumpmässig"
           }
-        },
+        }, 
         "th" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "สุ่ม"
           }
-        },
+        }, 
         "tr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Rastgele"
           }
-        },
+        }, 
         "uk" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Випадково"
           }
-        },
+        }, 
         "vi" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Ngẫu nhiên"
           }
-        },
+        }, 
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "随机"
           }
-        },
+        }, 
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "隨機"
           }
-        },
+        }, 
         "zh-Hant-TW" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "隨機"
           }
-        },
+        }, 
         "zh-HK" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "隨機"
+          }
+        }, 
+        "arz" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "عشوائي"
+          }
+        }, 
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Случайно"
+          }
+        }, 
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "এলোপাতাড়ি"
+          }
+        }, 
+        "bo" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "ཛོང"
+          }
+        }, 
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Random"
+          }
+        }, 
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Random"
+          }
+        }, 
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Random"
+          }
+        }, 
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Aleatorio"
+          }
+        }, 
+        "es-US" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Aleatorio"
+          }
+        }, 
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Aléatoire"
+          }
+        }, 
+        "gl" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Aleatorio"
+          }
+        }, 
+        "gu" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "રેન્ડમ"
+          }
+        }, 
+        "it-IT" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Casuale"
+          }
+        }, 
+        "jam" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Random"
+          }
+        }, 
+        "jv" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Acak"
+          }
+        }, 
+        "kk" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Кездейсоқ"
+          }
+        }, 
+        "kn" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "ಯಾದೃಚ್ಛಿಕ"
+          }
+        }, 
+        "ko-CN" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "무작위"
+          }
+        }, 
+        "ko-KP" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "무작위"
+          }
+        }, 
+        "ko-KR" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "무작위"
+          }
+        }, 
+        "lt" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Atsitiktinis"
+          }
+        }, 
+        "ml" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "യാദൃശ്ചികം"
+          }
+        }, 
+        "mr" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "रॅंडम"
+          }
+        }, 
+        "nqo" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Random"
+          }
+        }, 
+        "or" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "ର୍ୟାଣ୍ଡମ"
+          }
+        }, 
+        "pa" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "ਰੈਂਡਮ"
+          }
+        }, 
+        "ru-RU" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Случайно"
+          }
+        }, 
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Naključno"
+          }
+        }, 
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "ரேண்டம்"
+          }
+        }, 
+        "te" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "యాదృచ్ఛిక"
+          }
+        }, 
+        "tr-CY" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Rastgele"
+          }
+        }, 
+        "tr-TR" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Rastgele"
+          }
+        }, 
+        "ur" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "بے ترتیب"
+          }
+        }, 
+        "vro" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Juhuslik"
+          }
+        }, 
+        "zh-Hans-JP" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "随机"
           }
         }
       }
-    },
+    }, 
     "WINNER!" : {
       "localizations" : {
         "ain" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "かち!"
           }
-        },
+        }, 
         "ang" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "sige"
           }
-        },
+        }, 
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "الفائز!"
           }
-        },
+        }, 
         "ca" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Guanyador!"
           }
-        },
+        }, 
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Vítěz!"
           }
-        },
+        }, 
         "da" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Vinder!"
           }
-        },
+        }, 
         "de" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Gewinner!"
           }
-        },
+        }, 
         "el" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Νικητής!"
           }
-        },
+        }, 
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "WINNER!"
+          }
+        }, 
         "eo" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Venkinto!"
           }
-        },
+        }, 
         "es" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "¡Ganador!"
           }
-        },
+        }, 
         "fi" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Voittaja!"
           }
-        },
+        }, 
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Gagnant !"
           }
-        },
+        }, 
         "fro" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "venqueor"
           }
-        },
+        }, 
         "goh" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "sigāri"
           }
-        },
+        }, 
         "he" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "מנצח!"
           }
-        },
+        }, 
         "hi" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "विजेता!"
           }
-        },
+        }, 
         "hr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Pobjednik!"
           }
-        },
+        }, 
         "hu" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Győztes!"
           }
-        },
+        }, 
         "id" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Pemenang!"
           }
-        },
+        }, 
         "it" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Vincitore!"
           }
-        },
+        }, 
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "かち!"
           }
-        },
+        }, 
         "ko" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "승리자!"
           }
-        },
+        }, 
         "ms" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Pemenang!"
           }
-        },
+        }, 
         "nb" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Vinner!"
           }
-        },
+        }, 
         "nl" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Winnaar!"
           }
-        },
+        }, 
         "pl" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Zwycięzca!"
           }
-        },
+        }, 
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Vencedor!"
           }
-        },
+        }, 
         "pt-PT" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Vencedor!"
           }
-        },
+        }, 
         "ro" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Câștigător!"
           }
-        },
+        }, 
         "ru" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Победитель!"
           }
-        },
+        }, 
         "sk" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Víťaz!"
           }
-        },
+        }, 
         "sv" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Vinnare!"
           }
-        },
+        }, 
         "th" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "ผู้ชนะ!"
           }
-        },
+        }, 
         "tr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Kazanan!"
           }
-        },
+        }, 
         "uk" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Переможець!"
           }
-        },
+        }, 
         "vi" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "Người chiến thắng!"
           }
-        },
+        }, 
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "获胜者！"
           }
-        },
+        }, 
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "勝者！"
           }
-        },
+        }, 
         "zh-Hant-TW" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "贏家!"
           }
-        },
+        }, 
         "zh-HK" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "translated", 
             "value" : "勝者！"
+          }
+        }, 
+        "arz" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "الفائز!"
+          }
+        }, 
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Победител!"
+          }
+        }, 
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "বিজয়ী!"
+          }
+        }, 
+        "bo" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "བརྒོ!"
+          }
+        }, 
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "WINNER!"
+          }
+        }, 
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "WINNER!"
+          }
+        }, 
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "WINNER!"
+          }
+        }, 
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "¡Ganador!"
+          }
+        }, 
+        "es-US" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "¡Ganador!"
+          }
+        }, 
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Gagnant !"
+          }
+        }, 
+        "gl" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Gañador!"
+          }
+        }, 
+        "gu" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "વિજેતા!"
+          }
+        }, 
+        "it-IT" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Vincitore!"
+          }
+        }, 
+        "jam" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "WINNER!"
+          }
+        }, 
+        "jv" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Menang!"
+          }
+        }, 
+        "kk" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Жеңімпаз!"
+          }
+        }, 
+        "kn" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "ವಿಜೇತ!"
+          }
+        }, 
+        "ko-CN" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "승리자!"
+          }
+        }, 
+        "ko-KP" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "승리자!"
+          }
+        }, 
+        "ko-KR" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "승리자!"
+          }
+        }, 
+        "lt" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Nugalėtojas!"
+          }
+        }, 
+        "ml" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "വിജേതാവ്!"
+          }
+        }, 
+        "mr" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "विजेता!"
+          }
+        }, 
+        "nqo" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "WINNER!"
+          }
+        }, 
+        "or" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "ଜୟୀ!"
+          }
+        }, 
+        "pa" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "ਜੇਤੂ!"
+          }
+        }, 
+        "ru-RU" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Победитель!"
+          }
+        }, 
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Zmagovalec!"
+          }
+        }, 
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "வெற்றியாளர்!"
+          }
+        }, 
+        "te" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "విజేత!"
+          }
+        }, 
+        "tr-CY" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Kazanan!"
+          }
+        }, 
+        "tr-TR" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Kazanan!"
+          }
+        }, 
+        "ur" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "فاتح!"
+          }
+        }, 
+        "vro" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "Võitja!"
+          }
+        }, 
+        "zh-Hans-JP" : {
+          "stringUnit" : {
+            "state" : "translated", 
+            "value" : "获胜者！"
           }
         }
       }
     }
-  },
+  }, 
   "version" : "1.0"
 }
