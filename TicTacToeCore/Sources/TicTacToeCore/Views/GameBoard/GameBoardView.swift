@@ -9,7 +9,7 @@ import SwiftUI
 
         var body: some View {
             @Bindable var viewModel = viewModel
-            VStack(alignment: .trailing) {
+            VStack(alignment: .center) {
                 // メニュー
                 PlayerMenuView()
                 // 盤面

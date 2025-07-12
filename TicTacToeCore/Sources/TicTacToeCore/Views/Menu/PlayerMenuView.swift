@@ -29,18 +29,17 @@ import SwiftUI
                             }
                         }
                     } label: {
-                        Color.clear
-                            .frame(height: 0)
-                            .overlay {
-                                PlayerMenuLabel(
-                                    viewModel: .init(viewModel: viewModel, player: player)
-                                )
-                            }
-                            .frame(maxWidth: .infinity)
+                        ZStack {
+                            PlayerMenuLabel.dummy()
+                                .frame(maxWidth: .infinity)
+                            PlayerMenuLabel(viewModel: .init(viewModel: viewModel, player: player))
+                        }
                     }
                     .menuOrder(.fixed)
                 }
+                .frame(maxWidth: .infinity)
             }
+            .frame(maxWidth: .infinity)
             .buttonStyle(.actionStyle)
         }
     }

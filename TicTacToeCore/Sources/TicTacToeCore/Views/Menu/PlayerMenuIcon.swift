@@ -15,7 +15,9 @@ struct PlayerMenuIcon: View {
                 CrossMark(ratio: 1)
             }
         }
-        .background(content: sizeReader)
+        .background {
+            sizeReader()
+        }
         .frame(width: size.width, height: size.height)
         .environment(\.symbolLineWidth, size.height / 10)
         .environment(\.colorPalette.symbol1, color)
