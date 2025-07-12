@@ -34,6 +34,11 @@ extension PlayerMenuLabel {
     init(viewModel: PlayerMenuIconViewModel) {
         self.init(mode: viewModel.mode, symbol: viewModel.symbol)
     }
+
+    static func dummy() -> some View {
+        PlayerMenuLabel(mode: PlayMode.longTitle, symbol: .circle)
+            .hidden()
+    }
 }
 
 // MARK: - PlayerMenuLabelStyle
