@@ -24,7 +24,7 @@
         "ain": {
           "stringUnit": {
             "state": "translated",
-            "value": "色のパレット"
+            "value": "Color Palette"
           }
         },
         "ang": {
@@ -240,67 +240,67 @@
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "调色板"
+            "value": "Color Palette"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "調色盤"
+            "value": "Color Palette"
           }
         },
         "zh-Hant-TW": {
           "stringUnit": {
             "state": "translated",
-            "value": "調色盤"
+            "value": "Color Palette"
           }
         },
         "zh-HK": {
           "stringUnit": {
             "state": "translated",
-            "value": "調色板"
+            "value": "Color Palette"
           }
         },
         "arz": {
           "stringUnit": {
             "state": "translated",
-            "value": "色のパレット"
+            "value": "Color Palette"
           }
         },
         "bg": {
           "stringUnit": {
             "state": "translated",
-            "value": "色のパレット"
+            "value": "Color Palette"
           }
         },
         "bn": {
           "stringUnit": {
             "state": "translated",
-            "value": "色のパレット"
+            "value": "Color Palette"
           }
         },
         "bo": {
           "stringUnit": {
             "state": "translated",
-            "value": "色のパレット"
+            "value": "Color Palette"
           }
         },
         "en-AU": {
           "stringUnit": {
             "state": "translated",
-            "value": "色のパレット"
+            "value": "Color Palette"
           }
         },
         "en-GB": {
           "stringUnit": {
             "state": "translated",
-            "value": "色のパレット"
+            "value": "Color Palette"
           }
         },
         "en-IN": {
           "stringUnit": {
             "state": "translated",
-            "value": "色のパレット"
+            "value": "Color Palette"
           }
         },
         "es-419": {
@@ -324,13 +324,13 @@
         "gl": {
           "stringUnit": {
             "state": "translated",
-            "value": "色のパレット"
+            "value": "Color Palette"
           }
         },
         "gu": {
           "stringUnit": {
             "state": "translated",
-            "value": "色のパレット"
+            "value": "Color Palette"
           }
         },
         "it-IT": {
@@ -342,25 +342,25 @@
         "jam": {
           "stringUnit": {
             "state": "translated",
-            "value": "色のパレット"
+            "value": "Color Palette"
           }
         },
         "jv": {
           "stringUnit": {
             "state": "translated",
-            "value": "色のパレット"
+            "value": "Color Palette"
           }
         },
         "kk": {
           "stringUnit": {
             "state": "translated",
-            "value": "色のパレット"
+            "value": "Color Palette"
           }
         },
         "kn": {
           "stringUnit": {
             "state": "translated",
-            "value": "色のパレット"
+            "value": "Color Palette"
           }
         },
         "ko-CN": {
@@ -384,37 +384,37 @@
         "lt": {
           "stringUnit": {
             "state": "translated",
-            "value": "色のパレット"
+            "value": "Color Palette"
           }
         },
         "ml": {
           "stringUnit": {
             "state": "translated",
-            "value": "色のパレット"
+            "value": "Color Palette"
           }
         },
         "mr": {
           "stringUnit": {
             "state": "translated",
-            "value": "色のパレット"
+            "value": "Color Palette"
           }
         },
         "nqo": {
           "stringUnit": {
             "state": "translated",
-            "value": "色のパレット"
+            "value": "Color Palette"
           }
         },
         "or": {
           "stringUnit": {
             "state": "translated",
-            "value": "色のパレット"
+            "value": "Color Palette"
           }
         },
         "pa": {
           "stringUnit": {
             "state": "translated",
-            "value": "色のパレット"
+            "value": "Color Palette"
           }
         },
         "ru-RU": {
@@ -426,19 +426,19 @@
         "sl": {
           "stringUnit": {
             "state": "translated",
-            "value": "色のパレット"
+            "value": "Color Palette"
           }
         },
         "ta": {
           "stringUnit": {
             "state": "translated",
-            "value": "色のパレット"
+            "value": "Color Palette"
           }
         },
         "te": {
           "stringUnit": {
             "state": "translated",
-            "value": "色のパレット"
+            "value": "Color Palette"
           }
         },
         "tr-CY": {
@@ -456,13 +456,13 @@
         "ur": {
           "stringUnit": {
             "state": "translated",
-            "value": "色のパレット"
+            "value": "Color Palette"
           }
         },
         "vro": {
           "stringUnit": {
             "state": "translated",
-            "value": "色のパレット"
+            "value": "Color Palette"
           }
         },
         "zh-Hans-JP": {
@@ -478,7 +478,7 @@
         "ain": {
           "stringUnit": {
             "state": "translated",
-            "value": "外観モード"
+            "value": "Color Scheme"
           }
         },
         "ang": {
@@ -694,67 +694,67 @@
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "配色方案"
+            "value": "Color Scheme"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "配色方案"
+            "value": "Color Scheme"
           }
         },
         "zh-Hant-TW": {
           "stringUnit": {
             "state": "translated",
-            "value": "配色方案"
+            "value": "Color Scheme"
           }
         },
         "zh-HK": {
           "stringUnit": {
             "state": "translated",
-            "value": "顏色方案"
+            "value": "Color Scheme"
           }
         },
         "arz": {
           "stringUnit": {
             "state": "translated",
-            "value": "外観モード"
+            "value": "Color Scheme"
           }
         },
         "bg": {
           "stringUnit": {
             "state": "translated",
-            "value": "外観モード"
+            "value": "Color Scheme"
           }
         },
         "bn": {
           "stringUnit": {
             "state": "translated",
-            "value": "外観モード"
+            "value": "Color Scheme"
           }
         },
         "bo": {
           "stringUnit": {
             "state": "translated",
-            "value": "外観モード"
+            "value": "Color Scheme"
           }
         },
         "en-AU": {
           "stringUnit": {
             "state": "translated",
-            "value": "外観モード"
+            "value": "Color Scheme"
           }
         },
         "en-GB": {
           "stringUnit": {
             "state": "translated",
-            "value": "外観モード"
+            "value": "Color Scheme"
           }
         },
         "en-IN": {
           "stringUnit": {
             "state": "translated",
-            "value": "外観モード"
+            "value": "Color Scheme"
           }
         },
         "es-419": {
@@ -778,13 +778,13 @@
         "gl": {
           "stringUnit": {
             "state": "translated",
-            "value": "外観モード"
+            "value": "Color Scheme"
           }
         },
         "gu": {
           "stringUnit": {
             "state": "translated",
-            "value": "外観モード"
+            "value": "Color Scheme"
           }
         },
         "it-IT": {
@@ -796,25 +796,25 @@
         "jam": {
           "stringUnit": {
             "state": "translated",
-            "value": "外観モード"
+            "value": "Color Scheme"
           }
         },
         "jv": {
           "stringUnit": {
             "state": "translated",
-            "value": "外観モード"
+            "value": "Color Scheme"
           }
         },
         "kk": {
           "stringUnit": {
             "state": "translated",
-            "value": "外観モード"
+            "value": "Color Scheme"
           }
         },
         "kn": {
           "stringUnit": {
             "state": "translated",
-            "value": "外観モード"
+            "value": "Color Scheme"
           }
         },
         "ko-CN": {
@@ -838,37 +838,37 @@
         "lt": {
           "stringUnit": {
             "state": "translated",
-            "value": "外観モード"
+            "value": "Color Scheme"
           }
         },
         "ml": {
           "stringUnit": {
             "state": "translated",
-            "value": "外観モード"
+            "value": "Color Scheme"
           }
         },
         "mr": {
           "stringUnit": {
             "state": "translated",
-            "value": "外観モード"
+            "value": "Color Scheme"
           }
         },
         "nqo": {
           "stringUnit": {
             "state": "translated",
-            "value": "外観モード"
+            "value": "Color Scheme"
           }
         },
         "or": {
           "stringUnit": {
             "state": "translated",
-            "value": "外観モード"
+            "value": "Color Scheme"
           }
         },
         "pa": {
           "stringUnit": {
             "state": "translated",
-            "value": "外観モード"
+            "value": "Color Scheme"
           }
         },
         "ru-RU": {
@@ -880,19 +880,19 @@
         "sl": {
           "stringUnit": {
             "state": "translated",
-            "value": "外観モード"
+            "value": "Color Scheme"
           }
         },
         "ta": {
           "stringUnit": {
             "state": "translated",
-            "value": "外観モード"
+            "value": "Color Scheme"
           }
         },
         "te": {
           "stringUnit": {
             "state": "translated",
-            "value": "外観モード"
+            "value": "Color Scheme"
           }
         },
         "tr-CY": {
@@ -910,13 +910,13 @@
         "ur": {
           "stringUnit": {
             "state": "translated",
-            "value": "外観モード"
+            "value": "Color Scheme"
           }
         },
         "vro": {
           "stringUnit": {
             "state": "translated",
-            "value": "外観モード"
+            "value": "Color Scheme"
           }
         },
         "zh-Hans-JP": {
@@ -935,7 +935,7 @@
         "ain": {
           "stringUnit": {
             "state": "translated",
-            "value": "ダーク"
+            "value": "Dark"
           }
         },
         "ang": {
@@ -1151,67 +1151,67 @@
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "深色"
+            "value": "Dark"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "深色"
+            "value": "Dark"
           }
         },
         "zh-Hant-TW": {
           "stringUnit": {
             "state": "translated",
-            "value": "深色"
+            "value": "Dark"
           }
         },
         "zh-HK": {
           "stringUnit": {
             "state": "translated",
-            "value": "深色"
+            "value": "Dark"
           }
         },
         "arz": {
           "stringUnit": {
             "state": "translated",
-            "value": "ダーク"
+            "value": "Dark"
           }
         },
         "bg": {
           "stringUnit": {
             "state": "translated",
-            "value": "ダーク"
+            "value": "Dark"
           }
         },
         "bn": {
           "stringUnit": {
             "state": "translated",
-            "value": "ダーク"
+            "value": "Dark"
           }
         },
         "bo": {
           "stringUnit": {
             "state": "translated",
-            "value": "ダーク"
+            "value": "Dark"
           }
         },
         "en-AU": {
           "stringUnit": {
             "state": "translated",
-            "value": "ダーク"
+            "value": "Dark"
           }
         },
         "en-GB": {
           "stringUnit": {
             "state": "translated",
-            "value": "ダーク"
+            "value": "Dark"
           }
         },
         "en-IN": {
           "stringUnit": {
             "state": "translated",
-            "value": "ダーク"
+            "value": "Dark"
           }
         },
         "es-419": {
@@ -1235,13 +1235,13 @@
         "gl": {
           "stringUnit": {
             "state": "translated",
-            "value": "ダーク"
+            "value": "Dark"
           }
         },
         "gu": {
           "stringUnit": {
             "state": "translated",
-            "value": "ダーク"
+            "value": "Dark"
           }
         },
         "it-IT": {
@@ -1253,25 +1253,25 @@
         "jam": {
           "stringUnit": {
             "state": "translated",
-            "value": "ダーク"
+            "value": "Dark"
           }
         },
         "jv": {
           "stringUnit": {
             "state": "translated",
-            "value": "ダーク"
+            "value": "Dark"
           }
         },
         "kk": {
           "stringUnit": {
             "state": "translated",
-            "value": "ダーク"
+            "value": "Dark"
           }
         },
         "kn": {
           "stringUnit": {
             "state": "translated",
-            "value": "ダーク"
+            "value": "Dark"
           }
         },
         "ko-CN": {
@@ -1295,37 +1295,37 @@
         "lt": {
           "stringUnit": {
             "state": "translated",
-            "value": "ダーク"
+            "value": "Dark"
           }
         },
         "ml": {
           "stringUnit": {
             "state": "translated",
-            "value": "ダーク"
+            "value": "Dark"
           }
         },
         "mr": {
           "stringUnit": {
             "state": "translated",
-            "value": "ダーク"
+            "value": "Dark"
           }
         },
         "nqo": {
           "stringUnit": {
             "state": "translated",
-            "value": "ダーク"
+            "value": "Dark"
           }
         },
         "or": {
           "stringUnit": {
             "state": "translated",
-            "value": "ダーク"
+            "value": "Dark"
           }
         },
         "pa": {
           "stringUnit": {
             "state": "translated",
-            "value": "ダーク"
+            "value": "Dark"
           }
         },
         "ru-RU": {
@@ -1337,19 +1337,19 @@
         "sl": {
           "stringUnit": {
             "state": "translated",
-            "value": "ダーク"
+            "value": "Dark"
           }
         },
         "ta": {
           "stringUnit": {
             "state": "translated",
-            "value": "ダーク"
+            "value": "Dark"
           }
         },
         "te": {
           "stringUnit": {
             "state": "translated",
-            "value": "ダーク"
+            "value": "Dark"
           }
         },
         "tr-CY": {
@@ -1367,13 +1367,13 @@
         "ur": {
           "stringUnit": {
             "state": "translated",
-            "value": "ダーク"
+            "value": "Dark"
           }
         },
         "vro": {
           "stringUnit": {
             "state": "translated",
-            "value": "ダーク"
+            "value": "Dark"
           }
         },
         "zh-Hans-JP": {
@@ -1389,7 +1389,7 @@
         "ain": {
           "stringUnit": {
             "state": "translated",
-            "value": "デフォルト"
+            "value": "Default"
           }
         },
         "ang": {
@@ -1605,67 +1605,67 @@
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "默认"
+            "value": "Default"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "預設"
+            "value": "Default"
           }
         },
         "zh-Hant-TW": {
           "stringUnit": {
             "state": "translated",
-            "value": "預設"
+            "value": "Default"
           }
         },
         "zh-HK": {
           "stringUnit": {
             "state": "translated",
-            "value": "預設"
+            "value": "Default"
           }
         },
         "arz": {
           "stringUnit": {
             "state": "translated",
-            "value": "デフォルト"
+            "value": "Default"
           }
         },
         "bg": {
           "stringUnit": {
             "state": "translated",
-            "value": "デフォルト"
+            "value": "Default"
           }
         },
         "bn": {
           "stringUnit": {
             "state": "translated",
-            "value": "デフォルト"
+            "value": "Default"
           }
         },
         "bo": {
           "stringUnit": {
             "state": "translated",
-            "value": "デフォルト"
+            "value": "Default"
           }
         },
         "en-AU": {
           "stringUnit": {
             "state": "translated",
-            "value": "デフォルト"
+            "value": "Default"
           }
         },
         "en-GB": {
           "stringUnit": {
             "state": "translated",
-            "value": "デフォルト"
+            "value": "Default"
           }
         },
         "en-IN": {
           "stringUnit": {
             "state": "translated",
-            "value": "デフォルト"
+            "value": "Default"
           }
         },
         "es-419": {
@@ -1689,13 +1689,13 @@
         "gl": {
           "stringUnit": {
             "state": "translated",
-            "value": "デフォルト"
+            "value": "Default"
           }
         },
         "gu": {
           "stringUnit": {
             "state": "translated",
-            "value": "デフォルト"
+            "value": "Default"
           }
         },
         "it-IT": {
@@ -1707,25 +1707,25 @@
         "jam": {
           "stringUnit": {
             "state": "translated",
-            "value": "デフォルト"
+            "value": "Default"
           }
         },
         "jv": {
           "stringUnit": {
             "state": "translated",
-            "value": "デフォルト"
+            "value": "Default"
           }
         },
         "kk": {
           "stringUnit": {
             "state": "translated",
-            "value": "デフォルト"
+            "value": "Default"
           }
         },
         "kn": {
           "stringUnit": {
             "state": "translated",
-            "value": "デフォルト"
+            "value": "Default"
           }
         },
         "ko-CN": {
@@ -1749,37 +1749,37 @@
         "lt": {
           "stringUnit": {
             "state": "translated",
-            "value": "デフォルト"
+            "value": "Default"
           }
         },
         "ml": {
           "stringUnit": {
             "state": "translated",
-            "value": "デフォルト"
+            "value": "Default"
           }
         },
         "mr": {
           "stringUnit": {
             "state": "translated",
-            "value": "デフォルト"
+            "value": "Default"
           }
         },
         "nqo": {
           "stringUnit": {
             "state": "translated",
-            "value": "デフォルト"
+            "value": "Default"
           }
         },
         "or": {
           "stringUnit": {
             "state": "translated",
-            "value": "デフォルト"
+            "value": "Default"
           }
         },
         "pa": {
           "stringUnit": {
             "state": "translated",
-            "value": "デフォルト"
+            "value": "Default"
           }
         },
         "ru-RU": {
@@ -1791,19 +1791,19 @@
         "sl": {
           "stringUnit": {
             "state": "translated",
-            "value": "デフォルト"
+            "value": "Default"
           }
         },
         "ta": {
           "stringUnit": {
             "state": "translated",
-            "value": "デフォルト"
+            "value": "Default"
           }
         },
         "te": {
           "stringUnit": {
             "state": "translated",
-            "value": "デフォルト"
+            "value": "Default"
           }
         },
         "tr-CY": {
@@ -1821,13 +1821,13 @@
         "ur": {
           "stringUnit": {
             "state": "translated",
-            "value": "デフォルト"
+            "value": "Default"
           }
         },
         "vro": {
           "stringUnit": {
             "state": "translated",
-            "value": "デフォルト"
+            "value": "Default"
           }
         },
         "zh-Hans-JP": {
@@ -1864,7 +1864,7 @@
         "ain": {
           "stringUnit": {
             "state": "translated",
-            "value": "すぐに三目並べで遊びましょう。"
+            "value": "Let's Play TicTacToe."
           }
         },
         "ang": {
@@ -2080,67 +2080,67 @@
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "让我们快速玩井字棋吧。"
+            "value": "Let's Play TicTacToe."
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "讓我們快速來玩井字遊戲吧。"
+            "value": "Let's Play TicTacToe."
           }
         },
         "zh-Hant-TW": {
           "stringUnit": {
             "state": "translated",
-            "value": "讓我們快速來玩井字遊戲吧。"
+            "value": "Let's Play TicTacToe."
           }
         },
         "zh-HK": {
           "stringUnit": {
             "state": "translated",
-            "value": "我哋快啲嚟玩井字過三關啦。"
+            "value": "Let's Play TicTacToe."
           }
         },
         "arz": {
           "stringUnit": {
             "state": "translated",
-            "value": "すぐに三目並べで遊びましょう。"
+            "value": "Let's Play TicTacToe."
           }
         },
         "bg": {
           "stringUnit": {
             "state": "translated",
-            "value": "すぐに三目並べで遊びましょう。"
+            "value": "Let's Play TicTacToe."
           }
         },
         "bn": {
           "stringUnit": {
             "state": "translated",
-            "value": "すぐに三目並べで遊びましょう。"
+            "value": "Let's Play TicTacToe."
           }
         },
         "bo": {
           "stringUnit": {
             "state": "translated",
-            "value": "すぐに三目並べで遊びましょう。"
+            "value": "Let's Play TicTacToe."
           }
         },
         "en-AU": {
           "stringUnit": {
             "state": "translated",
-            "value": "すぐに三目並べで遊びましょう。"
+            "value": "Let's Play TicTacToe."
           }
         },
         "en-GB": {
           "stringUnit": {
             "state": "translated",
-            "value": "すぐに三目並べで遊びましょう。"
+            "value": "Let's Play TicTacToe."
           }
         },
         "en-IN": {
           "stringUnit": {
             "state": "translated",
-            "value": "すぐに三目並べで遊びましょう。"
+            "value": "Let's Play TicTacToe."
           }
         },
         "es-419": {
@@ -2164,13 +2164,13 @@
         "gl": {
           "stringUnit": {
             "state": "translated",
-            "value": "すぐに三目並べで遊びましょう。"
+            "value": "Let's Play TicTacToe."
           }
         },
         "gu": {
           "stringUnit": {
             "state": "translated",
-            "value": "すぐに三目並べで遊びましょう。"
+            "value": "Let's Play TicTacToe."
           }
         },
         "it-IT": {
@@ -2182,25 +2182,25 @@
         "jam": {
           "stringUnit": {
             "state": "translated",
-            "value": "すぐに三目並べで遊びましょう。"
+            "value": "Let's Play TicTacToe."
           }
         },
         "jv": {
           "stringUnit": {
             "state": "translated",
-            "value": "すぐに三目並べで遊びましょう。"
+            "value": "Let's Play TicTacToe."
           }
         },
         "kk": {
           "stringUnit": {
             "state": "translated",
-            "value": "すぐに三目並べで遊びましょう。"
+            "value": "Let's Play TicTacToe."
           }
         },
         "kn": {
           "stringUnit": {
             "state": "translated",
-            "value": "すぐに三目並べで遊びましょう。"
+            "value": "Let's Play TicTacToe."
           }
         },
         "ko-CN": {
@@ -2224,37 +2224,37 @@
         "lt": {
           "stringUnit": {
             "state": "translated",
-            "value": "すぐに三目並べで遊びましょう。"
+            "value": "Let's Play TicTacToe."
           }
         },
         "ml": {
           "stringUnit": {
             "state": "translated",
-            "value": "すぐに三目並べで遊びましょう。"
+            "value": "Let's Play TicTacToe."
           }
         },
         "mr": {
           "stringUnit": {
             "state": "translated",
-            "value": "すぐに三目並べで遊びましょう。"
+            "value": "Let's Play TicTacToe."
           }
         },
         "nqo": {
           "stringUnit": {
             "state": "translated",
-            "value": "すぐに三目並べで遊びましょう。"
+            "value": "Let's Play TicTacToe."
           }
         },
         "or": {
           "stringUnit": {
             "state": "translated",
-            "value": "すぐに三目並べで遊びましょう。"
+            "value": "Let's Play TicTacToe."
           }
         },
         "pa": {
           "stringUnit": {
             "state": "translated",
-            "value": "すぐに三目並べで遊びましょう。"
+            "value": "Let's Play TicTacToe."
           }
         },
         "ru-RU": {
@@ -2266,19 +2266,19 @@
         "sl": {
           "stringUnit": {
             "state": "translated",
-            "value": "すぐに三目並べで遊びましょう。"
+            "value": "Let's Play TicTacToe."
           }
         },
         "ta": {
           "stringUnit": {
             "state": "translated",
-            "value": "すぐに三目並べで遊びましょう。"
+            "value": "Let's Play TicTacToe."
           }
         },
         "te": {
           "stringUnit": {
             "state": "translated",
-            "value": "すぐに三目並べで遊びましょう。"
+            "value": "Let's Play TicTacToe."
           }
         },
         "tr-CY": {
@@ -2296,13 +2296,13 @@
         "ur": {
           "stringUnit": {
             "state": "translated",
-            "value": "すぐに三目並べで遊びましょう。"
+            "value": "Let's Play TicTacToe."
           }
         },
         "vro": {
           "stringUnit": {
             "state": "translated",
-            "value": "すぐに三目並べで遊びましょう。"
+            "value": "Let's Play TicTacToe."
           }
         },
         "zh-Hans-JP": {
@@ -2318,7 +2318,7 @@
         "ain": {
           "stringUnit": {
             "state": "translated",
-            "value": "ライト"
+            "value": "Light"
           }
         },
         "ang": {
@@ -2534,67 +2534,67 @@
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "浅色"
+            "value": "Light"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "淺色"
+            "value": "Light"
           }
         },
         "zh-Hant-TW": {
           "stringUnit": {
             "state": "translated",
-            "value": "淺色"
+            "value": "Light"
           }
         },
         "zh-HK": {
           "stringUnit": {
             "state": "translated",
-            "value": "淺色"
+            "value": "Light"
           }
         },
         "arz": {
           "stringUnit": {
             "state": "translated",
-            "value": "ライト"
+            "value": "Light"
           }
         },
         "bg": {
           "stringUnit": {
             "state": "translated",
-            "value": "ライト"
+            "value": "Light"
           }
         },
         "bn": {
           "stringUnit": {
             "state": "translated",
-            "value": "ライト"
+            "value": "Light"
           }
         },
         "bo": {
           "stringUnit": {
             "state": "translated",
-            "value": "ライト"
+            "value": "Light"
           }
         },
         "en-AU": {
           "stringUnit": {
             "state": "translated",
-            "value": "ライト"
+            "value": "Light"
           }
         },
         "en-GB": {
           "stringUnit": {
             "state": "translated",
-            "value": "ライト"
+            "value": "Light"
           }
         },
         "en-IN": {
           "stringUnit": {
             "state": "translated",
-            "value": "ライト"
+            "value": "Light"
           }
         },
         "es-419": {
@@ -2618,13 +2618,13 @@
         "gl": {
           "stringUnit": {
             "state": "translated",
-            "value": "ライト"
+            "value": "Light"
           }
         },
         "gu": {
           "stringUnit": {
             "state": "translated",
-            "value": "ライト"
+            "value": "Light"
           }
         },
         "it-IT": {
@@ -2636,25 +2636,25 @@
         "jam": {
           "stringUnit": {
             "state": "translated",
-            "value": "ライト"
+            "value": "Light"
           }
         },
         "jv": {
           "stringUnit": {
             "state": "translated",
-            "value": "ライト"
+            "value": "Light"
           }
         },
         "kk": {
           "stringUnit": {
             "state": "translated",
-            "value": "ライト"
+            "value": "Light"
           }
         },
         "kn": {
           "stringUnit": {
             "state": "translated",
-            "value": "ライト"
+            "value": "Light"
           }
         },
         "ko-CN": {
@@ -2678,37 +2678,37 @@
         "lt": {
           "stringUnit": {
             "state": "translated",
-            "value": "ライト"
+            "value": "Light"
           }
         },
         "ml": {
           "stringUnit": {
             "state": "translated",
-            "value": "ライト"
+            "value": "Light"
           }
         },
         "mr": {
           "stringUnit": {
             "state": "translated",
-            "value": "ライト"
+            "value": "Light"
           }
         },
         "nqo": {
           "stringUnit": {
             "state": "translated",
-            "value": "ライト"
+            "value": "Light"
           }
         },
         "or": {
           "stringUnit": {
             "state": "translated",
-            "value": "ライト"
+            "value": "Light"
           }
         },
         "pa": {
           "stringUnit": {
             "state": "translated",
-            "value": "ライト"
+            "value": "Light"
           }
         },
         "ru-RU": {
@@ -2720,19 +2720,19 @@
         "sl": {
           "stringUnit": {
             "state": "translated",
-            "value": "ライト"
+            "value": "Light"
           }
         },
         "ta": {
           "stringUnit": {
             "state": "translated",
-            "value": "ライト"
+            "value": "Light"
           }
         },
         "te": {
           "stringUnit": {
             "state": "translated",
-            "value": "ライト"
+            "value": "Light"
           }
         },
         "tr-CY": {
@@ -2750,13 +2750,13 @@
         "ur": {
           "stringUnit": {
             "state": "translated",
-            "value": "ライト"
+            "value": "Light"
           }
         },
         "vro": {
           "stringUnit": {
             "state": "translated",
-            "value": "ライト"
+            "value": "Light"
           }
         },
         "zh-Hans-JP": {
@@ -2811,7 +2811,7 @@
         "ain": {
           "stringUnit": {
             "state": "translated",
-            "value": "ウィジェットの設定を選択"
+            "value": "Select Widget Configuration"
           }
         },
         "ang": {
@@ -3027,67 +3027,67 @@
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "选择小组件配置"
+            "value": "Select Widget Configuration"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "選擇小工具配置"
+            "value": "Select Widget Configuration"
           }
         },
         "zh-Hant-TW": {
           "stringUnit": {
             "state": "translated",
-            "value": "選擇小工具配置"
+            "value": "Select Widget Configuration"
           }
         },
         "zh-HK": {
           "stringUnit": {
             "state": "translated",
-            "value": "選擇小工具配置"
+            "value": "Select Widget Configuration"
           }
         },
         "arz": {
           "stringUnit": {
             "state": "translated",
-            "value": "ウィジェットの設定を選択"
+            "value": "Select Widget Configuration"
           }
         },
         "bg": {
           "stringUnit": {
             "state": "translated",
-            "value": "ウィジェットの設定を選択"
+            "value": "Select Widget Configuration"
           }
         },
         "bn": {
           "stringUnit": {
             "state": "translated",
-            "value": "ウィジェットの設定を選択"
+            "value": "Select Widget Configuration"
           }
         },
         "bo": {
           "stringUnit": {
             "state": "translated",
-            "value": "ウィジェットの設定を選択"
+            "value": "Select Widget Configuration"
           }
         },
         "en-AU": {
           "stringUnit": {
             "state": "translated",
-            "value": "ウィジェットの設定を選択"
+            "value": "Select Widget Configuration"
           }
         },
         "en-GB": {
           "stringUnit": {
             "state": "translated",
-            "value": "ウィジェットの設定を選択"
+            "value": "Select Widget Configuration"
           }
         },
         "en-IN": {
           "stringUnit": {
             "state": "translated",
-            "value": "ウィジェットの設定を選択"
+            "value": "Select Widget Configuration"
           }
         },
         "es-419": {
@@ -3111,13 +3111,13 @@
         "gl": {
           "stringUnit": {
             "state": "translated",
-            "value": "ウィジェットの設定を選択"
+            "value": "Select Widget Configuration"
           }
         },
         "gu": {
           "stringUnit": {
             "state": "translated",
-            "value": "ウィジェットの設定を選択"
+            "value": "Select Widget Configuration"
           }
         },
         "it-IT": {
@@ -3129,25 +3129,25 @@
         "jam": {
           "stringUnit": {
             "state": "translated",
-            "value": "ウィジェットの設定を選択"
+            "value": "Select Widget Configuration"
           }
         },
         "jv": {
           "stringUnit": {
             "state": "translated",
-            "value": "ウィジェットの設定を選択"
+            "value": "Select Widget Configuration"
           }
         },
         "kk": {
           "stringUnit": {
             "state": "translated",
-            "value": "ウィジェットの設定を選択"
+            "value": "Select Widget Configuration"
           }
         },
         "kn": {
           "stringUnit": {
             "state": "translated",
-            "value": "ウィジェットの設定を選択"
+            "value": "Select Widget Configuration"
           }
         },
         "ko-CN": {
@@ -3171,37 +3171,37 @@
         "lt": {
           "stringUnit": {
             "state": "translated",
-            "value": "ウィジェットの設定を選択"
+            "value": "Select Widget Configuration"
           }
         },
         "ml": {
           "stringUnit": {
             "state": "translated",
-            "value": "ウィジェットの設定を選択"
+            "value": "Select Widget Configuration"
           }
         },
         "mr": {
           "stringUnit": {
             "state": "translated",
-            "value": "ウィジェットの設定を選択"
+            "value": "Select Widget Configuration"
           }
         },
         "nqo": {
           "stringUnit": {
             "state": "translated",
-            "value": "ウィジェットの設定を選択"
+            "value": "Select Widget Configuration"
           }
         },
         "or": {
           "stringUnit": {
             "state": "translated",
-            "value": "ウィジェットの設定を選択"
+            "value": "Select Widget Configuration"
           }
         },
         "pa": {
           "stringUnit": {
             "state": "translated",
-            "value": "ウィジェットの設定を選択"
+            "value": "Select Widget Configuration"
           }
         },
         "ru-RU": {
@@ -3213,19 +3213,19 @@
         "sl": {
           "stringUnit": {
             "state": "translated",
-            "value": "ウィジェットの設定を選択"
+            "value": "Select Widget Configuration"
           }
         },
         "ta": {
           "stringUnit": {
             "state": "translated",
-            "value": "ウィジェットの設定を選択"
+            "value": "Select Widget Configuration"
           }
         },
         "te": {
           "stringUnit": {
             "state": "translated",
-            "value": "ウィジェットの設定を選択"
+            "value": "Select Widget Configuration"
           }
         },
         "tr-CY": {
@@ -3243,13 +3243,13 @@
         "ur": {
           "stringUnit": {
             "state": "translated",
-            "value": "ウィジェットの設定を選択"
+            "value": "Select Widget Configuration"
           }
         },
         "vro": {
           "stringUnit": {
             "state": "translated",
-            "value": "ウィジェットの設定を選択"
+            "value": "Select Widget Configuration"
           }
         },
         "zh-Hans-JP": {
@@ -3268,7 +3268,7 @@
         "ain": {
           "stringUnit": {
             "state": "translated",
-            "value": "三目並べ"
+            "value": "TicTacToe"
           }
         },
         "ang": {
@@ -3484,67 +3484,67 @@
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "井字棋"
+            "value": "TicTacToe"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "井字遊戲"
+            "value": "TicTacToe"
           }
         },
         "zh-Hant-TW": {
           "stringUnit": {
             "state": "translated",
-            "value": "井字遊戲"
+            "value": "TicTacToe"
           }
         },
         "zh-HK": {
           "stringUnit": {
             "state": "translated",
-            "value": "井字過三關"
+            "value": "TicTacToe"
           }
         },
         "arz": {
           "stringUnit": {
             "state": "translated",
-            "value": "三目並べ"
+            "value": "TicTacToe"
           }
         },
         "bg": {
           "stringUnit": {
             "state": "translated",
-            "value": "三目並べ"
+            "value": "TicTacToe"
           }
         },
         "bn": {
           "stringUnit": {
             "state": "translated",
-            "value": "三目並べ"
+            "value": "TicTacToe"
           }
         },
         "bo": {
           "stringUnit": {
             "state": "translated",
-            "value": "三目並べ"
+            "value": "TicTacToe"
           }
         },
         "en-AU": {
           "stringUnit": {
             "state": "translated",
-            "value": "三目並べ"
+            "value": "TicTacToe"
           }
         },
         "en-GB": {
           "stringUnit": {
             "state": "translated",
-            "value": "三目並べ"
+            "value": "TicTacToe"
           }
         },
         "en-IN": {
           "stringUnit": {
             "state": "translated",
-            "value": "三目並べ"
+            "value": "TicTacToe"
           }
         },
         "es-419": {
@@ -3568,13 +3568,13 @@
         "gl": {
           "stringUnit": {
             "state": "translated",
-            "value": "三目並べ"
+            "value": "TicTacToe"
           }
         },
         "gu": {
           "stringUnit": {
             "state": "translated",
-            "value": "三目並べ"
+            "value": "TicTacToe"
           }
         },
         "it-IT": {
@@ -3586,25 +3586,25 @@
         "jam": {
           "stringUnit": {
             "state": "translated",
-            "value": "三目並べ"
+            "value": "TicTacToe"
           }
         },
         "jv": {
           "stringUnit": {
             "state": "translated",
-            "value": "三目並べ"
+            "value": "TicTacToe"
           }
         },
         "kk": {
           "stringUnit": {
             "state": "translated",
-            "value": "三目並べ"
+            "value": "TicTacToe"
           }
         },
         "kn": {
           "stringUnit": {
             "state": "translated",
-            "value": "三目並べ"
+            "value": "TicTacToe"
           }
         },
         "ko-CN": {
@@ -3628,37 +3628,37 @@
         "lt": {
           "stringUnit": {
             "state": "translated",
-            "value": "三目並べ"
+            "value": "TicTacToe"
           }
         },
         "ml": {
           "stringUnit": {
             "state": "translated",
-            "value": "三目並べ"
+            "value": "TicTacToe"
           }
         },
         "mr": {
           "stringUnit": {
             "state": "translated",
-            "value": "三目並べ"
+            "value": "TicTacToe"
           }
         },
         "nqo": {
           "stringUnit": {
             "state": "translated",
-            "value": "三目並べ"
+            "value": "TicTacToe"
           }
         },
         "or": {
           "stringUnit": {
             "state": "translated",
-            "value": "三目並べ"
+            "value": "TicTacToe"
           }
         },
         "pa": {
           "stringUnit": {
             "state": "translated",
-            "value": "三目並べ"
+            "value": "TicTacToe"
           }
         },
         "ru-RU": {
@@ -3670,19 +3670,19 @@
         "sl": {
           "stringUnit": {
             "state": "translated",
-            "value": "三目並べ"
+            "value": "TicTacToe"
           }
         },
         "ta": {
           "stringUnit": {
             "state": "translated",
-            "value": "三目並べ"
+            "value": "TicTacToe"
           }
         },
         "te": {
           "stringUnit": {
             "state": "translated",
-            "value": "三目並べ"
+            "value": "TicTacToe"
           }
         },
         "tr-CY": {
@@ -3700,13 +3700,13 @@
         "ur": {
           "stringUnit": {
             "state": "translated",
-            "value": "三目並べ"
+            "value": "TicTacToe"
           }
         },
         "vro": {
           "stringUnit": {
             "state": "translated",
-            "value": "三目並べ"
+            "value": "TicTacToe"
           }
         },
         "zh-Hans-JP": {
