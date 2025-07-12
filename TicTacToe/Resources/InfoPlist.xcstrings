@@ -1,508 +1,928 @@
 {
-  "sourceLanguage" : "en",
-  "strings" : {
-    "CFBundleDisplayName" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "ain" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "三目並べ"
+  "sourceLanguage": "en",
+  "strings": {
+    "CFBundleDisplayName": {
+      "extractionState": "manual",
+      "localizations": {
+        "ain": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "三目並べ"
           }
         },
-        "ang" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TicTacToe"
+        "ang": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
           }
         },
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "تيك تاك تو"
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تيك تاك تو"
           }
         },
-        "ca" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tres en ratlla"
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tres en ratlla"
           }
         },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Piškvorky"
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Piškvorky"
           }
         },
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TicTacToe"
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TicTacToe"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
           }
         },
-        "el" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Τρίλιζα"
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Τρίλιζα"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TicTacToe"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
           }
         },
-        "eo" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TicTacToe"
+        "eo": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tres en línea"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tres en línea"
           }
         },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ristiinolla"
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ristiinolla"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Morpion"
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Morpion"
           }
         },
-        "fro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TicTacToe"
+        "fro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
           }
         },
-        "goh" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TicTacToe"
+        "goh": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
           }
         },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "איקס עיגול"
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "איקס עיגול"
           }
         },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "टिक टैक टो"
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "टिक टैक टो"
           }
         },
-        "hr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Križić-kružić"
+        "hr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Križić-kružić"
           }
         },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Amőba"
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Amőba"
           }
         },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TicTacToe"
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tris"
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tris"
           }
         },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "三目並べ"
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "三目並べ"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "틱택토"
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "틱택토"
           }
         },
-        "ms" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TicTacToe"
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
           }
         },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tre på rad"
+        "nb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tre på rad"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Boter, kaas en eieren"
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Boter, kaas en eieren"
           }
         },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kółko i krzyżyk"
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kółko i krzyżyk"
           }
         },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Jogo da Velha"
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jogo da Velha"
           }
         },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Jogo do Galo"
+        "pt-PT": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jogo do Galo"
           }
         },
-        "ro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "X și 0"
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "X și 0"
           }
         },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Крестики-нолики"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Крестики-нолики"
           }
         },
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Piškvorky"
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Piškvorky"
           }
         },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Luffarschack"
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Luffarschack"
           }
         },
-        "th" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "X และ O"
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "X และ O"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TicTacToe"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
           }
         },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Хрестики-нулики"
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Хрестики-нулики"
           }
         },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cờ caro"
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cờ caro"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "井字棋"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "井字棋"
           }
         },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "圈圈叉叉"
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "圈圈叉叉"
           }
         },
-        "zh-Hant-TW" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "井字棋"
+        "zh-Hant-TW": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "井字棋"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "井字遊戲"
+        "zh-HK": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "井字遊戲"
+          }
+        },
+        "arz": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "bo": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "en-AU": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "en-GB": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "en-IN": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "es-419": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tres en línea"
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tres en línea"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Morpion"
+          }
+        },
+        "gl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "gu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "it-IT": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tris"
+          }
+        },
+        "jam": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "jv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "ko-CN": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "틱택토"
+          }
+        },
+        "ko-KP": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "틱택토"
+          }
+        },
+        "ko-KR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "틱택토"
+          }
+        },
+        "lt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "mr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "nqo": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "or": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "pa": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "ru-RU": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Крестики-нолики"
+          }
+        },
+        "sl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "te": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "tr-CY": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "tr-TR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "vro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "zh-Hans-JP": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "井字棋"
           }
         }
       }
     },
-    "CFBundleName" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "ain" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "三目並べ"
+    "CFBundleName": {
+      "extractionState": "manual",
+      "localizations": {
+        "ain": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "三目並べ"
           }
         },
-        "ang" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TicTacToe"
+        "ang": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
           }
         },
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "تيك تاك تو"
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تيك تاك تو"
           }
         },
-        "ca" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tres en ratlla"
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tres en ratlla"
           }
         },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Piškvorky"
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Piškvorky"
           }
         },
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TicTacToe"
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TicTacToe"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
           }
         },
-        "el" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Τρίλιζα"
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Τρίλιζα"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TicTacToe"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
           }
         },
-        "eo" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TicTacToe"
+        "eo": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tres en línea"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tres en línea"
           }
         },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ristiinolla"
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ristiinolla"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Morpion"
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Morpion"
           }
         },
-        "fro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TicTacToe"
+        "fro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
           }
         },
-        "goh" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TicTacToe"
+        "goh": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
           }
         },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "איקס עיגול"
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "איקס עיגול"
           }
         },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "टिक टैक टो"
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "टिक टैक टो"
           }
         },
-        "hr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Križić-kružić"
+        "hr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Križić-kružić"
           }
         },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Amőba"
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Amőba"
           }
         },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TicTacToe"
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tris"
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tris"
           }
         },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "三目並べ"
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "三目並べ"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "틱택토"
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "틱택토"
           }
         },
-        "ms" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TicTacToe"
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
           }
         },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tre på rad"
+        "nb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tre på rad"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Boter, kaas en eieren"
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Boter, kaas en eieren"
           }
         },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kółko i krzyżyk"
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kółko i krzyżyk"
           }
         },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Jogo da Velha"
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jogo da Velha"
           }
         },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Jogo do Galo"
+        "pt-PT": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jogo do Galo"
           }
         },
-        "ro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "X și 0"
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "X și 0"
           }
         },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Крестики-нолики"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Крестики-нолики"
           }
         },
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Piškvorky"
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Piškvorky"
           }
         },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Luffarschack"
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Luffarschack"
           }
         },
-        "th" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "X และ O"
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "X และ O"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TicTacToe"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
           }
         },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Хрестики-нулики"
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Хрестики-нулики"
           }
         },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cờ caro"
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cờ caro"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "井字棋"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "井字棋"
           }
         },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "圈圈叉叉"
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "圈圈叉叉"
           }
         },
-        "zh-Hant-TW" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "井字棋"
+        "zh-Hant-TW": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "井字棋"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "井字遊戲"
+        "zh-HK": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "井字遊戲"
+          }
+        },
+        "arz": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "bo": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "en-AU": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "en-GB": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "en-IN": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "es-419": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tres en línea"
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tres en línea"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Morpion"
+          }
+        },
+        "gl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "gu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "it-IT": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tris"
+          }
+        },
+        "jam": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "jv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "ko-CN": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "틱택토"
+          }
+        },
+        "ko-KP": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "틱택토"
+          }
+        },
+        "ko-KR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "틱택토"
+          }
+        },
+        "lt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "mr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "nqo": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "or": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "pa": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "ru-RU": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Крестики-нолики"
+          }
+        },
+        "sl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "te": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "tr-CY": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "tr-TR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "vro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "zh-Hans-JP": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "井字棋"
           }
         }
       }
     }
   },
-  "version" : "1.0"
+  "version": "1.0"
 }
