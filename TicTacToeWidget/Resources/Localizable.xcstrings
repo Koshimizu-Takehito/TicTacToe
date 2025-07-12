@@ -1,2051 +1,3731 @@
 {
-  "sourceLanguage" : "en",
-  "strings" : {
-    "Apricot" : {
-      "shouldTranslate" : false
+  "sourceLanguage": "en",
+  "strings": {
+    "Apricot": {
+      "shouldTranslate": false
     },
-    "Astra" : {
-      "shouldTranslate" : false
+    "Astra": {
+      "shouldTranslate": false
     },
-    "Brandy Punch" : {
-      "shouldTranslate" : false
+    "Brandy Punch": {
+      "shouldTranslate": false
     },
-    "Carnation" : {
-      "shouldTranslate" : false
+    "Carnation": {
+      "shouldTranslate": false
     },
-    "Carousel Pink" : {
-      "shouldTranslate" : false
+    "Carousel Pink": {
+      "shouldTranslate": false
     },
-    "Cerise Red" : {
-      "shouldTranslate" : false
+    "Cerise Red": {
+      "shouldTranslate": false
     },
-    "Color Palette" : {
-      "localizations" : {
-        "ain" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "色のパレット"
+    "Color Palette": {
+      "localizations": {
+        "ain": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "色のパレット"
           }
         },
-        "ang" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Blēocolor Crætt"
+        "ang": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Blēocolor Crætt"
           }
         },
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "لوحة الألوان"
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لوحة الألوان"
           }
         },
-        "ca" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Paleta de Colors"
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paleta de Colors"
           }
         },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Barevná Paleta"
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Barevná Paleta"
           }
         },
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Farvepalet"
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Farvepalet"
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Farbpalette"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Farbpalette"
           }
         },
-        "el" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Παλέτα Χρωμάτων"
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Παλέτα Χρωμάτων"
           }
         },
-        "eo" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kolorpaletro"
+        "eo": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kolorpaletro"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Paleta de Colores"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paleta de Colores"
           }
         },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Väripaletti"
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Väripaletti"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Palette de Couleurs"
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Palette de Couleurs"
           }
         },
-        "fro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Palette de Couleurs"
+        "fro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Palette de Couleurs"
           }
         },
-        "goh" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Faro Skelto"
+        "goh": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Faro Skelto"
           }
         },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "לוח צבעים"
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "לוח צבעים"
           }
         },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "रंग पैलेट"
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "रंग पैलेट"
           }
         },
-        "hr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Paleta Boja"
+        "hr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paleta Boja"
           }
         },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Színpaletta"
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Színpaletta"
           }
         },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Palet Warna"
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Palet Warna"
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Palette di Colori"
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Palette di Colori"
           }
         },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "カラーパレット"
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "カラーパレット"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "색상 팔레트"
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "색상 팔레트"
           }
         },
-        "ms" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Palet Warna"
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Palet Warna"
           }
         },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fargepalett"
+        "nb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fargepalett"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kleurenpalet"
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kleurenpalet"
           }
         },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Paleta Kolorów"
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paleta Kolorów"
           }
         },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Paleta de Cores"
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paleta de Cores"
           }
         },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Paleta de Cores"
+        "pt-PT": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paleta de Cores"
           }
         },
-        "ro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Paletă de Culori"
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paletă de Culori"
           }
         },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Палитра Цветов"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Палитра Цветов"
           }
         },
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Farebná Paleta"
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Farebná Paleta"
           }
         },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Färgpalett"
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Färgpalett"
           }
         },
-        "th" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "จานสี"
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "จานสี"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Renk Paleti"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Renk Paleti"
           }
         },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Палітра Кольорів"
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Палітра Кольорів"
           }
         },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bảng Màu"
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bảng Màu"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "调色板"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "调色板"
           }
         },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "調色盤"
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "調色盤"
           }
         },
-        "zh-Hant-TW" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "調色盤"
+        "zh-Hant-TW": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "調色盤"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "調色板"
+        "zh-HK": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "調色板"
+          }
+        },
+        "arz": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Palette"
+          }
+        },
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Palette"
+          }
+        },
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Palette"
+          }
+        },
+        "bo": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Palette"
+          }
+        },
+        "en-AU": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Palette"
+          }
+        },
+        "en-GB": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Palette"
+          }
+        },
+        "en-IN": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Palette"
+          }
+        },
+        "es-419": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paleta de Colores"
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paleta de Colores"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Palette de Couleurs"
+          }
+        },
+        "gl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Palette"
+          }
+        },
+        "gu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Palette"
+          }
+        },
+        "it-IT": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Palette di Colori"
+          }
+        },
+        "jam": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Palette"
+          }
+        },
+        "jv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Palette"
+          }
+        },
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Palette"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Palette"
+          }
+        },
+        "ko-CN": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "색상 팔레트"
+          }
+        },
+        "ko-KP": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "색상 팔레트"
+          }
+        },
+        "ko-KR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "색상 팔레트"
+          }
+        },
+        "lt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Palette"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Palette"
+          }
+        },
+        "mr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Palette"
+          }
+        },
+        "nqo": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Palette"
+          }
+        },
+        "or": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Palette"
+          }
+        },
+        "pa": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Palette"
+          }
+        },
+        "ru-RU": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Палитра Цветов"
+          }
+        },
+        "sl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Palette"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Palette"
+          }
+        },
+        "te": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Palette"
+          }
+        },
+        "tr-CY": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Renk Paleti"
+          }
+        },
+        "tr-TR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Renk Paleti"
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Palette"
+          }
+        },
+        "vro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Palette"
+          }
+        },
+        "zh-Hans-JP": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "调色板"
           }
         }
       }
     },
-    "Color Scheme" : {
-      "localizations" : {
-        "ain" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "外観モード"
+    "Color Scheme": {
+      "localizations": {
+        "ain": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "外観モード"
           }
         },
-        "ang" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Blēocolor Rǣd"
+        "ang": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Blēocolor Rǣd"
           }
         },
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "نظام الألوان"
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "نظام الألوان"
           }
         },
-        "ca" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Esquema de Colors"
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esquema de Colors"
           }
         },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Barevné Schéma"
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Barevné Schéma"
           }
         },
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Farveskema"
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Farveskema"
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Farbkonzept"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Farbkonzept"
           }
         },
-        "el" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Σχέδιο Χρωμάτων"
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Σχέδιο Χρωμάτων"
           }
         },
-        "eo" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kolora Skemo"
+        "eo": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kolora Skemo"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Esquema de Color"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esquema de Color"
           }
         },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Värijärjestelmä"
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Värijärjestelmä"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Schéma de Couleurs"
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schéma de Couleurs"
           }
         },
-        "fro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Schéma de Couleurs"
+        "fro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schéma de Couleurs"
           }
         },
-        "goh" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Faro Skema"
+        "goh": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Faro Skema"
           }
         },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ערכת צבעים"
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ערכת צבעים"
           }
         },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "रंग योजना"
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "रंग योजना"
           }
         },
-        "hr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Shema Boja"
+        "hr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shema Boja"
           }
         },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Színséma"
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Színséma"
           }
         },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Skema Warna"
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Skema Warna"
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Schema di Colori"
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schema di Colori"
           }
         },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "外観モード"
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "外観モード"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "색상 구성"
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "색상 구성"
           }
         },
-        "ms" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Skema Warna"
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Skema Warna"
           }
         },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fargesammensetning"
+        "nb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fargesammensetning"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kleurschema"
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kleurschema"
           }
         },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Schemat Kolorów"
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schemat Kolorów"
           }
         },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Esquema de Cores"
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esquema de Cores"
           }
         },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Esquema de Cores"
+        "pt-PT": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esquema de Cores"
           }
         },
-        "ro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Schema de Culori"
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schema de Culori"
           }
         },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Цветовая Схема"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Цветовая Схема"
           }
         },
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Farebná Schéma"
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Farebná Schéma"
           }
         },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Färgschema"
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Färgschema"
           }
         },
-        "th" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ชุดสี"
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ชุดสี"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Renk Şeması"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Renk Şeması"
           }
         },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Кольорова Схема"
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Кольорова Схема"
           }
         },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bảng Phối Màu"
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bảng Phối Màu"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "配色方案"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "配色方案"
           }
         },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "配色方案"
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "配色方案"
           }
         },
-        "zh-Hant-TW" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "配色方案"
+        "zh-Hant-TW": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "配色方案"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "顏色方案"
+        "zh-HK": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "顏色方案"
+          }
+        },
+        "arz": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Scheme"
+          }
+        },
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Scheme"
+          }
+        },
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Scheme"
+          }
+        },
+        "bo": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Scheme"
+          }
+        },
+        "en-AU": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Scheme"
+          }
+        },
+        "en-GB": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Scheme"
+          }
+        },
+        "en-IN": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Scheme"
+          }
+        },
+        "es-419": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esquema de Color"
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esquema de Color"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schéma de Couleurs"
+          }
+        },
+        "gl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Scheme"
+          }
+        },
+        "gu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Scheme"
+          }
+        },
+        "it-IT": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schema di Colori"
+          }
+        },
+        "jam": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Scheme"
+          }
+        },
+        "jv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Scheme"
+          }
+        },
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Scheme"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Scheme"
+          }
+        },
+        "ko-CN": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "색상 구성"
+          }
+        },
+        "ko-KP": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "색상 구성"
+          }
+        },
+        "ko-KR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "색상 구성"
+          }
+        },
+        "lt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Scheme"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Scheme"
+          }
+        },
+        "mr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Scheme"
+          }
+        },
+        "nqo": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Scheme"
+          }
+        },
+        "or": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Scheme"
+          }
+        },
+        "pa": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Scheme"
+          }
+        },
+        "ru-RU": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Цветовая Схема"
+          }
+        },
+        "sl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Scheme"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Scheme"
+          }
+        },
+        "te": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Scheme"
+          }
+        },
+        "tr-CY": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Renk Şeması"
+          }
+        },
+        "tr-TR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Renk Şeması"
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Scheme"
+          }
+        },
+        "vro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color Scheme"
+          }
+        },
+        "zh-Hans-JP": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "配色方案"
           }
         }
       }
     },
-    "Contessa" : {
-      "shouldTranslate" : false
+    "Contessa": {
+      "shouldTranslate": false
     },
-    "Dark" : {
-      "localizations" : {
-        "ain" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ダーク"
+    "Dark": {
+      "localizations": {
+        "ain": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ダーク"
           }
         },
-        "ang" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dēorc"
+        "ang": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dēorc"
           }
         },
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "داكن"
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "داكن"
           }
         },
-        "ca" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fosc"
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fosc"
           }
         },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tmavý"
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tmavý"
           }
         },
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mørk"
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mørk"
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dunkel"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dunkel"
           }
         },
-        "el" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Σκοτεινό"
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Σκοτεινό"
           }
         },
-        "eo" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Malhela"
+        "eo": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Malhela"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Oscuro"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oscuro"
           }
         },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tumma"
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tumma"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sombre"
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sombre"
           }
         },
-        "fro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sombre"
+        "fro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sombre"
           }
         },
-        "goh" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dunkal"
+        "goh": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dunkal"
           }
         },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "כהה"
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "כהה"
           }
         },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "डार्क"
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "डार्क"
           }
         },
-        "hr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tamno"
+        "hr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tamno"
           }
         },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sötét"
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sötét"
           }
         },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gelap"
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gelap"
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Scuro"
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scuro"
           }
         },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ダーク"
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ダーク"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "다크"
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "다크"
           }
         },
-        "ms" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gelap"
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gelap"
           }
         },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mørk"
+        "nb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mørk"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Donker"
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Donker"
           }
         },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ciemny"
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ciemny"
           }
         },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Escuro"
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escuro"
           }
         },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Escuro"
+        "pt-PT": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escuro"
           }
         },
-        "ro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Întunecat"
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Întunecat"
           }
         },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Тёмный"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тёмный"
           }
         },
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tmavý"
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tmavý"
           }
         },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mörk"
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mörk"
           }
         },
-        "th" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "เข้ม"
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เข้ม"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Koyu"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Koyu"
           }
         },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Темний"
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Темний"
           }
         },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tối"
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tối"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "深色"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dark"
           }
         },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "深色"
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dark"
           }
         },
-        "zh-Hant-TW" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "深色"
+        "zh-Hant-TW": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dark"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "深色"
+        "zh-HK": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dark"
+          }
+        },
+        "arz": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dark"
+          }
+        },
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dark"
+          }
+        },
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dark"
+          }
+        },
+        "bo": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dark"
+          }
+        },
+        "en-AU": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dark"
+          }
+        },
+        "en-GB": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dark"
+          }
+        },
+        "en-IN": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dark"
+          }
+        },
+        "es-419": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oscuro"
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oscuro"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sombre"
+          }
+        },
+        "gl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dark"
+          }
+        },
+        "gu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dark"
+          }
+        },
+        "it-IT": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scuro"
+          }
+        },
+        "jam": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dark"
+          }
+        },
+        "jv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dark"
+          }
+        },
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dark"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dark"
+          }
+        },
+        "ko-CN": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "다크"
+          }
+        },
+        "ko-KP": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "다크"
+          }
+        },
+        "ko-KR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "다크"
+          }
+        },
+        "lt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dark"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dark"
+          }
+        },
+        "mr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dark"
+          }
+        },
+        "nqo": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dark"
+          }
+        },
+        "or": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dark"
+          }
+        },
+        "pa": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dark"
+          }
+        },
+        "ru-RU": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тёмный"
+          }
+        },
+        "sl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dark"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dark"
+          }
+        },
+        "te": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dark"
+          }
+        },
+        "tr-CY": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Koyu"
+          }
+        },
+        "tr-TR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Koyu"
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dark"
+          }
+        },
+        "vro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dark"
+          }
+        },
+        "zh-Hans-JP": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "深色"
           }
         }
       }
     },
-    "Default" : {
-      "localizations" : {
-        "ain" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "デフォルト"
+    "Default": {
+      "localizations": {
+        "ain": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "デフォルト"
           }
         },
-        "ang" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Forþgewiten"
+        "ang": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Forþgewiten"
           }
         },
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "افتراضي"
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "افتراضي"
           }
         },
-        "ca" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Per Defecte"
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Per Defecte"
           }
         },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Výchozí"
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Výchozí"
           }
         },
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Standard"
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Standard"
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Standard"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Standard"
           }
         },
-        "el" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Προεπιλογή"
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Προεπιλογή"
           }
         },
-        "eo" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Defaŭlta"
+        "eo": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Defaŭlta"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Predeterminado"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Predeterminado"
           }
         },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Oletus"
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oletus"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Par Défaut"
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Par Défaut"
           }
         },
-        "fro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Par Défaut"
+        "fro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Par Défaut"
           }
         },
-        "goh" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Standard"
+        "goh": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Standard"
           }
         },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ברירת מחדל"
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ברירת מחדל"
           }
         },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "डिफ़ॉल्ट"
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "डिफ़ॉल्ट"
           }
         },
-        "hr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zadano"
+        "hr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zadano"
           }
         },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alapértelmezett"
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alapértelmezett"
           }
         },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Default"
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Default"
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Predefinito"
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Predefinito"
           }
         },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "デフォルト"
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "デフォルト"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "기본값"
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "기본값"
           }
         },
-        "ms" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lalai"
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lalai"
           }
         },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Standard"
+        "nb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Standard"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Standaard"
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Standaard"
           }
         },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Domyślnie"
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Domyślnie"
           }
         },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Padrão"
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Padrão"
           }
         },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Padrão"
+        "pt-PT": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Padrão"
           }
         },
-        "ro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Implicit"
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Implicit"
           }
         },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "По Умолчанию"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "По Умолчанию"
           }
         },
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Predvolený"
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Predvolený"
           }
         },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Standard"
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Standard"
           }
         },
-        "th" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ค่าเริ่มต้น"
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ค่าเริ่มต้น"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Varsayılan"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Varsayılan"
           }
         },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "За Замовчуванням"
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "За Замовчуванням"
           }
         },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mặc Định"
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mặc Định"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "默认"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Default"
           }
         },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "預設"
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Default"
           }
         },
-        "zh-Hant-TW" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "預設"
+        "zh-Hant-TW": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Default"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "預設"
+        "zh-HK": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Default"
+          }
+        },
+        "arz": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Default"
+          }
+        },
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Default"
+          }
+        },
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Default"
+          }
+        },
+        "bo": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Default"
+          }
+        },
+        "en-AU": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Default"
+          }
+        },
+        "en-GB": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Default"
+          }
+        },
+        "en-IN": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Default"
+          }
+        },
+        "es-419": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Predeterminado"
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Predeterminado"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Par Défaut"
+          }
+        },
+        "gl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Default"
+          }
+        },
+        "gu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Default"
+          }
+        },
+        "it-IT": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Predefinito"
+          }
+        },
+        "jam": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Default"
+          }
+        },
+        "jv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Default"
+          }
+        },
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Default"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Default"
+          }
+        },
+        "ko-CN": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "기본값"
+          }
+        },
+        "ko-KP": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "기본값"
+          }
+        },
+        "ko-KR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "기본값"
+          }
+        },
+        "lt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Default"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Default"
+          }
+        },
+        "mr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Default"
+          }
+        },
+        "nqo": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Default"
+          }
+        },
+        "or": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Default"
+          }
+        },
+        "pa": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Default"
+          }
+        },
+        "ru-RU": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "По Умолчанию"
+          }
+        },
+        "sl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Default"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Default"
+          }
+        },
+        "te": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Default"
+          }
+        },
+        "tr-CY": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Varsayılan"
+          }
+        },
+        "tr-TR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Varsayılan"
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Default"
+          }
+        },
+        "vro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Default"
+          }
+        },
+        "zh-Hans-JP": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "默认"
           }
         }
       }
     },
-    "Emerald" : {
-      "shouldTranslate" : false
+    "Emerald": {
+      "shouldTranslate": false
     },
-    "Froly" : {
-      "shouldTranslate" : false
+    "Froly": {
+      "shouldTranslate": false
     },
-    "Fun Blue" : {
-      "shouldTranslate" : false
+    "Fun Blue": {
+      "shouldTranslate": false
     },
-    "Fuzzy Wuzzy Brown" : {
-      "shouldTranslate" : false
+    "Fuzzy Wuzzy Brown": {
+      "shouldTranslate": false
     },
-    "Gable Green" : {
-      "shouldTranslate" : false
+    "Gable Green": {
+      "shouldTranslate": false
     },
-    "Hit Pink" : {
-      "shouldTranslate" : false
+    "Hit Pink": {
+      "shouldTranslate": false
     },
-    "Java" : {
-      "shouldTranslate" : false
+    "Java": {
+      "shouldTranslate": false
     },
-    "Let's Play TicTacToe." : {
-      "localizations" : {
-        "ain" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "すぐに三目並べで遊びましょう。"
+    "Let's Play TicTacToe.": {
+      "localizations": {
+        "ain": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "すぐに三目並べで遊びましょう。"
           }
         },
-        "ang" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Þu meaht hrædlīce Tricoláfsceacu plegian."
+        "ang": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Þu meaht hrædlīce Tricoláfsceacu plegian."
           }
         },
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "لنلعب تيك تاك تو بسرعة."
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لنلعب تيك تاك تو بسرعة."
           }
         },
-        "ca" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Juguem ràpidament al Tres en Ratlla."
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Juguem ràpidament al Tres en Ratlla."
           }
         },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pojďme si rychle zahrát Piškvorky."
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pojďme si rychle zahrát Piškvorky."
           }
         },
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lad os hurtigt spille Tic-Tac-Toe."
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lad os hurtigt spille Tic-Tac-Toe."
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lass uns schnell Tic-Tac-Toe spielen."
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lass uns schnell Tic-Tac-Toe spielen."
           }
         },
-        "el" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ας παίξουμε γρήγορα Τρίλιζα."
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ας παίξουμε γρήγορα Τρίλιζα."
           }
         },
-        "eo" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ni rapide ludu Tic-Tac-Toe."
+        "eo": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ni rapide ludu Tic-Tac-Toe."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Juguemos rápidamente al Tres en Raya."
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Juguemos rápidamente al Tres en Raya."
           }
         },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pelataan nopeasti Ristinollaa."
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pelataan nopeasti Ristinollaa."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Jouons rapidement au Morpion."
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jouons rapidement au Morpion."
           }
         },
-        "fro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Jouer bientost Trois à la suite."
+        "fro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jouer bientost Trois à la suite."
           }
         },
-        "goh" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Spilōm hraðos Tic-Tac-Toe."
+        "goh": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spilōm hraðos Tic-Tac-Toe."
           }
         },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "בואו נשחק איקס עיגול במהירות."
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "בואו נשחק איקס עיגול במהירות."
           }
         },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "जल्दी से टिक टैक टो खेलें。"
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "जल्दी से टिक टैक टो खेलें。"
           }
         },
-        "hr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Brzo igrajmo Iks-Oks."
+        "hr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brzo igrajmo Iks-Oks."
           }
         },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Játsszunk gyorsan Amőbát."
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Játsszunk gyorsan Amőbát."
           }
         },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mari kita cepat mainkan Tic-Tac-Toe."
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mari kita cepat mainkan Tic-Tac-Toe."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Giochiamo rapidamente a Tris."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Giochiamo rapidamente a Tris."
           }
         },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "すぐに三目並べで遊びましょう。"
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "すぐに三目並べで遊びましょう。"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "틱택토를 빠르게 즐기자。"
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "틱택토를 빠르게 즐기자。"
           }
         },
-        "ms" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mari kita cepat bermain Tic-Tac-Toe."
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mari kita cepat bermain Tic-Tac-Toe."
           }
         },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "La oss raskt spille Bondesjakk."
+        "nb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La oss raskt spille Bondesjakk."
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Laten we snel Boter, Kaas en Eieren spelen."
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Laten we snel Boter, Kaas en Eieren spelen."
           }
         },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zagrajmy szybko w Kółko i Krzyżyk."
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zagrajmy szybko w Kółko i Krzyżyk."
           }
         },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vamos jogar rapidamente o Jogo da Velha."
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vamos jogar rapidamente o Jogo da Velha."
           }
         },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vamos rapidamente jogar o Jogo do Galo."
+        "pt-PT": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vamos rapidamente jogar o Jogo do Galo."
           }
         },
-        "ro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Haideți să jucăm rapid X și 0."
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Haideți să jucăm rapid X și 0."
           }
         },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Давайте быстро сыграем в Крестики-нолики."
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Давайте быстро сыграем в Крестики-нолики."
           }
         },
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Poďme si rýchlo zahrať Piškvorky."
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Poďme si rýchlo zahrať Piškvorky."
           }
         },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Låt oss snabbt spela Luffarschack."
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Låt oss snabbt spela Luffarschack."
           }
         },
-        "th" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "มาเล่นโอเอกซ์กันเร็วเถอะ"
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "มาเล่นโอเอกซ์กันเร็วเถอะ"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hadi hızla XOX oynayalım."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hadi hızla XOX oynayalım."
           }
         },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Давайте швидко зіграємо в Хрестики-нулики."
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Давайте швидко зіграємо в Хрестики-нулики."
           }
         },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Chúng ta hãy chơi Cờ Ca-rô nhanh chóng."
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chúng ta hãy chơi Cờ Ca-rô nhanh chóng."
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "让我们快速玩井字棋吧。"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "让我们快速玩井字棋吧。"
           }
         },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "讓我們快速來玩井字遊戲吧。"
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "讓我們快速來玩井字遊戲吧。"
           }
         },
-        "zh-Hant-TW" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "讓我們快速來玩井字遊戲吧。"
+        "zh-Hant-TW": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "讓我們快速來玩井字遊戲吧。"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "我哋快啲嚟玩井字過三關啦。"
+        "zh-HK": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "我哋快啲嚟玩井字過三關啦。"
+          }
+        },
+        "arz": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Let's Play TicTacToe."
+          }
+        },
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Let's Play TicTacToe."
+          }
+        },
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Let's Play TicTacToe."
+          }
+        },
+        "bo": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Let's Play TicTacToe."
+          }
+        },
+        "en-AU": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Let's Play TicTacToe."
+          }
+        },
+        "en-GB": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Let's Play TicTacToe."
+          }
+        },
+        "en-IN": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Let's Play TicTacToe."
+          }
+        },
+        "es-419": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Juguemos rápidamente al Tres en Raya."
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Juguemos rápidamente al Tres en Raya."
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jouons rapidement au Morpion."
+          }
+        },
+        "gl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Let's Play TicTacToe."
+          }
+        },
+        "gu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Let's Play TicTacToe."
+          }
+        },
+        "it-IT": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Giochiamo rapidamente a Tris."
+          }
+        },
+        "jam": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Let's Play TicTacToe."
+          }
+        },
+        "jv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Let's Play TicTacToe."
+          }
+        },
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Let's Play TicTacToe."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Let's Play TicTacToe."
+          }
+        },
+        "ko-CN": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "틱택토를 빠르게 즐기자。"
+          }
+        },
+        "ko-KP": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "틱택토를 빠르게 즐기자。"
+          }
+        },
+        "ko-KR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "틱택토를 빠르게 즐기자。"
+          }
+        },
+        "lt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Let's Play TicTacToe."
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Let's Play TicTacToe."
+          }
+        },
+        "mr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Let's Play TicTacToe."
+          }
+        },
+        "nqo": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Let's Play TicTacToe."
+          }
+        },
+        "or": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Let's Play TicTacToe."
+          }
+        },
+        "pa": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Let's Play TicTacToe."
+          }
+        },
+        "ru-RU": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Давайте быстро сыграем в Крестики-нолики."
+          }
+        },
+        "sl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Let's Play TicTacToe."
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Let's Play TicTacToe."
+          }
+        },
+        "te": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Let's Play TicTacToe."
+          }
+        },
+        "tr-CY": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hadi hızla XOX oynayalım."
+          }
+        },
+        "tr-TR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hadi hızla XOX oynayalım."
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Let's Play TicTacToe."
+          }
+        },
+        "vro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Let's Play TicTacToe."
+          }
+        },
+        "zh-Hans-JP": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "让我们快速玩井字棋吧。"
           }
         }
       }
     },
-    "Light" : {
-      "localizations" : {
-        "ain" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ライト"
+    "Light": {
+      "localizations": {
+        "ain": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ライト"
           }
         },
-        "ang" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lēoht"
+        "ang": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lēoht"
           }
         },
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "فاتح"
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "فاتح"
           }
         },
-        "ca" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Clar"
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Clar"
           }
         },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Světlý"
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Světlý"
           }
         },
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lys"
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lys"
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hell"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hell"
           }
         },
-        "el" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Φωτεινό"
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Φωτεινό"
           }
         },
-        "eo" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Luma"
+        "eo": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Luma"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Claro"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Claro"
           }
         },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vaalea"
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vaalea"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Clair"
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Clair"
           }
         },
-        "fro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Clair"
+        "fro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Clair"
           }
         },
-        "goh" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lioht"
+        "goh": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lioht"
           }
         },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "בהיר"
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "בהיר"
           }
         },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "लाइट"
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "लाइट"
           }
         },
-        "hr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Svijetlo"
+        "hr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Svijetlo"
           }
         },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Világos"
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Világos"
           }
         },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Terang"
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terang"
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Chiaro"
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chiaro"
           }
         },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ライト"
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ライト"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "라이트"
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "라이트"
           }
         },
-        "ms" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Terang"
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terang"
           }
         },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lys"
+        "nb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lys"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Licht"
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Licht"
           }
         },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Jasny"
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jasny"
           }
         },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Claro"
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Claro"
           }
         },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Claro"
+        "pt-PT": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Claro"
           }
         },
-        "ro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Luminos"
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Luminos"
           }
         },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Светлый"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Светлый"
           }
         },
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Svetlý"
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Svetlý"
           }
         },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ljus"
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ljus"
           }
         },
-        "th" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "สว่าง"
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "สว่าง"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Açık"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Açık"
           }
         },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Світлий"
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Світлий"
           }
         },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sáng"
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sáng"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "浅色"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Light"
           }
         },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "淺色"
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Light"
           }
         },
-        "zh-Hant-TW" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "淺色"
+        "zh-Hant-TW": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Light"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "淺色"
+        "zh-HK": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Light"
+          }
+        },
+        "arz": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Light"
+          }
+        },
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Light"
+          }
+        },
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Light"
+          }
+        },
+        "bo": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Light"
+          }
+        },
+        "en-AU": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Light"
+          }
+        },
+        "en-GB": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Light"
+          }
+        },
+        "en-IN": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Light"
+          }
+        },
+        "es-419": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Claro"
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Claro"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Clair"
+          }
+        },
+        "gl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Light"
+          }
+        },
+        "gu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Light"
+          }
+        },
+        "it-IT": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chiaro"
+          }
+        },
+        "jam": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Light"
+          }
+        },
+        "jv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Light"
+          }
+        },
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Light"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Light"
+          }
+        },
+        "ko-CN": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "라이트"
+          }
+        },
+        "ko-KP": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "라이트"
+          }
+        },
+        "ko-KR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "라이트"
+          }
+        },
+        "lt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Light"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Light"
+          }
+        },
+        "mr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Light"
+          }
+        },
+        "nqo": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Light"
+          }
+        },
+        "or": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Light"
+          }
+        },
+        "pa": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Light"
+          }
+        },
+        "ru-RU": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Светлый"
+          }
+        },
+        "sl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Light"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Light"
+          }
+        },
+        "te": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Light"
+          }
+        },
+        "tr-CY": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Açık"
+          }
+        },
+        "tr-TR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Açık"
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Light"
+          }
+        },
+        "vro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Light"
+          }
+        },
+        "zh-Hans-JP": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "浅色"
           }
         }
       }
     },
-    "Lima" : {
-      "shouldTranslate" : false
+    "Lima": {
+      "shouldTranslate": false
     },
-    "Lochmara" : {
-      "shouldTranslate" : false
+    "Lochmara": {
+      "shouldTranslate": false
     },
-    "Mauve" : {
-      "shouldTranslate" : false
+    "Mauve": {
+      "shouldTranslate": false
     },
-    "Mulberry" : {
-      "shouldTranslate" : false
+    "Mulberry": {
+      "shouldTranslate": false
     },
-    "Ochre" : {
-      "shouldTranslate" : false
+    "Ochre": {
+      "shouldTranslate": false
     },
-    "Persian Green" : {
-      "shouldTranslate" : false
+    "Persian Green": {
+      "shouldTranslate": false
     },
-    "Red Damask" : {
-      "shouldTranslate" : false
+    "Red Damask": {
+      "shouldTranslate": false
     },
-    "Revolver" : {
-      "shouldTranslate" : false
+    "Revolver": {
+      "shouldTranslate": false
     },
-    "Rodeo Dust" : {
-      "shouldTranslate" : false
+    "Rodeo Dust": {
+      "shouldTranslate": false
     },
-    "Roman" : {
-      "shouldTranslate" : false
+    "Roman": {
+      "shouldTranslate": false
     },
-    "Roman Coffee" : {
-      "shouldTranslate" : false
+    "Roman Coffee": {
+      "shouldTranslate": false
     },
-    "Royal Purple" : {
-      "shouldTranslate" : false
+    "Royal Purple": {
+      "shouldTranslate": false
     },
-    "School Bus Yellow" : {
-      "shouldTranslate" : false
+    "School Bus Yellow": {
+      "shouldTranslate": false
     },
-    "Select Widget Configuration" : {
-      "localizations" : {
-        "ain" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ウィジェットの設定を選択"
+    "Select Widget Configuration": {
+      "localizations": {
+        "ain": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ウィジェットの設定を選択"
           }
         },
-        "ang" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wiðget Rǣdels Ċēosan"
+        "ang": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wiðget Rǣdels Ċēosan"
           }
         },
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "اختر إعدادات الودجت"
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "اختر إعدادات الودجت"
           }
         },
-        "ca" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selecciona la configuració del widget"
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Selecciona la configuració del widget"
           }
         },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vyberte konfiguraci widgetu"
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vyberte konfiguraci widgetu"
           }
         },
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vælg widget-konfiguration"
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vælg widget-konfiguration"
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Widget-Konfiguration auswählen"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Widget-Konfiguration auswählen"
           }
         },
-        "el" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Επιλέξτε ρύθμιση widget"
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Επιλέξτε ρύθμιση widget"
           }
         },
-        "eo" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Elektu fenestraĵan agordon"
+        "eo": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elektu fenestraĵan agordon"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selecciona la configuración del widget"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Selecciona la configuración del widget"
           }
         },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Valitse widgetin asetukset"
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Valitse widgetin asetukset"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sélectionnez la configuration du widget"
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sélectionnez la configuration du widget"
           }
         },
-        "fro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sélectionnez la configuration du widget"
+        "fro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sélectionnez la configuration du widget"
           }
         },
-        "goh" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wizzit-Konfigūratiōn kiusan"
+        "goh": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wizzit-Konfigūratiōn kiusan"
           }
         },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "בחר את תצורת הווידג'ט"
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "בחר את תצורת הווידג'ט"
           }
         },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "विजेट कॉन्फ़िगरेशन चुनें"
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "विजेट कॉन्फ़िगरेशन चुनें"
           }
         },
-        "hr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Odaberite konfiguraciju widgeta"
+        "hr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Odaberite konfiguraciju widgeta"
           }
         },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Válassza ki a widget beállítását"
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Válassza ki a widget beállítását"
           }
         },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pilih konfigurasi widget"
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pilih konfigurasi widget"
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Seleziona la configurazione del widget"
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seleziona la configurazione del widget"
           }
         },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ウィジェットの設定を選択"
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ウィジェットの設定を選択"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "위젯 구성을 선택하세요"
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "위젯 구성을 선택하세요"
           }
         },
-        "ms" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pilih konfigurasi widget"
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pilih konfigurasi widget"
           }
         },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Velg widget-konfigurasjon"
+        "nb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Velg widget-konfigurasjon"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selecteer widgetconfiguratie"
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Selecteer widgetconfiguratie"
           }
         },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wybierz konfigurację widżetu"
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wybierz konfigurację widżetu"
           }
         },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selecione a configuração do widget"
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Selecione a configuração do widget"
           }
         },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selecione a configuração do widget"
+        "pt-PT": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Selecione a configuração do widget"
           }
         },
-        "ro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selectați configurația widgetului"
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Selectați configurația widgetului"
           }
         },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Выберите конфигурацию виджета"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Выберите конфигурацию виджета"
           }
         },
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vyberte konfiguráciu widgetu"
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vyberte konfiguráciu widgetu"
           }
         },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Välj widgetkonfiguration"
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Välj widgetkonfiguration"
           }
         },
-        "th" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "เลือกการกำหนดค่าวิดเจ็ต"
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เลือกการกำหนดค่าวิดเจ็ต"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Widget yapılandırmasını seçin"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Widget yapılandırmasını seçin"
           }
         },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Виберіть конфігурацію віджета"
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Виберіть конфігурацію віджета"
           }
         },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Chọn cấu hình tiện ích"
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chọn cấu hình tiện ích"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "选择小组件配置"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select Widget Configuration"
           }
         },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "選擇小工具配置"
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select Widget Configuration"
           }
         },
-        "zh-Hant-TW" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "選擇小工具配置"
+        "zh-Hant-TW": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select Widget Configuration"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "選擇小工具配置"
+        "zh-HK": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select Widget Configuration"
+          }
+        },
+        "arz": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select Widget Configuration"
+          }
+        },
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select Widget Configuration"
+          }
+        },
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select Widget Configuration"
+          }
+        },
+        "bo": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select Widget Configuration"
+          }
+        },
+        "en-AU": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select Widget Configuration"
+          }
+        },
+        "en-GB": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select Widget Configuration"
+          }
+        },
+        "en-IN": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select Widget Configuration"
+          }
+        },
+        "es-419": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Selecciona la configuración del widget"
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Selecciona la configuración del widget"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sélectionnez la configuration du widget"
+          }
+        },
+        "gl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select Widget Configuration"
+          }
+        },
+        "gu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select Widget Configuration"
+          }
+        },
+        "it-IT": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seleziona la configurazione del widget"
+          }
+        },
+        "jam": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select Widget Configuration"
+          }
+        },
+        "jv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select Widget Configuration"
+          }
+        },
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select Widget Configuration"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select Widget Configuration"
+          }
+        },
+        "ko-CN": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "위젯 구성을 선택하세요"
+          }
+        },
+        "ko-KP": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "위젯 구성을 선택하세요"
+          }
+        },
+        "ko-KR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "위젯 구성을 선택하세요"
+          }
+        },
+        "lt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select Widget Configuration"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select Widget Configuration"
+          }
+        },
+        "mr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select Widget Configuration"
+          }
+        },
+        "nqo": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select Widget Configuration"
+          }
+        },
+        "or": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select Widget Configuration"
+          }
+        },
+        "pa": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select Widget Configuration"
+          }
+        },
+        "ru-RU": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Выберите конфигурацию виджета"
+          }
+        },
+        "sl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select Widget Configuration"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select Widget Configuration"
+          }
+        },
+        "te": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select Widget Configuration"
+          }
+        },
+        "tr-CY": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Widget yapılandırmasını seçin"
+          }
+        },
+        "tr-TR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Widget yapılandırmasını seçin"
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select Widget Configuration"
+          }
+        },
+        "vro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select Widget Configuration"
+          }
+        },
+        "zh-Hans-JP": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "选择小组件配置"
           }
         }
       }
     },
-    "Ship Gray Light Shade" : {
-      "shouldTranslate" : false
+    "Ship Gray Light Shade": {
+      "shouldTranslate": false
     },
-    "TicTacToe" : {
-      "localizations" : {
-        "ain" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "三目並べ"
+    "TicTacToe": {
+      "localizations": {
+        "ain": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "三目並べ"
           }
         },
-        "ang" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tricoláfsceacu"
+        "ang": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tricoláfsceacu"
           }
         },
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "تيك تاك تو"
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تيك تاك تو"
           }
         },
-        "ca" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tres en Ratlla"
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tres en Ratlla"
           }
         },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Piškvorky"
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Piškvorky"
           }
         },
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tic-Tac-Toe"
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tic-Tac-Toe"
           }
         },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tic-Tac-Toe"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tic-Tac-Toe"
           }
         },
-        "el" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Τρίλιζα"
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Τρίλιζα"
           }
         },
-        "eo" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Krucoj kaj Rondoj"
+        "eo": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Krucoj kaj Rondoj"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tres en Raya"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tres en Raya"
           }
         },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ristinolla"
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ristinolla"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Morpion"
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Morpion"
           }
         },
-        "fro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Trois à la suite"
+        "fro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trois à la suite"
           }
         },
-        "goh" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Drīhreihe"
+        "goh": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Drīhreihe"
           }
         },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "איקס עיגול"
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "איקס עיגול"
           }
         },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "टिक टैक टो"
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "टिक टैक टो"
           }
         },
-        "hr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Iks-Oks"
+        "hr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Iks-Oks"
           }
         },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Amőba"
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Amőba"
           }
         },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tic-Tac-Toe"
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tic-Tac-Toe"
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tris"
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tris"
           }
         },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "三目並べ"
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "三目並べ"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "틱택토"
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "틱택토"
           }
         },
-        "ms" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tic-Tac-Toe"
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tic-Tac-Toe"
           }
         },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bondesjakk"
+        "nb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bondesjakk"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Boter, Kaas en Eieren"
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Boter, Kaas en Eieren"
           }
         },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kółko i Krzyżyk"
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kółko i Krzyżyk"
           }
         },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Jogo da Velha"
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jogo da Velha"
           }
         },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Jogo do Galo"
+        "pt-PT": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jogo do Galo"
           }
         },
-        "ro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "X și 0"
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "X și 0"
           }
         },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Крестики-нолики"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Крестики-нолики"
           }
         },
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Piškvorky"
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Piškvorky"
           }
         },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Luffarschack"
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Luffarschack"
           }
         },
-        "th" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "โอเอกซ์"
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "โอเอกซ์"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "XOX"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "XOX"
           }
         },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Хрестики-нулики"
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Хрестики-нулики"
           }
         },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cờ Ca-rô"
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cờ Ca-rô"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "井字棋"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "井字棋"
           }
         },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "井字遊戲"
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "井字遊戲"
           }
         },
-        "zh-Hant-TW" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "井字遊戲"
+        "zh-Hant-TW": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "井字遊戲"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "井字過三關"
+        "zh-HK": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "井字過三關"
+          }
+        },
+        "arz": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "bo": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "en-AU": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "en-GB": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "en-IN": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "es-419": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tres en Raya"
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tres en Raya"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Morpion"
+          }
+        },
+        "gl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "gu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "it-IT": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tris"
+          }
+        },
+        "jam": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "jv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "ko-CN": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "틱택토"
+          }
+        },
+        "ko-KP": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "틱택토"
+          }
+        },
+        "ko-KR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "틱택토"
+          }
+        },
+        "lt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "mr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "nqo": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "or": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "pa": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "ru-RU": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Крестики-нолики"
+          }
+        },
+        "sl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "te": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "tr-CY": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "XOX"
+          }
+        },
+        "tr-TR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "XOX"
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "vro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TicTacToe"
+          }
+        },
+        "zh-Hans-JP": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "井字棋"
           }
         }
       }
     },
-    "True V" : {
-      "shouldTranslate" : false
+    "True V": {
+      "shouldTranslate": false
     },
-    "Wattle" : {
-      "shouldTranslate" : false
+    "Wattle": {
+      "shouldTranslate": false
     },
-    "Whiskey" : {
-      "shouldTranslate" : false
+    "Whiskey": {
+      "shouldTranslate": false
     }
   },
-  "version" : "1.0"
+  "version": "1.0"
 }
