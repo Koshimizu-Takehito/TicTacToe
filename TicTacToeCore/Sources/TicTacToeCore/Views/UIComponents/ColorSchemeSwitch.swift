@@ -8,6 +8,7 @@ struct ColorSchemeSwitch: View {
     @Environment(\.colorScheme) private var colorScheme
     @TextColor private var foreground
     @BackgroundColor private var background
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     init(isLightMode: Binding<Bool>) {
         _isOn = isLightMode
@@ -36,6 +37,7 @@ struct ColorSchemeSwitch: View {
     @ViewBuilder
     func content() -> some View {
         ZStack {
+            let ratio = reduceMotion ? 1 : ratio
             SwitchShape(angle: .degrees(-90), ratio: isOn ? 1 : ratio, reversed: true)
                 .foregroundStyle(background)
                 .background(foreground, in: Circle())

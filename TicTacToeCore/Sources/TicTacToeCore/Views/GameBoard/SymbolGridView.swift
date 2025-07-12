@@ -5,6 +5,7 @@ struct SymbolGridView: View {
     @Environment(\.latticeSpacing) private var spacing
     @Environment(\.colorPalette.symbol1) private var color1
     @Environment(\.colorPalette.symbol2) private var color2
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Environment(GameBoard.self) private var gameBoard
 
     /// Called when the result view is tapped.
@@ -124,14 +125,22 @@ private extension SymbolGridView {
 
     @ViewBuilder
     func slash(player: Player, _ targets: [IndexPath]...) -> some View {
-        let ratio: Double = state.isSlash ? 1 : 0
+        let ratio: Double = reduceMotion ? 1 : state.isSlash ? 1 : 0
         let position: Double = state.isSlash ? 0 : 0.5
         let (winner, positions) = winnerAndPositions
         ForEach(targets, id: \.self) { target in
-            Slash(ratio: positions == target && winner == player ? ratio : 0, position: position, angle: angle(target))
+            let ratio: Double = positions == target && winner == player ? ratio : 0
+            let opacity: Double = positions == target && winner == player && reduceMotion ? state.isSlash ? 1 : 0 : 1
+
+            Slash(ratio: ratio, position: position, angle: angle(target))
                 .stroke(lineWidth: spacing)
                 .foregroundStyle(foregroundColor(player: player))
-                .matchedGeometryEffect(id: state.isCentering ? "center" : "", in: namespace, isSource: false)
+                .opacity(opacity)
+                .matchedGeometryEffect(
+                    id: !reduceMotion && state.isCentering ? "center" : "",
+                    in: namespace,
+                    isSource: false
+                )
         }
     }
 
@@ -144,7 +153,7 @@ private extension SymbolGridView {
                     let indexPath: IndexPath = [i, j]
                     ZStack {
                         let positions = winnerAndPositions.positions
-                        if case .centering = state, indexPath == [1, 1] {
+                        if !reduceMotion, case .centering = state, indexPath == [1, 1] {
                             ForEach(positions, id: \.self) { indexPath in
                                 Color.clear
                                     .matchedGeometryEffect(id: indexPath, in: namespace, isSource: true)
@@ -153,7 +162,7 @@ private extension SymbolGridView {
                         SymbolView(symbol: gameBoard.symbol(at: indexPath))
                             .onTapGesture { gameBoard.place(at: indexPath) }
                             .matchedGeometryEffect(
-                                id: state.isCentering || state.isExpanding ? indexPath : [],
+                                id: (!reduceMotion && state.isCentering) || state.isExpanding ? indexPath : [],
                                 in: namespace, isSource: false
                             )
                             .opacity(symbolOpacity(at: indexPath))
@@ -188,10 +197,14 @@ private extension SymbolGridView {
         switch state {
         case .prepare, .slash:
             1
-        case .centering:
+        case .centering where !reduceMotion:
             winnerAndPositions.positions.contains(indexPath) ? 1 : 0
-        case .expanding:
-            winnerAndPositions.positions.first == indexPath ? 1 : 0
+        case .expanding, .centering:
+            if winnerAndPositions.positions.count == 3 {
+                winnerAndPositions.positions[1] == indexPath ? 1 : 0
+            } else {
+                0
+            }
         case .draw:
             0
         }
@@ -370,17 +383,21 @@ private struct Slash: Shape, Animatable {
 private struct DrawSymbolView: View {
     let offset: Double
     @State private var ratio: Double = 1
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     var body: some View {
+        let symbolOffset: Double = reduceMotion ? 0 : ratio * offset
+        let opacity: Double = reduceMotion ? 1 - ratio : 1
         HStack(spacing: -offset / 2) {
             SymbolView(ratio: 1, symbol: .circle)
-                .offset(x: -1 * ratio * offset)
+                .offset(x: -1 * symbolOffset)
             SymbolView(ratio: 1, symbol: .cross)
-                .offset(x: ratio * offset)
+                .offset(x: symbolOffset)
         }
         .padding(.horizontal, offset)
+        .opacity(opacity)
         .onAppear {
-            withAnimation(Animation.spring(response: 0.4, dampingFraction: 0.3)) {
+            withAnimation(reduceMotion ? .linear(duration: 0.3) : .spring(response: 0.4, dampingFraction: 0.3)) {
                 ratio = 0
             }
         }
