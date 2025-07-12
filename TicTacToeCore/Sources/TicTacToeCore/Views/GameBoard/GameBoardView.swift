@@ -6,6 +6,7 @@ import SwiftUI
     struct GameBoardView: View {
         @Environment(GameBoardViewModel.self) private var viewModel
         @Environment(\.colorScheme) private var colorScheme
+        @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
         var body: some View {
             @Bindable var viewModel = viewModel
@@ -16,7 +17,7 @@ import SwiftUI
                 GameBoardInnerView(viewModel: viewModel)
                 // ボトムアイテム
                 HStack(spacing: 0) {
-                    ResetButton(action: viewModel.reset)
+                    ResetButton(action: { viewModel.reset(reduceMotion: reduceMotion) })
                     Spacer()
                     ColorSchemeSwitch(isLightMode: isLightMode)
                         .frame(width: 40, height: 40)
@@ -43,7 +44,10 @@ import SwiftUI
             return Binding {
                 viewModel.colorScheme == .light
             } set: { isLightMode in
-                withAnimation(.smooth(duration: 0.6)) {
+                let animation: Animation = reduceMotion
+                    ? .easeInOut(duration: 0.6)
+                    : .smooth(duration: 0.6)
+                withAnimation(animation) {
                     viewModel.colorScheme = isLightMode ? .light : .dark
                 }
             }

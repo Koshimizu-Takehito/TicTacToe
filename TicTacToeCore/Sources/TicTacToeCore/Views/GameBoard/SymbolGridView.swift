@@ -6,6 +6,7 @@ struct SymbolGridView: View {
     @Environment(\.colorPalette.symbol1) private var color1
     @Environment(\.colorPalette.symbol2) private var color2
     @Environment(GameBoard.self) private var gameBoard
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     /// Called when the result view is tapped.
     var onTapGameResult: () -> Void = {}
@@ -213,20 +214,24 @@ private extension SymbolGridView {
                 state = .prepare
             case .win:
                 try await Task.sleep(nanoseconds: 0_660_000_000)
-                await withAnimation(.spring(duration: 0.6)) {
+                let anim1: Animation = reduceMotion ? .easeInOut(duration: 0.6) : .spring(duration: 0.6)
+                await withAnimation(anim1) {
                     state = .slash
                 }
-                await withAnimation(.spring(duration: 0.5)) {
+                let anim2: Animation = reduceMotion ? .easeInOut(duration: 0.5) : .spring(duration: 0.5)
+                await withAnimation(anim2) {
                     state = .centering
                 }
-                await withAnimation(.spring(duration: 0.5)) {
+                let anim3: Animation = reduceMotion ? .easeInOut(duration: 0.5) : .spring(duration: 0.5)
+                await withAnimation(anim3) {
                     state = .expanding
                 }
                 try await Task.sleep(nanoseconds: 0_700_000_000)
                 self.onGameResultAnimationDidFinish()
             case .draw:
                 try await Task.sleep(nanoseconds: 0_660_000_000)
-                await withAnimation(.spring(duration: 0.5)) {
+                let anim4: Animation = reduceMotion ? .easeInOut(duration: 0.5) : .spring(duration: 0.5)
+                await withAnimation(anim4) {
                     state = .draw
                 }
                 try await Task.sleep(nanoseconds: 1_000_000_000)
@@ -363,6 +368,7 @@ private struct Slash: Shape, Animatable {
 private struct DrawSymbolView: View {
     let offset: Double
     @State private var ratio: Double = 1
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     var body: some View {
         HStack(spacing: -offset / 2) {
@@ -373,7 +379,10 @@ private struct DrawSymbolView: View {
         }
         .padding(.horizontal, offset)
         .onAppear {
-            withAnimation(Animation.spring(response: 0.4, dampingFraction: 0.3)) {
+            let animation: Animation = reduceMotion
+                ? .easeInOut(duration: 0.4)
+                : Animation.spring(response: 0.4, dampingFraction: 0.3)
+            withAnimation(animation) {
                 ratio = 0
             }
         }
@@ -383,6 +392,7 @@ private struct DrawSymbolView: View {
 private struct SymbolView: View {
     @State var ratio: Double = 0
     var symbol: Symbol?
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     var body: some View {
         ZStack {
@@ -398,7 +408,10 @@ private struct SymbolView: View {
         }
         .onChange(of: symbol) { _, _ in
             ratio = 0
-            withAnimation(.spring(duration: 0.7)) {
+            let animation: Animation = reduceMotion
+                ? .easeInOut(duration: 0.7)
+                : .spring(duration: 0.7)
+            withAnimation(animation) {
                 ratio = 1
             }
         }

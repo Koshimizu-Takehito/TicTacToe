@@ -6,6 +6,7 @@ struct ColorSchemeSwitch: View {
     @State private var ratio = 1.0
     @Binding private var isOn: Bool
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @TextColor private var foreground
     @BackgroundColor private var background
 
@@ -51,7 +52,10 @@ struct ColorSchemeSwitch: View {
         isOn.toggle()
         ratio = 0.0
         Task { @MainActor in
-            withAnimation(.smooth(duration: 0.66)) {
+            let animation: Animation = reduceMotion
+                ? .easeInOut(duration: 0.66)
+                : .smooth(duration: 0.66)
+            withAnimation(animation) {
                 ratio = 1.0
             }
         }

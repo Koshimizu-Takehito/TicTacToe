@@ -3,11 +3,15 @@ import SwiftUI
 /// Animated grid lines used as the Tic‑Tac‑Toe board background.
 struct LatticeView: View {
     @State private var ratio: Double = 0
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     var body: some View {
         Lattice(animatableData: ratio)
             .onAppear {
-                withAnimation(.spring(duration: 1)) {
+                let animation: Animation = reduceMotion
+                    ? .easeInOut(duration: 1)
+                    : .spring(duration: 1)
+                withAnimation(animation) {
                     ratio = 1
                 }
             }
