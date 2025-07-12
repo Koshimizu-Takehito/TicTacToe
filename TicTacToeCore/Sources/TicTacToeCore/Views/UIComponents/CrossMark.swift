@@ -5,15 +5,17 @@ struct CrossMark: View {
     private var ratio: Double = 0
     @Environment(\.colorPalette.symbol2) private var color
     @Environment(\.symbolLineWidth) private var lineWidth
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     init(ratio: Double = 0) {
         self.ratio = ratio
     }
 
     var body: some View {
-        CrossShape(animatableData: ratio)
+        CrossShape(animatableData: reduceMotion ? 1 : ratio)
             .stroke(lineWidth: lineWidth)
             .foregroundStyle(color)
+            .opacity(reduceMotion ? ratio : 1)
     }
 
     private struct CrossShape: Shape, Animatable {

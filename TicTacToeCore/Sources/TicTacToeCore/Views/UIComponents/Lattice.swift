@@ -18,10 +18,12 @@ struct LatticeView: View {
 private struct Lattice: View, Animatable {
     @Environment(\.colorPalette.foreground) private var color
     @Environment(\.latticeSpacing) private var lineWidth
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     var animatableData: Double
     var ratio: Double { animatableData }
 
     var body: some View {
+        let ratio = reduceMotion ? 1 : ratio
         Canvas { context, size in
             let size = min(size.width, size.height)
             let length: Double = size

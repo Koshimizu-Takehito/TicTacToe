@@ -5,11 +5,13 @@ struct RingMark: View {
     var ratio: Double = 0
     @Environment(\.colorPalette.symbol1) private var color
     @Environment(\.symbolLineWidth) private var lineWidth
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     var body: some View {
-        RingShape(animatableData: ratio)
+        RingShape(animatableData: reduceMotion ? 1 : ratio)
             .stroke(style: .init(lineWidth: lineWidth, lineCap: .round))
             .foregroundStyle(color)
+            .opacity(reduceMotion ? ratio : 1)
     }
 
     private struct RingShape: Shape, Animatable {
