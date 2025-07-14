@@ -16,13 +16,33 @@
               "value" : "screen"
             },
             {
+              "appearance" : "dark",
+              "value" : "normal"
+            },
+            {
               "appearance" : "tinted",
               "value" : "multiply"
             }
           ],
-          "fill" : {
-            "automatic-gradient" : "display-p3:0.95686,0.92157,0.82745,1.00000"
-          },
+          "fill-specializations" : [
+            {
+              "value" : {
+                "automatic-gradient" : "display-p3:0.95686,0.92157,0.82745,1.00000"
+              }
+            },
+            {
+              "appearance" : "dark",
+              "value" : {
+                "automatic-gradient" : "display-p3:0.07059,0.63137,0.57255,1.00000"
+              }
+            },
+            {
+              "appearance" : "tinted",
+              "value" : {
+                "automatic-gradient" : "display-p3:0.95686,0.92157,0.82745,1.00000"
+              }
+            }
+          ],
           "glass" : true,
           "hidden" : false,
           "image-name" : "Ring.svg",
@@ -32,8 +52,12 @@
               "value" : 0.9
             },
             {
+              "appearance" : "dark",
+              "value" : 0.8
+            },
+            {
               "appearance" : "tinted",
-              "value" : 0.5
+              "value" : 0.8
             }
           ],
           "position-specializations" : [
@@ -85,13 +109,19 @@
           "fill-specializations" : [
             {
               "value" : {
-                "automatic-gradient" : "display-p3:0.32941,0.32941,0.32941,1.00000"
+                "solid" : "display-p3:0.06667,0.06667,0.06667,1.00000"
               }
             },
             {
               "appearance" : "dark",
               "value" : {
-                "solid" : "srgb:0.80000,0.76863,0.69412,1.00000"
+                "solid" : "srgb:1.00000,1.00000,1.00000,1.00000"
+              }
+            },
+            {
+              "appearance" : "tinted",
+              "value" : {
+                "solid" : "display-p3:1.00000,1.00000,1.00000,1.00000"
               }
             }
           ],
@@ -104,7 +134,7 @@
             },
             {
               "appearance" : "dark",
-              "value" : 0.7
+              "value" : 0.95
             },
             {
               "appearance" : "tinted",
