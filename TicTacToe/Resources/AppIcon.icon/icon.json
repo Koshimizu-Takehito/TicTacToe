@@ -27,7 +27,7 @@
           "fill-specializations" : [
             {
               "value" : {
-                "automatic-gradient" : "display-p3:0.95686,0.92157,0.82745,1.00000"
+                "solid" : "display-p3:1.00000,1.00000,1.00000,1.00000"
               }
             },
             {
@@ -49,15 +49,15 @@
           "name" : "Ring",
           "opacity-specializations" : [
             {
-              "value" : 0.9
+              "value" : 0.85
             },
             {
               "appearance" : "dark",
-              "value" : 0.8
+              "value" : 0.6
             },
             {
               "appearance" : "tinted",
-              "value" : 0.8
+              "value" : 0.9
             }
           ],
           "position-specializations" : [
@@ -130,11 +130,11 @@
           "name" : "Union",
           "opacity-specializations" : [
             {
-              "value" : 0.95
+              "value" : 0.99
             },
             {
               "appearance" : "dark",
-              "value" : 0.95
+              "value" : 0.8
             },
             {
               "appearance" : "tinted",
@@ -194,7 +194,7 @@
           "opacity-specializations" : [
             {
               "appearance" : "dark",
-              "value" : 1
+              "value" : 0
             },
             {
               "appearance" : "tinted",
@@ -244,6 +244,10 @@
           "name" : "Rectangle 2",
           "opacity-specializations" : [
             {
+              "appearance" : "dark",
+              "value" : 0
+            },
+            {
               "appearance" : "tinted",
               "value" : 0.6
             }
@@ -292,7 +296,7 @@
           "opacity-specializations" : [
             {
               "appearance" : "dark",
-              "value" : 0.8
+              "value" : 0
             },
             {
               "appearance" : "tinted",
@@ -343,7 +347,7 @@
           "opacity-specializations" : [
             {
               "appearance" : "dark",
-              "value" : 0.8
+              "value" : 0
             },
             {
               "appearance" : "tinted",
