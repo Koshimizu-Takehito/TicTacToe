@@ -33,7 +33,7 @@
             {
               "appearance" : "dark",
               "value" : {
-                "solid" : "display-p3:0.07059,0.63137,0.57255,1.00000"
+                "solid" : "display-p3:0.08298,0.82205,0.74803,1.00000"
               }
             },
             {
@@ -134,7 +134,7 @@
             },
             {
               "appearance" : "dark",
-              "value" : 0.8
+              "value" : 1
             },
             {
               "appearance" : "tinted",
