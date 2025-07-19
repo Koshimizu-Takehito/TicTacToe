@@ -1,7 +1,140 @@
 {
   "images" : [
     {
-      "filename" : "AppIcon.004.png",
+      "filename" : "App Icon - 44 × 44 px (22 × 22 pt @2x).png",
+      "idiom" : "universal",
+      "platform" : "watchos",
+      "scale" : "2x",
+      "size" : "22x22"
+    },
+    {
+      "filename" : "App Icon - 48 × 48 px (24 × 24 pt @2x).png",
+      "idiom" : "universal",
+      "platform" : "watchos",
+      "scale" : "2x",
+      "size" : "24x24"
+    },
+    {
+      "filename" : "App Icon - 55 × 55 px (27.5 × 27.5 pt @2x).png",
+      "idiom" : "universal",
+      "platform" : "watchos",
+      "scale" : "2x",
+      "size" : "27.5x27.5"
+    },
+    {
+      "filename" : "App Icon - 58 × 58 px (29 × 29 pt @2x).png",
+      "idiom" : "universal",
+      "platform" : "watchos",
+      "scale" : "2x",
+      "size" : "29x29"
+    },
+    {
+      "filename" : "App Icon - 60 × 60 px (30 × 30 pt @2x).png",
+      "idiom" : "universal",
+      "platform" : "watchos",
+      "scale" : "2x",
+      "size" : "30x30"
+    },
+    {
+      "filename" : "App Icon - 64 × 64 px (32 × 32 pt @2x).png",
+      "idiom" : "universal",
+      "platform" : "watchos",
+      "scale" : "2x",
+      "size" : "32x32"
+    },
+    {
+      "filename" : "App Icon - 66 × 66 px (33 × 33 pt @2x).png",
+      "idiom" : "universal",
+      "platform" : "watchos",
+      "scale" : "2x",
+      "size" : "33x33"
+    },
+    {
+      "filename" : "App Icon - 80 × 80 px (40 × 40 pt @2x).png",
+      "idiom" : "universal",
+      "platform" : "watchos",
+      "scale" : "2x",
+      "size" : "40x40"
+    },
+    {
+      "filename" : "App Icon - 87 × 87 px (29 × 29 pt @3x).png",
+      "idiom" : "universal",
+      "platform" : "watchos",
+      "scale" : "2x",
+      "size" : "43.5x43.5"
+    },
+    {
+      "filename" : "App Icon - 88 × 88 px (44 × 44 pt @2x).png",
+      "idiom" : "universal",
+      "platform" : "watchos",
+      "scale" : "2x",
+      "size" : "44x44"
+    },
+    {
+      "filename" : "App Icon - 92 × 92 px (46 × 46 pt @2x)-1.png",
+      "idiom" : "universal",
+      "platform" : "watchos",
+      "scale" : "2x",
+      "size" : "46x46"
+    },
+    {
+      "filename" : "App Icon - 100 × 100 px (50 × 50 pt @2x).png",
+      "idiom" : "universal",
+      "platform" : "watchos",
+      "scale" : "2x",
+      "size" : "50x50"
+    },
+    {
+      "filename" : "App Icon - 102 × 102 px (51 × 51 pt @2x).png",
+      "idiom" : "universal",
+      "platform" : "watchos",
+      "scale" : "2x",
+      "size" : "51x51"
+    },
+    {
+      "filename" : "App Icon - 108 x 108 px (54 x 54 pt @2x).png",
+      "idiom" : "universal",
+      "platform" : "watchos",
+      "scale" : "2x",
+      "size" : "54x54"
+    },
+    {
+      "filename" : "App Icon - 172 x 172 px (86 x 86 pt @2x).png",
+      "idiom" : "universal",
+      "platform" : "watchos",
+      "scale" : "2x",
+      "size" : "86x86"
+    },
+    {
+      "filename" : "App Icon - 196 x 196 px (98 x 98 pt @2x).png",
+      "idiom" : "universal",
+      "platform" : "watchos",
+      "scale" : "2x",
+      "size" : "98x98"
+    },
+    {
+      "filename" : "App Icon - 216 x 216 px (108 x 108 pt @2x).png",
+      "idiom" : "universal",
+      "platform" : "watchos",
+      "scale" : "2x",
+      "size" : "108x108"
+    },
+    {
+      "filename" : "App Icon - 234 × 234 px (117 × 117 pt @2x).png",
+      "idiom" : "universal",
+      "platform" : "watchos",
+      "scale" : "2x",
+      "size" : "117x117"
+    },
+    {
+      "filename" : "App Icon - 258 × 258 px (129 × 129 pt @2x).png",
+      "idiom" : "universal",
+      "platform" : "watchos",
+      "scale" : "2x",
+      "size" : "129x129"
+    },
+    {
+      "filename" : "App Icon.png",
       "idiom" : "universal",
       "platform" : "watchos",
       "size" : "1024x1024"
