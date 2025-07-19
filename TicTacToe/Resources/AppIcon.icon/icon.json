@@ -1,10 +1,7 @@
 {
   "color-space-for-untagged-svg-colors" : "display-p3",
   "fill" : {
-    "linear-gradient" : [
-      "display-p3:0.07059,0.74118,0.67451,1.00000",
-      "srgb:0.07059,0.63137,0.57255,1.00000"
-    ]
+    "solid" : "display-p3:0.07059,0.63137,0.57255,1.00000"
   },
   "groups" : [
     {
@@ -188,7 +185,7 @@
             }
           ],
           "glass" : false,
-          "hidden" : false,
+          "hidden" : true,
           "image-name" : "Rectangle 1.svg",
           "name" : "Rectangle 1",
           "opacity-specializations" : [
@@ -239,7 +236,7 @@
             }
           ],
           "glass" : false,
-          "hidden" : false,
+          "hidden" : true,
           "image-name" : "Rectangle 2.svg",
           "name" : "Rectangle 2",
           "opacity-specializations" : [
@@ -276,24 +273,36 @@
           ]
         },
         {
+          "blend-mode" : "screen",
           "fill-specializations" : [
             {
               "value" : {
-                "solid" : "srgb:0.07059,0.63137,0.57255,1.00000"
+                "automatic-gradient" : "srgb:0.07059,0.74118,0.67451,1.00000"
               }
             },
             {
               "appearance" : "dark",
               "value" : {
-                "solid" : "srgb:0.02353,0.20000,0.17647,1.00000"
+                "solid" : "srgb:0.02353,0.20000,0.17647,0.00000"
               }
             }
           ],
-          "glass" : false,
+          "glass-specializations" : [
+            {
+              "value" : true
+            },
+            {
+              "appearance" : "dark",
+              "value" : false
+            }
+          ],
           "hidden" : false,
           "image-name" : "Rectangle 3.svg",
           "name" : "Rectangle 3",
           "opacity-specializations" : [
+            {
+              "value" : 0.85
+            },
             {
               "appearance" : "dark",
               "value" : 0
@@ -327,24 +336,36 @@
           ]
         },
         {
+          "blend-mode" : "screen",
           "fill-specializations" : [
             {
               "value" : {
-                "solid" : "srgb:0.07059,0.63137,0.57255,1.00000"
+                "automatic-gradient" : "srgb:0.07059,0.74118,0.67451,1.00000"
               }
             },
             {
               "appearance" : "dark",
               "value" : {
-                "solid" : "srgb:0.02353,0.20000,0.17647,1.00000"
+                "solid" : "srgb:0.02353,0.20000,0.17647,0.00000"
               }
             }
           ],
-          "glass" : false,
+          "glass-specializations" : [
+            {
+              "value" : true
+            },
+            {
+              "appearance" : "dark",
+              "value" : false
+            }
+          ],
           "hidden" : false,
           "image-name" : "Rectangle 4.svg",
           "name" : "Rectangle 4",
           "opacity-specializations" : [
+            {
+              "value" : 0.85
+            },
             {
               "appearance" : "dark",
               "value" : 0
