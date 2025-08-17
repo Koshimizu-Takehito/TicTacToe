@@ -57,6 +57,15 @@ extension PlayMode: CaseIterable {
         .computer(.medium),
         .computer(.hard),
     ]
+
+    static let longTitle: Self = {
+        let longTitle = PlayMode.allCases.max { lhs, rhs in
+            let lhs = lhs.difficulty ?? lhs.title
+            let rhs = rhs.difficulty ?? rhs.title
+            return lhs.count <= rhs.count
+        }
+        return longTitle ?? .player
+    }()
 }
 
 extension PlayMode {
@@ -68,6 +77,15 @@ extension PlayMode {
             String(localized: "Random", bundle: .module)
         case .computer:
             String(localized: "Computer", bundle: .module)
+        }
+    }
+
+    var difficulty: String? {
+        switch self {
+        case .player, .random:
+            nil
+        case let .computer(difficulty):
+            difficulty.title
         }
     }
 

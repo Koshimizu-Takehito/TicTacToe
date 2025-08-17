@@ -3,7 +3,8 @@
 ![Platform](https://img.shields.io/badge/platform-iOS-blue.svg)
 ![Platform](https://img.shields.io/badge/platform-watchOS-blue.svg)
 ![Platform](https://img.shields.io/badge/platform-macOS-blue.svg)
-![Swift](https://img.shields.io/badge/swift-6.0-orange.svg)
+![Swift](https://img.shields.io/badge/swift-6.2-orange.svg)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/Koshimizu-Takehito/TicTacToe)
 
 Enjoy the classic game of Tic-Tac-Toe in a simple and stylish way with "TicTacToe Simple Quick Play"! This is the ultimate casual game that everyone can enjoy easily.
 
@@ -14,8 +15,8 @@ Enjoy the classic game of Tic-Tac-Toe in a simple and stylish way with "TicTacTo
 - iOS 17.0+
 - macOS 14.0+
 - watchOS 10.0+
-- Xcode Version 16.0+
-- Swift 6.0+
+- Xcode Version 26.0+
+- Swift 6.2+
 
 ## Setup
 

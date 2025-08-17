@@ -19,14 +19,21 @@ struct SymbolGridView: View {
     var body: some View {
         ZStack {
             // X and O symbols
-            Grid(horizontalSpacing: spacing, verticalSpacing: spacing, content: symbolRows)
-                .environment(\.colorPalette.symbol1, symbolColor(for: .first))
-                .environment(\.colorPalette.symbol2, symbolColor(for: .second))
+            Grid(horizontalSpacing: spacing, verticalSpacing: spacing) {
+                symbolRows()
+            }
+            .environment(\.colorPalette.symbol1, symbolColor(for: .first))
+            .environment(\.colorPalette.symbol2, symbolColor(for: .second))
+
             // slash shown when a player wins
-            Group(content: slash)
+            Group {
+                slash()
+            }
             // win or draw label
-            Group(content: gameResult)
-                .modifier(GameResultTapModifier(state: state, onTap: onTapGameResult))
+            Group {
+                gameResult()
+            }
+            .modifier(GameResultTapModifier(state: state, onTap: onTapGameResult))
         }
         .transaction { transaction in
             // Disable animations when the board is reset
