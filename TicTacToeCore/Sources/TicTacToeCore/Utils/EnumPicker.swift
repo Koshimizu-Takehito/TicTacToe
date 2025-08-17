@@ -10,9 +10,9 @@ struct EnumPicker<Enum>: View where
     @Binding var selection: Enum
 
     var body: some View {
-        Picker("\(Enum.self)", selection: $selection) {
+        Picker(String(describing: Enum.self), selection: $selection) {
             ForEach(Enum.allCases, id: \.self) { value in
-                Text("\(value)")
+                Text(String(describing: value))
                     .tag(value)
             }
         }
