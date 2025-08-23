@@ -102,6 +102,7 @@
 		FB97AB962CA2492E000AD13B /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				Resources/AppIcon.icon,
 				Resources/InfoPlist.xcstrings,
 			);
 			target = FB97AB802CA24817000AD13B /* TicTacToeWatch */;
