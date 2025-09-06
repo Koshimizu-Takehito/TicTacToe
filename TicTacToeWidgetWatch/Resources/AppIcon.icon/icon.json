@@ -412,6 +412,8 @@
     }
   ],
   "supported-platforms" : {
-    "squares" : "shared"
+    "circles" : [
+      "watchOS"
+    ]
   }
 }
