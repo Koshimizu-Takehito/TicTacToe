@@ -86,15 +86,15 @@ struct ColorPaletteEntity: AppIntents.AppEntity {
 // MARK: - ColorPaletteQuery
 
 struct ColorPaletteQuery: AppIntents.EntityQuery {
-    func entities(for identifiers: [ColorPaletteEntity.ID]) async throws -> [ColorPaletteEntity] {
+    @concurrent func entities(for identifiers: [ColorPaletteEntity.ID]) async throws -> [ColorPaletteEntity] {
         ColorPaletteEntity.allCases.filter { identifiers.contains($0.id) }
     }
 
-    func suggestedEntities() async throws -> [ColorPaletteEntity] {
+    @concurrent func suggestedEntities() async throws -> [ColorPaletteEntity] {
         ColorPaletteEntity.allCases
     }
 
-    func defaultResult() async -> ColorPaletteEntity? {
+    @concurrent func defaultResult() async -> ColorPaletteEntity? {
         ColorPaletteEntity(id: .default)
     }
 }
