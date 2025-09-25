@@ -26,7 +26,7 @@ struct ColorSchemeEntity: AppIntents.AppEntity {
 
 // MARK: - ColorSchemeEntitySelection
 
-enum ColorSchemeEntitySelection: String, CaseIterable, EntityIdentifierConvertible {
+nonisolated enum ColorSchemeEntitySelection: String, CaseIterable, EntityIdentifierConvertible {
     case `default`
     case light
     case dark
@@ -43,15 +43,15 @@ enum ColorSchemeEntitySelection: String, CaseIterable, EntityIdentifierConvertib
 // MARK: - ColorSchemeQuery
 
 struct ColorSchemeQuery: AppIntents.EntityQuery {
-    func entities(for identifiers: [ColorSchemeEntity.ID]) async throws -> [ColorSchemeEntity] {
+    @concurrent func entities(for identifiers: [ColorSchemeEntity.ID]) async throws -> [ColorSchemeEntity] {
         ColorSchemeEntity.allCases.filter { identifiers.contains($0.id) }
     }
 
-    func suggestedEntities() async throws -> [ColorSchemeEntity] {
+    @concurrent func suggestedEntities() async throws -> [ColorSchemeEntity] {
         ColorSchemeEntity.allCases
     }
 
-    func defaultResult() async -> ColorSchemeEntity? {
+    @concurrent func defaultResult() async -> ColorSchemeEntity? {
         ColorSchemeEntity(id: .default)
     }
 }
