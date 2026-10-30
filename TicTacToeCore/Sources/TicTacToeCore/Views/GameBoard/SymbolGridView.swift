@@ -228,30 +228,36 @@ private extension SymbolGridView {
     /// Triggers animations when the overall game state changes.
     func redraw(old _: GameState, new: GameState) {
         Task {
-            switch new {
-            case .ongoing:
-                state = .prepare
-            case .win:
-                try await Task.sleep(nanoseconds: 0_660_000_000)
-                await withAnimation(.spring(duration: 0.6)) {
-                    state = .slash
-                }
-                await withAnimation(.spring(duration: 0.5)) {
-                    state = .centering
-                }
-                await withAnimation(.spring(duration: 0.5)) {
-                    state = .expanding
-                }
-                try await Task.sleep(nanoseconds: 0_700_000_000)
-                self.onGameResultAnimationDidFinish()
-            case .draw:
-                try await Task.sleep(nanoseconds: 0_660_000_000)
-                await withAnimation(.spring(duration: 0.5)) {
-                    state = .draw
-                }
-                try await Task.sleep(nanoseconds: 1_000_000_000)
-                self.onGameResultAnimationDidFinish()
+            // Sleeping only throws when the task is cancelled, which just ends the animations early.
+            try? await animate(to: new)
+        }
+    }
+
+    /// Plays the animations for the new game state.
+    func animate(to new: GameState) async throws {
+        switch new {
+        case .ongoing:
+            state = .prepare
+        case .win:
+            try await Task.sleep(nanoseconds: 0_660_000_000)
+            await withAnimation(.spring(duration: 0.6)) {
+                state = .slash
             }
+            await withAnimation(.spring(duration: 0.5)) {
+                state = .centering
+            }
+            await withAnimation(.spring(duration: 0.5)) {
+                state = .expanding
+            }
+            try await Task.sleep(nanoseconds: 0_700_000_000)
+            self.onGameResultAnimationDidFinish()
+        case .draw:
+            try await Task.sleep(nanoseconds: 0_660_000_000)
+            await withAnimation(.spring(duration: 0.5)) {
+                state = .draw
+            }
+            try await Task.sleep(nanoseconds: 1_000_000_000)
+            self.onGameResultAnimationDidFinish()
         }
     }
 }
