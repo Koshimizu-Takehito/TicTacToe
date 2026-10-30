@@ -7,14 +7,14 @@ on:
 
 jobs:
   build:
-    runs-on: macos-15
+    runs-on: xcode-27 # iPhone Duo requires the iOS 27.1 SDK (Xcode 27.1 or later)
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Xcode 26.0
+      - name: Set up Xcode 27
         uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: '26.0-beta'
+          xcode-version: 'latest-stable'
 
       - name: Install xcpretty
         run: gem install xcpretty
@@ -22,9 +22,17 @@ jobs:
       - name: List available simulators
         run: xcrun simctl list devices
 
-      - name: Build with xcodebuild
+      - name: Build for iPhone Duo
         run: |
+          set -o pipefail
           xcodebuild -workspace TicTacToe.xcworkspace -scheme TicTacToe \
-            -destination 'platform=iOS Simulator,name=iPhone 16 Pro,OS=26.0' \
+            -destination 'platform=iOS Simulator,name=iPhone Duo' \
             CODE_SIGNING_ALLOWED=NO clean build | xcpretty
+
+      - name: Build for macOS
+        run: |
+          set -o pipefail
+          xcodebuild -workspace TicTacToe.xcworkspace -scheme TicTacToe \
+            -destination 'platform=macOS' \
+            CODE_SIGNING_ALLOWED=NO build | xcpretty
 
