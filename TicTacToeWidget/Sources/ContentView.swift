@@ -45,7 +45,7 @@ private extension ContentView {
         var background: Color {
             // renderingMode
             switch widgetFamily {
-            case .systemSmall, .systemMedium, .systemLarge, .systemExtraLarge:
+            case .systemSmall, .systemMedium, .systemLarge, .systemExtraLarge, .systemExtraLargePortrait:
                 switch renderingMode {
                 case .fullColor:
                     colorPalette.background
@@ -69,6 +69,8 @@ private extension ContentView {
             case .systemLarge:
                 colorPalette.background
             case .systemExtraLarge:
+                colorPalette.background
+            case .systemExtraLargePortrait:
                 colorPalette.background
             @unknown default:
                 Color.clear
