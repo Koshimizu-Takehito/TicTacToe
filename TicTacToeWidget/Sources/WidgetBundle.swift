@@ -3,7 +3,7 @@ import WidgetKit
 
 // MARK: - TimelineEntry
 
-struct TimelineEntry: WidgetKit.TimelineEntry {
+nonisolated struct TimelineEntry: WidgetKit.TimelineEntry {
     let date: Date
     let configuration: WidgetConfigurationIntent
 }
@@ -15,11 +15,11 @@ struct TimelineProvider: WidgetKit.AppIntentTimelineProvider {
         TimelineEntry(date: .now, configuration: WidgetConfigurationIntent())
     }
 
-    func snapshot(for configuration: WidgetConfigurationIntent, in _: Context) async -> TimelineEntry {
+    @concurrent func snapshot(for configuration: WidgetConfigurationIntent, in _: Context) async -> TimelineEntry {
         TimelineEntry(date: .now, configuration: configuration)
     }
 
-    func timeline(for configuration: WidgetConfigurationIntent, in _: Context) async -> Timeline<TimelineEntry> {
+    @concurrent func timeline(for configuration: WidgetConfigurationIntent, in _: Context) async -> Timeline<TimelineEntry> {
         Timeline(entries: [TimelineEntry(date: .now, configuration: configuration)], policy: .atEnd)
     }
 }

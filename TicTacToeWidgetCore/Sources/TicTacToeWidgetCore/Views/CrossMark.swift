@@ -1,4 +1,5 @@
 import SwiftUI
+import WidgetKit
 
 public struct CrossMark: View {
     @Environment(\.colorPalette.symbol2) var color

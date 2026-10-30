@@ -60,7 +60,6 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FB97AB802CA24817000AD13B"
             BuildableName = "TicTacToeWatch.app"
-            BlueprintName = "TicTacToeWatch"
             ReferencedContainer = "container:TicTacToe.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -77,7 +76,6 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FB97AB802CA24817000AD13B"
             BuildableName = "TicTacToeWatch.app"
-            BlueprintName = "TicTacToeWatch"
             ReferencedContainer = "container:TicTacToe.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

@@ -25,3 +25,13 @@ git clone git@github.com:Koshimizu-Takehito/TicTacToe.git
 cd TicTacToe
 open TicTacToe.xcworkspace
 ```
+
+## Release
+
+Xcode Cloud archives the iOS and macOS apps and uploads the builds to App Store Connect. Metadata, screenshots, and the review submission are handled with fastlane (`make help` lists the targets).
+
+1. Copy `.env.template` to `.env`, fill in the App Store Connect API key, and run `make fastlane-setup`.
+2. Bump `MARKETING_VERSION`, update `fastlane/metadata/*/release_notes.txt`, and merge to `main` so Xcode Cloud builds it.
+3. `make submit-preflight VERSION=x.y.z` to check the builds have finished processing.
+4. `make metadata-push VERSION=x.y.z` to create the App Store versions and upload the metadata.
+5. `make submit-review VERSION=x.y.z` to submit both platforms for review (released manually after approval).

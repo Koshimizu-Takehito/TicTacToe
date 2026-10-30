@@ -121,21 +121,21 @@ private extension GameBoard {
             case .player:
                 break
             case .random:
-                try await placeAtRandom()
+                await placeAtRandom()
             case .computer(.easy):
-                try await placeByEasyAI()
+                await placeByEasyAI()
             case .computer(.medium):
-                try await placeByMediumAI()
+                await placeByMediumAI()
             case .computer(.hard):
-                try await placeByHardAI()
+                await placeByHardAI()
             }
         }
     }
 
     /// Places a piece at a random open location.
-    func placeAtRandom() async throws {
+    func placeAtRandom() async {
         let gameBoard = gameBoard
-        try await waitUntilCalculation {
+        await waitUntilCalculation {
             while gameBoard.checkGameState() == .ongoing {
                 let randomPath = IndexPath.randomElement()
                 if gameBoard.occupied[randomPath] == nil {
@@ -147,10 +147,10 @@ private extension GameBoard {
     }
 
     /// Places a piece using a basic Min‑Max search that favors slower moves.
-    func placeByEasyAI() async throws {
+    func placeByEasyAI() async {
         let gameBoard = gameBoard
         let currentPlayer = currentPlayer
-        try await waitUntilCalculation {
+        await waitUntilCalculation {
             guard gameBoard.checkGameState() == .ongoing else {
                 return nil
             }
@@ -180,22 +180,22 @@ private extension GameBoard {
     }
 
     /// Medium difficulty mixes random, easy and hard strategies.
-    func placeByMediumAI() async throws {
+    func placeByMediumAI() async {
         let p = 10 * max(10 - gameBoard.occupied.count, 0)
         if Int.random(in: 0 ..< 100) < p {
-            try await placeByHardAI()
+            await placeByHardAI()
         } else if Bool.random() {
-            try await placeAtRandom()
+            await placeAtRandom()
         } else {
-            try await placeByEasyAI()
+            await placeByEasyAI()
         }
     }
 
     /// Places a piece using the Min‑Max algorithm.
-    func placeByHardAI() async throws {
+    func placeByHardAI() async {
         let gameBoard = gameBoard
         let currentPlayer = currentPlayer
-        try await waitUntilCalculation {
+        await waitUntilCalculation {
             guard gameBoard.checkGameState() == .ongoing else {
                 return nil
             }
@@ -228,13 +228,18 @@ private extension GameBoard {
     /// - Parameters:
     ///   - minWaitingTime: Minimum duration (in nanoseconds) to wait before placing the piece.
     ///   - calculation: Closure that returns the selected move.
-    func waitUntilCalculation(minWaitingTime: Int64 = 660_000_000, calculation: @Sendable @escaping () -> IndexPath?) async throws {
+    func waitUntilCalculation(minWaitingTime: Int64 = 660_000_000, calculation: @Sendable @escaping () -> IndexPath?) async {
         let beforeStates = gameBoard.occupied
         let startTime = Date.now
         Task.detached {
             if let location = calculation() {
                 let elapsedTime = Int64(-startTime.timeIntervalSinceNow * 1_000_000_000)
-                try await Task.sleep(nanoseconds: UInt64(max(minWaitingTime - elapsedTime, 0)))
+                do {
+                    try await Task.sleep(nanoseconds: UInt64(max(minWaitingTime - elapsedTime, 0)))
+                } catch {
+                    // Cancelled while waiting, so don't place the piece.
+                    return
+                }
                 Task { @MainActor in
                     let gameBoard = self.gameBoard
                     guard gameBoard.occupied == beforeStates else { return }

@@ -1,0 +1,9 @@
+{
+  "id" : "ca507451-67e5-4429-aa7f-b69ae46afcab",
+  "targets" : [
+    {
+      "id" : "0220F050-563E-4F20-B75D-12E20B662ACE",
+      "name" : "TicTacToe"
+    }
+  ]
+}
