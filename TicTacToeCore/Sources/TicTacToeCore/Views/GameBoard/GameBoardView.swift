@@ -9,19 +9,26 @@ import SwiftUI
 
         var body: some View {
             @Bindable var viewModel = viewModel
-            VStack(alignment: .center) {
-                // メニュー
-                PlayerMenuView()
-                // 盤面
-                GameBoardInnerView(viewModel: viewModel)
-                // ボトムアイテム
-                HStack(spacing: 0) {
-                    ResetButton(action: viewModel.reset)
-                    Spacer()
-                    ColorSchemeSwitch(isLightMode: isLightMode)
-                        .frame(width: 40, height: 40)
+            GeometryReader { geometry in
+                GameBoardLayout(fold: geometry.foldFrame) {
+                    // メニュー
+                    ForEach(Player.allCases, id: \.self) { player in
+                        PlayerMenu(player: player)
+                            .gameBoardLayoutRole(.menu)
+                    }
+                    // 盤面
+                    GameBoardInnerView(viewModel: viewModel)
+                        .gameBoardLayoutRole(.board)
+                    // ボトムアイテム
+                    HStack(spacing: 0) {
+                        ResetButton(action: viewModel.reset)
+                        Spacer()
+                        ColorSchemeSwitch(isLightMode: isLightMode)
+                            .frame(width: 40, height: 40)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .gameBoardLayoutRole(.controls)
                 }
-                .frame(maxWidth: .infinity)
             }
             .padding()
             .background { viewModel.colorPalette.background.ignoresSafeArea() }
@@ -107,3 +114,20 @@ import SwiftUI
 
     return GameBoardView()
 }
+
+#if os(iOS) || os(macOS)
+    @available(iOS 18.0, macOS 15.0, *)
+    #Preview("Wide (iPhone Duo outer, landscape)", traits: .myEnvironment, .fixedLayout(width: 678, height: 466)) {
+        GameBoardView()
+    }
+
+    @available(iOS 18.0, macOS 15.0, *)
+    #Preview("Wide (iPhone Duo inner)", traits: .myEnvironment, .fixedLayout(width: 951, height: 669)) {
+        GameBoardView()
+    }
+
+    @available(iOS 18.0, macOS 15.0, *)
+    #Preview("Mac default window", traits: .myEnvironment, .fixedLayout(width: 540, height: 432)) {
+        GameBoardView()
+    }
+#endif

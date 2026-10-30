@@ -4,41 +4,49 @@ import SwiftUI
 
 #if os(iOS) || os(macOS)
     struct PlayerMenuView: View {
-        @Environment(PlayerMenuViewModel.self)
-        private var viewModel
-
         var body: some View {
             HStack(spacing: 0) {
                 ForEach(Player.allCases, id: \.self) { player in
-                    Menu {
-                        Section {
-                            let mode = PlayMode.player
-                            Button {
-                                viewModel.select(player: player, role: mode)
-                            } label: {
-                                Label(mode.title, systemImage: mode.systemImage)
-                            }
-                        }
-                        Section(PlayMode.computer().title) {
-                            ForEach(Difficulty.allCases, id: \.self) { difficulty in
-                                Button {
-                                    viewModel.select(player: player, role: .computer(difficulty))
-                                } label: {
-                                    Label(difficulty.title, systemImage: difficulty.systemImage)
-                                }
-                            }
-                        }
+                    PlayerMenu(player: player)
+                }
+            }
+            .frame(maxWidth: .infinity)
+        }
+    }
+
+    /// Menu for choosing the role of a single player.
+    struct PlayerMenu: View {
+        @Environment(PlayerMenuViewModel.self)
+        private var viewModel
+        let player: Player
+
+        var body: some View {
+            Menu {
+                Section {
+                    let mode = PlayMode.player
+                    Button {
+                        viewModel.select(player: player, role: mode)
                     } label: {
-                        ZStack {
-                            PlayerMenuLabel.dummy()
-                                .frame(maxWidth: .infinity)
-                            PlayerMenuLabel(viewModel: .init(viewModel: viewModel, player: player))
+                        Label(mode.title, systemImage: mode.systemImage)
+                    }
+                }
+                Section(PlayMode.computer().title) {
+                    ForEach(Difficulty.allCases, id: \.self) { difficulty in
+                        Button {
+                            viewModel.select(player: player, role: .computer(difficulty))
+                        } label: {
+                            Label(difficulty.title, systemImage: difficulty.systemImage)
                         }
                     }
-                    .menuOrder(.fixed)
                 }
-                .frame(maxWidth: .infinity)
+            } label: {
+                ZStack {
+                    PlayerMenuLabel.dummy()
+                        .frame(maxWidth: .infinity)
+                    PlayerMenuLabel(viewModel: .init(viewModel: viewModel, player: player))
+                }
             }
+            .menuOrder(.fixed)
             .frame(maxWidth: .infinity)
             .buttonStyle(.actionStyle)
         }
