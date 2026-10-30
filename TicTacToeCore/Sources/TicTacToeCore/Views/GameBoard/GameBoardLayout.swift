@@ -4,7 +4,7 @@ import SwiftUI
     /// Arranges the player menus, the game board and the bottom controls for the available space.
     ///
     /// - vertical: menus on top, the board in the middle and the controls at the bottom.
-    /// - horizontal: the board with a side column of menus and controls, used when it makes the board larger.
+    /// - horizontal: a column of menus and controls on the leading side of the board, used when it makes the board larger.
     /// - folded: the board on one side of the display's folding region and the menus and controls on the other.
     ///
     /// Every arrangement places the same subviews, so switching between them keeps the board's state and animations.
@@ -120,11 +120,11 @@ import SwiftUI
             let side = horizontalBoardSide(parts, in: bounds)
             let minX = bounds.minX + (bounds.width - side - spacing - columnWidth) / 2
             let minY = bounds.midY - side / 2
+            placeColumn(parts, in: CGRect(x: minX, y: minY, width: columnWidth, height: side))
             parts.board?.place(
-                at: CGPoint(x: minX, y: minY),
+                at: CGPoint(x: minX + columnWidth + spacing, y: minY),
                 proposal: .init(width: side, height: side)
             )
-            placeColumn(parts, in: CGRect(x: minX + side + spacing, y: minY, width: columnWidth, height: side))
         }
 
         // MARK: Folded
@@ -133,9 +133,9 @@ import SwiftUI
         func placeFolded(_ parts: Parts, in bounds: CGRect, fold: CGRect) -> Bool {
             let minimumBoardSide: CGFloat = 200
             if fold.height >= fold.width {
-                // Book pose: board on the leading side, controls on the trailing side.
-                let boardRect = CGRect(x: bounds.minX, y: bounds.minY, width: fold.minX - bounds.minX, height: bounds.height)
-                let controlsRect = CGRect(x: fold.maxX, y: bounds.minY, width: bounds.maxX - fold.maxX, height: bounds.height)
+                // Book pose: controls on the leading side, board on the trailing side, as in the horizontal arrangement.
+                let controlsRect = CGRect(x: bounds.minX, y: bounds.minY, width: fold.minX - bounds.minX, height: bounds.height)
+                let boardRect = CGRect(x: fold.maxX, y: bounds.minY, width: bounds.maxX - fold.maxX, height: bounds.height)
                 guard min(boardRect.width, boardRect.height) >= minimumBoardSide,
                       controlsRect.width >= parts.columnWidth,
                       controlsRect.height >= columnHeight(parts)
