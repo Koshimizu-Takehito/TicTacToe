@@ -1,0 +1,200 @@
+require File.expand_path("asc_helper", __dir__)
+
+default_platform(:ios)
+
+# App Store platforms this app ships on (universal purchase). The watchOS app and
+# widgets ride along with the iOS build. Metadata is shared by both platforms;
+# screenshots are not.
+STORE_PLATFORMS = {
+  "ios" => { deliver: "ios", asc: "IOS", screenshots: "screenshots" },
+  "mac" => { deliver: "osx", asc: "MAC_OS", screenshots: "screenshots_mac" },
+}.freeze
+
+METADATA_PATH = File.expand_path("metadata", __dir__)
+
+# The repository is public, so the App Review contact isn't kept under
+# fastlane/metadata. It comes from `.env` when set; otherwise deliver leaves
+# whatever App Store Connect already has.
+def review_information_from_env
+  info = {
+    first_name: ENV["REVIEW_FIRST_NAME"],
+    last_name: ENV["REVIEW_LAST_NAME"],
+    phone_number: ENV["REVIEW_PHONE_NUMBER"],
+    email_address: ENV["REVIEW_EMAIL_ADDRESS"],
+  }.reject { |_, value| value.to_s.empty? }
+  info.empty? ? nil : info
+end
+
+# `platform:` picks one store platform; without it a lane runs for all of them.
+def store_platforms(options)
+  name = options[:platform].to_s
+  return STORE_PLATFORMS.keys if name.empty?
+
+  UI.user_error!("Unknown platform `#{name}`. Use one of: #{STORE_PLATFORMS.keys.join(", ")}.") unless STORE_PLATFORMS.key?(name)
+  [name]
+end
+
+def screenshots_path(name)
+  File.expand_path(STORE_PLATFORMS[name][:screenshots], __dir__)
+end
+
+platform :ios do
+  before_all do
+    key_path = ENV["ASC_KEY_PATH"] || Dir[File.expand_path("AuthKey_*.p8", __dir__)].first
+    UI.user_error!("ASC API key (.p8) not found under fastlane/. Set ASC_KEY_PATH or place AuthKey_*.p8 there.") if key_path.nil?
+    UI.user_error!("ASC_KEY_ID is not set.") if ENV["ASC_KEY_ID"].to_s.empty?
+    UI.user_error!("ASC_ISSUER_ID is not set.") if ENV["ASC_ISSUER_ID"].to_s.empty?
+
+    app_store_connect_api_key(
+      key_id: ENV["ASC_KEY_ID"],
+      issuer_id: ENV["ASC_ISSUER_ID"],
+      key_filepath: key_path,
+      in_house: false,
+    )
+  end
+
+  desc "Download current metadata (from iOS) and screenshots (per platform) from App Store Connect"
+  desc "Warns about macOS metadata that differs from iOS, since `push` uploads the iOS text to both"
+  lane :pull do
+    require "json"
+    require "tmpdir"
+
+    # `deliver download_metadata` / `download_screenshots` are CLI subcommands that
+    # spawn a fresh Ruby process, so the API key set in `before_all` doesn't carry
+    # over. Materialize it into a temporary JSON file and hand it to the child
+    # process via `--api_key_path`.
+    key_path = ENV["ASC_KEY_PATH"] || Dir[File.expand_path("AuthKey_*.p8", __dir__)].first
+
+    Dir.mktmpdir do |tmp|
+      json_path = File.join(tmp, "asc_api_key.json")
+      File.write(json_path, JSON.generate(
+        key_id: ENV["ASC_KEY_ID"],
+        issuer_id: ENV["ASC_ISSUER_ID"],
+        key: File.read(key_path),
+        duration: 1200,
+        in_house: false,
+      ))
+      deliver_cli = "cd .. && bundle exec fastlane deliver"
+      auth = "--force --api_key_path '#{json_path}'"
+
+      sh("#{deliver_cli} download_metadata #{auth} --platform ios --metadata_path '#{METADATA_PATH}'")
+      # Empty contact files would make deliver send a contact-less review detail, which ASC rejects.
+      FileUtils.rm_rf(File.join(METADATA_PATH, "review_information"))
+
+      mac_metadata = File.join(tmp, "metadata_mac")
+      sh("#{deliver_cli} download_metadata #{auth} --platform osx --metadata_path '#{mac_metadata}'")
+      differing = Dir.glob("**/*.txt", base: mac_metadata).reject do |file|
+        local = File.join(METADATA_PATH, file)
+        File.exist?(local) && File.read(local) == File.read(File.join(mac_metadata, file))
+      end
+      UI.important("macOS metadata differs from iOS (push will overwrite it with the iOS text): #{differing.join(", ")}") unless differing.empty?
+
+      # Unlike download_metadata, download_screenshots doesn't fall back to the
+      # live version when there's no version being edited.
+      app = Spaceship::ConnectAPI::App.find(CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier))
+      STORE_PLATFORMS.each_key do |name|
+        live = app.get_edit_app_store_version(platform: STORE_PLATFORMS[name][:asc]).nil?
+        sh("#{deliver_cli} download_screenshots #{auth} --platform #{STORE_PLATFORMS[name][:deliver]} " \
+           "--use_live_version #{live} --screenshots_path '#{screenshots_path(name)}'")
+      end
+    end
+  end
+
+  desc "Upload metadata, screenshots, and release notes (no binary)"
+  desc "Pass `version:` to create that App Store version on ASC if it doesn't exist yet; `platform:` (ios|mac) limits it to one platform"
+  lane :push do |options|
+    # Shared deliver options (force, no binary, precheck, manual release) live in the Deliverfile.
+    store_platforms(options).each do |name|
+      deliver(
+        platform: STORE_PLATFORMS[name][:deliver],
+        app_version: options[:version],
+        metadata_path: METADATA_PATH,
+        screenshots_path: screenshots_path(name),
+        app_review_information: review_information_from_env,
+        skip_metadata: false,
+        skip_screenshots: false,
+        submit_for_review: false,
+      )
+    end
+  end
+
+  desc "Check submission prerequisites (age rating, App Store versions, uploaded builds) without changing ASC"
+  desc "Usage: fastlane submit_review_preflight version:2.1.0 [platform:ios|mac]"
+  lane :submit_review_preflight do |options|
+    UI.user_error!("Pass `version:` (e.g. 2.1.0).") if options[:version].to_s.empty?
+
+    version = options[:version].to_s
+    app_id = ASCHelper.app_id
+    ASCHelper.warn_unanswered_age_rating(app_id: app_id)
+
+    store_platforms(options).each do |name|
+      platform = STORE_PLATFORMS[name][:asc]
+      store_version = ASCHelper.find_app_store_version(app_id: app_id, version_string: version, platform: platform)
+      if store_version
+        UI.message("#{platform} App Store version #{version}: #{store_version.dig("attributes", "appStoreState")}")
+        ASCHelper.warn_missing_review_contact(version: store_version)
+      else
+        UI.important("#{platform} App Store version #{version} doesn't exist yet; `make metadata-push VERSION=#{version}` creates it.")
+      end
+
+      build = ASCHelper.latest_build(app_id: app_id, version_string: version, platform: platform)
+      if build
+        UI.message("#{platform} latest build: #{version} (#{build.dig("attributes", "version")}), #{build.dig("attributes", "processingState")}")
+      else
+        UI.important("#{platform} has no uploaded build for #{version}. Check the Xcode Cloud archive action.")
+      end
+    end
+  end
+
+  desc "Attach an uploaded build (e.g. from Xcode Cloud) to the version and submit it for review"
+  desc "Without `build:`, uses the latest processed build of that version on each platform"
+  desc "Usage: fastlane submit_review version:2.1.0 [build:63] [platform:ios|mac]"
+  lane :submit_review do |options|
+    UI.user_error!("Pass `version:` (e.g. 2.1.0).") if options[:version].to_s.empty?
+
+    version = options[:version].to_s
+    app_id = ASCHelper.app_id
+    ASCHelper.warn_unanswered_age_rating(app_id: app_id)
+
+    store_platforms(options).each do |name|
+      platform = STORE_PLATFORMS[name][:asc]
+      build_number = options[:build].to_s
+      if build_number.empty?
+        build = ASCHelper.latest_build(app_id: app_id, version_string: version, platform: platform)
+        UI.user_error!("#{platform} has no uploaded build for #{version}.") if build.nil?
+        state = build.dig("attributes", "processingState")
+        UI.user_error!("#{platform} build #{version} (#{build.dig("attributes", "version")}) is #{state}, not VALID yet.") unless state == "VALID"
+        build_number = build.dig("attributes", "version")
+      end
+      UI.message("Submitting #{platform} #{version} (#{build_number}) for review")
+
+      begin
+        deliver(
+          platform: STORE_PLATFORMS[name][:deliver],
+          app_version: version,
+          build_number: build_number,
+          skip_metadata: true,
+          skip_screenshots: true,
+          submit_for_review: true,
+          submission_information: {
+            add_id_info_uses_idfa: false,
+          },
+        )
+      rescue Spaceship::UnexpectedResponse
+        # ASC rejected an API call (e.g. the review item); show its per-field reasons.
+        ASCHelper.explain_review_submission_errors(app_id: app_id, version_string: version, platform: platform)
+        raise
+      end
+    end
+  end
+
+  desc "Validate the App Store Connect metadata without uploading"
+  lane :precheck_metadata do |options|
+    store_platforms(options).each do |name|
+      precheck(
+        platform: STORE_PLATFORMS[name][:deliver],
+        include_in_app_purchases: false,
+      )
+    end
+  end
+end

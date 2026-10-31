@@ -1,0 +1,3 @@
+• Added support for iPhone Duo. The board stays clear of the fold while the device is partly folded.
+• iPhone now supports landscape orientation.
+• The board is now larger on iPad in landscape.
