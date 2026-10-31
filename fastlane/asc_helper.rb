@@ -88,15 +88,15 @@ module ASCHelper
     UI.important("These age rating questions look unanswered (App Information → Age Rating): #{missing.join(", ")}")
   end
 
-  # App Review needs a contact for every version. `fastlane/metadata/review_information`
-  # is kept empty because the repository is public, so the contact lives only on ASC.
+  # App Review needs a contact for every version. The repository is public, so the
+  # contact comes from `.env` (REVIEW_*) or is entered on App Store Connect.
   def warn_missing_review_contact(version:)
     detail = request(:get, "appStoreVersions/#{version["id"]}/appStoreReviewDetail")["data"]
     attributes = detail&.dig("attributes") || {}
     missing = %w[contactFirstName contactLastName contactPhone contactEmail].select { |key| attributes[key].to_s.empty? }
     return UI.message("App Review contact is set.") if missing.empty?
 
-    UI.important("App Review contact is missing (App Store version → App Review Information): #{missing.join(", ")}")
+    UI.important("App Review contact is missing: #{missing.join(", ")}. Set REVIEW_* in .env and run `make metadata-push`, or enter it on App Store Connect (App Review Information).")
   end
 
   # `deliver` reports a rejected review item only by its title. Adding the version

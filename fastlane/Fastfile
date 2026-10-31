@@ -12,6 +12,19 @@ STORE_PLATFORMS = {
 
 METADATA_PATH = File.expand_path("metadata", __dir__)
 
+# The repository is public, so the App Review contact isn't kept under
+# fastlane/metadata. It comes from `.env` when set; otherwise deliver leaves
+# whatever App Store Connect already has.
+def review_information_from_env
+  info = {
+    first_name: ENV["REVIEW_FIRST_NAME"],
+    last_name: ENV["REVIEW_LAST_NAME"],
+    phone_number: ENV["REVIEW_PHONE_NUMBER"],
+    email_address: ENV["REVIEW_EMAIL_ADDRESS"],
+  }.reject { |_, value| value.to_s.empty? }
+  info.empty? ? nil : info
+end
+
 # `platform:` picks one store platform; without it a lane runs for all of them.
 def store_platforms(options)
   name = options[:platform].to_s
@@ -65,6 +78,8 @@ platform :ios do
       auth = "--force --api_key_path '#{json_path}'"
 
       sh("#{deliver_cli} download_metadata #{auth} --platform ios --metadata_path '#{METADATA_PATH}'")
+      # Empty contact files would make deliver send a contact-less review detail, which ASC rejects.
+      FileUtils.rm_rf(File.join(METADATA_PATH, "review_information"))
 
       mac_metadata = File.join(tmp, "metadata_mac")
       sh("#{deliver_cli} download_metadata #{auth} --platform osx --metadata_path '#{mac_metadata}'")
@@ -95,6 +110,7 @@ platform :ios do
         app_version: options[:version],
         metadata_path: METADATA_PATH,
         screenshots_path: screenshots_path(name),
+        app_review_information: review_information_from_env,
         skip_metadata: false,
         skip_screenshots: false,
         submit_for_review: false,
