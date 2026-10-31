@@ -3,11 +3,12 @@ require File.expand_path("asc_helper", __dir__)
 default_platform(:ios)
 
 # App Store platforms this app ships on (universal purchase). The watchOS app and
-# widgets ride along with the iOS build. Metadata is shared by both platforms;
-# screenshots are not.
+# widgets ride along with the iOS build. Metadata is shared by both platforms,
+# except for the files under a platform's `metadata_overrides` (e.g. release
+# notes that only apply to the Mac); screenshots are not shared.
 STORE_PLATFORMS = {
   "ios" => { deliver: "ios", asc: "IOS", screenshots: "screenshots" },
-  "mac" => { deliver: "osx", asc: "MAC_OS", screenshots: "screenshots_mac" },
+  "mac" => { deliver: "osx", asc: "MAC_OS", screenshots: "screenshots_mac", metadata_overrides: "metadata_mac" },
 }.freeze
 
 METADATA_PATH = File.expand_path("metadata", __dir__)
@@ -36,6 +37,19 @@ end
 
 def screenshots_path(name)
   File.expand_path(STORE_PLATFORMS[name][:screenshots], __dir__)
+end
+
+# Localized values that replace the shared metadata on one platform, as deliver
+# options ({ release_notes: { "ja" => "..." } }). deliver only reads a file from
+# metadata_path when the option isn't already set.
+def metadata_overrides(name)
+  dir = STORE_PLATFORMS[name][:metadata_overrides]
+  return {} if dir.nil?
+
+  Dir.glob("*/*.txt", base: File.expand_path(dir, __dir__)).each_with_object({}) do |file, overrides|
+    language, key = File.dirname(file), File.basename(file, ".txt")
+    (overrides[key.to_sym] ||= {})[language] = File.read(File.expand_path(File.join(dir, file), __dir__))
+  end
 end
 
 platform :ios do
@@ -83,11 +97,12 @@ platform :ios do
 
       mac_metadata = File.join(tmp, "metadata_mac")
       sh("#{deliver_cli} download_metadata #{auth} --platform osx --metadata_path '#{mac_metadata}'")
+      mac_overrides = File.expand_path(STORE_PLATFORMS["mac"][:metadata_overrides], __dir__)
       differing = Dir.glob("**/*.txt", base: mac_metadata).reject do |file|
-        local = File.join(METADATA_PATH, file)
-        File.exist?(local) && File.read(local) == File.read(File.join(mac_metadata, file))
+        local = [File.join(mac_overrides, file), File.join(METADATA_PATH, file)].find { |path| File.exist?(path) }
+        local && File.read(local) == File.read(File.join(mac_metadata, file))
       end
-      UI.important("macOS metadata differs from iOS (push will overwrite it with the iOS text): #{differing.join(", ")}") unless differing.empty?
+      UI.important("macOS metadata differs from what push uploads (iOS text plus metadata_mac): #{differing.join(", ")}") unless differing.empty?
 
       # Unlike download_metadata, download_screenshots doesn't fall back to the
       # live version when there's no version being edited.
@@ -114,6 +129,7 @@ platform :ios do
         skip_metadata: false,
         skip_screenshots: false,
         submit_for_review: false,
+        **metadata_overrides(name),
       )
     end
   end
