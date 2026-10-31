@@ -4,7 +4,7 @@
 ![Platform](https://img.shields.io/badge/platform-watchOS-blue.svg)
 ![Platform](https://img.shields.io/badge/platform-macOS-blue.svg)
 ![Swift](https://img.shields.io/badge/swift-6.2-orange.svg)
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/Koshimizu-Takehito/TicTacToe)
+[![Ask DeepWiki](https://img.shields.io/badge/Ask-DeepWiki-blue)](https://deepwiki.com/Koshimizu-Takehito/TicTacToe)
 
 Enjoy the classic game of Tic-Tac-Toe in a simple and stylish way with "TicTacToe Simple Quick Play"! This is the ultimate casual game that everyone can enjoy easily.
 
